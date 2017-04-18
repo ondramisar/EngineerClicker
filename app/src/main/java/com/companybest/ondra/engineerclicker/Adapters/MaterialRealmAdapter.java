@@ -87,7 +87,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
                         }
                     });
                     viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
-                    mainActivity.mechanicActivity.coins.setText("Coins: " + String.valueOf(user.getCoins()));
+                    mainActivity.coins.setText("Coins: " + String.valueOf(user.getCoins()));
                 }
             }
         });
@@ -110,7 +110,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
                         }
                     });
                     viewHolder.numberOfMaterials.setText("Number: " + String.valueOf(material.getNumberOf()));
-                    mainActivity.mechanicActivity.coins.setText("Coins: " + String.valueOf(user.getCoins()));
+                    mainActivity.coins.setText("Coins: " + String.valueOf(user.getCoins()));
                 }
 
             }

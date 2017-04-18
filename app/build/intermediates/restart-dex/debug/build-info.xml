@@ -6,7 +6,7 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1492550290605"
+    timestamp="1492553599594"
     token="2444275099828509080"
     verifier="COLD_SWAP_REQUESTED" >
 
@@ -96,27 +96,27 @@
         <artifact
             location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_1.apk"
             type="SPLIT" />
-        <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
-            type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1492549999391"
+        timestamp="1492553397419"
         verifier="COLD_SWAP_REQUESTED" >
+        <artifact
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            type="SPLIT" />
         <artifact
             location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
             type="SPLIT" />
     </build>
     <build
         build-mode="COLD"
-        timestamp="1492550249752"
+        timestamp="1492553558664"
         verifier="COLD_SWAP_REQUESTED" >
         <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="G:\programing\android\project\EngineerClicker\app\build\outputs\apk\app-debug.apk"
@@ -124,7 +124,7 @@
     </build>
     <build
         build-mode="COLD"
-        timestamp="1492550290605"
+        timestamp="1492553599594"
         verifier="COLD_SWAP_REQUESTED" />
 
 </instant-run>

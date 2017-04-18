@@ -106,7 +106,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
                     viewHolder.costOfMachine.setText("Cost: " + String.valueOf(machine.getCost()));
-                    mainActivity.mechanicActivity.coins.setText(String.valueOf("Coins: " + String.valueOf(user.getCoins())));
+                    mainActivity.coins.setText(String.valueOf("Coins: " + String.valueOf(user.getCoins())));
                 }
 
                 Log.i("user", "COINS: "+ String.valueOf(user.getCoins()));
@@ -138,7 +138,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                     viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                    mainActivity.mechanicActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                    mainActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 
@@ -169,7 +169,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                     viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                    mainActivity.mechanicActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                    mainActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 
