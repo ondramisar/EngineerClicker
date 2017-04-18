@@ -776,11 +776,11 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
                 }
             });
 
-            mechanicActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+            numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
-            mechanicActivity.costOfWorkers.setText("Cost: " + String.valueOf(worker.getCost()));
+            costOfWorkers.setText("Cost: " + String.valueOf(worker.getCost()));
 
-            mechanicActivity.coins.setText(String.valueOf("Coins: " + user.getCoins()));
+            coins.setText(String.valueOf("Coins: " + user.getCoins()));
             Log.i("user", "Coins: " + user.getCoins());
 
         }
