@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Engineer Clicker</string>
+    <string name="service_name">Engineer Clicker</string>
+    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id2">ca-app-pub-3940256099942544/6300978111</string>
+    <string name="banner_ad_unit_id3">ca-app-pub-3940256099942544/6300978111</string>
+
+    <string name="banner_ad_unit_id_main">ca-app-pub-4686615482489412/2340994680</string>
+    <string name="banner_ad_unit_id2_material">ca-app-pub-4686615482489412/6771194280</string>
+    <string name="banner_ad_unit_id3_upgrade">ca-app-pub-4686615482489412/8247927489</string>
+</resources>

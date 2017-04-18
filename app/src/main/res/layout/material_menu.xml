@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/nameOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Name: " />
+
+
+        <TextView
+            android:id="@+id/numberOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="         "
+            android:layout_alignBaseline="@+id/sellMaterial"
+            android:layout_alignBottom="@+id/sellMaterial"
+            android:layout_toRightOf="@+id/upgradeImg"
+            android:layout_toEndOf="@+id/upgradeImg"
+            android:layout_marginLeft="4dp"/>
+
+        <Button
+            android:id="@+id/sellMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="sellMaterial"
+            android:text="Sell"
+            android:layout_alignBaseline="@+id/sellMaterialAll"
+            android:layout_alignBottom="@+id/sellMaterialAll"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="105dp"/>
+
+        <Button
+            android:id="@+id/sellMaterialAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sell All"
+            android:layout_below="@+id/nameOfMaterial"
+            android:layout_toRightOf="@+id/sellMaterial"
+            android:layout_toEndOf="@+id/sellMaterial"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="10dp"/>
+
+        <TextView
+            android:id="@+id/costOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cost:      "
+            android:layout_alignBaseline="@+id/sellMaterialAll"
+            android:layout_alignBottom="@+id/sellMaterialAll"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginRight="5dp"/>
+
+        <ImageView
+            android:id="@+id/upgradeImg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/sellMaterial"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp"/>
+    </RelativeLayout>
+</FrameLayout>
