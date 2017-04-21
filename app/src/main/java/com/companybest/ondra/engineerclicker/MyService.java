@@ -24,7 +24,6 @@ import io.realm.Realm;
 
 public class MyService extends Service {
 
-    private Realm realm;
     private MainActivity mainActivity;
     MainThread mainThread;
 
@@ -168,38 +167,7 @@ public class MyService extends Service {
 
             timeForMachine2 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m2.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m2.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m2.getNameOfNeededMaterial()).findFirst();
-
-            if (m2.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m2.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m2.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
+            machineThread(m2);
 
         }
 
@@ -207,304 +175,61 @@ public class MyService extends Service {
 
             timeForMachine3 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m3.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m3.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m3.getNameOfNeededMaterial()).findFirst();
+            machineThread(m3);
 
-            if (m3.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m3.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m3.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
         }
 
         if (timeForMachine4 > m4.getTimerOfMachine()) {
 
             timeForMachine4 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m4.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m4.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m4.getNameOfNeededMaterial()).findFirst();
-
-            if (m4.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m4.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m4.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-
-                    }
-                });
-
-            }
+            machineThread(m4);
         }
 
         if (timeForMachine5 > m5.getTimerOfMachine()) {
 
             timeForMachine5 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m5.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m5.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m5.getNameOfNeededMaterial()).findFirst();
-
-            if (m5.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m5.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m5.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-
-            }
+            machineThread(m5);
         }
+
 
         if (timeForMachine6 > m6.getTimerOfMachine()) {
 
             timeForMachine6 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m6.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m6.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m6.getNameOfNeededMaterial()).findFirst();
-
-            if (m6.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m6.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m6.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
+            machineThread(m6);
         }
 
         if (timeForMachine7 > m7.getTimerOfMachine()) {
 
             timeForMachine7 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m7.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m7.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m7.getNameOfNeededMaterial()).findFirst();
-
-            if (m7.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m7.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m7.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
+            machineThread(m7);
         }
 
         if (timeForMachine8 > m8.getTimerOfMachine()) {
 
             timeForMachine8 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m8.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m8.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m8.getNameOfNeededMaterial()).findFirst();
-
-            if (m8.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m8.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m8.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-
-            }
+            machineThread(m8);
         }
 
         if (timeForMachine9 > m9.getTimerOfMachine()) {
 
             timeForMachine9 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m9.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m9.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m9.getNameOfNeededMaterial()).findFirst();
+            machineThread(m9);
 
-            if (m9.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m9.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
 
-                for (int i = 0; i < m9.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
         }
 
         if (timeForMachine10 > m10.getTimerOfMachine()) {
 
             timeForMachine10 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m10.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m10.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m10.getNameOfNeededMaterial()).findFirst();
+            machineThread(m10);
 
-            if (m10.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m10.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m10.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-
-            }
         }
 
         //Log.i("user", String.valueOf(timeOfDestructionThred));
@@ -515,6 +240,42 @@ public class MyService extends Service {
 
             stopSelf();
             timeOfDestructionThred = 0;
+        }
+    }
+
+    private void machineThread(Machine mach){
+        Log.i("user", "timer for" + String.valueOf(mach.getTimerOfMachine()));
+        Realm realm = Realm.getDefaultInstance();
+        final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
+        final Material material2 = realm.where(Material.class).equalTo("name", mach.getNameOfNeededMaterial()).findFirst();
+
+        if (mach.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
+            Log.i("user", "in IF STATMENT For " + mach.getName());
+            int numberOfMaterialsAdd = 0;
+            int numberOfMaterials = material2.getNumberOf();
+
+            for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
+                if (numberOfMaterials > 0) {
+                    numberOfMaterialsAdd += 1;
+                    numberOfMaterials -= 1;
+                }
+            }
+
+            final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
+
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+
+                    material.setNumberOf(finalNumberOfMaterialsAdd,true);
+
+                    material2.setNumberOf(finalNumberOfMaterialsAdd, false);
+                    Log.i("user", "Material Added: " + material.getNumberOf());
+                    Log.i("user", "Material Getted: " + material2.getNumberOf());
+                }
+            });
+
+
         }
     }
 }

@@ -29,7 +29,7 @@
         <activity android:name=".Activitis.MechanicActivity" />
         <activity android:name=".Activitis.StockActivity" />
         <activity android:name=".Activitis.UpgradeActivity" />
-        <activity android:name=".Activitis.BettingActivity"></activity>
+        <activity android:name=".Activitis.BettingActivity" />
     </application>
 
 </manifest>

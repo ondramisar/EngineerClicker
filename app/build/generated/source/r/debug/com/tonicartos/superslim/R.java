@@ -18,19 +18,19 @@ public final class R {
         public static final int slm_section_sectionManager = 0x7f01017b;
     }
     public static final class id {
-        public static final int auto_fit = 0x7f0c0051;
-        public static final int end = 0x7f0c0030;
-        public static final int grid = 0x7f0c0055;
-        public static final int inline = 0x7f0c0052;
-        public static final int linear = 0x7f0c0056;
-        public static final int match_header = 0x7f0c0058;
-        public static final int overlay = 0x7f0c0053;
-        public static final int staggered_grid = 0x7f0c0057;
-        public static final int start = 0x7f0c0034;
-        public static final int sticky = 0x7f0c0054;
+        public static final int auto_fit = 0x7f0d0053;
+        public static final int end = 0x7f0d0032;
+        public static final int grid = 0x7f0d0057;
+        public static final int inline = 0x7f0d0054;
+        public static final int linear = 0x7f0d0058;
+        public static final int match_header = 0x7f0d005a;
+        public static final int overlay = 0x7f0d0055;
+        public static final int staggered_grid = 0x7f0d0059;
+        public static final int start = 0x7f0d0036;
+        public static final int sticky = 0x7f0d0056;
     }
     public static final class string {
-        public static final int app_name = 0x7f06003c;
+        public static final int app_name = 0x7f07003c;
     }
     public static final class styleable {
         public static final int[] superslim_GridSLM = { 0x7f010176, 0x7f010177 };

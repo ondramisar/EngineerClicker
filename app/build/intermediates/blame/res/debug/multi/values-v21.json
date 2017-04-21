@@ -2062,17 +2062,17 @@
                     "startOffset": 20967,
                     "endLine": 289,
                     "endColumn": 12,
-                    "endOffset": 21156
+                    "endOffset": 21160
                 },
                 "from": {
-                    "file": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\values-v21\\values-v21.xml",
+                    "file": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\values-v21\\values-v21.xml",
                     "position": {
                         "startLine": 2,
                         "startColumn": 4,
                         "startOffset": 55,
                         "endLine": 4,
                         "endColumn": 12,
-                        "endOffset": 244
+                        "endOffset": 248
                     }
                 }
             }

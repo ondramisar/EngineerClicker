@@ -8,9 +8,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TabHost;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,7 +49,7 @@ import io.realm.RealmResults;
 public class MainActivity extends RealmBaseActivity implements RewardedVideoAdListener  {
 
     RealmRecyclerView materialRecyclerView;
-    public static RealmRecyclerView upgradeRecyclerView;
+    RealmRecyclerView upgradeRecyclerView;
     RealmRecyclerView mainScreenRecyclerView;
 
     public static TextView numberOfWorkers;
@@ -58,6 +63,8 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
 
     Button playAd;
+    Button play50To50;
+    Button playShufle;
 
     public MainThread thread;
 
@@ -107,15 +114,18 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
         AdRequest adRequest3 = new AdRequest.Builder().build();
         mAdView3.loadAd(adRequest3);
 
+        //AD VIEW
+        AdView mAdView4 = (AdView) findViewById(R.id.adView4);
+        AdRequest adRequest4 = new AdRequest.Builder().build();
+        mAdView4.loadAd(adRequest4);
 
         //THREAD FOR GAME LOOP
         thread = new MainThread(this,true);
         starThread();
 
-        //REALM INITIALIZE
-        Realm.setDefaultConfiguration(getRealmConfig());
 
-        Realm realm = Realm.getInstance(getRealmConfig());
+        Realm.setDefaultConfiguration(getRealmConfig());
+        //Realm realm = Realm.getInstance(getRealmConfig());
 
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.companybest.ondra.engineerclicker.Activitis", Context.MODE_PRIVATE);
 
@@ -136,6 +146,7 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
         }
 
+        Realm realm = Realm.getDefaultInstance();
 
         //FOR ADAPTER LIST OF MACHINES
         machines = realm
@@ -187,7 +198,7 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
         realm = Realm.getDefaultInstance();
         BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainReferences.nameOfWorker).findFirst();
-        User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
+        final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
         numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
         coins.setText("Coins: " + String.valueOf(user.getCoins()));
         costOfWorkers.setText("Cost: " + String.valueOf(worker.getCost()));
@@ -214,6 +225,148 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
                 }
             }
         });
+
+        play50To50 = (Button) findViewById(R.id.playFyftyToFyfty);
+        Button buttonForConfurm50To50 = (Button) findViewById(R.id.buttonConfirmForFyftyFyfty);
+        final TextView textViewFor50To50 = (TextView) findViewById(R.id.textViewForFyftyToFyfty);
+        final EditText editTextFor50To50 = (EditText) findViewById(R.id.editTextFyftyToFyfty);
+        buttonForConfurm50To50.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
+            }
+        });
+        play50To50.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (textViewFor50To50.getText() != "") {
+
+                    Realm realm = Realm.getDefaultInstance();
+
+                    final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
+
+                    if (user.getCoins() > Integer.valueOf(String.valueOf(editTextFor50To50.getText()))) {
+
+                        Log.i("user", "In On CLICK FOR 50 50");
+                        int min = 0;
+                        final int max = 200;
+
+                        Random r = new Random();
+                        final int i1 = r.nextInt(max - min + 1) + min;
+                        Log.i("user", String.valueOf(i1));
+
+                        play50To50.setEnabled(false);
+
+                        if (i1 <= 100) {
+                            Toast.makeText(getApplicationContext(), "YOU HAVE WONE " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+
+                                    user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), true);
+                                    coins.setText(String.valueOf(user.getCoins()));
+                                }
+                            });
+                        } else {
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
+
+                                    user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), false);
+                                    coins.setText(String.valueOf(user.getCoins()));
+                                }
+                            });
+                            Toast.makeText(getApplicationContext(), "YOU HAVE Lost " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
+                        }
+
+                        new CountDownTimer(10000, 1000) {
+
+                            public void onTick(long millisUntilFinished) {
+
+                            }
+
+                            public void onFinish() {
+                                play50To50.setEnabled(true);
+                            }
+                        }.start();
+                    }
+                }
+
+            }
+        });
+
+
+        playShufle = (Button) findViewById(R.id.playFirstMiniGame);
+        Button buttonForConfurmShufl = (Button) findViewById(R.id.buttonForConfirmShufl);
+        final TextView textViewForShufl = (TextView) findViewById(R.id.textViewForShufl);
+        final EditText editTextForShufl = (EditText) findViewById(R.id.editTextShufle);
+        buttonForConfurmShufl.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
+
+                int min = i - i/3;
+                int max = i + i/3;
+                textViewForShufl.setText("You can win from " + String.valueOf(min) + " to "  + String.valueOf(max));
+            }
+        });
+        playShufle.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                if (textViewForShufl.getText() != "") {
+
+                    Realm realm = Realm.getDefaultInstance();
+
+                    final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
+
+                    if (user.getCoins() > Integer.valueOf(String.valueOf(editTextForShufl.getText()))) {
+                        int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
+
+                        int min = i - i/3;
+                        int max = i + i/3;
+                        Log.i("user", "In On CLICK FOR Shufl");
+                        int minRan = min;
+                        final int maxRan = max;
+
+                        Random r = new Random();
+                        final int i1 = r.nextInt(maxRan - minRan + 1) + minRan;
+                        Log.i("user", String.valueOf(i1));
+
+                        playShufle.setEnabled(false);
+
+                        Toast.makeText(getApplicationContext(), "YOU HAVE WONE " + String.valueOf(i1), Toast.LENGTH_SHORT).show();
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+
+                                user.setCoins(Integer.valueOf(String.valueOf(editTextForShufl.getText())), false);
+                                Log.i("user", "MinuS THIS: "+ String.valueOf(editTextForShufl.getText()));
+                                user.setCoins(i1, true);
+                                Log.i("user", "PLUS THIS: " + String.valueOf(i1));
+                                coins.setText(String.valueOf(user.getCoins()));
+                            }
+                        });
+                        new CountDownTimer(10000, 1000) {
+
+                            public void onTick(long millisUntilFinished) {
+
+                            }
+
+                            public void onFinish() {
+                                playShufle.setEnabled(true);
+                            }
+                        }.start();
+
+                    }
+                }
+
+            }
+        });
+
+
+
 
         //set up for tab view
         TabHost host = (TabHost) findViewById(R.id.tabHost);
@@ -277,6 +430,21 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
         return alll;
     }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_menu, menu);
+        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        return super.onOptionsItemSelected(item);
+/*
+        if(item.getItemId() == R.id.optionMenu){
+
+        }*/
+    }
 
     public void starThread() {
         thread.setRunning(true);
@@ -292,6 +460,7 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
         }
         return false;
     }
+
 
     public void update() {
         //Log.i("user", "update");
@@ -351,44 +520,7 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
             timeForMachine2 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m2.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m2.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m2.getNameOfNeededMaterial()).findFirst();
-
-            if (m2.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m2.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m2.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m2);
 
         }
 
@@ -396,43 +528,7 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
             timeForMachine3 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m3.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m3.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m3.getNameOfNeededMaterial()).findFirst();
-
-            if (m3.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m3.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m3.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m3);
 
         }
 
@@ -440,89 +536,14 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
             timeForMachine4 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m4.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m4.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m4.getNameOfNeededMaterial()).findFirst();
-
-            if (m4.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m4.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m4.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m4);
         }
 
         if (timeForMachine5 > m5.getTimerOfMachine()) {
 
             timeForMachine5 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m5.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m5.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m5.getNameOfNeededMaterial()).findFirst();
-
-            if (m5.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m5.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m5.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m5);
         }
 
 
@@ -530,180 +551,30 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
             timeForMachine6 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m6.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m6.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m6.getNameOfNeededMaterial()).findFirst();
-
-            if (m6.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m6.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m6.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m6);
         }
 
         if (timeForMachine7 > m7.getTimerOfMachine()) {
 
             timeForMachine7 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m7.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m7.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m7.getNameOfNeededMaterial()).findFirst();
-
-            if (m7.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m7.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m7.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m7);
         }
 
         if (timeForMachine8 > m8.getTimerOfMachine()) {
 
             timeForMachine8 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m8.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m8.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m8.getNameOfNeededMaterial()).findFirst();
-
-            if (m8.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m8.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < m8.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
+            machineThread(m8);
         }
 
         if (timeForMachine9 > m9.getTimerOfMachine()) {
 
             timeForMachine9 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m9.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m9.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m9.getNameOfNeededMaterial()).findFirst();
+            machineThread(m9);
 
-            if (m9.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m9.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
 
-                for (int i = 0; i < m9.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
-
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
         }
 
 
@@ -711,46 +582,53 @@ public class MainActivity extends RealmBaseActivity implements RewardedVideoAdLi
 
             timeForMachine10 = 0;
 
-            Log.i("user", "timer for" + String.valueOf(m10.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m10.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", m10.getNameOfNeededMaterial()).findFirst();
+            machineThread(m10);
+        }
+    }
 
-            if (m10.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + m10.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
+    private void machineThread(Machine mech){
+        Log.i("user", "timer for" + String.valueOf(mech.getTimerOfMachine()));
+        realm = Realm.getDefaultInstance();
+        final Material material = realm.where(Material.class).equalTo("name", mech.getNameOfMaterial()).findFirst();
+        final Material material2 = realm.where(Material.class).equalTo("name", mech.getNameOfNeededMaterial()).findFirst();
 
-                for (int i = 0; i < m10.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
+        if (mech.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
+            Log.i("user", "in IF STATMENT For " + mech.getName());
+            int numberOfMaterialsAdd = 0;
+            int numberOfMaterials = material2.getNumberOf();
+
+            for (int i = 0; i < mech.getNumberOfWorkersOnMachine(); i++) {
+                if (numberOfMaterials > 0) {
+                    numberOfMaterialsAdd += 1;
+                    numberOfMaterials -= 1;
                 }
-
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-
-                        material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
-                        Log.i("user", "Material Getted: " + material2.getNumberOf());
-                    }
-                });
             }
-            runOnUiThread(new Runnable() {
+
+            final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
+
+            realm.executeTransaction(new Realm.Transaction() {
                 @Override
-                public void run() {
-                    mainRealmAdapter.notifyDataSetChanged();
-                    materialRealmAdapter.notifyDataSetChanged();
+                public void execute(Realm realm) {
+
+                    material.setNumberOf(finalNumberOfMaterialsAdd,true);
+
+                    material2.setNumberOf(finalNumberOfMaterialsAdd, false);
+                    Log.i("user", "Material Added: " + material.getNumberOf());
+                    Log.i("user", "Material Getted: " + material2.getNumberOf());
                 }
             });
         }
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                mainRealmAdapter.notifyDataSetChanged();
+                materialRealmAdapter.notifyDataSetChanged();
+            }
+        });
+
+
     }
+
 
     public void plusWorker(View view) {
         //GETTING WORKERS AND USER COINS

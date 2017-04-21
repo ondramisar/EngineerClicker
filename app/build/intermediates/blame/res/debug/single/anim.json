@@ -1,7 +1,7 @@
 [
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_in.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_snackbar_in.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_snackbar_in.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_top.xml",
@@ -17,7 +17,7 @@
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_snackbar_out.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_snackbar_out.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_snackbar_out.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_in_top.xml",
@@ -25,7 +25,7 @@
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_in.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_fab_in.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_fab_in.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_enter.xml",
@@ -41,7 +41,7 @@
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_out.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_bottom_sheet_slide_out.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_popup_exit.xml",
@@ -49,7 +49,7 @@
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_bottom_sheet_slide_in.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_bottom_sheet_slide_in.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\abc_slide_out_bottom.xml",
@@ -61,6 +61,6 @@
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\anim\\design_fab_out.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\anim\\design_fab_out.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\anim\\design_fab_out.xml"
     }
 ]

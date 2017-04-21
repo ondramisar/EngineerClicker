@@ -4,6 +4,10 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-v21\\abc_edit_text_material.xml"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_hide_password.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\drawable-v21\\avd_hide_password.xml"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\abc_btn_colored_material.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-v21\\abc_btn_colored_material.xml"
     },
@@ -16,7 +20,15 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-v21\\abc_action_bar_item_background_material.xml"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\avd_show_password.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\drawable-v21\\avd_show_password.xml"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_bottom_navigation_item_background.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\a151a2bb53ee74ebf0a317f0070b09457e1d34da\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\drawable-v21\\design_bottom_navigation_item_background.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v21\\design_password_eye.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\drawable-v21\\design_password_eye.xml"
     }
 ]

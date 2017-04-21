@@ -44,6 +44,9 @@
         <activity android:name="com.companybest.ondra.engineerclicker.Activitis.StockActivity" />
         <activity android:name="com.companybest.ondra.engineerclicker.Activitis.UpgradeActivity" />
         <activity android:name="com.companybest.ondra.engineerclicker.Activitis.BettingActivity" />
+        <activity
+            android:name="com.companybest.ondra.engineerclicker.Activitis.MainActivity2"
+            android:label="@string/title_activity_main2" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"
