@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.companybest.ondra.engineerclicker.Activitis.MainActivity;
+import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;

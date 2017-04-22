@@ -14,7 +14,6 @@ import android.support.v4.app.NotificationCompat;
 import android.util.Log;
 import android.widget.Toast;
 
-import com.companybest.ondra.engineerclicker.Activitis.MainActivity;
 import com.companybest.ondra.engineerclicker.GameLoop.MainThread;
 import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.Material;

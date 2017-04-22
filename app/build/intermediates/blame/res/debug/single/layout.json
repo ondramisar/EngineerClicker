@@ -1,9 +1,5 @@
 [
     {
-        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main.xml",
-        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\activity_main.xml"
-    },
-    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_separator.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_navigation_item_separator.xml"
     },
@@ -80,6 +76,10 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_navigation_item_header.xml"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\stock_tab.xml",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\stock_tab.xml"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_navigation_item.xml"
     },
@@ -90,6 +90,10 @@
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_menu_item_action_area.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_menu_item_action_area.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\mech_tab.xml",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\mech_tab.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_navigation_item_subheader.xml",
@@ -106,6 +110,10 @@
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\header_item.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\353d909505bf609b89c83d82497a095a79f7320c\\output\\res\\layout\\header_item.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\betting_tab.xml",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\betting_tab.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_layout_snackbar_include.xml",
@@ -180,6 +188,10 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_navigation_menu.xml"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\upgrade_tab.xml",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\upgrade_tab.xml"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\upgrade_menu.xml",
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\upgrade_menu.xml"
     },
@@ -230,6 +242,10 @@
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\design_bottom_navigation_item.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\layout\\design_bottom_navigation_item.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\activity_main1.xml",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\activity_main1.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_alert_dialog_material.xml",

@@ -4,7 +4,7 @@ import android.graphics.Canvas;
 import android.util.Log;
 import android.view.SurfaceHolder;
 
-import com.companybest.ondra.engineerclicker.Activitis.MainActivity;
+import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.MyService;
 
 public class MainThread extends Thread {

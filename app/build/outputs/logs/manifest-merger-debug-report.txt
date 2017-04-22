@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-38:12
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-33:12
 	package
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
@@ -29,7 +29,7 @@ MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\bu
 	android:name
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:6:22-65
 application
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:8:5-36:19
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:8:5-31:19
 MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.android\build-cache\828d881e39e1d1c36a76ce8f4dee5436ac536ee5\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.android\build-cache\0fe0fae9a7f20c848065107574c4b0b414ec2748\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\ff5dbe51eaf4fc3474937c253cca9687744644b3\output\AndroidManifest.xml:23:5-27:19
@@ -64,52 +64,34 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:10:9-43
 	android:theme
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:13:9-40
-activity#com.companybest.ondra.engineerclicker.Activitis.MainActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:14:9-22:20
+activity#com.companybest.ondra.engineerclicker.MainActivity
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:14:9-24:20
 	android:screenOrientation
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:16:13-49
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:18:13-49
+	android:label
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:16:13-56
+	android:theme
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:17:13-56
 	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:15:13-51
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:15:13-41
 intent-filter#android.intent.action.MAIN+android.intent.category.LAUNCHER
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:17:13-21:29
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:19:13-23:29
 action#android.intent.action.MAIN
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:18:17-69
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:20:17-69
 	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:18:25-66
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:20:25-66
 category#android.intent.category.LAUNCHER
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:20:17-77
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:22:17-77
 	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:20:27-74
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:22:27-74
 service#com.companybest.ondra.engineerclicker.MyService
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:24:9-27:52
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:26:9-29:52
 	android:label
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:27:13-49
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:29:13-49
 	android:icon
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:26:13-72
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:28:13-72
 	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:25:13-38
-activity#com.companybest.ondra.engineerclicker.Activitis.MechanicActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:29:9-64
-	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:29:19-61
-activity#com.companybest.ondra.engineerclicker.Activitis.StockActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:30:9-61
-	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:30:19-58
-activity#com.companybest.ondra.engineerclicker.Activitis.UpgradeActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:31:9-63
-	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:31:19-60
-activity#com.companybest.ondra.engineerclicker.Activitis.BettingActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:32:9-63
-	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:32:19-60
-activity#com.companybest.ondra.engineerclicker.Activitis.MainActivity2
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:33:9-35:69
-	android:label
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:35:13-57
-	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:34:13-52
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:27:13-38
 uses-sdk
 INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.android\build-cache\ec74d40fefcdc63afd7bfa26487fc76781220051\output\AndroidManifest.xml:6:5-8:41

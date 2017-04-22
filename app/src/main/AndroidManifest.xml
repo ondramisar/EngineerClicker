@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".Activitis.MainActivity"
+            android:name=".MainActivity"
+            android:label="@string/title_activity_main"
+            android:theme="@style/AppTheme.NoActionBar"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +28,6 @@
             android:icon="@drawable/common_google_signin_btn_icon_dark"
             android:label="@string/service_name" />
 
-        <activity android:name=".Activitis.MechanicActivity" />
-        <activity android:name=".Activitis.StockActivity" />
-        <activity android:name=".Activitis.UpgradeActivity" />
-        <activity android:name=".Activitis.BettingActivity" />
     </application>
 
 </manifest>

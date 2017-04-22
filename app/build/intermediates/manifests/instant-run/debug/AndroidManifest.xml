@@ -26,8 +26,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme" >
         <activity
-            android:name="com.companybest.ondra.engineerclicker.Activitis.MainActivity"
-            android:screenOrientation="portrait" >
+            android:name="com.companybest.ondra.engineerclicker.MainActivity"
+            android:label="@string/title_activity_main"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -40,10 +42,6 @@
             android:icon="@drawable/common_google_signin_btn_icon_dark"
             android:label="@string/service_name" />
 
-        <activity android:name="com.companybest.ondra.engineerclicker.Activitis.MechanicActivity" />
-        <activity android:name="com.companybest.ondra.engineerclicker.Activitis.StockActivity" />
-        <activity android:name="com.companybest.ondra.engineerclicker.Activitis.UpgradeActivity" />
-        <activity android:name="com.companybest.ondra.engineerclicker.Activitis.BettingActivity" />
         <!-- Include the AdActivity and InAppPurchaseActivity configChanges and themes. -->
         <activity
             android:name="com.google.android.gms.ads.AdActivity"

@@ -9,7 +9,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
-import com.companybest.ondra.engineerclicker.Activitis.MainActivity;
+import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.Upgrade;

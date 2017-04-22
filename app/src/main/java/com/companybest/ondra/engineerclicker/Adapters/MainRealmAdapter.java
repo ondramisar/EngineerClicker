@@ -8,7 +8,8 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.companybest.ondra.engineerclicker.Activitis.MainActivity;
+import com.companybest.ondra.engineerclicker.Activitis.MechTab;
+import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker;
@@ -138,7 +139,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                     viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                    mainActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                    MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 
@@ -169,7 +170,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                     viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                    mainActivity.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                    MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 

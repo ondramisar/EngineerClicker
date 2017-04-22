@@ -9,4 +9,6 @@
     <string name="banner_ad_unit_id_main">ca-app-pub-4686615482489412/2340994680</string>
     <string name="banner_ad_unit_id2_material">ca-app-pub-4686615482489412/6771194280</string>
     <string name="banner_ad_unit_id3_upgrade">ca-app-pub-4686615482489412/8247927489</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="action_settings">Settings</string>
 </resources>
