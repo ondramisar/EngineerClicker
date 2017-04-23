@@ -27,7 +27,6 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name="com.companybest.ondra.engineerclicker.MainActivity"
-            android:label="@string/title_activity_main"
             android:screenOrientation="portrait"
             android:theme="@style/AppTheme.NoActionBar" >
             <intent-filter>

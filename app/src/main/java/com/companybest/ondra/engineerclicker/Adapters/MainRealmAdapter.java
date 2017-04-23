@@ -74,7 +74,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
         final Machine machine = realmResults.get(position);
 
         viewHolder.numberOfMachines.setText(String.valueOf(machine.getNumberOf()));
-        viewHolder.costOfMachine.setText("Cost: " + String.valueOf(machine.getCost()));
+        viewHolder.costOfMachine.setText("" + String.valueOf(machine.getCost()));
         viewHolder.numberOfWorkersOnMach.setText(String.valueOf(machine.getNumberOfWorkersOnMachine()));
         viewHolder.nameOfMachine.setText(machine.getName());
         viewHolder.timer.setText("Timer: " + String.valueOf(machine.getTimerOfMachine()));
@@ -106,8 +106,8 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                     });
 
                     viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
-                    viewHolder.costOfMachine.setText("Cost: " + String.valueOf(machine.getCost()));
-                    mainActivity.coins.setText(String.valueOf("Coins: " + String.valueOf(user.getCoins())));
+                    viewHolder.costOfMachine.setText("" + String.valueOf(machine.getCost()));
+                    mainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                 }
 
                 Log.i("user", "COINS: "+ String.valueOf(user.getCoins()));

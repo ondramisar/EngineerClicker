@@ -20,7 +20,9 @@ import android.view.MenuItem;
 import android.widget.TextView;
 
 import com.companybest.ondra.engineerclicker.Activitis.BettingTab;
+import com.companybest.ondra.engineerclicker.Activitis.CreditFragment;
 import com.companybest.ondra.engineerclicker.Activitis.MechTab;
+import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
 import com.companybest.ondra.engineerclicker.GameLoop.MainThread;
@@ -70,6 +72,7 @@ public class MainActivity extends RealmBaseActivity {
 
     public static TextView coins;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -100,6 +103,14 @@ public class MainActivity extends RealmBaseActivity {
         //REFERENCE FOR REAL OBJECT
         mainReferences = new MainReferences();
 
+        /*
+        new ShowcaseView.Builder(this)
+                .setTarget(new ViewTarget(R.id.coins, this))
+                .setContentTitle("ShowcaseView")
+                .setContentText("This is highlighting the Home button")
+                .hideOnTouchOutside()
+                .build();*/
+
         //CREATING MACHINES
         if (sharedPreferences.getInt("created", 0) == 0) {
             sharedPreferences.edit().putInt("created", 1).apply();
@@ -108,6 +119,8 @@ public class MainActivity extends RealmBaseActivity {
             mainReferences.createAllUpgrades();
             mainReferences.createWorker();
             mainReferences.createUser();
+            sharedPreferences.edit().putInt("music", 100).apply();
+            sharedPreferences.edit().putInt("sound", 100).apply();
             Log.i("user", "first Time Created");
         } else if (sharedPreferences.getInt("created", 0) == 1) {
             Log.i("user", "was created");
@@ -123,13 +136,14 @@ public class MainActivity extends RealmBaseActivity {
         Realm realm = Realm.getDefaultInstance();
         final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
         coins = (TextView) findViewById(R.id.coins);
-        coins.setText("Coins: " + String.valueOf(user.getCoins()));
+        coins.setText("" + String.valueOf(user.getCoins()));
     }
 
     public void starThread() {
         thread.setRunning(true);
         thread.start();
     }
+
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
@@ -188,8 +202,8 @@ public class MainActivity extends RealmBaseActivity {
             runOnUiThread(new Runnable() {
                 @Override
                 public void run() {
-                    mechTab.mainRealmAdapter.notifyDataSetChanged();
-                    stockTab.materialRealmAdapter.notifyDataSetChanged();
+                    MechTab.mainRealmAdapter.notifyDataSetChanged();
+                    StockTab.materialRealmAdapter.notifyDataSetChanged();
                 }
             });
         }
@@ -299,8 +313,8 @@ public class MainActivity extends RealmBaseActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                mechTab.mainRealmAdapter.notifyDataSetChanged();
-                stockTab.materialRealmAdapter.notifyDataSetChanged();
+                MechTab.mainRealmAdapter.notifyDataSetChanged();
+                StockTab.materialRealmAdapter.notifyDataSetChanged();
             }
         });
 
@@ -316,6 +330,7 @@ public class MainActivity extends RealmBaseActivity {
         return true;
     }
 
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
@@ -325,6 +340,16 @@ public class MainActivity extends RealmBaseActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            FragmentManager fm = getSupportFragmentManager();
+
+            SettingFragment settingFragment = new SettingFragment(getApplicationContext());
+            settingFragment.show(fm, "user");
+            return true;
+        } else if (id == R.id.action_credit) {
+            FragmentManager fm = getSupportFragmentManager();
+
+            CreditFragment cretidFragment = new CreditFragment(getApplicationContext());
+            cretidFragment.show(fm, "user");
             return true;
         }
 
