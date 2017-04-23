@@ -27,7 +27,7 @@ public class MechTab extends Fragment {
     RealmResults<Machine> machines;
     public static MainRealmAdapter mainRealmAdapter;
     public static TextView numberOfWorkers;
-    public static TextView costOfWorkers;
+    TextView costOfWorkers;
     MainActivity mainActivity;
 
     RealmRecyclerView mainScreenRecyclerView;
@@ -93,10 +93,10 @@ public class MechTab extends Fragment {
 
                     numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
-                    costOfWorkers.setText("Cost: " + String.valueOf(worker.getCost()));
+                    costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
-                    mainActivity.coins.setText(String.valueOf("Coins: " + user.getCoins()));
-                    Log.i("user", "Coins: " + user.getCoins());
+                    mainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                    Log.i("user", "" + user.getCoins());
 
                 }
             }
@@ -107,7 +107,7 @@ public class MechTab extends Fragment {
         final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
         Log.i("user", String.valueOf(worker.getNumberOf()));
         numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
-        costOfWorkers.setText("Cost: " + String.valueOf(worker.getCost()));
+        costOfWorkers.setText("" + String.valueOf(worker.getCost()));
         return rootView;
     }
 

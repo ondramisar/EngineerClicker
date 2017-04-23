@@ -1,4 +1,4 @@
-#Sat Apr 22 00:03:38 CEST 2017
+#Sun Apr 23 23:18:10 CEST 2017
 base.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9
 renamed.0=classes.dex
 file.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\5\\slice_9\\classes.dex

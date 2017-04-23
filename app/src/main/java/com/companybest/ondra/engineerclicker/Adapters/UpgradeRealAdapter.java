@@ -131,7 +131,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                     }
 
-                    mainActivity.coins.setText("Coins: " + String.valueOf(user.getCoins()));
+                    mainActivity.coins.setText("" + String.valueOf(user.getCoins()));
 
                     viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
 

@@ -117,7 +117,7 @@
     <color name="button_material_dark">#ff5a595b</color>
     <color name="button_material_light">#ffd6d7d7</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimary">#3f51b5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
     <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
@@ -375,6 +375,7 @@
             
             <flag name="all" value="0x77"/>
         </attr></declare-styleable>
+    <declare-styleable name="CustomTheme"><attr format="reference" name="showcaseViewStyle"/></declare-styleable>
     <declare-styleable name="DesignTheme"><attr format="reference" name="bottomSheetDialogTheme"/><attr format="reference" name="bottomSheetStyle"/><attr format="color" name="textColorError"/></declare-styleable>
     <declare-styleable name="DrawerArrowToggle"><attr format="color" name="color"/><attr format="boolean" name="spinBars"/><attr format="dimension" name="drawableSize"/><attr format="dimension" name="gapBetweenBars"/><attr format="dimension" name="arrowHeadLength"/><attr format="dimension" name="arrowShaftLength"/><attr format="dimension" name="barLength"/><attr format="dimension" name="thickness"/></declare-styleable>
     <declare-styleable name="FloatingActionButton"><attr name="backgroundTint"/><attr name="backgroundTintMode"/><attr format="color" name="rippleColor"/><attr name="fabSize">
@@ -432,6 +433,7 @@
     <declare-styleable name="ScrimInsetsFrameLayout"><attr format="color|reference" name="insetForeground"/></declare-styleable>
     <declare-styleable name="ScrollingViewBehavior_Layout"><attr format="dimension" name="behavior_overlapTop"/></declare-styleable>
     <declare-styleable name="SearchView"><attr format="reference" name="layout"/><attr format="boolean" name="iconifiedByDefault"/><attr name="android:maxWidth"/><attr format="string" name="queryHint"/><attr format="string" name="defaultQueryHint"/><attr name="android:imeOptions"/><attr name="android:inputType"/><attr format="reference" name="closeIcon"/><attr format="reference" name="goIcon"/><attr format="reference" name="searchIcon"/><attr format="reference" name="searchHintIcon"/><attr format="reference" name="voiceIcon"/><attr format="reference" name="commitIcon"/><attr format="reference" name="suggestionRowLayout"/><attr format="reference" name="queryBackground"/><attr format="reference" name="submitBackground"/><attr name="android:focusable"/></declare-styleable>
+    <declare-styleable name="ShowcaseView"><attr format="color|reference" name="sv_backgroundColor"/><attr format="color|reference" name="sv_detailTextColor"/><attr format="color|reference" name="sv_titleTextColor"/><attr format="color|reference" name="sv_buttonBackgroundColor"/><attr format="color|reference" name="sv_buttonForegroundColor"/><attr format="string|reference" name="sv_buttonText"/><attr format="reference" name="sv_detailTextAppearance"/><attr format="reference" name="sv_titleTextAppearance"/><attr format="color|reference" name="sv_showcaseColor"/><attr format="boolean|reference" name="sv_tintButtonColor"/></declare-styleable>
     <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
 <enum name="standard" value="0"/>
 
@@ -593,9 +595,11 @@
     <dimen name="abc_text_size_subtitle_material_toolbar">16dp</dimen>
     <dimen name="abc_text_size_title_material">20sp</dimen>
     <dimen name="abc_text_size_title_material_toolbar">20dp</dimen>
+    <dimen name="action_bar_offset">66dp</dimen>
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="appbar_padding_top">8dp</dimen>
+    <dimen name="button_margin">12dp</dimen>
     <dimen name="design_appbar_elevation">4dp</dimen>
     <dimen name="design_bottom_navigation_active_item_max_width">168dp</dimen>
     <dimen name="design_bottom_navigation_active_text_size">14sp</dimen>
@@ -663,6 +667,11 @@
     <dimen name="notification_subtext_size">13sp</dimen>
     <dimen name="notification_top_pad">10dp</dimen>
     <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <dimen name="showcase_radius">94dp</dimen>
+    <dimen name="showcase_radius_inner">96dp</dimen>
+    <dimen name="showcase_radius_material">48dip</dimen>
+    <dimen name="showcase_radius_outer">128dp</dimen>
+    <dimen name="text_padding">24dp</dimen>
     <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
     <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
     <item name="action_bar_activity_content" type="id"/>
@@ -673,6 +682,9 @@
     <item name="item_touch_helper_previous_elevation" type="id"/>
     <item name="progress_circular" type="id"/>
     <item name="progress_horizontal" type="id"/>
+    <item name="showcase_button" type="id"/>
+    <item name="showcase_sub_text" type="id"/>
+    <item name="showcase_title_text" type="id"/>
     <item name="split_action_bar" type="id"/>
     <item name="textinput_counter" type="id"/>
     <item name="textinput_error" type="id"/>
@@ -722,6 +734,7 @@
     <string name="abc_shareactionprovider_share_with_application">Share with %s</string>
     <string name="abc_toolbar_collapse_description">Collapse</string>
     <string name="accept">Accept</string>
+    <string name="action_credit">Credit</string>
     <string name="action_settings">Settings</string>
     <string name="app_name">Engineer Clicker</string>
     <string name="appbar_scrolling_view_behavior" translatable="false">android.support.design.widget.AppBarLayout$ScrollingViewBehavior</string>
@@ -765,6 +778,7 @@
     <string name="google_app_id" translatable="false">1:814234644113:android:52172a8693923316</string>
     <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDNRUxECJRv9Jwj-X4VQCsFwJ8FOr5y_3M</string>
     <string name="google_storage_bucket" translatable="false">pomocnik-pro-technicke-obory.appspot.com</string>
+    <string name="ok">OK</string>
     <string name="password_toggle_content_description">Toggle password visibility</string>
     <string name="path_password_eye" translatable="false">M12,4.5C7,4.5 2.73,7.61 1,12c1.73,4.39 6,7.5 11,7.5s9.27,-3.11 11,-7.5c-1.73,-4.39 -6,-7.5 -11,-7.5zM12,17c-2.76,0 -5,-2.24 -5,-5s2.24,-5 5,-5 5,2.24 5,5 -2.24,5 -5,5zM12,9c-1.66,0 -3,1.34 -3,3s1.34,3 3,3 3,-1.34 3,-3 -1.34,-3 -3,-3z</string>
     <string name="path_password_eye_mask_strike_through" translatable="false">M2,4.27 L19.73,22 L22.27,19.46 L4.54,1.73 L4.54,1 L23,1 L23,23 L1,23 L1,4.27 Z</string>
@@ -1970,6 +1984,27 @@
         <item name="android:paddingLeft">@dimen/abc_action_bar_overflow_padding_start_material</item>
         <item name="android:paddingRight">@dimen/abc_action_bar_overflow_padding_end_material</item>
     </style>
+    <style name="ShowcaseButton">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:minWidth">96dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/button</item>
+    </style>
+    <style name="ShowcaseView">
+        <item name="sv_titleTextAppearance">@style/TextAppearance.ShowcaseView.Title</item>
+        <item name="sv_detailTextAppearance">@style/TextAppearance.ShowcaseView.Detail</item>
+        <item name="sv_backgroundColor">#3333B5E5</item>
+        <item name="sv_buttonText">@android:string/ok</item>
+    </style>
+    <style name="ShowcaseView.Light">
+        <item name="sv_titleTextAppearance">@style/TextAppearance.ShowcaseView.Title</item>
+        <item name="sv_detailTextAppearance">@style/TextAppearance.ShowcaseView.Detail.Light</item>
+        <item name="sv_backgroundColor">#3333B5E5</item>
+        <item name="sv_buttonText">@android:string/ok</item>
+    </style>
     <style name="TextAppearance.AppCompat" parent="Base.TextAppearance.AppCompat"/>
     <style name="TextAppearance.AppCompat.Body1" parent="Base.TextAppearance.AppCompat.Body1"/>
     <style name="TextAppearance.AppCompat.Body2" parent="Base.TextAppearance.AppCompat.Body2"/>
@@ -2068,6 +2103,20 @@
         <item name="android:textSize">@dimen/design_tab_text_size</item>
         <item name="android:textColor">?android:textColorSecondary</item>
         <item name="textAllCaps">true</item>
+    </style>
+    <style name="TextAppearance.ShowcaseView.Detail" parent="android:style/TextAppearance">
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+    <style name="TextAppearance.ShowcaseView.Detail.Light">
+        <item name="android:textColor">#333333</item>
+        <item name="android:shadowColor">#FF0000</item>
+        <item name="android:shadowRadius">0</item>
+    </style>
+    <style name="TextAppearance.ShowcaseView.Title" parent="android:style/TextAppearance.Large">
+        <item name="android:textColor">#33B5E5</item>
+    </style>
+    <style name="TextAppearance.ShowcaseView.Title.Light">
+        <item name="android:shadowRadius">0</item>
     </style>
     <style name="TextAppearance.StatusBar.EventContent" parent=""/>
     <style name="TextAppearance.StatusBar.EventContent.Info" parent=""/>

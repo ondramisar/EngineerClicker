@@ -66,17 +66,22 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         Button buttonForConfurm50To50 = (Button) rootView.findViewById(R.id.buttonConfirmForFyftyFyfty);
         final TextView textViewFor50To50 = (TextView) rootView.findViewById(R.id.textViewForFyftyToFyfty);
         final EditText editTextFor50To50 = (EditText) rootView.findViewById(R.id.editTextFyftyToFyfty);
+        if (editTextFor50To50.getText().toString().trim().length() > 0) {
+            textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
+        }
         buttonForConfurm50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
+                if (editTextFor50To50.getText().toString().trim().length() > 0) {
+                    textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
+                }
             }
         });
         play50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (textViewFor50To50.getText() != "" && editTextFor50To50.getText() == null) {
+                if (textViewFor50To50.getText() != "" &&  editTextFor50To50.getText().toString().trim().length() > 0) {
 
                     Realm realm = Realm.getDefaultInstance();
 
@@ -137,21 +142,30 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         Button buttonForConfurmShufl = (Button) rootView.findViewById(R.id.buttonForConfirmShufl);
         final TextView textViewForShufl = (TextView) rootView.findViewById(R.id.textViewForShufl);
         final EditText editTextForShufl = (EditText) rootView.findViewById(R.id.editTextShufle);
+        if (editTextForShufl.getText().toString().trim().length() > 0) {
+            int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
+
+            int min = i - i / 3;
+            int max = i + i / 3;
+            textViewForShufl.setText("You can win from " + String.valueOf(min) + " to " + String.valueOf(max));
+        }
         buttonForConfurmShufl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
+                if (editTextForShufl.getText().toString().trim().length() > 0) {
+                    int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
 
-                int min = i - i/3;
-                int max = i + i/3;
-                textViewForShufl.setText("You can win from " + String.valueOf(min) + " to "  + String.valueOf(max));
+                    int min = i - i / 3;
+                    int max = i + i / 3;
+                    textViewForShufl.setText("You can win from " + String.valueOf(min) + " to " + String.valueOf(max));
+                }
             }
         });
         playShufle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (textViewForShufl.getText() != ""&& textViewForShufl.getText() == null) {
+                if (textViewForShufl.getText() != ""&& editTextForShufl.getText().toString().trim().length() > 0) {
 
                     Realm realm = Realm.getDefaultInstance();
 

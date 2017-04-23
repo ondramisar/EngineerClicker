@@ -7,115 +7,121 @@
     tools:context="com.companybest.ondra.engineerclicker.MainActivity$PlaceholderFragment">
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical" >
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="461dp">
 
-        <Button
-            android:id="@+id/buttonConfirmForFyftyFyfty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_above="@+id/playFirstMiniGame"
-            android:layout_toLeftOf="@+id/editTextShufle"
-            android:layout_toStartOf="@+id/editTextShufle" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="460dp">
 
-        <Button
-            android:id="@+id/buttonForConfirmShufl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Button"
-            android:layout_alignBottom="@+id/editTextShufle"
-            android:layout_toLeftOf="@+id/editTextShufle"
-            android:layout_toStartOf="@+id/editTextShufle" />
+                <Button
+                    android:id="@+id/buttonConfirmForFyftyFyfty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_above="@+id/playFirstMiniGame"
+                    android:layout_toLeftOf="@+id/editTextShufle"
+                    android:layout_toStartOf="@+id/editTextShufle"
+                    android:text="Button" />
 
-        <EditText
-            android:id="@+id/editTextShufle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:layout_below="@+id/textViewForShufl"
-            android:layout_centerHorizontal="true"/>
+                <Button
+                    android:id="@+id/buttonForConfirmShufl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Button"
+                    android:layout_alignBottom="@+id/editTextShufle"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
 
-        <EditText
-            android:id="@+id/editTextFyftyToFyfty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:inputType="number"
-            android:layout_below="@+id/textViewForFyftyToFyfty"
-            android:layout_toRightOf="@+id/buttonConfirmForFyftyFyfty"
-            android:layout_toEndOf="@+id/buttonConfirmForFyftyFyfty" />
+                <EditText
+                    android:id="@+id/editTextShufle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="100"
+                    android:layout_below="@+id/textViewForShufl"
+                    android:layout_toRightOf="@+id/buttonForConfirmShufl"
+                    android:layout_toEndOf="@+id/buttonForConfirmShufl" />
 
-
-        <TextView
-            android:id="@+id/textViewForFyftyToFyfty"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/playFyftyToFyfty"
-            android:layout_centerHorizontal="true"
-            android:text=""
-            android:textSize="20sp" />
-
-        <Button
-            android:id="@+id/playAd"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:text="Play Ad For coins" />"/>
-
-        <Button
-            android:id="@+id/playFirstMiniGame"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editTextFyftyToFyfty"
-            android:layout_marginTop="56dp"
-            android:text="Play shufl" />
-
-        <Button
-            android:id="@+id/playFyftyToFyfty"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/playAd"
-            android:layout_marginTop="51dp"
-            android:text="play 50/50" />
+                <EditText
+                    android:id="@+id/editTextFyftyToFyfty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewForFyftyToFyfty"
+                    android:layout_toEndOf="@+id/buttonConfirmForFyftyFyfty"
+                    android:layout_toRightOf="@+id/buttonConfirmForFyftyFyfty"
+                    android:ems="10"
+                    android:inputType="number"
+                    android:text="100" />
 
 
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id4" />
+                <TextView
+                    android:id="@+id/textViewForFyftyToFyfty"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/playFyftyToFyfty"
+                    android:layout_centerHorizontal="true"
+                    android:text="Your bet is here"
+                    android:textSize="20sp" />
 
-        <TextView
-            android:id="@+id/textViewForShufl"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/playFirstMiniGame"
-            android:layout_centerHorizontal="true"
-            android:text=""
-            android:textSize="20sp" />
+                <Button
+                    android:id="@+id/playAd"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Play Ad For coins" />"/>
+
+                <Button
+                    android:id="@+id/playFirstMiniGame"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/editTextFyftyToFyfty"
+                    android:layout_marginTop="56dp"
+                    android:text="Play shufl" />
+
+                <Button
+                    android:id="@+id/playFyftyToFyfty"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_below="@+id/playAd"
+                    android:layout_marginTop="51dp"
+                    android:text="play 50/50" />
 
 
+                <com.google.android.gms.ads.AdView
+                    android:id="@+id/adView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/banner_ad_unit_id4"
+                    android:layout_alignParentBottom="true"
+                    android:layout_centerHorizontal="true" />
 
-    </RelativeLayout>
-</LinearLayout>
+                <TextView
+                    android:id="@+id/textViewForShufl"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/playFirstMiniGame"
+                    android:layout_centerHorizontal="true"
+                    android:text="Your bet is here"
+                    android:textSize="20sp" />
+
+
+            </RelativeLayout>
+        </LinearLayout>
     </ScrollView>
 
 </RelativeLayout>
