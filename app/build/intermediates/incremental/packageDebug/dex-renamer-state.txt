@@ -1,4 +1,4 @@
-#Sun Apr 23 23:18:11 CEST 2017
+#Thu Apr 27 16:16:11 CEST 2017
 base.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_2abec5b1fa7fadfce671e3b1b9756b31e3a3a9df
 renamed.1=classes2.dex
 renamed.0=classes.dex

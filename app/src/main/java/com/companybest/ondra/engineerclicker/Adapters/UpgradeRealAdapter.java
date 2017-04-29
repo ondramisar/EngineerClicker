@@ -1,5 +1,6 @@
 package com.companybest.ondra.engineerclicker.Adapters;
 
+import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.util.Log;
@@ -15,6 +16,8 @@ import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
+import com.facebook.common.util.UriUtil;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.Objects;
 
@@ -31,18 +34,19 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         public TextView nameOfUpgrade;
         public TextView costOfUpgrade;
         public Button buyUpgrade;
+        //public ImageView imageView;
+        public SimpleDraweeView upgradeImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
             this.nameOfUpgrade = (TextView) container.findViewById(R.id.nameOgUpgrade);
             this.costOfUpgrade = (TextView) container.findViewById(R.id.costOfUpgrade);
             this.buyUpgrade = (Button) container.findViewById(R.id.buyUpgrade);
+           // this.imageView = (ImageView) container.findViewById(R.id.imageViewOfUpgrade);
+            this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.imageViewOfUpgrade);
         }
     }
 
-
-    private Realm realm;
-    private MainActivity mainActivity;
 
     public UpgradeRealAdapter(android.content.Context context, RealmResults<Upgrade> realmResults,boolean automaticUpdate, boolean animateResults) {
         super(context, realmResults, automaticUpdate, animateResults);
@@ -60,19 +64,26 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         final Upgrade upgrade = realmResults.get(position);
 
         viewHolder.nameOfUpgrade.setText(String.valueOf(upgrade.getName()));
-        viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
+        viewHolder.costOfUpgrade.setText("" + String.valueOf(upgrade.getCost()));
+
+        int resourceId = getContext().getResources().getIdentifier(upgrade.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId))
+                .build();
+        viewHolder.upgradeImg.setImageURI(uri);
+
+
+        final Realm realm = Realm.getDefaultInstance();
         viewHolder.buyUpgrade.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.KITKAT)
             @Override
             public void onClick(View v) {
-                realm = Realm.getDefaultInstance();
                 final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
                 if (user.getCoins() >= upgrade.getCost()) {
 
-                    Log.i("user", upgrade.getForWhatToDo());
                     if (Objects.equals(upgrade.getForWhatToDo(), "time")){
-
 
                             realm.executeTransaction(new Realm.Transaction() {
                                 @Override
@@ -91,7 +102,6 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
                         }
                     if (Objects.equals(upgrade.getForWhatToDo(), "material")){
 
-                        realm = Realm.getDefaultInstance();
                         final Material material = realm.where(Material.class).equalTo("name", upgrade.getNameOfMaterialGive()).findFirst();
                         realm.executeTransaction(new Realm.Transaction() {
                             @Override
@@ -110,8 +120,6 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                     if (Objects.equals(upgrade.getForWhatToDo(), "machine")){
 
-
-                        realm = Realm.getDefaultInstance();
                         final Machine machine = realm.where(Machine.class).equalTo("name", upgrade.getNameOfMachinetoGive()).findFirst();
                         if (machine.getTimerOfMachine() >= 20) {
                             realm.executeTransaction(new Realm.Transaction() {
@@ -131,7 +139,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                     }
 
-                    mainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
 
                     viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
 

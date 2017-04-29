@@ -1,16 +1,18 @@
 package com.companybest.ondra.engineerclicker.Adapters;
 
+import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
+import com.facebook.common.util.UriUtil;
+import com.facebook.drawee.view.SimpleDraweeView;
 
 import io.realm.Realm;
 import io.realm.RealmBasedRecyclerViewAdapter;
@@ -28,7 +30,9 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         public TextView numberOfMaterials;
         public Button sellMaterial;
         public Button sellMaterialAll;
-        public ImageView upgradeImg;
+        //public ImageView upgradeImg;
+        public SimpleDraweeView upgradeImg;
+        public SimpleDraweeView costOfMaterialImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
@@ -37,13 +41,11 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
             this.numberOfMaterials = (TextView) container.findViewById(R.id.numberOfMaterial);
             this.sellMaterial = (Button) container.findViewById(R.id.sellMaterial);
             this.sellMaterialAll = (Button) container.findViewById(R.id.sellMaterialAll);
-            this.upgradeImg = (ImageView) container.findViewById(R.id.upgradeImg);
+            this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.upgradeImg);
+            this.costOfMaterialImg = (SimpleDraweeView) container.findViewById(R.id.costOfMaterialImg);
         }
     }
 
-
-    private Realm realm;
-    private MainActivity mainActivity;
 
     public MaterialRealmAdapter(android.content.Context context, RealmResults<Material> realmResults, boolean automaticUpdate, boolean animateResults) {
         super(context, realmResults, automaticUpdate, animateResults);
@@ -61,19 +63,29 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         final Material material = realmResults.get(position);
 
         viewHolder.nameOfMaterial.setText("Name: " + String.valueOf(material.getName()));
-        viewHolder.costOfMaterial.setText("Cost: " + String.valueOf(material.getCost()));
+        viewHolder.costOfMaterial.setText("" + String.valueOf(material.getCost()));
         viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
 
         int resourceId = getContext().getResources().getIdentifier(material.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
-        viewHolder.upgradeImg.setImageResource(resourceId);
+        Uri uri = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId))
+                .build();
+        viewHolder.upgradeImg.setImageURI(uri);
 
+        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri1 = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId1))
+                .build();
+        viewHolder.costOfMaterialImg.setImageURI(uri1);
 
+        final Realm realm = Realm.getDefaultInstance();
         viewHolder.sellMaterial.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
                 if (material.getNumberOf() > 0) {
-                    realm = Realm.getDefaultInstance();
                     final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
                     realm.executeTransaction(new Realm.Transaction() {
@@ -87,7 +99,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
                         }
                     });
                     viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
-                    mainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
                 }
             }
         });
@@ -96,7 +108,6 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
             @Override
             public void onClick(View v) {
                 if (material.getNumberOf() > 0) {
-                    realm = Realm.getDefaultInstance();
                     final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
                     realm.executeTransaction(new Realm.Transaction() {
@@ -110,7 +121,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
                         }
                     });
                     viewHolder.numberOfMaterials.setText("Number: " + String.valueOf(material.getNumberOf()));
-                    mainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
                 }
 
             }

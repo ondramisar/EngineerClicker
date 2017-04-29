@@ -21,7 +21,7 @@ public class MainReferences {
     public int workersOnMachine1 = 0;
     public int timerOfMachine1 = 300;
     public String nameOfMaterialForMachine1 = "ore";
-    private String nameOfImageMachine1 = "hammer";
+    private String nameOfImageMachine1 = "mine";
 
     public Machine machine2;
     public String nameOfMachine2 = "Steelworks";
@@ -31,6 +31,7 @@ public class MainReferences {
     public int timerOfMachine2 = 600;
     public String nameOfMaterialForMachine2 = "ingot";
     String nameOfMaterialNeededMachine2 = "ore";
+    private String nameOfImageMachine2 = "factory";
 
     public Machine machine3;
     public String nameOfMachine3 = "Casting machine";
@@ -58,6 +59,7 @@ public class MainReferences {
     public int timerOfMachine5 = 600;
     public String nameOfMaterialForMachine5 = "drilled workpiece";
     String nameOfMaterialNeededMachine5 = "rolled material and cast";
+    private String nameOfImageMachine5 = "drill";
 
     public Machine machine6;
     public String nameOfMachine6 = "Countersinks";
@@ -103,6 +105,7 @@ public class MainReferences {
     public int timerOfMachine10 = 1800;
     public String nameOfMaterialForMachine10 = "weldment";
     String nameOfMaterialNeededMachine10 = "workpiece";
+    private String nameOfImageMachine10 = "welding";
 
 
     // MATERIALS
@@ -111,7 +114,7 @@ public class MainReferences {
     private String nameOfMaterial1 = "ore";
     private int numnerOfMaterial1 = 0;
     private int costOfMaterial1 = 15;
-    String nameOfImgMaterial1 = "book";
+    String nameOfImgMaterial1 = "gold";
 
     private Material material2;
     private String nameOfMaterial2 = "ingot";
@@ -156,6 +159,7 @@ public class MainReferences {
     int costOfUpgrade0 = 200;
     int whatToDoUpgrade0 = 30;
     String forWhatToDoUpgrade0 = "time";
+    String nameOfImgUpgrade0 = "upgrade_time";
 
 
     // UPGRADE MATERIAL
@@ -167,6 +171,7 @@ public class MainReferences {
     String forWhatToDoUpgrade1 = "material";
     String nameOfMachineToGiveUpgrade1 = "Extraction";
     String nameOfMaterialToGiveUpgrade1 = "ore";
+    String nameOfImgUpgrade1 = "upgrade_money_for_mat";
 
     Upgrade upgrade2;
     String nameOfUpgrade2 = "Upgrade ingot +2";
@@ -234,6 +239,7 @@ public class MainReferences {
     String forWhatToDoUpgrade9 = "machine";
     String nameOfMachineToGiveUpgrade9 = "Extraction";
     String nameOfMaterialToGiveUpgrade9 = "ore";
+    String NameOfImgUpgrade9 = "upgrade_time_of_machine";
 
 
     Upgrade upgrade10;
@@ -373,7 +379,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
-    private void createUpgrade(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade, String nameOfMachineToGiveUpgrade, String nameOfMaterialToGiveUpgrade){
+    private void createUpgrade(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade, String nameOfMachineToGiveUpgrade, String nameOfMaterialToGiveUpgrade, String nameOfImgUpgrade){
         upgrade = new Upgrade();
         upgrade.setName(nameOfUpgrade);
         upgrade.setCost(costOfUpgrade, true);
@@ -381,17 +387,19 @@ public class MainReferences {
         upgrade.setForWhatToDo(forWhatToDoUpgrade);
         upgrade.setNameOfMachinetoGive(nameOfMachineToGiveUpgrade);
         upgrade.setNameOfMaterialGive(nameOfMaterialToGiveUpgrade);
+        upgrade.setNameOfImg(nameOfImgUpgrade);
         realm.beginTransaction();
         realm.copyToRealm(upgrade);
         realm.commitTransaction();
     }
 
-    private void createUpgradeOfTime(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade){
+    private void createUpgradeOfTime(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade, String nameOfImgUpgrade){
         upgrade = new Upgrade();
         upgrade.setName(nameOfUpgrade);
         upgrade.setCost(costOfUpgrade, true);
         upgrade.setWhatDo(whatToDoUpgrade);
         upgrade.setForWhatToDo(forWhatToDoUpgrade);
+        upgrade.setNameOfImg(nameOfImgUpgrade);
         realm.beginTransaction();
         realm.copyToRealm(upgrade);
         realm.commitTransaction();
@@ -399,15 +407,15 @@ public class MainReferences {
 
     public void createAllMachines(){
         creatingMachine(machine1, nameOfMachine1, numberOfMachine1,costOfMachine1,workersOnMachine1,timerOfMachine1, nameOfMaterialForMachine1, nameOfImageMachine1);
-        creatingMachine(machine2, nameOfMachine2, numberOfMachine2,costOfMachine2, workersOnMachine2,timerOfMachine2,nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine1);
+        creatingMachine(machine2, nameOfMachine2, numberOfMachine2,costOfMachine2, workersOnMachine2,timerOfMachine2,nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine2);
         creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3,timerOfMachine3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine1);
         creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4,timerOfMachine4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine1);
-        creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine1);
+        creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
         creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine1);
         creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine1);
         creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8,timerOfMachine8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine1);
         creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9,timerOfMachine9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine1);
-        creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10,timerOfMachine10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine1);
+        creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10,timerOfMachine10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);
     }
 
     public void createAllMaterials(){
@@ -422,25 +430,27 @@ public class MainReferences {
     }
 
     public void createAllUpgrades(){
-        createUpgradeOfTime(upgrade0,nameOfUpgrade0,costOfUpgrade0,whatToDoUpgrade0, forWhatToDoUpgrade0);
-        createUpgrade(upgrade1, nameOfUpgrade1, costOfUpgrade1, whatToDoUpgrade1, forWhatToDoUpgrade1, nameOfMachineToGiveUpgrade1, nameOfMaterialToGiveUpgrade1);
-        createUpgrade(upgrade2, nameOfUpgrade2, costOfUpgrade2, whatToDoUpgrade2, forWhatToDoUpgrade2, nameOfMachineToGiveUpgrade2, nameOfMaterialToGiveUpgrade2);
-        createUpgrade(upgrade3, nameOfUpgrade3, costOfUpgrade3, whatToDoUpgrade3, forWhatToDoUpgrade3, nameOfMachineToGiveUpgrade3, nameOfMaterialToGiveUpgrade3);
-        createUpgrade(upgrade4, nameOfUpgrade4, costOfUpgrade4, whatToDoUpgrade4, forWhatToDoUpgrade4, nameOfMachineToGiveUpgrade4, nameOfMaterialToGiveUpgrade4);
-        createUpgrade(upgrade5, nameOfUpgrade5, costOfUpgrade5, whatToDoUpgrade5, forWhatToDoUpgrade5, nameOfMachineToGiveUpgrade5, nameOfMaterialToGiveUpgrade5);
-        createUpgrade(upgrade6, nameOfUpgrade6, costOfUpgrade6, whatToDoUpgrade6, forWhatToDoUpgrade6, nameOfMachineToGiveUpgrade6, nameOfMaterialToGiveUpgrade6);
-        createUpgrade(upgrade7, nameOfUpgrade7, costOfUpgrade7, whatToDoUpgrade7, forWhatToDoUpgrade7, nameOfMachineToGiveUpgrade7, nameOfMaterialToGiveUpgrade7);
-        createUpgrade(upgrade8, nameOfUpgrade8, costOfUpgrade8, whatToDoUpgrade8, forWhatToDoUpgrade8, nameOfMachineToGiveUpgrade8, nameOfMaterialToGiveUpgrade8);
-        createUpgrade(upgrade9, nameOfUpgrade9, costOfUpgrade9, whatToDoUpgrade9, forWhatToDoUpgrade9, nameOfMachineToGiveUpgrade9, nameOfMaterialToGiveUpgrade9);
-        createUpgrade(upgrade10, nameOfUpgrade10, costOfUpgrade10, whatToDoUpgrade10, forWhatToDoUpgrade10, nameOfMachineToGiveUpgrade10, nameOfMaterialToGiveUpgrade10);
-        createUpgrade(upgrade11, nameOfUpgrade11, costOfUpgrade11, whatToDoUpgrade11, forWhatToDoUpgrade11, nameOfMachineToGiveUpgrade11, nameOfMaterialToGiveUpgrade11);
-        createUpgrade(upgrade13, nameOfUpgrade13, costOfUpgrade13, whatToDoUpgrade13, forWhatToDoUpgrade13, nameOfMachineToGiveUpgrade13, nameOfMaterialToGiveUpgrade13);
-        createUpgrade(upgrade14, nameOfUpgrade14, costOfUpgrade14, whatToDoUpgrade14, forWhatToDoUpgrade14, nameOfMachineToGiveUpgrade14, nameOfMaterialToGiveUpgrade14);
-        createUpgrade(upgrade15, nameOfUpgrade15, costOfUpgrade15, whatToDoUpgrade15, forWhatToDoUpgrade15, nameOfMachineToGiveUpgrade15, nameOfMaterialToGiveUpgrade15);
-        createUpgrade(upgrade16, nameOfUpgrade16, costOfUpgrade16, whatToDoUpgrade16, forWhatToDoUpgrade16, nameOfMachineToGiveUpgrade16, nameOfMaterialToGiveUpgrade16);
-        createUpgrade(upgrade17, nameOfUpgrade17, costOfUpgrade17, whatToDoUpgrade17, forWhatToDoUpgrade17, nameOfMachineToGiveUpgrade17, nameOfMaterialToGiveUpgrade17);
-        createUpgrade(upgrade18, nameOfUpgrade18, costOfUpgrade18, whatToDoUpgrade18, forWhatToDoUpgrade18, nameOfMachineToGiveUpgrade18, nameOfMaterialToGiveUpgrade18);
-        createUpgrade(upgrade19, nameOfUpgrade19, costOfUpgrade19, whatToDoUpgrade19, forWhatToDoUpgrade19, nameOfMachineToGiveUpgrade19, nameOfMaterialToGiveUpgrade19);
+        createUpgradeOfTime(upgrade0,nameOfUpgrade0,costOfUpgrade0,whatToDoUpgrade0, forWhatToDoUpgrade0, nameOfImgUpgrade0);
+
+        createUpgrade(upgrade1, nameOfUpgrade1, costOfUpgrade1, whatToDoUpgrade1, forWhatToDoUpgrade1, nameOfMachineToGiveUpgrade1, nameOfMaterialToGiveUpgrade1, nameOfImgUpgrade1);
+        createUpgrade(upgrade2, nameOfUpgrade2, costOfUpgrade2, whatToDoUpgrade2, forWhatToDoUpgrade2, nameOfMachineToGiveUpgrade2, nameOfMaterialToGiveUpgrade2, nameOfImgUpgrade1);
+        createUpgrade(upgrade3, nameOfUpgrade3, costOfUpgrade3, whatToDoUpgrade3, forWhatToDoUpgrade3, nameOfMachineToGiveUpgrade3, nameOfMaterialToGiveUpgrade3, nameOfImgUpgrade1);
+        createUpgrade(upgrade4, nameOfUpgrade4, costOfUpgrade4, whatToDoUpgrade4, forWhatToDoUpgrade4, nameOfMachineToGiveUpgrade4, nameOfMaterialToGiveUpgrade4, nameOfImgUpgrade1);
+        createUpgrade(upgrade5, nameOfUpgrade5, costOfUpgrade5, whatToDoUpgrade5, forWhatToDoUpgrade5, nameOfMachineToGiveUpgrade5, nameOfMaterialToGiveUpgrade5, nameOfImgUpgrade1);
+        createUpgrade(upgrade6, nameOfUpgrade6, costOfUpgrade6, whatToDoUpgrade6, forWhatToDoUpgrade6, nameOfMachineToGiveUpgrade6, nameOfMaterialToGiveUpgrade6, nameOfImgUpgrade1);
+        createUpgrade(upgrade7, nameOfUpgrade7, costOfUpgrade7, whatToDoUpgrade7, forWhatToDoUpgrade7, nameOfMachineToGiveUpgrade7, nameOfMaterialToGiveUpgrade7, nameOfImgUpgrade1);
+        createUpgrade(upgrade8, nameOfUpgrade8, costOfUpgrade8, whatToDoUpgrade8, forWhatToDoUpgrade8, nameOfMachineToGiveUpgrade8, nameOfMaterialToGiveUpgrade8, nameOfImgUpgrade1);
+
+        createUpgrade(upgrade9, nameOfUpgrade9, costOfUpgrade9, whatToDoUpgrade9, forWhatToDoUpgrade9, nameOfMachineToGiveUpgrade9, nameOfMaterialToGiveUpgrade9, NameOfImgUpgrade9);
+        createUpgrade(upgrade10, nameOfUpgrade10, costOfUpgrade10, whatToDoUpgrade10, forWhatToDoUpgrade10, nameOfMachineToGiveUpgrade10, nameOfMaterialToGiveUpgrade10, NameOfImgUpgrade9);
+        createUpgrade(upgrade11, nameOfUpgrade11, costOfUpgrade11, whatToDoUpgrade11, forWhatToDoUpgrade11, nameOfMachineToGiveUpgrade11, nameOfMaterialToGiveUpgrade11, NameOfImgUpgrade9);
+        createUpgrade(upgrade13, nameOfUpgrade13, costOfUpgrade13, whatToDoUpgrade13, forWhatToDoUpgrade13, nameOfMachineToGiveUpgrade13, nameOfMaterialToGiveUpgrade13, NameOfImgUpgrade9);
+        createUpgrade(upgrade14, nameOfUpgrade14, costOfUpgrade14, whatToDoUpgrade14, forWhatToDoUpgrade14, nameOfMachineToGiveUpgrade14, nameOfMaterialToGiveUpgrade14, NameOfImgUpgrade9);
+        createUpgrade(upgrade15, nameOfUpgrade15, costOfUpgrade15, whatToDoUpgrade15, forWhatToDoUpgrade15, nameOfMachineToGiveUpgrade15, nameOfMaterialToGiveUpgrade15, NameOfImgUpgrade9);
+        createUpgrade(upgrade16, nameOfUpgrade16, costOfUpgrade16, whatToDoUpgrade16, forWhatToDoUpgrade16, nameOfMachineToGiveUpgrade16, nameOfMaterialToGiveUpgrade16, NameOfImgUpgrade9);
+        createUpgrade(upgrade17, nameOfUpgrade17, costOfUpgrade17, whatToDoUpgrade17, forWhatToDoUpgrade17, nameOfMachineToGiveUpgrade17, nameOfMaterialToGiveUpgrade17, NameOfImgUpgrade9);
+        createUpgrade(upgrade18, nameOfUpgrade18, costOfUpgrade18, whatToDoUpgrade18, forWhatToDoUpgrade18, nameOfMachineToGiveUpgrade18, nameOfMaterialToGiveUpgrade18, NameOfImgUpgrade9);
+        createUpgrade(upgrade19, nameOfUpgrade19, costOfUpgrade19, whatToDoUpgrade19, forWhatToDoUpgrade19, nameOfMachineToGiveUpgrade19, nameOfMaterialToGiveUpgrade19, NameOfImgUpgrade9);
 
     }
 

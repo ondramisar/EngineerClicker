@@ -15,30 +15,31 @@
         android:id="@+id/relativeLayout2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="?android:attr/colorActivatedHighlight"
-        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true">
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:background="@color/wintegreenDream">
 
-        <ImageView
-            android:id="@+id/imageView5"
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfWorker"
             android:layout_width="30dp"
             android:layout_height="30dp"
-            ads:srcCompat="@drawable/ui_coin"
             android:layout_alignBottom="@+id/plusWorker"
-            android:layout_toRightOf="@+id/plusWorker"
-            android:layout_toEndOf="@+id/plusWorker"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"/>
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/plusWorker"
+            android:layout_toRightOf="@+id/plusWorker"
+            />
 
         <TextView
             android:id="@+id/numberOfWorkers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="-10dp"
-            android:layout_toEndOf="@+id/imageView4"
-            android:layout_toRightOf="@+id/imageView4"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/workerImg"
+            android:layout_toRightOf="@+id/workerImg"
             android:text="          "
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
@@ -57,32 +58,35 @@
             android:id="@+id/costOfWorkers"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         "
-            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:layout_alignBaseline="@+id/numberOfWorkers"
             android:layout_alignBottom="@+id/numberOfWorkers"
-            android:layout_toRightOf="@+id/imageView5"
-            android:layout_toEndOf="@+id/imageView5"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="8dp"/>
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/costOfWorker"
+            android:layout_toRightOf="@+id/costOfWorker"
+            android:text="         "
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
-        <ImageView
-            android:id="@+id/imageView4"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/workerImg"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_centerVertical="true"
-            android:layout_marginTop="-10dp"
-            ads:srcCompat="@drawable/mechanik_big" />
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            />
 
     </RelativeLayout>
 
     <RelativeLayout
+        android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relativeLayout2"
-        android:id="@+id/relativeLayout">
+        android:background="@color/artichoke">
 
         <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView
             android:id="@+id/realm_recycler_view"
@@ -91,6 +95,7 @@
             android:layout_above="@+id/adView"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
             app:rrvLayoutType="LinearLayout" />
 
         <com.google.android.gms.ads.AdView

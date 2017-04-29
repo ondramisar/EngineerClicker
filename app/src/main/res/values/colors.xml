@@ -2,5 +2,19 @@
 <resources>
     <color name="colorPrimary">#3f51b5</color>
     <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorAccent">#f47c00</color>
+    <color name="orange_500">#fd9700</color>
+    <color name="primaryBlue">#3f51b4</color>
+    <color name="secondaryGray">#455a64</color>
+    <color name="secondaryGrayLight">#8fa3ad</color>
+    <color name="Bluegray">#607d8a</color>
+    <color name="metallicBlue">#177d88</color>
+    <color name="tropicalRain">#08605f</color>
+    <color name="wintegreenDream">#598280</color>
+    <color name="artichoke">#8d926d</color>
+    <color name="middleGreen">#a1ac59</color>
+    <color name="darkSeaGreen">#81bf99</color>
+    <color name="BlueSapphire">#115c64</color>
+    <color name="RomanSilver">#819197</color>
+    <color name="PewterBlue">#8bbbb8</color>
 </resources>

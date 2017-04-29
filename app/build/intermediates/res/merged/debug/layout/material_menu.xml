@@ -6,7 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:background="@color/middleGreen">
 
         <TextView
             android:id="@+id/nameOfMaterial"
@@ -15,61 +16,77 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp"
-            android:text="Name: " />
+            android:text="Name: "
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
 
         <TextView
             android:id="@+id/numberOfMaterial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="         "
             android:layout_alignBaseline="@+id/sellMaterial"
             android:layout_alignBottom="@+id/sellMaterial"
-            android:layout_toRightOf="@+id/upgradeImg"
+            android:layout_marginLeft="4dp"
             android:layout_toEndOf="@+id/upgradeImg"
-            android:layout_marginLeft="4dp"/>
+            android:layout_toRightOf="@+id/upgradeImg"
+            android:text="         "
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <Button
             android:id="@+id/sellMaterial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="sellMaterial"
-            android:text="Sell"
             android:layout_alignBaseline="@+id/sellMaterialAll"
             android:layout_alignBottom="@+id/sellMaterialAll"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="105dp"/>
+            android:layout_marginLeft="105dp"
+            android:onClick="sellMaterial"
+            android:text="Sell" />
 
         <Button
             android:id="@+id/sellMaterialAll"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Sell All"
             android:layout_below="@+id/nameOfMaterial"
-            android:layout_toRightOf="@+id/sellMaterial"
-            android:layout_toEndOf="@+id/sellMaterial"
+            android:layout_marginBottom="10dp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
+            android:layout_toEndOf="@+id/sellMaterial"
+            android:layout_toRightOf="@+id/sellMaterial"
+            android:text="Sell All" />
 
         <TextView
             android:id="@+id/costOfMaterial"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/costOfMaterialImg"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/costOfMaterialImg"
             android:text="Cost:      "
-            android:layout_alignBaseline="@+id/sellMaterialAll"
-            android:layout_alignBottom="@+id/sellMaterialAll"
-            android:layout_alignParentRight="true"
-            android:layout_alignParentEnd="true"
-            android:layout_marginRight="5dp"/>
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
-        <ImageView
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/upgradeImg"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
             android:layout_alignBottom="@+id/sellMaterial"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginLeft="5dp"
+            />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfMaterialImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="45dp"
+            android:layout_toRightOf="@+id/sellMaterialAll"
+            />
+
     </RelativeLayout>
 </FrameLayout>

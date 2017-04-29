@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\layout\\abc_action_mode_close_item_material.xml"
     },
     {
-        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\showcase_button.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\bef0dc3946156eeac703dd73e372aca0f5d7e7b8\\output\\res\\layout\\showcase_button.xml"
-    },
-    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_action_menu_layout.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\layout\\abc_action_menu_layout.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\showcase_button.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\bef0dc3946156eeac703dd73e372aca0f5d7e7b8\\output\\res\\layout\\showcase_button.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",

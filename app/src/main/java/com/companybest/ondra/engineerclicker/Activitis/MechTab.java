@@ -1,5 +1,6 @@
 package com.companybest.ondra.engineerclicker.Activitis;
 
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -15,6 +16,8 @@ import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker;
 import com.companybest.ondra.engineerclicker.R;
+import com.facebook.common.util.UriUtil;
+import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -45,13 +48,11 @@ public class MechTab extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         mAdView.loadAd(adRequest);
 
-        Realm realm = Realm.getDefaultInstance();
-
-        //FOR ADAPTER LIST OF MACHINES
-        machines = realm
-                .where(Machine.class)
-                .findAll();
-
+        final Realm realm = Realm.getDefaultInstance();
+            //FOR ADAPTER LIST OF MACHINES
+            machines = realm
+                    .where(Machine.class)
+                    .findAll();
         Log.i("user", String.valueOf(machines));
         mainRealmAdapter = new MainRealmAdapter(getContext(), machines, true, false);
 
@@ -60,6 +61,21 @@ public class MechTab extends Fragment {
         mainScreenRecyclerView.setAdapter(mainRealmAdapter);
 
 
+        SimpleDraweeView costOfWorker = (SimpleDraweeView) rootView.findViewById(R.id.costOfWorker);
+        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri1 = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId1))
+                .build();
+        costOfWorker.setImageURI(uri1);
+
+        SimpleDraweeView workerImg = (SimpleDraweeView) rootView.findViewById(R.id.workerImg);
+        int resourceId = getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId))
+                .build();
+        workerImg.setImageURI(uri);
 
         //TEXT VIEWS OF WORKERS COINS AND COST OF WORKERS AND SETTING VALUE
         numberOfWorkers = (TextView) rootView.findViewById(R.id.numberOfWorkers);
@@ -69,36 +85,35 @@ public class MechTab extends Fragment {
             @Override
             public void onClick(View v) {
                 //GETTING WORKERS AND USER COINS
-                Realm realm = Realm.getDefaultInstance();
-                final BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
-                final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
+                    final BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
+                    final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
 
-                if (user.getCoins() >= worker.getCost()) {
+                    if (user.getCoins() >= worker.getCost()) {
 
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
 
-                            worker.setNumberOf(1, true);
+                                worker.setNumberOf(1, true);
 
-                            int calculatingNamburOfCost = worker.getCost()/5;
+                                int calculatingNamburOfCost = worker.getCost() / 5;
 
-                            user.setCoins(worker.getCost(), false);
-                            Log.i("user", String.valueOf(calculatingNamburOfCost));
+                                user.setCoins(worker.getCost(), false);
+                                Log.i("user", String.valueOf(calculatingNamburOfCost));
 
-                            worker.setCost(calculatingNamburOfCost, true);
+                                worker.setCost(calculatingNamburOfCost, true);
 
-                        }
-                    });
+                            }
+                        });
 
-                    numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                        numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
-                    costOfWorkers.setText("" + String.valueOf(worker.getCost()));
+                        costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
-                    mainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                    Log.i("user", "" + user.getCoins());
+                        mainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                        Log.i("user", "" + user.getCoins());
 
-                }
+                    }
             }
         });
 

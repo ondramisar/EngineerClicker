@@ -19,7 +19,8 @@
 
             <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="460dp">
+                android:layout_height="460dp"
+                android:background="@color/PewterBlue">
 
                 <Button
                     android:id="@+id/buttonConfirmForFyftyFyfty"
@@ -34,21 +35,21 @@
                     android:id="@+id/buttonForConfirmShufl"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="Button"
                     android:layout_alignBottom="@+id/editTextShufle"
                     android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_alignParentStart="true"
+                    android:text="Button" />
 
                 <EditText
                     android:id="@+id/editTextShufle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_below="@+id/textViewForShufl"
+                    android:layout_toEndOf="@+id/buttonForConfirmShufl"
+                    android:layout_toRightOf="@+id/buttonForConfirmShufl"
                     android:ems="10"
                     android:inputType="number"
-                    android:text="100"
-                    android:layout_below="@+id/textViewForShufl"
-                    android:layout_toRightOf="@+id/buttonForConfirmShufl"
-                    android:layout_toEndOf="@+id/buttonForConfirmShufl" />
+                    android:text="100" />
 
                 <EditText
                     android:id="@+id/editTextFyftyToFyfty"
@@ -69,6 +70,7 @@
                     android:layout_below="@+id/playFyftyToFyfty"
                     android:layout_centerHorizontal="true"
                     android:text="Your bet is here"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="20sp" />
 
                 <Button
@@ -105,10 +107,10 @@
                     android:id="@+id/adView4"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    ads:adSize="BANNER"
-                    ads:adUnitId="@string/banner_ad_unit_id4"
                     android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
+                    android:layout_centerHorizontal="true"
+                    ads:adSize="BANNER"
+                    ads:adUnitId="@string/banner_ad_unit_id4" />
 
                 <TextView
                     android:id="@+id/textViewForShufl"
@@ -117,6 +119,7 @@
                     android:layout_below="@+id/playFirstMiniGame"
                     android:layout_centerHorizontal="true"
                     android:text="Your bet is here"
+                    android:textColor="@color/common_google_signin_btn_text_dark_focused"
                     android:textSize="20sp" />
 
 

@@ -122,6 +122,11 @@ MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.an
 MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.android\build-cache\7353284ea2349e1a9d02bcb750efc21165d74dea\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.android\build-cache\2436171e48a93cb21d04edfcb84027e41c691ca5\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\build-cache\24ac739520836eaafd9868a80e3b0d6a00890dcc\output\AndroidManifest.xml:21:5-23:58
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.android\build-cache\2d32d871e9088c740793eed3d05fe1fb43fb0a37\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.android\build-cache\fa9902521d1a8d6c2841be812fb5809e09a00846\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.android\build-cache\157c03db827fdfa04e56a9027ed8202da741abb9\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.android\build-cache\b3517b0203645cfc469447ab675677c11651580c\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.android\build-cache\81434627ee590b0d1e9ee4953dc84a4c16be8923\output\AndroidManifest.xml:5:5-7:41
 MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.android\build-cache\9cfa8782b00353dee85362b6b2d568b643525b87\output\AndroidManifest.xml:6:5-8:41
 MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.android\build-cache\648647d2359a2e5f96fb482e81e4bb9b356c7378\output\AndroidManifest.xml:7:5-43
 	tools:overrideLibrary

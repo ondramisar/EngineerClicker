@@ -128,153 +128,170 @@ public class MyService extends Service {
 
 
         Realm realm = Realm.getDefaultInstance();
-        final Machine m = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine1).findFirst();
-        final Machine m2 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine2).findFirst();
-        final Machine m3 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine3).findFirst();
-        final Machine m4 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine4).findFirst();
-        final Machine m5 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine5).findFirst();
-        final Machine m6 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine6).findFirst();
-        final Machine m7 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine7).findFirst();
-        final Machine m8 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine8).findFirst();
-        final Machine m9 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine9).findFirst();
-        final Machine m10 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine10).findFirst();
+        try {
+/*
+            final Machine m =  machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine1).findFirst();
+            final Machine m2 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine2).findFirst();
+            final Machine m3 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine3).findFirst();
+            final Machine m4 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine4).findFirst();
+            final Machine m5 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine5).findFirst();
+            final Machine m6 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine6).findFirst();
+            final Machine m7 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine7).findFirst();
+            final Machine m8 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine8).findFirst();
+            final Machine m9 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine9).findFirst();
+            final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();*/
 
 
-        if (timeForMachine1 > m.getTimerOfMachine()) {
-            timeForMachine1 = 0;
+            final Machine m = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine1).findFirst();
+            final Machine m2 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine2).findFirst();
+            final Machine m3 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine3).findFirst();
+            final Machine m4 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine4).findFirst();
+            final Machine m5 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine5).findFirst();
+            final Machine m6 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine6).findFirst();
+            final Machine m7 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine7).findFirst();
+            final Machine m8 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine8).findFirst();
+            final Machine m9 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine9).findFirst();
+            final Machine m10 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine10).findFirst();
 
-            Log.i("user", "timer for" + String.valueOf(m.getTimerOfMachine()));
-            realm = Realm.getDefaultInstance();
-            final Material material = realm.where(Material.class).equalTo("name", m.getNameOfMaterial()).findFirst();
 
-            if (m.getNumberOfWorkersOnMachine() > 0 ) {
-                Log.i("user", "in IF STATMENT For " + m.getName());
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
+            if (timeForMachine1 > m.getTimerOfMachine()) {
+                timeForMachine1 = 0;
 
-                        material.setNumberOf(m.getNumberOfWorkersOnMachine(),true);
-                        Log.i("user", "Material Added: " + material.getNumberOf());
+                final Material material = realm.where(Material.class).equalTo("name", m.getNameOfMaterial()).findFirst();
 
-                    }
-                });
+                if (m.getNumberOfWorkersOnMachine() > 0) {
+                    Log.i("user", "in IF STATMENT For " + m.getName());
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+
+                            material.setNumberOf(m.getNumberOfWorkersOnMachine(), true);
+                            Log.i("user", "Material Added: " + material.getNumberOf());
+
+                        }
+                    });
+
+                }
+            }
+
+            if (timeForMachine2 > m2.getTimerOfMachine()) {
+
+                timeForMachine2 = 0;
+
+                machineThread(m2);
 
             }
-        }
 
-        if (timeForMachine2 > m2.getTimerOfMachine()) {
+            if (timeForMachine3 > m3.getTimerOfMachine()) {
 
-            timeForMachine2 = 0;
+                timeForMachine3 = 0;
 
-            machineThread(m2);
+                machineThread(m3);
 
-        }
+            }
 
-        if (timeForMachine3 > m3.getTimerOfMachine()) {
+            if (timeForMachine4 > m4.getTimerOfMachine()) {
 
-            timeForMachine3 = 0;
+                timeForMachine4 = 0;
 
-            machineThread(m3);
+                machineThread(m4);
+            }
 
-        }
+            if (timeForMachine5 > m5.getTimerOfMachine()) {
 
-        if (timeForMachine4 > m4.getTimerOfMachine()) {
+                timeForMachine5 = 0;
 
-            timeForMachine4 = 0;
-
-            machineThread(m4);
-        }
-
-        if (timeForMachine5 > m5.getTimerOfMachine()) {
-
-            timeForMachine5 = 0;
-
-            machineThread(m5);
-        }
+                machineThread(m5);
+            }
 
 
-        if (timeForMachine6 > m6.getTimerOfMachine()) {
+            if (timeForMachine6 > m6.getTimerOfMachine()) {
 
-            timeForMachine6 = 0;
+                timeForMachine6 = 0;
 
-            machineThread(m6);
-        }
+                machineThread(m6);
+            }
 
-        if (timeForMachine7 > m7.getTimerOfMachine()) {
+            if (timeForMachine7 > m7.getTimerOfMachine()) {
 
-            timeForMachine7 = 0;
+                timeForMachine7 = 0;
 
-            machineThread(m7);
-        }
+                machineThread(m7);
+            }
 
-        if (timeForMachine8 > m8.getTimerOfMachine()) {
+            if (timeForMachine8 > m8.getTimerOfMachine()) {
 
-            timeForMachine8 = 0;
+                timeForMachine8 = 0;
 
-            machineThread(m8);
-        }
+                machineThread(m8);
+            }
 
-        if (timeForMachine9 > m9.getTimerOfMachine()) {
+            if (timeForMachine9 > m9.getTimerOfMachine()) {
 
-            timeForMachine9 = 0;
+                timeForMachine9 = 0;
 
-            machineThread(m9);
+                machineThread(m9);
 
 
-        }
+            }
 
-        if (timeForMachine10 > m10.getTimerOfMachine()) {
+            if (timeForMachine10 > m10.getTimerOfMachine()) {
 
-            timeForMachine10 = 0;
+                timeForMachine10 = 0;
 
-            machineThread(m10);
+                machineThread(m10);
 
-        }
+            }
 
-        //Log.i("user", String.valueOf(timeOfDestructionThred));
+            final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
+            if (timeOfDestructionThred > user.getTimeOutOfApp()) {
+                Log.i("user", "SERVICE END");
 
-        final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
-        if (timeOfDestructionThred > user.getTimeOutOfApp()){
-            Log.i("user", "SERVICE END");
-
-            stopSelf();
-            timeOfDestructionThred = 0;
+                stopSelf();
+                timeOfDestructionThred = 0;
+            }
+        }finally {
+            realm.close();
         }
     }
 
     private void machineThread(Machine mach){
         Log.i("user", "timer for" + String.valueOf(mach.getTimerOfMachine()));
         Realm realm = Realm.getDefaultInstance();
-        final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
-        final Material material2 = realm.where(Material.class).equalTo("name", mach.getNameOfNeededMaterial()).findFirst();
+        try {
+            final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
+            final Material material2 = realm.where(Material.class).equalTo("name", mach.getNameOfNeededMaterial()).findFirst();
 
-        if (mach.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-            Log.i("user", "in IF STATMENT For " + mach.getName());
-            int numberOfMaterialsAdd = 0;
-            int numberOfMaterials = material2.getNumberOf();
+            if (mach.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
+                Log.i("user", "in IF STATMENT For " + mach.getName());
+                int numberOfMaterialsAdd = 0;
+                int numberOfMaterials = material2.getNumberOf();
 
-            for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
-                if (numberOfMaterials > 0) {
-                    numberOfMaterialsAdd += 1;
-                    numberOfMaterials -= 1;
+                for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
+                    if (numberOfMaterials > 0) {
+                        numberOfMaterialsAdd += 1;
+                        numberOfMaterials -= 1;
+                    }
                 }
+
+                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
+
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+
+                        material.setNumberOf(finalNumberOfMaterialsAdd, true);
+
+                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
+                        Log.i("user", "Material Added: " + material.getNumberOf());
+                        Log.i("user", "Material Getted: " + material2.getNumberOf());
+                    }
+                });
+            }
+        } finally {
+                realm.close();
             }
 
-            final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
 
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-
-                    material.setNumberOf(finalNumberOfMaterialsAdd,true);
-
-                    material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                    Log.i("user", "Material Added: " + material.getNumberOf());
-                    Log.i("user", "Material Getted: " + material2.getNumberOf());
-                }
-            });
-
-
-        }
     }
 }
