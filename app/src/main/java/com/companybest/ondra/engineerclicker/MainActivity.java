@@ -10,7 +10,6 @@ import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -20,6 +19,7 @@ import android.widget.TextView;
 
 import com.companybest.ondra.engineerclicker.Activitis.BettingTab;
 import com.companybest.ondra.engineerclicker.Activitis.CreditFragment;
+import com.companybest.ondra.engineerclicker.Activitis.IntroActivity;
 import com.companybest.ondra.engineerclicker.Activitis.MechTab;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
@@ -52,11 +52,12 @@ public class MainActivity extends RealmBaseActivity {
     /**
      * The {@link ViewPager} that will host the section contents.
      */
-    private ViewPager mViewPager;
+    public ViewPager mViewPager;
 
     public static MainReferences mainReferences;
 
     MainThread thread;
+
     StockTab stockTab;
 
     int timeForMachine1 = 0;
@@ -72,15 +73,19 @@ public class MainActivity extends RealmBaseActivity {
 
     MechTab mechTab;
 
-
     public static TextView coins;
+
     RealmResults<Machine> machines;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this.getApplicationContext());
+
+        setTitle("");
+
         setContentView(R.layout.activity_main1);
+
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
@@ -93,36 +98,34 @@ public class MainActivity extends RealmBaseActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
 
 
+        startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
+
         //THREAD FOR GAME LOOP AND STARING IT
-        thread = new MainThread(this,true);
-        starThread();
+        //thread = new MainThread(this,true);
+        //starThread();
 
-        if(isMyServiceRunning(MyService.class)) {
+        /*if(isMyServiceRunning(MyService.class)) {
+            //unbindService((ServiceConnection) new Intent(getBaseContext(), MyService.class));
             stopService(new Intent(getBaseContext(), MyService.class));
+            Log.i("user", "SERVICE END IN CREATE");
+        }*/
 
-            Log.i("user", "SERVICE END");
-        }
-
+        //DEFAULT REALM INSTANCE/CONFIG
         Realm.setDefaultConfiguration(getRealmConfig());
 
+        //SHARED PREFERENCES IS USED FOR FIRST TIME CREATING SO THE MACHINES CAN BE CREATED AND FOR SOUND AND MUSIC SET
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.companybest.ondra.engineerclicker.Activitis", Context.MODE_PRIVATE);
 
         //REFERENCE FOR REAL OBJECT
         mainReferences = new MainReferences();
 
-        /*
-        new ShowcaseView.Builder(this)
-                .setTarget(new ViewTarget(R.id.coins, this))
-                .setContentTitle("ShowcaseView")
-                .setContentText("This is highlighting the Home button")
-                .hideOnTouchOutside()
-                .build();*/
 
-        //CREATING MACHINES
+        //CREATING MACHINES JUST WHEN APP IS CREATED FOR THE FIRST TIME
         if (sharedPreferences.getInt("created", 0) == 0) {
             sharedPreferences.edit().putInt("created", 1).apply();
             mainReferences.createAllMachines();
@@ -133,12 +136,11 @@ public class MainActivity extends RealmBaseActivity {
             sharedPreferences.edit().putInt("music", 100).apply();
             sharedPreferences.edit().putInt("sound", 100).apply();
             Log.i("user", "first Time Created");
-        } else if (sharedPreferences.getInt("created", 0) == 1) {
-            Log.i("user", "was created");
-
+            Intent i = new Intent(this, IntroActivity.class);
+            startActivity(i);
         }
 
-
+        //COIN IMAGE
         SimpleDraweeView coinsImg = (SimpleDraweeView) findViewById(R.id.coinsImg);
         int resourceId1 = this.getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri1 = new Uri.Builder()
@@ -148,9 +150,9 @@ public class MainActivity extends RealmBaseActivity {
         coinsImg.setImageURI(uri1);
 
 
+        //USE OF REALM INSTANCE AND CLOSING IT
         Realm realm = Realm.getDefaultInstance();
         try {
-
             final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
             coins = (TextView) findViewById(R.id.coins);
             coins.setText("" + String.valueOf(user.getCoins()));
@@ -159,10 +161,12 @@ public class MainActivity extends RealmBaseActivity {
         }
     }
 
+
     public void starThread() {
         thread.setRunning(true);
         thread.start();
     }
+
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -174,8 +178,17 @@ public class MainActivity extends RealmBaseActivity {
         return false;
     }
 
+
     public void update() {
         //Log.i("user", "update");
+        runOnUiThread(new Runnable() {
+            @Override
+            public void run() {
+                MechTab.mainRealmAdapter.notifyDataSetChanged();
+                StockTab.materialRealmAdapter.notifyDataSetChanged();
+            }
+        });
+                /*
         timeForMachine1 += 1;
         timeForMachine2 += 1;
         timeForMachine3 += 1;
@@ -186,6 +199,7 @@ public class MainActivity extends RealmBaseActivity {
         timeForMachine8 += 1;
         timeForMachine9 += 1;
         timeForMachine10 += 1;
+
 
 
         Realm realm = Realm.getDefaultInstance();
@@ -202,7 +216,7 @@ public class MainActivity extends RealmBaseActivity {
             final Machine m9 = machines.where().equalTo("name", mainReferences.nameOfMachine9).findFirst();
             final Machine m10 = machines.where().equalTo("name", mainReferences.nameOfMachine10).findFirst();
 
-            /*
+
             final Machine m =  realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine1).findFirst();
             final Machine m2 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine2).findFirst();
             final Machine m3 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine3).findFirst();
@@ -212,7 +226,7 @@ public class MainActivity extends RealmBaseActivity {
             final Machine m7 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine7).findFirst();
             final Machine m8 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine8).findFirst();
             final Machine m9 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine9).findFirst();
-            final Machine m10 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine10).findFirst();*/
+            final Machine m10 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine10).findFirst();
 
 
             if (timeForMachine1 > m.getTimerOfMachine()) {
@@ -226,7 +240,6 @@ public class MainActivity extends RealmBaseActivity {
                     realm.executeTransaction(new Realm.Transaction() {
                         @Override
                         public void execute(Realm realm) {
-
                             material.setNumberOf(m.getNumberOfWorkersOnMachine(), true);
                             Log.i("user", "Material Added: " + material.getNumberOf());
                         }
@@ -299,9 +312,7 @@ public class MainActivity extends RealmBaseActivity {
 
                 machineThread(m9);
 
-
             }
-
 
             if (timeForMachine10 > m10.getTimerOfMachine()) {
 
@@ -311,7 +322,7 @@ public class MainActivity extends RealmBaseActivity {
             }
         } finally {
             realm.close();
-        }
+        }*/
     }
 
     private void machineThread(Machine mech){
@@ -332,13 +343,10 @@ public class MainActivity extends RealmBaseActivity {
                         numberOfMaterials -= 1;
                     }
                 }
-
                 final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-
                 realm.executeTransaction(new Realm.Transaction() {
                     @Override
                     public void execute(Realm realm) {
-
                         material.setNumberOf(finalNumberOfMaterialsAdd, true);
 
                         material2.setNumberOf(finalNumberOfMaterialsAdd, false);
@@ -355,8 +363,8 @@ public class MainActivity extends RealmBaseActivity {
         } finally {
             realm.close();
         }
-
     }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -364,6 +372,7 @@ public class MainActivity extends RealmBaseActivity {
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -385,6 +394,11 @@ public class MainActivity extends RealmBaseActivity {
             CreditFragment cretidFragment = new CreditFragment(getApplicationContext());
             cretidFragment.show(fm, "user");
             return true;
+        } else if (id == R.id.action_help) {
+
+            Intent i1 = new Intent(this, IntroActivity.class);
+            startActivity(i1);
+            return true;
         }
 
         return super.onOptionsItemSelected(item);
@@ -393,10 +407,15 @@ public class MainActivity extends RealmBaseActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
-        stopService(new Intent(getBaseContext(), MyService.class));
-        //thread = new MainThread(this,true);
-        starThread();
-        //loadAd();
+
+        /*
+        if(isMyServiceRunning(MyService.class)) {
+            stopService(new Intent(getBaseContext(), MyService.class));
+
+            //Log.i("user", "SERVICE END");
+        } else {
+            starThread();
+        }*/
         Log.i("user", "RESTART");
     }
 
@@ -404,7 +423,8 @@ public class MainActivity extends RealmBaseActivity {
     protected void onStop() {
         // call the superclass method first
         super.onStop();
-        startService(new Intent(getBaseContext(), MyService.class));
+        Log.i("user", "STOP");
+        startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", true));
         thread.setRunning(false);
     }
 
@@ -418,7 +438,7 @@ public class MainActivity extends RealmBaseActivity {
      * A {@link FragmentPagerAdapter} that returns a fragment corresponding to
      * one of the sections/tabs/pages.
      */
-    public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
+    public class SectionsPagerAdapter extends FragmentPagerAdapter {
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);

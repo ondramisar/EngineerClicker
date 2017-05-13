@@ -80,6 +80,10 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-mdpi-v4\\abc_ic_menu_paste_mtrl_am_alpha.png"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_finish.png",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\drawable-mdpi-v4\\ic_finish.png"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-mdpi-v4\\abc_tab_indicator_mtrl_alpha.9.png"
     },
@@ -152,6 +156,10 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\drawable-mdpi-v4\\abc_ic_star_black_36dp.png"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_previous.png",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\drawable-mdpi-v4\\ic_previous.png"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\googleg_disabled_color_18.png",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\ef1aa199833f10b13d294335c045dffef44d6121\\output\\res\\drawable-mdpi-v4\\googleg_disabled_color_18.png"
     },
@@ -190,6 +198,14 @@
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\hand.png",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\bef0dc3946156eeac703dd73e372aca0f5d7e7b8\\output\\res\\drawable-mdpi-v4\\hand.png"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_next.png",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\drawable-mdpi-v4\\ic_next.png"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\ic_skip.png",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\drawable-mdpi-v4\\ic_skip.png"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable-mdpi-v4\\abc_ic_star_black_16dp.png",

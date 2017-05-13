@@ -20,10 +20,10 @@ import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.User;
 
 import io.realm.Realm;
+import io.realm.RealmResults;
 
 public class MyService extends Service {
 
-    private MainActivity mainActivity;
     MainThread mainThread;
 
     int timeForMachine1 = 0;
@@ -39,7 +39,9 @@ public class MyService extends Service {
 
     float timeOfDestructionThred = 0.f;
     PowerManager.WakeLock wl;
+    RealmResults<Machine> machines;
 
+    boolean isOutOfApp = false;
 
     @Nullable
     @Override
@@ -67,6 +69,8 @@ public class MyService extends Service {
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Let it continue running until it is stopped.
+
+        isOutOfApp = intent.getBooleanExtra("outOfApp", false);
 
         mainThread = new MainThread(this, false);
         mainThread.setRunning(true);
@@ -129,7 +133,7 @@ public class MyService extends Service {
 
         Realm realm = Realm.getDefaultInstance();
         try {
-/*
+            machines = realm.where(Machine.class).findAll();
             final Machine m =  machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine1).findFirst();
             final Machine m2 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine2).findFirst();
             final Machine m3 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine3).findFirst();
@@ -139,9 +143,9 @@ public class MyService extends Service {
             final Machine m7 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine7).findFirst();
             final Machine m8 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine8).findFirst();
             final Machine m9 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine9).findFirst();
-            final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();*/
+            final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();
 
-
+/*
             final Machine m = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine1).findFirst();
             final Machine m2 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine2).findFirst();
             final Machine m3 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine3).findFirst();
@@ -152,7 +156,7 @@ public class MyService extends Service {
             final Machine m8 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine8).findFirst();
             final Machine m9 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine9).findFirst();
             final Machine m10 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine10).findFirst();
-
+*/
 
             if (timeForMachine1 > m.getTimerOfMachine()) {
                 timeForMachine1 = 0;
@@ -243,12 +247,15 @@ public class MyService extends Service {
 
             }
 
-            final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
-            if (timeOfDestructionThred > user.getTimeOutOfApp()) {
-                Log.i("user", "SERVICE END");
+            if (isOutOfApp) {
+                Log.i("user", "IN END LOOP");
+                final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
+                if (timeOfDestructionThred > user.getTimeOutOfApp()) {
+                    Log.i("user", "SERVICE END");
 
-                stopSelf();
-                timeOfDestructionThred = 0;
+                    stopSelf();
+                    timeOfDestructionThred = 0;
+                }
             }
         }finally {
             realm.close();

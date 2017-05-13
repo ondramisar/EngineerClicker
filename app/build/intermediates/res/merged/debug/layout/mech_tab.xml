@@ -51,7 +51,7 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="20dp"
             android:layout_toRightOf="@+id/numberOfWorkers"
-            android:background="@android:color/holo_green_light"
+            android:background="@color/Secondary_Green68"
             android:text="BUY" />
 
         <TextView

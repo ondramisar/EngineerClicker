@@ -36,6 +36,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         public Button buyUpgrade;
         //public ImageView imageView;
         public SimpleDraweeView upgradeImg;
+        public SimpleDraweeView upgradeCostImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
@@ -44,6 +45,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
             this.buyUpgrade = (Button) container.findViewById(R.id.buyUpgrade);
            // this.imageView = (ImageView) container.findViewById(R.id.imageViewOfUpgrade);
             this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.imageViewOfUpgrade);
+            this.upgradeCostImg = (SimpleDraweeView) container.findViewById(R.id.costOfUpgrdImg);
         }
     }
 
@@ -73,6 +75,12 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
                 .build();
         viewHolder.upgradeImg.setImageURI(uri);
 
+        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri1 = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId1))
+                .build();
+        viewHolder.upgradeCostImg.setImageURI(uri1);
 
         final Realm realm = Realm.getDefaultInstance();
         viewHolder.buyUpgrade.setOnClickListener(new View.OnClickListener() {

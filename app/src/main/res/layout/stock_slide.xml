@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/PewterBlue"
+        android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/nameOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="15dp"
+            android:text="Name: Ore"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+
+        <TextView
+            android:id="@+id/numberOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sellMaterial"
+            android:layout_alignBottom="@+id/sellMaterial"
+            android:layout_marginLeft="4dp"
+            android:layout_toEndOf="@+id/upgradeImg"
+            android:layout_toRightOf="@+id/upgradeImg"
+            android:text="1000"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/sellMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/sellMaterialAll"
+            android:layout_alignBottom="@+id/sellMaterialAll"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="105dp"
+            android:background="@color/Secondary_Green68"
+            android:onClick="sellMaterial"
+            android:text="Sell" />
+
+        <Button
+            android:id="@+id/sellMaterialAll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameOfMaterial"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_toEndOf="@+id/sellMaterial"
+            android:layout_toRightOf="@+id/sellMaterial"
+            android:background="@color/Secondary_Green68"
+            android:layout_marginLeft="4dp"
+            android:text="Sell All" />
+
+        <TextView
+            android:id="@+id/costOfMaterial"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/costOfMaterialImg"
+            android:layout_marginBottom="5dp"
+            android:layout_toRightOf="@+id/costOfMaterialImg"
+            android:text="100"
+            android:layout_marginLeft="6dp"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/upgradeImg"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignBottom="@+id/sellMaterial"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="5dp" />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfMaterialImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="45dp"
+            android:layout_toRightOf="@+id/sellMaterialAll" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_weight="0.43">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="STOCK TAB"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/decription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:text="DESVCISKFJAFAJFJAJHFJAHSJFHAJFHSJFHAJSAJSHFJAHFJASFJAJFJASJFASSSSSSSSSSasfasfasfafafsas"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

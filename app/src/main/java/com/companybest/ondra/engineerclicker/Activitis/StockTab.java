@@ -50,6 +50,29 @@ public class StockTab extends Fragment {
         materialRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view_for_products);
         materialRecyclerView.setAdapter(materialRealmAdapter);
 
+        /*
+        // sequence example
+        ShowcaseConfig config = new ShowcaseConfig();
+        config.setDelay(500); // half second between each showcase view
+
+        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(getActivity(), "SECOND");
+
+        sequence.setConfig(config);
+
+        sequence.addSequenceItem(materialRecyclerView,
+                "These are tabs of your material you have in stock", "GOT IT");
+
+        sequence.addSequenceItem(materialRecyclerView,
+                "On the left you have number of material you have in stock", "GOT IT");
+
+        sequence.addSequenceItem(materialRecyclerView,
+                "You can sell one material or sell all material you have in stock", "GOT IT");
+
+        sequence.addSequenceItem(materialRecyclerView,
+                "On the right you have number of coins you will get for selling one material", "GOT IT");
+
+        sequence.start();*/
+
         return rootView;
     }
 }

@@ -7,8 +7,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="88dp"
-        android:background="@color/darkSeaGreen">
+        android:layout_height="100dp"
+        android:background="@color/aurometalsaurus">
 
         <TextView
             android:id="@+id/nameOgUpgrade"
@@ -26,21 +26,30 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/nameOgUpgrade"
             android:layout_centerHorizontal="true"
+            android:background="@color/Secondary_Green68"
+            android:layout_marginTop="4dp"
             android:text="Buy" />
 
         <TextView
             android:id="@+id/costOfUpgrade"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:text="10000000"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:layout_alignBaseline="@+id/buyUpgrade"
             android:layout_alignBottom="@+id/buyUpgrade"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="40dp"
-            android:text="Cost:            "
-            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+            android:layout_toRightOf="@+id/costOfUpgrdImg"
+            android:layout_toEndOf="@+id/costOfUpgrdImg"
+            android:layout_marginLeft="5dp"/>
 
-
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfUpgrdImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/buyUpgrade"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="17dp"/>
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/imageViewOfUpgrade"
@@ -50,8 +59,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="38dp"
-            android:layout_marginStart="38dp"
-            />
+            android:layout_marginStart="38dp" />
 
     </RelativeLayout>
 

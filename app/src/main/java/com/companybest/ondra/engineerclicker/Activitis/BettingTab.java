@@ -1,17 +1,22 @@
 package com.companybest.ondra.engineerclicker.Activitis;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
 import com.google.android.gms.ads.AdRequest;
@@ -20,7 +25,6 @@ import com.google.android.gms.ads.MobileAds;
 import com.google.android.gms.ads.reward.RewardItem;
 import com.google.android.gms.ads.reward.RewardedVideoAd;
 import com.google.android.gms.ads.reward.RewardedVideoAdListener;
-import com.companybest.ondra.engineerclicker.MainActivity;
 
 import java.util.Random;
 
@@ -51,6 +55,16 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         AdRequest adRequest4 = new AdRequest.Builder().build();
         mAdView4.loadAd(adRequest4);
 
+        LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.betting_layout);
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
+            }
+        });
+
         playAd = (Button) rootView.findViewById(R.id.playAd);
         playAd.setEnabled(false);
         playAd.setOnClickListener(new View.OnClickListener() {
@@ -74,6 +88,10 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             public void onClick(View v) {
                 if (editTextFor50To50.getText().toString().trim().length() > 0) {
                     textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
+
+
+                        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                 }
             }
         });
@@ -158,6 +176,9 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                     int min = i - i / 3;
                     int max = i + i / 3;
                     textViewForShufl.setText("You can win from " + String.valueOf(min) + " to " + String.valueOf(max));
+
+                    InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                 }
             }
         });
@@ -212,6 +233,23 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                     }
                 }
 
+            }
+        });
+
+        ((MainActivity)getActivity()).mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+
+            @Override
+            public void onPageSelected(int position) {
+            }
+
+            @Override
+            public void onPageScrolled(int position, float offset, int offsetPixels) {
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             }
         });
         return rootView;

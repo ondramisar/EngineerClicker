@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:background="@color/aurometalsaurus"
+        android:layout_marginTop="200dp">
+
+        <TextView
+            android:id="@+id/nameOgUpgrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="10dp"
+            android:text="Name"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/buyUpgrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nameOgUpgrade"
+            android:layout_centerHorizontal="true"
+            android:background="@color/Secondary_Green68"
+            android:layout_marginTop="4dp"
+            android:text="Buy" />
+
+        <TextView
+            android:id="@+id/costOfUpgrade"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1000"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:layout_alignBaseline="@+id/buyUpgrade"
+            android:layout_alignBottom="@+id/buyUpgrade"
+            android:layout_toRightOf="@+id/costOfUpgrdImg"
+            android:layout_toEndOf="@+id/costOfUpgrdImg"
+            android:layout_marginLeft="5dp"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfUpgrdImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_toRightOf="@+id/buyUpgrade"
+            android:layout_marginLeft="20dp"
+            android:layout_marginBottom="17dp"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imageViewOfUpgrade"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignBottom="@+id/buyUpgrade"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginLeft="38dp"
+            android:layout_marginStart="38dp" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_weight="0.43">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="UPGRADE TAB"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_marginTop="50dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/decription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:text="DESVCISKFJAFAJFJAJHFJAHSJFHAJFHSJFHAJSAJSHFJAHFJASFJAJFJASJFASSSSSSSSSSasfasfasfafafsas"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

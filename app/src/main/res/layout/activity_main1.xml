@@ -44,7 +44,7 @@
                 android:layout_toEndOf="@+id/coinsImg"
                 android:layout_toRightOf="@+id/coinsImg"
                 android:layout_weight="1"
-                android:text="                     "
+                android:text="10000000"
                 android:textColor="@color/common_google_signin_btn_text_dark_default"
                 android:textSize="20sp" />
 

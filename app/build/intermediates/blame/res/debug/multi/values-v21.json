@@ -1719,8 +1719,29 @@
                     "startLine": 225,
                     "startColumn": 4,
                     "startOffset": 16916,
+                    "endLine": 228,
+                    "endColumn": 12,
+                    "endOffset": 17150
+                },
+                "from": {
+                    "file": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 2,
+                        "startColumn": 4,
+                        "startOffset": 55,
+                        "endLine": 5,
+                        "endColumn": 12,
+                        "endOffset": 289
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 229,
+                    "startColumn": 4,
+                    "startOffset": 17155,
                     "endColumn": 70,
-                    "endOffset": 16982
+                    "endOffset": 17221
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1735,11 +1756,11 @@
             },
             {
                 "to": {
-                    "startLine": 226,
+                    "startLine": 230,
                     "startColumn": 4,
-                    "startOffset": 16987,
+                    "startOffset": 17226,
                     "endColumn": 82,
-                    "endOffset": 17065
+                    "endOffset": 17304
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1754,12 +1775,12 @@
             },
             {
                 "to": {
-                    "startLine": 227,
+                    "startLine": 231,
                     "startColumn": 4,
-                    "startOffset": 17070,
-                    "endLine": 236,
+                    "startOffset": 17309,
+                    "endLine": 240,
                     "endColumn": 12,
-                    "endOffset": 17745
+                    "endOffset": 17984
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1775,11 +1796,11 @@
             },
             {
                 "to": {
-                    "startLine": 237,
+                    "startLine": 241,
                     "startColumn": 4,
-                    "startOffset": 17750,
+                    "startOffset": 17989,
                     "endColumn": 56,
-                    "endOffset": 17802
+                    "endOffset": 18041
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1794,11 +1815,11 @@
             },
             {
                 "to": {
-                    "startLine": 238,
+                    "startLine": 242,
                     "startColumn": 4,
-                    "startOffset": 17807,
+                    "startOffset": 18046,
                     "endColumn": 57,
-                    "endOffset": 17860
+                    "endOffset": 18099
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1813,12 +1834,12 @@
             },
             {
                 "to": {
-                    "startLine": 239,
+                    "startLine": 243,
                     "startColumn": 4,
-                    "startOffset": 17865,
-                    "endLine": 250,
+                    "startOffset": 18104,
+                    "endLine": 254,
                     "endColumn": 12,
-                    "endOffset": 18554
+                    "endOffset": 18793
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1834,12 +1855,12 @@
             },
             {
                 "to": {
-                    "startLine": 251,
+                    "startLine": 255,
                     "startColumn": 4,
-                    "startOffset": 18559,
-                    "endLine": 262,
+                    "startOffset": 18798,
+                    "endLine": 266,
                     "endColumn": 12,
-                    "endOffset": 19260
+                    "endOffset": 19499
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1855,11 +1876,11 @@
             },
             {
                 "to": {
-                    "startLine": 263,
+                    "startLine": 267,
                     "startColumn": 4,
-                    "startOffset": 19265,
+                    "startOffset": 19504,
                     "endColumn": 118,
-                    "endOffset": 19379
+                    "endOffset": 19618
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1874,11 +1895,11 @@
             },
             {
                 "to": {
-                    "startLine": 264,
+                    "startLine": 268,
                     "startColumn": 4,
-                    "startOffset": 19384,
+                    "startOffset": 19623,
                     "endColumn": 128,
-                    "endOffset": 19508
+                    "endOffset": 19747
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1893,12 +1914,12 @@
             },
             {
                 "to": {
-                    "startLine": 265,
+                    "startLine": 269,
                     "startColumn": 4,
-                    "startOffset": 19513,
-                    "endLine": 267,
+                    "startOffset": 19752,
+                    "endLine": 271,
                     "endColumn": 12,
-                    "endOffset": 19679
+                    "endOffset": 19918
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1914,12 +1935,12 @@
             },
             {
                 "to": {
-                    "startLine": 268,
+                    "startLine": 272,
                     "startColumn": 4,
-                    "startOffset": 19684,
-                    "endLine": 270,
+                    "startOffset": 19923,
+                    "endLine": 274,
                     "endColumn": 12,
-                    "endOffset": 19845
+                    "endOffset": 20084
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1935,11 +1956,11 @@
             },
             {
                 "to": {
-                    "startLine": 271,
+                    "startLine": 275,
                     "startColumn": 4,
-                    "startOffset": 19850,
+                    "startOffset": 20089,
                     "endColumn": 128,
-                    "endOffset": 19974
+                    "endOffset": 20213
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1954,12 +1975,12 @@
             },
             {
                 "to": {
-                    "startLine": 272,
+                    "startLine": 276,
                     "startColumn": 4,
-                    "startOffset": 19979,
-                    "endLine": 274,
+                    "startOffset": 20218,
+                    "endLine": 278,
                     "endColumn": 12,
-                    "endOffset": 20145
+                    "endOffset": 20384
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1975,11 +1996,11 @@
             },
             {
                 "to": {
-                    "startLine": 275,
+                    "startLine": 279,
                     "startColumn": 4,
-                    "startOffset": 20150,
+                    "startOffset": 20389,
                     "endColumn": 130,
-                    "endOffset": 20276
+                    "endOffset": 20515
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -1994,12 +2015,12 @@
             },
             {
                 "to": {
-                    "startLine": 276,
+                    "startLine": 280,
                     "startColumn": 4,
-                    "startOffset": 20281,
-                    "endLine": 278,
+                    "startOffset": 20520,
+                    "endLine": 282,
                     "endColumn": 12,
-                    "endOffset": 20446
+                    "endOffset": 20685
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -2015,12 +2036,33 @@
             },
             {
                 "to": {
-                    "startLine": 279,
+                    "startLine": 283,
                     "startColumn": 4,
-                    "startOffset": 20451,
-                    "endLine": 281,
+                    "startOffset": 20690,
+                    "endLine": 287,
                     "endColumn": 12,
-                    "endOffset": 20621
+                    "endOffset": 20980
+                },
+                "from": {
+                    "file": "C:\\Users\\Ondra\\.android\\build-cache\\50e5760198982355cc9e94f26c481fd6e33d2325\\output\\res\\values-v21\\values-v21.xml",
+                    "position": {
+                        "startLine": 6,
+                        "startColumn": 4,
+                        "startOffset": 294,
+                        "endLine": 10,
+                        "endColumn": 12,
+                        "endOffset": 584
+                    }
+                }
+            },
+            {
+                "to": {
+                    "startLine": 288,
+                    "startColumn": 4,
+                    "startOffset": 20985,
+                    "endLine": 290,
+                    "endColumn": 12,
+                    "endOffset": 21155
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -2036,12 +2078,12 @@
             },
             {
                 "to": {
-                    "startLine": 282,
+                    "startLine": 291,
                     "startColumn": 4,
-                    "startOffset": 20626,
-                    "endLine": 286,
+                    "startOffset": 21160,
+                    "endLine": 295,
                     "endColumn": 12,
-                    "endOffset": 20962
+                    "endOffset": 21496
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\598d58c84feb956d3cb342688c88101f04ce6743\\output\\res\\values-v21\\values-v21.xml",
@@ -2057,12 +2099,12 @@
             },
             {
                 "to": {
-                    "startLine": 287,
+                    "startLine": 296,
                     "startColumn": 4,
-                    "startOffset": 20967,
-                    "endLine": 289,
+                    "startOffset": 21501,
+                    "endLine": 298,
                     "endColumn": 12,
-                    "endOffset": 21160
+                    "endOffset": 21694
                 },
                 "from": {
                     "file": "C:\\Users\\Ondra\\.android\\build-cache\\f2bee6960299c87689a3ae6517303ed0bec6b27b\\output\\res\\values-v21\\values-v21.xml",

@@ -6,10 +6,13 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
-import android.widget.TextView;
+import android.widget.ListView;
 
 import com.companybest.ondra.engineerclicker.R;
+
+import java.util.ArrayList;
 
 
 public class CreditFragment extends DialogFragment {
@@ -26,8 +29,20 @@ public class CreditFragment extends DialogFragment {
         View rootView = inflater.inflate(R.layout.credit_fragment, container,
                 false);
 
-        TextView creditText = (TextView) rootView.findViewById(R.id.credit_text);
-        creditText.setText("HI THIS IS THE CREDIT");
+        ArrayList<String> values = new ArrayList<>();
+        values.add("Main Graphic made by ");
+        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
+        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
+        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
+        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
+
+        ListView credit = (ListView) rootView.findViewById(R.id.list_view_credit);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getActivity(),
+                android.R.layout.simple_list_item_1, values);
+        credit.setAdapter(adapter);
+
+
         Button creditBack = (Button) rootView.findViewById(R.id.creditBack);
         creditBack.setOnClickListener(new View.OnClickListener() {
             @Override

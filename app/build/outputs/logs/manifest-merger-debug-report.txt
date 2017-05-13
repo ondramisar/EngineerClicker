@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-32:12
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
@@ -29,7 +29,7 @@ MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\bu
 	android:name
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:6:22-65
 application
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:8:5-30:19
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:8:5-33:19
 MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.android\build-cache\828d881e39e1d1c36a76ce8f4dee5436ac536ee5\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.android\build-cache\0fe0fae9a7f20c848065107574c4b0b414ec2748\output\AndroidManifest.xml:5:5-20
 MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\ff5dbe51eaf4fc3474937c253cca9687744644b3\output\AndroidManifest.xml:23:5-27:19
@@ -46,8 +46,8 @@ MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\On
 MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.android\build-cache\f2bee6960299c87689a3ae6517303ed0bec6b27b\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.android\build-cache\598d58c84feb956d3cb342688c88101f04ce6743\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\d437fcc8c53b7165a7c078821af11c9662d280f4\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.android\build-cache\e930d386e589a01b6df6ddb9056f378ac68a9742\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\32ce72553bd90578567ef84861aac35022cdeeb7\output\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.android\build-cache\e930d386e589a01b6df6ddb9056f378ac68a9742\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.android\build-cache\f40d1ecd0a1fb77971fb23eea48162a7aab85272\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.android\build-cache\a5605c134a0af473e232bb63dc20475df3167895\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.android\build-cache\41a02ba2676b046576228f32f56aec6bd1702227\output\AndroidManifest.xml:25:5-20
@@ -65,7 +65,7 @@ MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\
 	android:theme
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.companybest.ondra.engineerclicker.MainActivity
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:14:9-23:20
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:14:9-24:20
 	android:screenOrientation
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:16:13-49
 	android:theme
@@ -82,14 +82,20 @@ category#android.intent.category.LAUNCHER
 ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:21:17-77
 	android:name
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:21:27-74
-service#com.companybest.ondra.engineerclicker.MyService
-ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:25:9-28:52
-	android:label
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:28:13-49
-	android:icon
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:27:13-72
+activity#com.companybest.ondra.engineerclicker.Activitis.IntroActivity
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:25:9-27:50
+	android:theme
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:27:13-47
 	android:name
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:26:13-38
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:26:13-52
+service#com.companybest.ondra.engineerclicker.MyService
+ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:28:9-31:52
+	android:label
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:31:13-49
+	android:icon
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:30:13-72
+	android:name
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:29:13-38
 uses-sdk
 INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.android\build-cache\ec74d40fefcdc63afd7bfa26487fc76781220051\output\AndroidManifest.xml:6:5-8:41
@@ -109,24 +115,25 @@ MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android
 MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.android\build-cache\29f616c0b652a1328422e9b291e50743dd9c9e39\output\AndroidManifest.xml:3:5-43
 MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2132be63f06f3a508defc3ec3654c91647b7d6e2\output\AndroidManifest.xml:17:5-43
 MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.android\build-cache\16e39f75d6bfe6986f39d76d4e92ece084332a1e\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.github.deano2390:MaterialShowcaseView:1.1.0] C:\Users\Ondra\.android\build-cache\14c006753860074faea51431da96c26ed6460c94\output\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.android\build-cache\2d32d871e9088c740793eed3d05fe1fb43fb0a37\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.android\build-cache\fa9902521d1a8d6c2841be812fb5809e09a00846\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.android\build-cache\157c03db827fdfa04e56a9027ed8202da741abb9\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.android\build-cache\b3517b0203645cfc469447ab675677c11651580c\output\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.android\build-cache\81434627ee590b0d1e9ee4953dc84a4c16be8923\output\AndroidManifest.xml:5:5-7:41
+MERGED from [agency.tango.android:material-intro-screen:0.0.5] C:\Users\Ondra\.android\build-cache\50e5760198982355cc9e94f26c481fd6e33d2325\output\AndroidManifest.xml:8:5-10:41
 MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.android\build-cache\f2bee6960299c87689a3ae6517303ed0bec6b27b\output\AndroidManifest.xml:21:5-23:62
 MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.android\build-cache\598d58c84feb956d3cb342688c88101f04ce6743\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\d437fcc8c53b7165a7c078821af11c9662d280f4\output\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\32ce72553bd90578567ef84861aac35022cdeeb7\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Ondra\.android\build-cache\a21dac7c09a6331066b916ea4e698a33892873aa\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.android\build-cache\e930d386e589a01b6df6ddb9056f378ac68a9742\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\32ce72553bd90578567ef84861aac35022cdeeb7\output\AndroidManifest.xml:21:5-43
-MERGED from [com.github.amlcurran.showcaseview:library:5.4.3] C:\Users\Ondra\.android\build-cache\bef0dc3946156eeac703dd73e372aca0f5d7e7b8\output\AndroidManifest.xml:22:5-24:41
 MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.android\build-cache\f40d1ecd0a1fb77971fb23eea48162a7aab85272\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.android\build-cache\a5605c134a0af473e232bb63dc20475df3167895\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.android\build-cache\41a02ba2676b046576228f32f56aec6bd1702227\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.android\build-cache\7353284ea2349e1a9d02bcb750efc21165d74dea\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.android\build-cache\2436171e48a93cb21d04edfcb84027e41c691ca5\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\build-cache\24ac739520836eaafd9868a80e3b0d6a00890dcc\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.android\build-cache\2d32d871e9088c740793eed3d05fe1fb43fb0a37\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.android\build-cache\fa9902521d1a8d6c2841be812fb5809e09a00846\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.android\build-cache\157c03db827fdfa04e56a9027ed8202da741abb9\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.android\build-cache\b3517b0203645cfc469447ab675677c11651580c\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.android\build-cache\81434627ee590b0d1e9ee4953dc84a4c16be8923\output\AndroidManifest.xml:5:5-7:41
 MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.android\build-cache\9cfa8782b00353dee85362b6b2d568b643525b87\output\AndroidManifest.xml:6:5-8:41
 MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.android\build-cache\648647d2359a2e5f96fb482e81e4bb9b356c7378\output\AndroidManifest.xml:7:5-43
 	tools:overrideLibrary

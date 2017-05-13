@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="1">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="100dp"
+        android:background="@color/wintegreenDream">
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfWorker"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/plusWorker"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toEndOf="@+id/plusWorker"
+            android:layout_toRightOf="@+id/plusWorker"
+            />
+
+        <TextView
+            android:id="@+id/numberOfWorkers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toEndOf="@+id/workerImg"
+            android:layout_toRightOf="@+id/workerImg"
+            android:text="10"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/plusWorker"
+            android:layout_width="60dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:layout_toRightOf="@+id/numberOfWorkers"
+            android:background="@color/Secondary_Green68"
+            android:text="BUY" />
+
+        <TextView
+            android:id="@+id/costOfWorkers"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/numberOfWorkers"
+            android:layout_alignBottom="@+id/numberOfWorkers"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/costOfWorker"
+            android:layout_toRightOf="@+id/costOfWorker"
+            android:text="1000"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/workerImg"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="157dp"
+        android:layout_weight="0.08"
+        android:background="@color/artichoke">
+
+        <TextView
+            android:id="@+id/nameOfMachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="12dp"
+            android:text="Extraction"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="16sp" />
+
+
+        <TextView
+            android:id="@+id/numberOfMachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/plusMachine"
+            android:layout_alignBottom="@+id/plusMachine"
+            android:layout_alignLeft="@+id/numberOfWokersOnMach"
+            android:layout_alignStart="@+id/numberOfWokersOnMach"
+            android:text="10"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/plusMachine"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignLeft="@+id/plusWorkerOnMach"
+            android:layout_alignStart="@+id/plusWorkerOnMach"
+            android:layout_below="@+id/nameOfMachine"
+            android:layout_marginBottom="4dp"
+            android:background="@color/Secondary_Green68"
+            android:text="+" />
+
+        <TextView
+            android:id="@+id/costOfMachine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/costOfMachineImg"
+            android:layout_alignLeft="@+id/timer"
+            android:layout_alignStart="@+id/timer"
+            android:layout_marginBottom="6dp"
+            android:text="1000"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="16sp" />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/workerOnMachImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_marginBottom="30dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp" />
+
+
+        <TextView
+            android:id="@+id/numberOfWokersOnMach"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/materialOfMachineImg"
+            android:layout_marginLeft="8dp"
+            android:layout_toEndOf="@+id/workerOnMachImg"
+            android:layout_toRightOf="@+id/workerOnMachImg"
+            android:text="10"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused" />
+
+        <Button
+            android:id="@+id/plusWorkerOnMach"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_below="@+id/plusMachine"
+            android:layout_marginBottom="2dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_toLeftOf="@+id/imageView"
+            android:layout_toStartOf="@+id/imageView"
+            android:background="@color/Secondary_Green68"
+            android:text="+" />
+
+        <Button
+            android:id="@+id/minusWorkerOnMach"
+            android:layout_width="38dp"
+            android:layout_height="38dp"
+            android:layout_alignLeft="@+id/plusWorkerOnMach"
+            android:layout_alignStart="@+id/plusWorkerOnMach"
+            android:layout_below="@+id/plusWorkerOnMach"
+            android:background="@color/Secondary_Green68"
+            android:text="-" />
+
+
+        <TextView
+            android:id="@+id/timer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/timeOfMachineImg"
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="13dp"
+            android:layout_marginStart="13dp"
+            android:layout_toEndOf="@+id/timeOfMachineImg"
+            android:layout_toRightOf="@+id/timeOfMachineImg"
+            android:text="300"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/materialMake"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/timer"
+            android:layout_alignStart="@+id/timer"
+            android:layout_alignTop="@+id/materialOfMachineImg"
+            android:text="ore"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:textSize="16sp" />
+
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/imageView"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/costOfMachineImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/plusWorkerOnMach"
+            android:layout_marginLeft="28dp"
+            android:layout_toEndOf="@+id/imageView"
+            android:layout_toRightOf="@+id/imageView" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/timeOfMachineImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_above="@+id/minusWorkerOnMach"
+            android:layout_alignLeft="@+id/costOfMachineImg"
+            android:layout_alignStart="@+id/costOfMachineImg" />
+
+        <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/materialOfMachineImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/minusWorkerOnMach"
+            android:layout_toLeftOf="@+id/timer"
+            android:layout_toStartOf="@+id/timer" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:layout_weight="0.43">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="MACHINE TAB"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textSize="20sp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp"/>
+
+        <TextView
+            android:id="@+id/decription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView"
+            android:text="DESVCISKFJAFAJFJAJHFJAHSJFHAJFHSJFHAJSAJSHFJAHFJASFJAJFJASJFASSSSSSSSSSasfasfasfafafsas"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+    </RelativeLayout>
+
+</LinearLayout>

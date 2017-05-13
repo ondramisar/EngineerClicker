@@ -41,6 +41,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
         public SimpleDraweeView costOfMachineImg;
         public SimpleDraweeView timeOfMachineImg;
         public SimpleDraweeView materialOfMachineImg;
+        public SimpleDraweeView workerOnMachineImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
@@ -58,6 +59,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
             this.costOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.costOfMachineImg);
             this.timeOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.timeOfMachineImg);
             this.materialOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.materialOfMachineImg);
+            this.workerOnMachineImg = (SimpleDraweeView) container.findViewById(R.id.workerOnMachImg);
         }
     }
 
@@ -114,6 +116,14 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .path(String.valueOf(resourceId3))
                 .build();
         viewHolder.materialOfMachineImg.setImageURI(uri3);
+
+
+        int resourceId4 = getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri4 = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId4))
+                .build();
+        viewHolder.workerOnMachineImg.setImageURI(uri4);
 
         final Realm realm = Realm.getDefaultInstance();
         viewHolder.plusMachine.setOnClickListener(new View.OnClickListener() {

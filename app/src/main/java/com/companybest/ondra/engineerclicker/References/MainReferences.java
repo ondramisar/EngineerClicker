@@ -69,6 +69,7 @@ public class MainReferences {
     public int timerOfMachine6 = 700;
     public String nameOfMaterialForMachine6 = "better drilled workpiece";
     String nameOfMaterialNeededMachine6 = "drilled workpiece";
+    private String nameOfImageMachine6 = "countersinks";
 
     public Machine machine7;
     public String nameOfMachine7 = "Reamer";
@@ -78,6 +79,7 @@ public class MainReferences {
     public int timerOfMachine7 = 800;
     public String nameOfMaterialForMachine7 = "best drilled workpiece";
     String nameOfMaterialNeededMachine7 = "better drilled workpiece";
+    private String nameOfImageMachine7 = "reamer";
 
     public Machine machine8;
     public String nameOfMachine8 = "Milling machine";
@@ -86,7 +88,7 @@ public class MainReferences {
     public int workersOnMachine8 = 0;
     public int timerOfMachine8 = 1200;
     public String nameOfMaterialForMachine8 = "workpiece";
-    String nameOfMaterialNeededMachine8 = "best drilled workpiece";
+    private String nameOfMaterialNeededMachine8 = "best drilled workpiece";
 
     public Machine machine9;
     public String nameOfMachine9 = "Turning";
@@ -411,8 +413,8 @@ public class MainReferences {
         creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3,timerOfMachine3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine1);
         creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4,timerOfMachine4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine1);
         creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
-        creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine1);
-        creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine1);
+        creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine6);
+        creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine7);
         creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8,timerOfMachine8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine1);
         creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9,timerOfMachine9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine1);
         creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10,timerOfMachine10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);

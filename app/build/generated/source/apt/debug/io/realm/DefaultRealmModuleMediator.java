@@ -28,10 +28,10 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
     static {
         Set<Class<? extends RealmModel>> modelClasses = new HashSet<Class<? extends RealmModel>>();
         modelClasses.add(com.companybest.ondra.engineerclicker.Models.User.class);
+        modelClasses.add(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class);
         modelClasses.add(com.companybest.ondra.engineerclicker.Models.Material.class);
         modelClasses.add(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class);
         modelClasses.add(com.companybest.ondra.engineerclicker.Models.Upgrade.class);
-        modelClasses.add(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class);
         MODEL_CLASSES = Collections.unmodifiableSet(modelClasses);
     }
 
@@ -41,14 +41,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return io.realm.UserRealmProxy.initTable(sharedRealm);
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return io.realm.BasicWorkerRealmProxy.initTable(sharedRealm);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return io.realm.MaterialRealmProxy.initTable(sharedRealm);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return io.realm.MachineRealmProxy.initTable(sharedRealm);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return io.realm.UpgradeRealmProxy.initTable(sharedRealm);
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return io.realm.BasicWorkerRealmProxy.initTable(sharedRealm);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -60,14 +60,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return io.realm.UserRealmProxy.createRealmObjectSchema(realmSchema);
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return io.realm.BasicWorkerRealmProxy.createRealmObjectSchema(realmSchema);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return io.realm.MaterialRealmProxy.createRealmObjectSchema(realmSchema);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return io.realm.MachineRealmProxy.createRealmObjectSchema(realmSchema);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return io.realm.UpgradeRealmProxy.createRealmObjectSchema(realmSchema);
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return io.realm.BasicWorkerRealmProxy.createRealmObjectSchema(realmSchema);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -79,14 +79,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return io.realm.UserRealmProxy.validateTable(sharedRealm, allowExtraColumns);
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return io.realm.BasicWorkerRealmProxy.validateTable(sharedRealm, allowExtraColumns);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return io.realm.MaterialRealmProxy.validateTable(sharedRealm, allowExtraColumns);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return io.realm.MachineRealmProxy.validateTable(sharedRealm, allowExtraColumns);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return io.realm.UpgradeRealmProxy.validateTable(sharedRealm, allowExtraColumns);
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return io.realm.BasicWorkerRealmProxy.validateTable(sharedRealm, allowExtraColumns);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -98,14 +98,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return io.realm.UserRealmProxy.getFieldNames();
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return io.realm.BasicWorkerRealmProxy.getFieldNames();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return io.realm.MaterialRealmProxy.getFieldNames();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return io.realm.MachineRealmProxy.getFieldNames();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return io.realm.UpgradeRealmProxy.getFieldNames();
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return io.realm.BasicWorkerRealmProxy.getFieldNames();
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -117,14 +117,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return io.realm.UserRealmProxy.getTableName();
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return io.realm.BasicWorkerRealmProxy.getTableName();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return io.realm.MaterialRealmProxy.getTableName();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return io.realm.MachineRealmProxy.getTableName();
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return io.realm.UpgradeRealmProxy.getTableName();
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return io.realm.BasicWorkerRealmProxy.getTableName();
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -139,14 +139,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
                 return clazz.cast(new io.realm.UserRealmProxy());
+            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+                return clazz.cast(new io.realm.BasicWorkerRealmProxy());
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
                 return clazz.cast(new io.realm.MaterialRealmProxy());
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
                 return clazz.cast(new io.realm.MachineRealmProxy());
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
                 return clazz.cast(new io.realm.UpgradeRealmProxy());
-            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-                return clazz.cast(new io.realm.BasicWorkerRealmProxy());
             } else {
                 throw getMissingProxyClassException(clazz);
             }
@@ -168,14 +168,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return clazz.cast(io.realm.UserRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.User) obj, update, cache));
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return clazz.cast(io.realm.BasicWorkerRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) obj, update, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return clazz.cast(io.realm.MaterialRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Material) obj, update, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return clazz.cast(io.realm.MachineRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Machines.Machine) obj, update, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return clazz.cast(io.realm.UpgradeRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Upgrade) obj, update, cache));
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return clazz.cast(io.realm.BasicWorkerRealmProxy.copyOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) obj, update, cache));
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -189,14 +189,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             io.realm.UserRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.User) object, cache);
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            io.realm.BasicWorkerRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             io.realm.MaterialRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Material) object, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             io.realm.MachineRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Machines.Machine) object, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             io.realm.UpgradeRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Upgrade) object, cache);
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            io.realm.BasicWorkerRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -216,28 +216,28 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
                 io.realm.UserRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.User) object, cache);
+            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+                io.realm.BasicWorkerRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
                 io.realm.MaterialRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Material) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
                 io.realm.MachineRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Machines.Machine) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
                 io.realm.UpgradeRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Upgrade) object, cache);
-            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-                io.realm.BasicWorkerRealmProxy.insert(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
                 if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
                     io.realm.UserRealmProxy.insert(realm, iterator, cache);
+                } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+                    io.realm.BasicWorkerRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
                     io.realm.MaterialRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
                     io.realm.MachineRealmProxy.insert(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
                     io.realm.UpgradeRealmProxy.insert(realm, iterator, cache);
-                } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-                    io.realm.BasicWorkerRealmProxy.insert(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -253,14 +253,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             io.realm.UserRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.User) obj, cache);
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) obj, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             io.realm.MaterialRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Material) obj, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             io.realm.MachineRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Machines.Machine) obj, cache);
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             io.realm.UpgradeRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Upgrade) obj, cache);
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) obj, cache);
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -280,28 +280,28 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
             if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
                 io.realm.UserRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.User) object, cache);
+            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+                io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
                 io.realm.MaterialRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Material) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
                 io.realm.MachineRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Machines.Machine) object, cache);
             } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
                 io.realm.UpgradeRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Upgrade) object, cache);
-            } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-                io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, (com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) object, cache);
             } else {
                 throw getMissingProxyClassException(clazz);
             }
             if (iterator.hasNext()) {
                 if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
                     io.realm.UserRealmProxy.insertOrUpdate(realm, iterator, cache);
+                } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+                    io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
                     io.realm.MaterialRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
                     io.realm.MachineRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
                     io.realm.UpgradeRealmProxy.insertOrUpdate(realm, iterator, cache);
-                } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-                    io.realm.BasicWorkerRealmProxy.insertOrUpdate(realm, iterator, cache);
                 } else {
                     throw getMissingProxyClassException(clazz);
                 }
@@ -316,14 +316,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return clazz.cast(io.realm.UserRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return clazz.cast(io.realm.BasicWorkerRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return clazz.cast(io.realm.MaterialRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return clazz.cast(io.realm.MachineRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return clazz.cast(io.realm.UpgradeRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return clazz.cast(io.realm.BasicWorkerRealmProxy.createOrUpdateUsingJsonObject(realm, json, update));
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -336,14 +336,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return clazz.cast(io.realm.UserRealmProxy.createUsingJsonStream(realm, reader));
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return clazz.cast(io.realm.BasicWorkerRealmProxy.createUsingJsonStream(realm, reader));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return clazz.cast(io.realm.MaterialRealmProxy.createUsingJsonStream(realm, reader));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return clazz.cast(io.realm.MachineRealmProxy.createUsingJsonStream(realm, reader));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return clazz.cast(io.realm.UpgradeRealmProxy.createUsingJsonStream(realm, reader));
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return clazz.cast(io.realm.BasicWorkerRealmProxy.createUsingJsonStream(realm, reader));
         } else {
             throw getMissingProxyClassException(clazz);
         }
@@ -357,14 +357,14 @@ class DefaultRealmModuleMediator extends RealmProxyMediator {
 
         if (clazz.equals(com.companybest.ondra.engineerclicker.Models.User.class)) {
             return clazz.cast(io.realm.UserRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.User) realmObject, 0, maxDepth, cache));
+        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
+            return clazz.cast(io.realm.BasicWorkerRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) realmObject, 0, maxDepth, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Material.class)) {
             return clazz.cast(io.realm.MaterialRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.Material) realmObject, 0, maxDepth, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Machines.Machine.class)) {
             return clazz.cast(io.realm.MachineRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.Machines.Machine) realmObject, 0, maxDepth, cache));
         } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Upgrade.class)) {
             return clazz.cast(io.realm.UpgradeRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.Upgrade) realmObject, 0, maxDepth, cache));
-        } else if (clazz.equals(com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker.class)) {
-            return clazz.cast(io.realm.BasicWorkerRealmProxy.createDetachedCopy((com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker) realmObject, 0, maxDepth, cache));
         } else {
             throw getMissingProxyClassException(clazz);
         }

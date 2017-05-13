@@ -9,7 +9,7 @@
     <RelativeLayout
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:background="@color/darkSeaGreen">
+        android:background="@color/aurometalsaurus">
 
         <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView
             android:id="@+id/realm_recycler_view_for_upgrades"

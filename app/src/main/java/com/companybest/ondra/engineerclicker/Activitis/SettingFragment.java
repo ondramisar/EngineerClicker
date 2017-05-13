@@ -43,6 +43,10 @@ Context context;
         musicSet.setProgress(sharedPreferences.getInt("music",0));
         soundSet.setProgress(sharedPreferences.getInt("sound", 0));
 
+
+        musicText.setText("MUSIC: " + String.valueOf(sharedPreferences.getInt("music",0)));
+        soundText.setText("SOUND: " + String.valueOf(sharedPreferences.getInt("sound", 0)));
+
         musicSet.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
             @Override
             public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {

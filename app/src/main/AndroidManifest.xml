@@ -20,8 +20,11 @@
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
 
+        </activity>
+        <activity
+            android:name=".Activitis.IntroActivity"
+            android:theme="@style/Theme.Intro" />
         <service
             android:name=".MyService"
             android:icon="@drawable/common_google_signin_btn_icon_dark"

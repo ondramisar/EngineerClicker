@@ -35,6 +35,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name="com.companybest.ondra.engineerclicker.Activitis.IntroActivity"
+            android:theme="@style/Theme.Intro" />
 
         <service
             android:name="com.companybest.ondra.engineerclicker.MyService"

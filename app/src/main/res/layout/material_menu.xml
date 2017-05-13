@@ -6,8 +6,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/middleGreen">
+        android:layout_height="100dp"
+        android:background="@color/PewterBlue">
 
         <TextView
             android:id="@+id/nameOfMaterial"
@@ -41,6 +41,7 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_marginLeft="105dp"
+            android:background="@color/Secondary_Green68"
             android:onClick="sellMaterial"
             android:text="Sell" />
 
@@ -53,6 +54,8 @@
             android:layout_marginTop="5dp"
             android:layout_toEndOf="@+id/sellMaterial"
             android:layout_toRightOf="@+id/sellMaterial"
+            android:background="@color/Secondary_Green68"
+            android:layout_marginLeft="4dp"
             android:text="Sell All" />
 
         <TextView
@@ -62,9 +65,9 @@
             android:layout_alignBottom="@+id/costOfMaterialImg"
             android:layout_marginBottom="5dp"
             android:layout_toRightOf="@+id/costOfMaterialImg"
-            android:text="Cost:      "
+            android:text="100000"
+            android:layout_marginLeft="6dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
-
 
 
         <com.facebook.drawee.view.SimpleDraweeView
@@ -74,8 +77,7 @@
             android:layout_alignBottom="@+id/sellMaterial"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="5dp"
-            />
+            android:layout_marginLeft="5dp" />
 
 
         <com.facebook.drawee.view.SimpleDraweeView
@@ -83,10 +85,9 @@
             android:layout_width="30dp"
             android:layout_height="30dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="15dp"
+            android:layout_marginLeft="12dp"
             android:layout_marginTop="45dp"
-            android:layout_toRightOf="@+id/sellMaterialAll"
-            />
+            android:layout_toRightOf="@+id/sellMaterialAll" />
 
     </RelativeLayout>
 </FrameLayout>
