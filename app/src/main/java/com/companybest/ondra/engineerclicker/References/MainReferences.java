@@ -14,67 +14,69 @@ public class MainReferences {
 
     // MACHINES
 
-    public Machine machine1;
+    private Machine machine1;
     public String nameOfMachine1 = "Extraction";
-    public int numberOfMachine1 = 0;
-    public int costOfMachine1 = 500;
-    public int workersOnMachine1 = 0;
-    public int timerOfMachine1 = 300;
-    public String nameOfMaterialForMachine1 = "ore";
+    private int numberOfMachine1 = 0;
+    private int costOfMachine1 = 1000;
+    private int workersOnMachine1 = 0;
+    private int timerOfMachine1 = 300;
+    private String nameOfMaterialForMachine1 = "ore";
     private String nameOfImageMachine1 = "mine";
 
-    public Machine machine2;
+    private Machine machine2;
     public String nameOfMachine2 = "Steelworks";
-    public int numberOfMachine2 = 0;
-    public int costOfMachine2 = 2000;
-    public int workersOnMachine2 = 0;
-    public int timerOfMachine2 = 600;
-    public String nameOfMaterialForMachine2 = "ingot";
-    String nameOfMaterialNeededMachine2 = "ore";
+    private int numberOfMachine2 = 0;
+    private int costOfMachine2 = 13000;
+    private int workersOnMachine2 = 0;
+    private int timerOfMachine2 = 600;
+    private String nameOfMaterialForMachine2 = "ingot";
+    private String nameOfMaterialNeededMachine2 = "ore";
     private String nameOfImageMachine2 = "factory";
 
-    public Machine machine3;
+    private Machine machine3;
     public String nameOfMachine3 = "Casting machine";
-    public int numberOfMachine3 = 0;
-    public int costOfMachine3 = 6000;
-    public int workersOnMachine3 = 0;
-    public int timerOfMachine3 = 900;
-    public String nameOfMaterialForMachine3 = "rolled material and cast";
+    private int numberOfMachine3 = 0;
+    private int costOfMachine3 = 36000;
+    private int workersOnMachine3 = 0;
+    private int timerOfMachine3 = 900;
+    private String nameOfMaterialForMachine3 = "rolled material and cast";
     String nameOfMaterialNeededMachine3 = "ingot";
+    private String nameOfImageMachine3 = "casting";
 
-    public Machine machine4;
+    private Machine machine4;
     public String nameOfMachine4 = "Rolling machine";
-    public int numberOfMachine4 = 0;
-    public int costOfMachine4 = 9000;
-    public int workersOnMachine4 = 0;
-    public int timerOfMachine4 = 700;
-    public String nameOfMaterialForMachine4 = "rolled material and cast";
+    private int numberOfMachine4 = 0;
+    private int costOfMachine4 = 39000;
+    private int workersOnMachine4 = 0;
+    private int timerOfMachine4 = 700;
+    private String nameOfMaterialForMachine4 = "rolled material and cast";
     String nameOfMaterialNeededMachine4= "ingot";
+    private String nameOfImageMachine4 = "rolling";
 
-    public Machine machine5;
+    private Machine machine5;
     public String nameOfMachine5 = "Drill press";
-    public int numberOfMachine5 = 0;
-    public int costOfMachine5 = 25000;
-    public int workersOnMachine5 = 0;
-    public int timerOfMachine5 = 600;
-    public String nameOfMaterialForMachine5 = "drilled workpiece";
+    private int numberOfMachine5 = 0;
+    private int costOfMachine5 = 100000;
+    private int workersOnMachine5 = 0;
+    private int timerOfMachine5 = 600;
+    private String nameOfMaterialForMachine5 = "drilled workpiece";
     String nameOfMaterialNeededMachine5 = "rolled material and cast";
     private String nameOfImageMachine5 = "drill";
 
-    public Machine machine6;
+    private Machine machine6;
     public String nameOfMachine6 = "Countersinks";
-    public int numberOfMachine6 = 0;
-    public int costOfMachine6 = 53000;
-    public int workersOnMachine6 = 0;
-    public int timerOfMachine6 = 700;
-    public String nameOfMaterialForMachine6 = "better drilled workpiece";
+    private int numberOfMachine6 = 0;
+    private int costOfMachine6 = 200000;
+    private int workersOnMachine6 = 0;
+    private int timerOfMachine6 = 700;
+    private String nameOfMaterialForMachine6 = "better drilled workpiece";
     String nameOfMaterialNeededMachine6 = "drilled workpiece";
     private String nameOfImageMachine6 = "countersinks";
 
-    public Machine machine7;
+    private Machine machine7;
     public String nameOfMachine7 = "Reamer";
-    public int numberOfMachine7 = 0;
-    public int costOfMachine7 = 110000;
+    private int numberOfMachine7 = 0;
+    private int costOfMachine7 = 340000;
     public int workersOnMachine7 = 0;
     public int timerOfMachine7 = 800;
     public String nameOfMaterialForMachine7 = "best drilled workpiece";
@@ -84,7 +86,7 @@ public class MainReferences {
     public Machine machine8;
     public String nameOfMachine8 = "Milling machine";
     public int numberOfMachine8 = 0;
-    public int costOfMachine8 = 220000;
+    public int costOfMachine8 = 550000;
     public int workersOnMachine8 = 0;
     public int timerOfMachine8 = 1200;
     public String nameOfMaterialForMachine8 = "workpiece";
@@ -93,7 +95,7 @@ public class MainReferences {
     public Machine machine9;
     public String nameOfMachine9 = "Turning";
     public int numberOfMachine9 = 0;
-    public int costOfMachine9 = 240000;
+    public int costOfMachine9 = 590000;
     public int workersOnMachine9 = 0;
     public int timerOfMachine9 = 1100;
     public String nameOfMaterialForMachine9 = "workpiece";
@@ -102,7 +104,7 @@ public class MainReferences {
     public Machine machine10;
     public String nameOfMachine10 = "Welder";
     public int numberOfMachine10 = 0;
-    public int costOfMachine10 = 500000;
+    public int costOfMachine10 = 1500000;
     public int workersOnMachine10 = 0;
     public int timerOfMachine10 = 1800;
     public String nameOfMaterialForMachine10 = "weldment";
@@ -329,7 +331,7 @@ public class MainReferences {
     public User user;
     public float coins = 1500.f;
     public String name = "user";
-    public float timerOutOfApp = 60.f;
+    public float timerOutOfApp = 10.f;
     public int costOfTimeOutOfApp = 200;
 
     Realm realm;
@@ -410,8 +412,8 @@ public class MainReferences {
     public void createAllMachines(){
         creatingMachine(machine1, nameOfMachine1, numberOfMachine1,costOfMachine1,workersOnMachine1,timerOfMachine1, nameOfMaterialForMachine1, nameOfImageMachine1);
         creatingMachine(machine2, nameOfMachine2, numberOfMachine2,costOfMachine2, workersOnMachine2,timerOfMachine2,nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine2);
-        creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3,timerOfMachine3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine1);
-        creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4,timerOfMachine4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine1);
+        creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3,timerOfMachine3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine3);
+        creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4,timerOfMachine4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine4);
         creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
         creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine6);
         creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine7);
@@ -432,7 +434,7 @@ public class MainReferences {
     }
 
     public void createAllUpgrades(){
-        createUpgradeOfTime(upgrade0,nameOfUpgrade0,costOfUpgrade0,whatToDoUpgrade0, forWhatToDoUpgrade0, nameOfImgUpgrade0);
+        //createUpgradeOfTime(upgrade0,nameOfUpgrade0,costOfUpgrade0,whatToDoUpgrade0, forWhatToDoUpgrade0, nameOfImgUpgrade0);
 
         createUpgrade(upgrade1, nameOfUpgrade1, costOfUpgrade1, whatToDoUpgrade1, forWhatToDoUpgrade1, nameOfMachineToGiveUpgrade1, nameOfMaterialToGiveUpgrade1, nameOfImgUpgrade1);
         createUpgrade(upgrade2, nameOfUpgrade2, costOfUpgrade2, whatToDoUpgrade2, forWhatToDoUpgrade2, nameOfMachineToGiveUpgrade2, nameOfMaterialToGiveUpgrade2, nameOfImgUpgrade1);

@@ -24,9 +24,7 @@ import com.companybest.ondra.engineerclicker.Activitis.MechTab;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
-import com.companybest.ondra.engineerclicker.GameLoop.MainThread;
 import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
-import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
 import com.facebook.common.util.UriUtil;
@@ -56,22 +54,6 @@ public class MainActivity extends RealmBaseActivity {
 
     public static MainReferences mainReferences;
 
-    MainThread thread;
-
-    StockTab stockTab;
-
-    int timeForMachine1 = 0;
-    int timeForMachine2 = 0;
-    int timeForMachine3 = 0;
-    int timeForMachine4 = 0;
-    int timeForMachine5 = 0;
-    int timeForMachine6 = 0;
-    int timeForMachine7 = 0;
-    int timeForMachine8 = 0;
-    int timeForMachine9 = 0;
-    int timeForMachine10 = 0;
-
-    MechTab mechTab;
 
     public static TextView coins;
 
@@ -103,17 +85,13 @@ public class MainActivity extends RealmBaseActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-        startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
 
-        //THREAD FOR GAME LOOP AND STARING IT
-        //thread = new MainThread(this,true);
-        //starThread();
 
-        /*if(isMyServiceRunning(MyService.class)) {
-            //unbindService((ServiceConnection) new Intent(getBaseContext(), MyService.class));
-            stopService(new Intent(getBaseContext(), MyService.class));
-            Log.i("user", "SERVICE END IN CREATE");
-        }*/
+
+        if (!isMyServiceRunning(MyService.class)) {
+            startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
+            Log.i("user", "SERVICE IN CREATE");
+        }
 
         //DEFAULT REALM INSTANCE/CONFIG
         Realm.setDefaultConfiguration(getRealmConfig());
@@ -162,10 +140,7 @@ public class MainActivity extends RealmBaseActivity {
     }
 
 
-    public void starThread() {
-        thread.setRunning(true);
-        thread.start();
-    }
+
 
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
@@ -178,192 +153,6 @@ public class MainActivity extends RealmBaseActivity {
         return false;
     }
 
-
-    public void update() {
-        //Log.i("user", "update");
-        runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                MechTab.mainRealmAdapter.notifyDataSetChanged();
-                StockTab.materialRealmAdapter.notifyDataSetChanged();
-            }
-        });
-                /*
-        timeForMachine1 += 1;
-        timeForMachine2 += 1;
-        timeForMachine3 += 1;
-        timeForMachine4 += 1;
-        timeForMachine5 += 1;
-        timeForMachine6 += 1;
-        timeForMachine7 += 1;
-        timeForMachine8 += 1;
-        timeForMachine9 += 1;
-        timeForMachine10 += 1;
-
-
-
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            machines = realm.where(Machine.class).findAll();
-            final Machine m =  machines.where().equalTo("name", mainReferences.nameOfMachine1).findFirst();
-            final Machine m2 = machines.where().equalTo("name", mainReferences.nameOfMachine2).findFirst();
-            final Machine m3 = machines.where().equalTo("name", mainReferences.nameOfMachine3).findFirst();
-            final Machine m4 = machines.where().equalTo("name", mainReferences.nameOfMachine4).findFirst();
-            final Machine m5 = machines.where().equalTo("name", mainReferences.nameOfMachine5).findFirst();
-            final Machine m6 = machines.where().equalTo("name", mainReferences.nameOfMachine6).findFirst();
-            final Machine m7 = machines.where().equalTo("name", mainReferences.nameOfMachine7).findFirst();
-            final Machine m8 = machines.where().equalTo("name", mainReferences.nameOfMachine8).findFirst();
-            final Machine m9 = machines.where().equalTo("name", mainReferences.nameOfMachine9).findFirst();
-            final Machine m10 = machines.where().equalTo("name", mainReferences.nameOfMachine10).findFirst();
-
-
-            final Machine m =  realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine1).findFirst();
-            final Machine m2 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine2).findFirst();
-            final Machine m3 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine3).findFirst();
-            final Machine m4 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine4).findFirst();
-            final Machine m5 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine5).findFirst();
-            final Machine m6 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine6).findFirst();
-            final Machine m7 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine7).findFirst();
-            final Machine m8 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine8).findFirst();
-            final Machine m9 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine9).findFirst();
-            final Machine m10 = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine10).findFirst();
-
-
-            if (timeForMachine1 > m.getTimerOfMachine()) {
-                timeForMachine1 = 0;
-
-                Log.i("user", "timer for" + String.valueOf(m.getTimerOfMachine()));
-                final Material material = realm.where(Material.class).equalTo("name", m.getNameOfMaterial()).findFirst();
-
-                if (m.getNumberOfWorkersOnMachine() > 0) {
-                    Log.i("user", "in IF STATMENT For " + m.getName());
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            material.setNumberOf(m.getNumberOfWorkersOnMachine(), true);
-                            Log.i("user", "Material Added: " + material.getNumberOf());
-                        }
-                    });
-                }
-                runOnUiThread(new Runnable() {
-                    @Override
-                    public void run() {
-                        MechTab.mainRealmAdapter.notifyDataSetChanged();
-                        StockTab.materialRealmAdapter.notifyDataSetChanged();
-                    }
-                });
-            }
-
-            if (timeForMachine2 > m2.getTimerOfMachine()) {
-
-                timeForMachine2 = 0;
-
-                machineThread(m2);
-
-            }
-
-            if (timeForMachine3 > m3.getTimerOfMachine()) {
-
-                timeForMachine3 = 0;
-
-                machineThread(m3);
-
-            }
-
-            if (timeForMachine4 > m4.getTimerOfMachine()) {
-
-                timeForMachine4 = 0;
-
-                machineThread(m4);
-            }
-
-            if (timeForMachine5 > m5.getTimerOfMachine()) {
-
-                timeForMachine5 = 0;
-
-                machineThread(m5);
-            }
-
-
-            if (timeForMachine6 > m6.getTimerOfMachine()) {
-
-                timeForMachine6 = 0;
-
-                machineThread(m6);
-            }
-
-            if (timeForMachine7 > m7.getTimerOfMachine()) {
-
-                timeForMachine7 = 0;
-
-                machineThread(m7);
-            }
-
-            if (timeForMachine8 > m8.getTimerOfMachine()) {
-
-                timeForMachine8 = 0;
-
-                machineThread(m8);
-            }
-
-            if (timeForMachine9 > m9.getTimerOfMachine()) {
-
-                timeForMachine9 = 0;
-
-                machineThread(m9);
-
-            }
-
-            if (timeForMachine10 > m10.getTimerOfMachine()) {
-
-                timeForMachine10 = 0;
-
-                machineThread(m10);
-            }
-        } finally {
-            realm.close();
-        }*/
-    }
-
-    private void machineThread(Machine mech){
-        Log.i("user", "timer for" + String.valueOf(mech.getTimerOfMachine()));
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            final Material material = realm.where(Material.class).equalTo("name", mech.getNameOfMaterial()).findFirst();
-            final Material material2 = realm.where(Material.class).equalTo("name", mech.getNameOfNeededMaterial()).findFirst();
-
-            if (mech.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                Log.i("user", "in IF STATMENT For " + mech.getName());
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
-
-                for (int i = 0; i < mech.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
-                    }
-                }
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
-                        material.setNumberOf(finalNumberOfMaterialsAdd, true);
-
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                    }
-                });
-            }
-            runOnUiThread(new Runnable() {
-                @Override
-                public void run() {
-                    MechTab.mainRealmAdapter.notifyDataSetChanged();
-                    StockTab.materialRealmAdapter.notifyDataSetChanged();
-                }
-            });
-        } finally {
-            realm.close();
-        }
-    }
 
 
     @Override
@@ -408,14 +197,6 @@ public class MainActivity extends RealmBaseActivity {
     protected void onRestart() {
         super.onRestart();
 
-        /*
-        if(isMyServiceRunning(MyService.class)) {
-            stopService(new Intent(getBaseContext(), MyService.class));
-
-            //Log.i("user", "SERVICE END");
-        } else {
-            starThread();
-        }*/
         Log.i("user", "RESTART");
     }
 
@@ -424,8 +205,8 @@ public class MainActivity extends RealmBaseActivity {
         // call the superclass method first
         super.onStop();
         Log.i("user", "STOP");
-        startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", true));
-        thread.setRunning(false);
+        //startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", true));
+        //thread.setRunning(false);
     }
 
     @Override

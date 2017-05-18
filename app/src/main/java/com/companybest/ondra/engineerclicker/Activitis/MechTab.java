@@ -56,7 +56,6 @@ public class MechTab extends Fragment {
             machines = realm
                     .where(Machine.class)
                     .findAll();
-        Log.i("user", String.valueOf(machines));
         mainRealmAdapter = new MainRealmAdapter(getContext(), machines, true, false);
 
         //RECYCLERVIEW
@@ -127,43 +126,6 @@ public class MechTab extends Fragment {
         numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
         costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
-        /*
-        // sequence example
-        ShowcaseConfig config = new ShowcaseConfig();
-        config.setDelay(500); // half second between each showcase view
-
-        MaterialShowcaseSequence sequence = new MaterialShowcaseSequence(getActivity(), "FIRST");
-
-        sequence.setConfig(config);
-
-        sequence.addSequenceItem(workerImg,
-                "These are yours workers, They will work on your machines", "GOT IT");
-
-        sequence.addSequenceItem(plusWorker,
-                "This is Button for buying workers", "GOT IT");
-
-        sequence.addSequenceItem(numberOfWorkers,
-                "This is number of workers you have", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "These are tabs of your machines", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "On the left you have number of machines you own", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "Then under is number of workers on machines", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "On the right you have cost of machine", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "Then time of machine to make a material when work is working", "GOT IT");
-
-        sequence.addSequenceItem(mainScreenRecyclerView,
-                "Then what kind of material is machine making", "GOT IT");
-
-        sequence.start();*/
 
 
         return rootView;

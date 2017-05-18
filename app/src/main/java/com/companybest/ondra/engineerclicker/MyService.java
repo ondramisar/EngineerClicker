@@ -54,12 +54,13 @@ public class MyService extends Service {
         super.onCreate();
         Intent notificationIntent = new Intent(this, MainActivity.class);
 
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
                 notificationIntent, 0);
 
         Notification notification = new NotificationCompat.Builder(this)
                 .setSmallIcon(R.mipmap.ic_launcher)
-                .setContentTitle("My Awesome App")
+                .setContentTitle("Engineer Clicker")
                 .setContentText("Doing some work...")
                 .setContentIntent(pendingIntent).build();
 
@@ -70,7 +71,13 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
         // Let it continue running until it is stopped.
 
-        isOutOfApp = intent.getBooleanExtra("outOfApp", false);
+        try {
+            isOutOfApp = intent.getBooleanExtra("outOfApp", false);
+            Log.i("user", "IS OUT OF APP " + String.valueOf(intent.getBooleanExtra("outOfApp", false)));
+        } catch (Exception e){
+            e.printStackTrace();
+        }
+
 
         mainThread = new MainThread(this, false);
         mainThread.setRunning(true);
@@ -145,18 +152,7 @@ public class MyService extends Service {
             final Machine m9 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine9).findFirst();
             final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();
 
-/*
-            final Machine m = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine1).findFirst();
-            final Machine m2 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine2).findFirst();
-            final Machine m3 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine3).findFirst();
-            final Machine m4 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine4).findFirst();
-            final Machine m5 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine5).findFirst();
-            final Machine m6 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine6).findFirst();
-            final Machine m7 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine7).findFirst();
-            final Machine m8 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine8).findFirst();
-            final Machine m9 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine9).findFirst();
-            final Machine m10 = realm.where(Machine.class).equalTo("name", mainActivity.mainReferences.nameOfMachine10).findFirst();
-*/
+
 
             if (timeForMachine1 > m.getTimerOfMachine()) {
                 timeForMachine1 = 0;
@@ -170,10 +166,11 @@ public class MyService extends Service {
                         public void execute(Realm realm) {
 
                             material.setNumberOf(m.getNumberOfWorkersOnMachine(), true);
-                            Log.i("user", "Material Added: " + material.getNumberOf());
+                            //Log.i("user", "Material Added: " + material.getNumberOf());
 
                         }
                     });
+
 
                 }
             }
@@ -248,7 +245,7 @@ public class MyService extends Service {
             }
 
             if (isOutOfApp) {
-                Log.i("user", "IN END LOOP");
+                //Log.i("user", "IN END LOOP");
                 final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
                 if (timeOfDestructionThred > user.getTimeOutOfApp()) {
                     Log.i("user", "SERVICE END");
@@ -263,7 +260,7 @@ public class MyService extends Service {
     }
 
     private void machineThread(Machine mach){
-        Log.i("user", "timer for" + String.valueOf(mach.getTimerOfMachine()));
+        //Log.i("user", "timer for" + String.valueOf(mach.getTimerOfMachine()));
         Realm realm = Realm.getDefaultInstance();
         try {
             final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
