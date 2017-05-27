@@ -30,26 +30,32 @@ public class UpgradeTab extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.upgrade_tab, container, false);
 
-        Realm realm = Realm.getDefaultInstance();
-
         //AD VIEW
         AdView mAdView3 = (AdView) rootView.findViewById(R.id.adView3);
         AdRequest adRequest3 = new AdRequest.Builder().build();
         mAdView3.loadAd(adRequest3);
 
-        //FOR ADAPTER LIST OF MACHINES
-        upgrades = realm
-                .where(Upgrade.class)
-                .findAll();
 
-        //Log.i("user", String.valueOf(machines));
-        upgradeRealAdapter = new UpgradeRealAdapter(getContext(), upgrades, true, false);
+        Realm realm = Realm.getDefaultInstance();
+        try {
+
+            //FOR ADAPTER LIST OF MACHINES
+            upgrades = realm
+                    .where(Upgrade.class)
+                    .findAll();
+
+            upgradeRealAdapter = new UpgradeRealAdapter(getContext(), upgrades, true, false);
 
 
-        //RECYCLERVIEW
-        upgradeRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view_for_upgrades);
-        upgradeRecyclerView.setAdapter(upgradeRealAdapter);
+            //RECYCLERVIEW
+            upgradeRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view_for_upgrades);
+            upgradeRecyclerView.setAdapter(upgradeRealAdapter);
+        } finally {
+            realm.close();
+        }
 
         return rootView;
     }
+
+
 }

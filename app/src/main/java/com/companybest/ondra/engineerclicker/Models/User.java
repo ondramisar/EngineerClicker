@@ -8,32 +8,7 @@ public class User extends RealmObject {
     private String name;
 
     private float coins;
-    private float timeOutOfApp;
-    private int cost;
 
-    public int getCost() {
-        return cost;
-    }
-
-    public void setCost(int cost, boolean plus) {
-        if (plus) {
-            this.cost += cost;
-        } else {
-            this.cost -= cost;
-        }
-    }
-
-    public float getTimeOutOfApp() {
-        return timeOutOfApp;
-    }
-
-    public void setTimeOutOfApp(float timeOutOfApp, boolean plus) {
-        if (plus) {
-            this.timeOutOfApp += timeOutOfApp;
-        } else {
-            this.timeOutOfApp -= timeOutOfApp;
-        }
-    }
 
     public String getName() {
         return name;

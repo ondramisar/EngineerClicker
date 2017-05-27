@@ -30,11 +30,10 @@ public class CreditFragment extends DialogFragment {
                 false);
 
         ArrayList<String> values = new ArrayList<>();
-        values.add("Main Graphic made by ");
         values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
-        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
-        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
-        values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
+        values.add("Part of graphic is from Jan Cikrle, FACEBOOK: Jan Ciki Cikrle");
+        values.add("Main Graphic is from flaticon by Pixel perfect: https://icon54.com/\n" +
+                "Freepik: http://www.freepik.com ");
 
         ListView credit = (ListView) rootView.findViewById(R.id.list_view_credit);
 

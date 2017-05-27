@@ -1,10 +1,8 @@
 package com.companybest.ondra.engineerclicker.GameLoop;
 
 import android.graphics.Canvas;
-import android.util.Log;
 import android.view.SurfaceHolder;
 
-import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.MyService;
 
 public class MainThread extends Thread {
@@ -12,17 +10,10 @@ public class MainThread extends Thread {
     private int FPS = 30;
     private double averageFPS;
     private SurfaceHolder surfaceHolder;
-    private MainActivity mainActivity;
     private MyService myService;
     private boolean running;
     public static Canvas canvas;
     private boolean isMain;
-
-    public MainThread(MainActivity MainActivity, boolean isMain) {
-        super();
-        this.mainActivity = MainActivity;
-        this.isMain = isMain;
-    }
 
     public MainThread(MyService myService, boolean isMain){
         super();
@@ -33,7 +24,6 @@ public class MainThread extends Thread {
     @Override
     public void run() {
 
-        Log.i("user", String.valueOf(running));
 
         long startTime;
         long timeMillis;
@@ -51,16 +41,10 @@ public class MainThread extends Thread {
             try {
 
                 if (isMain){
-                    this.mainActivity.update();
                 }else{
                     this.myService.update();
                 }
 
-                //canvas = this.surfaceHolder.lockCanvas();
-                //synchronized (surfaceHolder) {
-                  //  this.gamePanel.update();
-                    //this.gamePanel.draw(canvas);
-                //}
             } catch (Exception e) {
             }
 
@@ -81,7 +65,6 @@ public class MainThread extends Thread {
                 averageFPS = 1000/((totalTime/frameCount)/1000000);
                 frameCount = 0;
                 totalTime = 0;
-               // System.out.println(averageFPS);
             }
         }
     }

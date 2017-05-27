@@ -18,9 +18,9 @@ import agency.tango.materialintroscreen.SlideFragment;
 
 public class CustomSlide extends SlideFragment {
 
-    boolean worker = true;
+    int worker = 0;
 
-    public CustomSlide(boolean worker){
+    public CustomSlide(int worker){
         this.worker = worker;
 
     }
@@ -31,11 +31,13 @@ public class CustomSlide extends SlideFragment {
         final View view = inflater.inflate(R.layout.custom_slide_machine, container, false);
 
         TextView decription = (TextView) view.findViewById(R.id.decription);
-        if (worker) {
+        if (worker == 0) {
 
-            decription.setText("On the top are yours workers, They will work on your machines, Buy Button is for buying workers, Next to the button is number of workers you have, On the other side of button is cost of worker\n\n");
+            decription.setText("Machines are making material only when there is worker on them and you will get as much material as you have workers on machine per time. With a first machine you won't need any material, but for every next machine you will need a material that is from machine before.");
 
-        } else {
+        } else  if (worker == 1){
+            decription.setText("On the top are your workers, They will work on your machines, Buy Button is for buying workers, Next to the button is number of workers you have, On the other side of button is cost of worker");
+        } else  if (worker == 2){
             decription.setText("Under workers are tabs of your machines, On the left you have number of machines you own, Then under is number of workers on machines, On the right you have cost of machine, Then time of machine to make a material when work is working, Then what kind of material is machine making");
         }
 

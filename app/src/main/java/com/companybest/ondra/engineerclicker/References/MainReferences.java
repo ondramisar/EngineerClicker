@@ -17,7 +17,7 @@ public class MainReferences {
     private Machine machine1;
     public String nameOfMachine1 = "Extraction";
     private int numberOfMachine1 = 0;
-    private int costOfMachine1 = 1000;
+    private int costOfMachine1 = 4000;
     private int workersOnMachine1 = 0;
     private int timerOfMachine1 = 300;
     private String nameOfMaterialForMachine1 = "ore";
@@ -26,7 +26,7 @@ public class MainReferences {
     private Machine machine2;
     public String nameOfMachine2 = "Steelworks";
     private int numberOfMachine2 = 0;
-    private int costOfMachine2 = 13000;
+    private int costOfMachine2 = 30000;
     private int workersOnMachine2 = 0;
     private int timerOfMachine2 = 600;
     private String nameOfMaterialForMachine2 = "ingot";
@@ -36,78 +36,80 @@ public class MainReferences {
     private Machine machine3;
     public String nameOfMachine3 = "Casting machine";
     private int numberOfMachine3 = 0;
-    private int costOfMachine3 = 36000;
+    private int costOfMachine3 = 80000;
     private int workersOnMachine3 = 0;
     private int timerOfMachine3 = 900;
-    private String nameOfMaterialForMachine3 = "rolled material and cast";
+    private String nameOfMaterialForMachine3 = "cast";
     String nameOfMaterialNeededMachine3 = "ingot";
     private String nameOfImageMachine3 = "casting";
 
     private Machine machine4;
     public String nameOfMachine4 = "Rolling machine";
     private int numberOfMachine4 = 0;
-    private int costOfMachine4 = 39000;
+    private int costOfMachine4 = 90000;
     private int workersOnMachine4 = 0;
     private int timerOfMachine4 = 700;
-    private String nameOfMaterialForMachine4 = "rolled material and cast";
+    private String nameOfMaterialForMachine4 = "cast";
     String nameOfMaterialNeededMachine4= "ingot";
     private String nameOfImageMachine4 = "rolling";
 
     private Machine machine5;
     public String nameOfMachine5 = "Drill press";
     private int numberOfMachine5 = 0;
-    private int costOfMachine5 = 100000;
+    private int costOfMachine5 = 170000;
     private int workersOnMachine5 = 0;
     private int timerOfMachine5 = 600;
-    private String nameOfMaterialForMachine5 = "drilled workpiece";
-    String nameOfMaterialNeededMachine5 = "rolled material and cast";
+    private String nameOfMaterialForMachine5 = "drilled hole";
+    String nameOfMaterialNeededMachine5 = "cast";
     private String nameOfImageMachine5 = "drill";
 
     private Machine machine6;
     public String nameOfMachine6 = "Countersinks";
     private int numberOfMachine6 = 0;
-    private int costOfMachine6 = 200000;
+    private int costOfMachine6 = 290000;
     private int workersOnMachine6 = 0;
     private int timerOfMachine6 = 700;
-    private String nameOfMaterialForMachine6 = "better drilled workpiece";
-    String nameOfMaterialNeededMachine6 = "drilled workpiece";
+    private String nameOfMaterialForMachine6 = "better hole";
+    String nameOfMaterialNeededMachine6 = "drilled hole";
     private String nameOfImageMachine6 = "countersinks";
 
     private Machine machine7;
     public String nameOfMachine7 = "Reamer";
     private int numberOfMachine7 = 0;
-    private int costOfMachine7 = 340000;
-    public int workersOnMachine7 = 0;
-    public int timerOfMachine7 = 800;
-    public String nameOfMaterialForMachine7 = "best drilled workpiece";
-    String nameOfMaterialNeededMachine7 = "better drilled workpiece";
+    private int costOfMachine7 = 470000;
+    private int workersOnMachine7 = 0;
+    private int timerOfMachine7 = 800;
+    private String nameOfMaterialForMachine7 = "best hole";
+    String nameOfMaterialNeededMachine7 = "better hole";
     private String nameOfImageMachine7 = "reamer";
 
-    public Machine machine8;
+    private Machine machine8;
     public String nameOfMachine8 = "Milling machine";
-    public int numberOfMachine8 = 0;
-    public int costOfMachine8 = 550000;
-    public int workersOnMachine8 = 0;
-    public int timerOfMachine8 = 1200;
-    public String nameOfMaterialForMachine8 = "workpiece";
-    private String nameOfMaterialNeededMachine8 = "best drilled workpiece";
+    private int numberOfMachine8 = 0;
+    private int costOfMachine8 = 770000;
+    private int workersOnMachine8 = 0;
+    private int timerOfMachine8 = 1200;
+    private String nameOfMaterialForMachine8 = "workpiece";
+    private String nameOfMaterialNeededMachine8 = "best hole";
+    private String nameOfImageMachine8 = "milling";
 
-    public Machine machine9;
+    private Machine machine9;
     public String nameOfMachine9 = "Turning";
-    public int numberOfMachine9 = 0;
-    public int costOfMachine9 = 590000;
-    public int workersOnMachine9 = 0;
-    public int timerOfMachine9 = 1100;
-    public String nameOfMaterialForMachine9 = "workpiece";
-    String nameOfMaterialNeededMachine9 = "best drilled workpiece";
+    private int numberOfMachine9 = 0;
+    private int costOfMachine9 = 800000;
+    private int workersOnMachine9 = 0;
+    private int timerOfMachine9 = 1100;
+    private String nameOfMaterialForMachine9 = "workpiece";
+    String nameOfMaterialNeededMachine9 = "best hole";
+    private String nameOfImageMachine9 = "turning";
 
-    public Machine machine10;
+    private Machine machine10;
     public String nameOfMachine10 = "Welder";
-    public int numberOfMachine10 = 0;
-    public int costOfMachine10 = 1500000;
-    public int workersOnMachine10 = 0;
-    public int timerOfMachine10 = 1800;
-    public String nameOfMaterialForMachine10 = "weldment";
+    private int numberOfMachine10 = 0;
+    private int costOfMachine10 = 1500000;
+    private int workersOnMachine10 = 0;
+    private int timerOfMachine10 = 1800;
+    private String nameOfMaterialForMachine10 = "weldment";
     String nameOfMaterialNeededMachine10 = "workpiece";
     private String nameOfImageMachine10 = "welding";
 
@@ -126,22 +128,22 @@ public class MainReferences {
     private int costOfMaterial2 = 40;
 
     private Material material3;
-    private String nameOfMaterial3 = "rolled material and cast";
+    private String nameOfMaterial3 = "cast";
     private int numnerOfMaterial3 = 0;
     private int costOfMaterial3 = 80;
 
     private Material material4;
-    private String nameOfMaterial4 = "drilled workpiece";
+    private String nameOfMaterial4 = "hole";
     private int numnerOfMaterial4 = 0;
     private int costOfMaterial4 = 95;
 
     private Material material5;
-    private String nameOfMaterial5 = "better drilled workpiece";
+    private String nameOfMaterial5 = "better hole";
     private int numnerOfMaterial5 = 0;
     private int costOfMaterial5 = 150;
 
     private Material material6;
-    private String nameOfMaterial6 = "best drilled workpiece";
+    private String nameOfMaterial6 = "best hole";
     private int numnerOfMaterial6 = 0;
     private int costOfMaterial6 = 210;
 
@@ -169,7 +171,7 @@ public class MainReferences {
     // UPGRADE MATERIAL
 
     Upgrade upgrade1;
-    String nameOfUpgrade1 = "Upgrade ore +1";
+    String nameOfUpgrade1 = "Upgrade ore cost +1";
     int costOfUpgrade1 = 120;
     int whatToDoUpgrade1 = 1;
     String forWhatToDoUpgrade1 = "material";
@@ -178,7 +180,7 @@ public class MainReferences {
     String nameOfImgUpgrade1 = "upgrade_money_for_mat";
 
     Upgrade upgrade2;
-    String nameOfUpgrade2 = "Upgrade ingot +2";
+    String nameOfUpgrade2 = "Upgrade ingot cost +2";
     int costOfUpgrade2 = 400;
     int whatToDoUpgrade2 = 2;
     String forWhatToDoUpgrade2 = "material";
@@ -187,39 +189,39 @@ public class MainReferences {
 
 
     Upgrade upgrade3;
-    String nameOfUpgrade3 = "Upgrade rolled material and cast +4";
+    String nameOfUpgrade3 = "Upgrade cast cost +4";
     int costOfUpgrade3 = 250;
     int whatToDoUpgrade3 = 4;
     String forWhatToDoUpgrade3 = "material";
     String nameOfMachineToGiveUpgrade3 = "Casting machine";
-    String nameOfMaterialToGiveUpgrade3 = "rolled material and cast";
+    String nameOfMaterialToGiveUpgrade3 = "cast";
 
     Upgrade upgrade4;
-    String nameOfUpgrade4 = "Upgrade drilled workpiece +4";
+    String nameOfUpgrade4 = "Upgrade hole cost +4";
     int costOfUpgrade4 = 450;
     int whatToDoUpgrade4 = 4;
     String forWhatToDoUpgrade4 = "material";
     String nameOfMachineToGiveUpgrade4 = "Drill press";
-    String nameOfMaterialToGiveUpgrade4 = "drilled workpiece";
+    String nameOfMaterialToGiveUpgrade4 = "hole";
 
     Upgrade upgrade5;
-    String nameOfUpgrade5 = "Upgrade better drilled workpiece +5";
+    String nameOfUpgrade5 = "Upgrade better hole cost +5";
     int costOfUpgrade5 = 650;
     int whatToDoUpgrade5 = 5;
     String forWhatToDoUpgrade5 = "material";
     String nameOfMachineToGiveUpgrade5 = "Countersinks";
-    String nameOfMaterialToGiveUpgrade5 = "better drilled workpiece";
+    String nameOfMaterialToGiveUpgrade5 = "better hole";
 
     Upgrade upgrade6;
-    String nameOfUpgrade6 = "Upgrade best drilled workpiece +5";
+    String nameOfUpgrade6 = "Upgrade best hole cost +5";
     int costOfUpgrade6 = 600;
     int whatToDoUpgrade6 = 5;
     String forWhatToDoUpgrade6 = "material";
     String nameOfMachineToGiveUpgrade6 = "Reamer";
-    String nameOfMaterialToGiveUpgrade6 = "best drilled workpiece";
+    String nameOfMaterialToGiveUpgrade6 = "best hole";
 
     Upgrade upgrade7;
-    String nameOfUpgrade7 = "Upgrade workpiece +7";
+    String nameOfUpgrade7 = "Upgrade workpiece cost +7";
     int costOfUpgrade7 = 300;
     int whatToDoUpgrade7 = 7;
     String forWhatToDoUpgrade7 = "material";
@@ -227,7 +229,7 @@ public class MainReferences {
     String nameOfMaterialToGiveUpgrade7 = "workpiece";
 
     Upgrade upgrade8;
-    String nameOfUpgrade8 = "Upgrade weldment +8";
+    String nameOfUpgrade8 = "Upgrade weldment cost +8";
     int costOfUpgrade8 = 200;
     int whatToDoUpgrade8 = 8;
     String forWhatToDoUpgrade8 = "material";
@@ -323,21 +325,18 @@ public class MainReferences {
 
     // WORKER
 
-    public BasicWorker worker;
-    public String nameOfWorker = "Basic Woker";
-    public int numberOfWorker = 0;
-    public int costOfWorker = 50;
+    private BasicWorker worker;
+    public String nameOfWorker = "Basic Worker";
+    private int numberOfWorker = 0;
+    private int costOfWorker = 1000;
 
     public User user;
-    public float coins = 1500.f;
+    public float coins = 5000.f;
     public String name = "user";
-    public float timerOutOfApp = 10.f;
-    public int costOfTimeOutOfApp = 200;
 
-    Realm realm;
+    private Realm realm;
 
     public MainReferences() {
-        //this.realm = realm;
     }
 
     private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int timerOfMachine, String nameOfMaterialForMachine, String nameOfImgMachine){
@@ -417,8 +416,8 @@ public class MainReferences {
         creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
         creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine6);
         creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine7);
-        creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8,timerOfMachine8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine1);
-        creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9,timerOfMachine9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine1);
+        creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8,timerOfMachine8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine8);
+        creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9,timerOfMachine9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine9);
         creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10,timerOfMachine10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);
     }
 
@@ -434,7 +433,6 @@ public class MainReferences {
     }
 
     public void createAllUpgrades(){
-        //createUpgradeOfTime(upgrade0,nameOfUpgrade0,costOfUpgrade0,whatToDoUpgrade0, forWhatToDoUpgrade0, nameOfImgUpgrade0);
 
         createUpgrade(upgrade1, nameOfUpgrade1, costOfUpgrade1, whatToDoUpgrade1, forWhatToDoUpgrade1, nameOfMachineToGiveUpgrade1, nameOfMaterialToGiveUpgrade1, nameOfImgUpgrade1);
         createUpgrade(upgrade2, nameOfUpgrade2, costOfUpgrade2, whatToDoUpgrade2, forWhatToDoUpgrade2, nameOfMachineToGiveUpgrade2, nameOfMaterialToGiveUpgrade2, nameOfImgUpgrade1);
@@ -473,8 +471,6 @@ public class MainReferences {
         user = new User();
         user.setName(name);
         user.setCoins(coins, true);
-        user.setTimeOutOfApp(timerOutOfApp, true);
-        user.setCost(costOfTimeOutOfApp,true);
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();

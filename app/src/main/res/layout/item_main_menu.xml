@@ -28,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="1000"
+            android:textSize="14sp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:layout_alignBaseline="@+id/plusMachine"
             android:layout_alignBottom="@+id/plusMachine"
@@ -60,6 +61,15 @@
 
 
         <com.facebook.drawee.view.SimpleDraweeView
+            android:id="@+id/smallMachImg"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignTop="@+id/plusMachine"
+            android:layout_alignLeft="@+id/workerOnMachImg"
+            android:layout_alignStart="@+id/workerOnMachImg"
+            android:layout_marginTop="4sp"/>
+
+        <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/workerOnMachImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -75,12 +85,14 @@
             android:id="@+id/numberOfWokersOnMach"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="1000"
+            android:text="10000"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:layout_above="@+id/materialOfMachineImg"
+            android:layout_alignTop="@+id/workerOnMachImg"
             android:layout_toRightOf="@+id/workerOnMachImg"
-            android:layout_toEndOf="@+id/workerOnMachImg"
-            android:layout_marginLeft="8dp"/>
+            android:layout_toEndOf="@+id/workerOnMachImg" />
 
         <Button
             android:id="@+id/plusWorkerOnMach"
@@ -114,11 +126,11 @@
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/timeOfMachineImg"
             android:layout_marginBottom="6dp"
-            android:layout_marginLeft="13dp"
-            android:layout_marginStart="13dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginStart="11dp"
             android:layout_toEndOf="@+id/timeOfMachineImg"
             android:layout_toRightOf="@+id/timeOfMachineImg"
-            android:text="              "
+            android:text="700"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="16sp" />
 
@@ -129,9 +141,10 @@
             android:layout_alignLeft="@+id/timer"
             android:layout_alignStart="@+id/timer"
             android:layout_alignTop="@+id/materialOfMachineImg"
-            android:text="                  "
+            android:text="better hole"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:textSize="16sp" />
+            android:textSize="16sp"
+            android:layout_marginTop="6dp"/>
 
 
 
@@ -146,9 +159,9 @@
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/costOfMachineImg"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="32dp"
             android:layout_above="@+id/plusWorkerOnMach"
-            android:layout_marginLeft="28dp"
+            android:layout_marginLeft="20dp"
             android:layout_toEndOf="@+id/imageView"
             android:layout_toRightOf="@+id/imageView"
             />

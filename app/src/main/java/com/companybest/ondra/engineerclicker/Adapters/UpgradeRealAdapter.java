@@ -3,7 +3,6 @@ package com.companybest.ondra.engineerclicker.Adapters;
 import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -34,7 +33,6 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         public TextView nameOfUpgrade;
         public TextView costOfUpgrade;
         public Button buyUpgrade;
-        //public ImageView imageView;
         public SimpleDraweeView upgradeImg;
         public SimpleDraweeView upgradeCostImg;
 
@@ -43,7 +41,6 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
             this.nameOfUpgrade = (TextView) container.findViewById(R.id.nameOgUpgrade);
             this.costOfUpgrade = (TextView) container.findViewById(R.id.costOfUpgrade);
             this.buyUpgrade = (Button) container.findViewById(R.id.buyUpgrade);
-           // this.imageView = (ImageView) container.findViewById(R.id.imageViewOfUpgrade);
             this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.imageViewOfUpgrade);
             this.upgradeCostImg = (SimpleDraweeView) container.findViewById(R.id.costOfUpgrdImg);
         }
@@ -83,79 +80,67 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         viewHolder.upgradeCostImg.setImageURI(uri1);
 
         final Realm realm = Realm.getDefaultInstance();
-        viewHolder.buyUpgrade.setOnClickListener(new View.OnClickListener() {
-            @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-            @Override
-            public void onClick(View v) {
-                final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
+        try {
+            viewHolder.buyUpgrade.setOnClickListener(new View.OnClickListener() {
+                @RequiresApi(api = Build.VERSION_CODES.KITKAT)
+                @Override
+                public void onClick(View v) {
+                    final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
-                if (user.getCoins() >= upgrade.getCost()) {
+                    if (user.getCoins() >= upgrade.getCost()) {
 
-                    if (Objects.equals(upgrade.getForWhatToDo(), "time")){
+                        if (Objects.equals(upgrade.getForWhatToDo(), "material")) {
 
-                            realm.executeTransaction(new Realm.Transaction() {
-                                @Override
-                                public void execute(Realm realm) {
-
-                                    user.setTimeOutOfApp(upgrade.getWhatDo(), true);
-
-                                    user.setCoins(upgrade.getCost(), false);
-                                    Log.i("user", String.valueOf(user.getCost()));
-
-                                    upgrade.setCost(upgrade.getCost() , true);
-
-                                }
-                            });
-                            viewHolder.nameOfUpgrade.setText("Upgrade Time: " + String.valueOf(user.getTimeOutOfApp() * 100));
-                        }
-                    if (Objects.equals(upgrade.getForWhatToDo(), "material")){
-
-                        final Material material = realm.where(Material.class).equalTo("name", upgrade.getNameOfMaterialGive()).findFirst();
-                        realm.executeTransaction(new Realm.Transaction() {
-                            @Override
-                            public void execute(Realm realm) {
-
-                                user.setCoins(upgrade.getCost(),false);
-
-                                material.setCost(upgrade.getWhatDo(),true);
-
-                                upgrade.setCost(upgrade.getCost()/3 , true);
-                                Log.i("user","Material Cost: " +  String.valueOf(material.getCost()));
-
-                            }
-                        });
-                    }
-
-                    if (Objects.equals(upgrade.getForWhatToDo(), "machine")){
-
-                        final Machine machine = realm.where(Machine.class).equalTo("name", upgrade.getNameOfMachinetoGive()).findFirst();
-                        if (machine.getTimerOfMachine() >= 20) {
+                            final Material material = realm.where(Material.class).equalTo("name", upgrade.getNameOfMaterialGive()).findFirst();
                             realm.executeTransaction(new Realm.Transaction() {
                                 @Override
                                 public void execute(Realm realm) {
 
                                     user.setCoins(upgrade.getCost(), false);
 
-                                    machine.setTimerOfMachine(machine.getTimerOfMachine() / 20, false);
+                                    material.setCost(upgrade.getWhatDo(), true);
 
                                     upgrade.setCost(upgrade.getCost() / 3, true);
+
                                 }
                             });
-                        } else{
-                            viewHolder.buyUpgrade.setEnabled(false);
                         }
+
+                        if (Objects.equals(upgrade.getForWhatToDo(), "machine")) {
+
+                            final Machine machine = realm.where(Machine.class).equalTo("name", upgrade.getNameOfMachinetoGive()).findFirst();
+                            if (machine.getTimerOfMachine() >= 20) {
+                                realm.executeTransaction(new Realm.Transaction() {
+                                    @Override
+                                    public void execute(Realm realm) {
+
+                                        user.setCoins(upgrade.getCost(), false);
+
+                                        machine.setTimerOfMachine(machine.getTimerOfMachine() / 20, false);
+
+                                        upgrade.setCost(upgrade.getCost() / 3, true);
+                                    }
+                                });
+                            } else {
+                                viewHolder.buyUpgrade.setEnabled(false);
+                            }
+
+                        }
+
+                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                       // MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+
+                        viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
 
                     }
 
-                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
-
-                    viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
 
                 }
-
-
-            }
-        });
+            });
+        }finally {
+            realm.close();
+        }
 
     }
 }

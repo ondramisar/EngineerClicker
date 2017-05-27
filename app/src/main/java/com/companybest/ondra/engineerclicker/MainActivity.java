@@ -12,7 +12,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -24,7 +23,6 @@ import com.companybest.ondra.engineerclicker.Activitis.MechTab;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
 import com.facebook.common.util.UriUtil;
@@ -33,7 +31,6 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.MobileAds;
 
 import io.realm.Realm;
-import io.realm.RealmResults;
 
 public class MainActivity extends RealmBaseActivity {
 
@@ -55,14 +52,13 @@ public class MainActivity extends RealmBaseActivity {
     public static MainReferences mainReferences;
 
 
-    public static TextView coins;
-
-    RealmResults<Machine> machines;
+    TextView coins;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this.getApplicationContext());
+
 
         setTitle("");
 
@@ -72,6 +68,7 @@ public class MainActivity extends RealmBaseActivity {
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
@@ -85,12 +82,8 @@ public class MainActivity extends RealmBaseActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-
-
-
         if (!isMyServiceRunning(MyService.class)) {
             startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
-            Log.i("user", "SERVICE IN CREATE");
         }
 
         //DEFAULT REALM INSTANCE/CONFIG
@@ -113,7 +106,6 @@ public class MainActivity extends RealmBaseActivity {
             mainReferences.createUser();
             sharedPreferences.edit().putInt("music", 100).apply();
             sharedPreferences.edit().putInt("sound", 100).apply();
-            Log.i("user", "first Time Created");
             Intent i = new Intent(this, IntroActivity.class);
             startActivity(i);
         }
@@ -127,7 +119,6 @@ public class MainActivity extends RealmBaseActivity {
                 .build();
         coinsImg.setImageURI(uri1);
 
-
         //USE OF REALM INSTANCE AND CLOSING IT
         Realm realm = Realm.getDefaultInstance();
         try {
@@ -138,9 +129,6 @@ public class MainActivity extends RealmBaseActivity {
             realm.close();
         }
     }
-
-
-
 
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
@@ -173,20 +161,20 @@ public class MainActivity extends RealmBaseActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             FragmentManager fm = getSupportFragmentManager();
-
             SettingFragment settingFragment = new SettingFragment(getApplicationContext());
             settingFragment.show(fm, "user");
+
             return true;
         } else if (id == R.id.action_credit) {
             FragmentManager fm = getSupportFragmentManager();
-
             CreditFragment cretidFragment = new CreditFragment(getApplicationContext());
             cretidFragment.show(fm, "user");
+
             return true;
         } else if (id == R.id.action_help) {
-
             Intent i1 = new Intent(this, IntroActivity.class);
             startActivity(i1);
+
             return true;
         }
 
@@ -197,16 +185,12 @@ public class MainActivity extends RealmBaseActivity {
     protected void onRestart() {
         super.onRestart();
 
-        Log.i("user", "RESTART");
     }
 
     @Override
     protected void onStop() {
         // call the superclass method first
         super.onStop();
-        Log.i("user", "STOP");
-        //startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", true));
-        //thread.setRunning(false);
     }
 
     @Override
@@ -247,7 +231,7 @@ public class MainActivity extends RealmBaseActivity {
 
         @Override
         public int getCount() {
-            // Show 3 total pages.
+            // Show 4 total pages.
             return 4;
         }
 
@@ -255,7 +239,7 @@ public class MainActivity extends RealmBaseActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "MECH";
+                    return "MACH";
                 case 1:
                     return "STOCK";
                 case 2:

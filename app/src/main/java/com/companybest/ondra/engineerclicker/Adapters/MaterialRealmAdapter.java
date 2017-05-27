@@ -30,7 +30,6 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         public TextView numberOfMaterials;
         public Button sellMaterial;
         public Button sellMaterialAll;
-        //public ImageView upgradeImg;
         public SimpleDraweeView upgradeImg;
         public SimpleDraweeView costOfMaterialImg;
 
@@ -62,7 +61,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
     public void onBindRealmViewHolder(final ViewHolder viewHolder, int position) {
         final Material material = realmResults.get(position);
 
-        viewHolder.nameOfMaterial.setText("Name: " + String.valueOf(material.getName()));
+        viewHolder.nameOfMaterial.setText("" + String.valueOf(material.getName()));
         viewHolder.costOfMaterial.setText("" + String.valueOf(material.getCost()));
         viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
 
@@ -81,50 +80,60 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         viewHolder.costOfMaterialImg.setImageURI(uri1);
 
         final Realm realm = Realm.getDefaultInstance();
-        viewHolder.sellMaterial.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        try {
+            viewHolder.sellMaterial.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
 
-                if (material.getNumberOf() > 0) {
-                    final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
+                    if (material.getNumberOf() > 0) {
+                        final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
 
-                            material.setNumberOf(1, false);
+                                material.setNumberOf(1, false);
 
-                            user.setCoins(material.getCost(), true);
+                                user.setCoins(material.getCost(), true);
 
-                        }
-                    });
-                    viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
-                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                            }
+                        });
+                        viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
+
+                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                        //MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                    }
                 }
-            }
-        });
+            });
 
-        viewHolder.sellMaterialAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                if (material.getNumberOf() > 0) {
-                    final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
+            viewHolder.sellMaterialAll.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    if (material.getNumberOf() > 0) {
+                        final User user = realm.where(User.class).equalTo("name", MainActivity.mainReferences.name).findFirst();
 
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
 
-                            user.setCoins(material.getCost() * material.getNumberOf(), true);
+                                user.setCoins(material.getCost() * material.getNumberOf(), true);
 
-                            material.setNumberOf(material.getNumberOf(), false);
+                                material.setNumberOf(material.getNumberOf(), false);
 
-                        }
-                    });
-                    viewHolder.numberOfMaterials.setText("Number: " + String.valueOf(material.getNumberOf()));
-                    MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                            }
+                        });
+                        viewHolder.numberOfMaterials.setText("Number: " + String.valueOf(material.getNumberOf()));
+
+                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                        //MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
+                    }
+
                 }
-
-            }
-        });
+            });
+        }finally {
+            realm.close();
+        }
     }
 }

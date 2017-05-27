@@ -36,20 +36,22 @@
             android:layout_height="wrap_content"
             android:text="10000000"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:layout_alignBaseline="@+id/buyUpgrade"
-            android:layout_alignBottom="@+id/buyUpgrade"
+            android:layout_alignBottom="@+id/costOfUpgrdImg"
             android:layout_toRightOf="@+id/costOfUpgrdImg"
             android:layout_toEndOf="@+id/costOfUpgrdImg"
-            android:layout_marginLeft="5dp"/>
+            android:layout_marginBottom="8dp"
+            android:layout_marginLeft="6dp"/>
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/costOfUpgrdImg"
             android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_alignParentBottom="true"
+            android:layout_height="32dp"
+            android:layout_marginLeft="21dp"
+            android:layout_marginStart="21dp"
+            android:layout_marginTop="40dp"
+            android:layout_alignParentTop="true"
             android:layout_toRightOf="@+id/buyUpgrade"
-            android:layout_marginLeft="20dp"
-            android:layout_marginBottom="17dp"/>
+            android:layout_toEndOf="@+id/buyUpgrade" />
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/imageViewOfUpgrade"

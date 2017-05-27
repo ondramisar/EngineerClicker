@@ -29,7 +29,7 @@
             android:layout_marginLeft="4dp"
             android:layout_toEndOf="@+id/upgradeImg"
             android:layout_toRightOf="@+id/upgradeImg"
-            android:text="         "
+            android:text="100000"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <Button
@@ -40,7 +40,7 @@
             android:layout_alignBottom="@+id/sellMaterialAll"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_marginLeft="105dp"
+            android:layout_marginLeft="102dp"
             android:background="@color/Secondary_Green68"
             android:onClick="sellMaterial"
             android:text="Sell" />
@@ -63,7 +63,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignBottom="@+id/costOfMaterialImg"
-            android:layout_marginBottom="5dp"
+            android:layout_marginBottom="6dp"
             android:layout_toRightOf="@+id/costOfMaterialImg"
             android:text="100000"
             android:layout_marginLeft="6dp"
@@ -83,9 +83,9 @@
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/costOfMaterialImg"
             android:layout_width="30dp"
-            android:layout_height="30dp"
+            android:layout_height="32dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="12dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="45dp"
             android:layout_toRightOf="@+id/sellMaterialAll" />
 
