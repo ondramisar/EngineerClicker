@@ -37,19 +37,13 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
 
         public long nameIndex;
         public long coinsIndex;
-        public long timeOutOfAppIndex;
-        public long costIndex;
 
         UserColumnInfo(String path, Table table) {
-            final Map<String, Long> indicesMap = new HashMap<String, Long>(4);
+            final Map<String, Long> indicesMap = new HashMap<String, Long>(2);
             this.nameIndex = getValidColumnIndex(path, table, "User", "name");
             indicesMap.put("name", this.nameIndex);
             this.coinsIndex = getValidColumnIndex(path, table, "User", "coins");
             indicesMap.put("coins", this.coinsIndex);
-            this.timeOutOfAppIndex = getValidColumnIndex(path, table, "User", "timeOutOfApp");
-            indicesMap.put("timeOutOfApp", this.timeOutOfAppIndex);
-            this.costIndex = getValidColumnIndex(path, table, "User", "cost");
-            indicesMap.put("cost", this.costIndex);
 
             setIndicesMap(indicesMap);
         }
@@ -59,8 +53,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             final UserColumnInfo otherInfo = (UserColumnInfo) other;
             this.nameIndex = otherInfo.nameIndex;
             this.coinsIndex = otherInfo.coinsIndex;
-            this.timeOutOfAppIndex = otherInfo.timeOutOfAppIndex;
-            this.costIndex = otherInfo.costIndex;
 
             setIndicesMap(otherInfo.getIndicesMap());
         }
@@ -78,8 +70,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         List<String> fieldNames = new ArrayList<String>();
         fieldNames.add("name");
         fieldNames.add("coins");
-        fieldNames.add("timeOutOfApp");
-        fieldNames.add("cost");
         FIELD_NAMES = Collections.unmodifiableList(fieldNames);
     }
 
@@ -156,73 +146,11 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         proxyState.getRow$realm().setFloat(columnInfo.coinsIndex, value);
     }
 
-    @SuppressWarnings("cast")
-    public float realmGet$timeOutOfApp() {
-        if (proxyState == null) {
-            // Called from model's constructor. Inject context.
-            injectObjectContext();
-        }
-
-        proxyState.getRealm$realm().checkIfValid();
-        return (float) proxyState.getRow$realm().getFloat(columnInfo.timeOutOfAppIndex);
-    }
-
-    public void realmSet$timeOutOfApp(float value) {
-        if (proxyState == null) {
-            // Called from model's constructor. Inject context.
-            injectObjectContext();
-        }
-
-        if (proxyState.isUnderConstruction()) {
-            if (!proxyState.getAcceptDefaultValue$realm()) {
-                return;
-            }
-            final Row row = proxyState.getRow$realm();
-            row.getTable().setFloat(columnInfo.timeOutOfAppIndex, row.getIndex(), value, true);
-            return;
-        }
-
-        proxyState.getRealm$realm().checkIfValid();
-        proxyState.getRow$realm().setFloat(columnInfo.timeOutOfAppIndex, value);
-    }
-
-    @SuppressWarnings("cast")
-    public int realmGet$cost() {
-        if (proxyState == null) {
-            // Called from model's constructor. Inject context.
-            injectObjectContext();
-        }
-
-        proxyState.getRealm$realm().checkIfValid();
-        return (int) proxyState.getRow$realm().getLong(columnInfo.costIndex);
-    }
-
-    public void realmSet$cost(int value) {
-        if (proxyState == null) {
-            // Called from model's constructor. Inject context.
-            injectObjectContext();
-        }
-
-        if (proxyState.isUnderConstruction()) {
-            if (!proxyState.getAcceptDefaultValue$realm()) {
-                return;
-            }
-            final Row row = proxyState.getRow$realm();
-            row.getTable().setLong(columnInfo.costIndex, row.getIndex(), value, true);
-            return;
-        }
-
-        proxyState.getRealm$realm().checkIfValid();
-        proxyState.getRow$realm().setLong(columnInfo.costIndex, value);
-    }
-
     public static RealmObjectSchema createRealmObjectSchema(RealmSchema realmSchema) {
         if (!realmSchema.contains("User")) {
             RealmObjectSchema realmObjectSchema = realmSchema.create("User");
             realmObjectSchema.add(new Property("name", RealmFieldType.STRING, Property.PRIMARY_KEY, Property.INDEXED, !Property.REQUIRED));
             realmObjectSchema.add(new Property("coins", RealmFieldType.FLOAT, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
-            realmObjectSchema.add(new Property("timeOutOfApp", RealmFieldType.FLOAT, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
-            realmObjectSchema.add(new Property("cost", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             return realmObjectSchema;
         }
         return realmSchema.get("User");
@@ -233,8 +161,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             Table table = sharedRealm.getTable("class_User");
             table.addColumn(RealmFieldType.STRING, "name", Table.NULLABLE);
             table.addColumn(RealmFieldType.FLOAT, "coins", Table.NOT_NULLABLE);
-            table.addColumn(RealmFieldType.FLOAT, "timeOutOfApp", Table.NOT_NULLABLE);
-            table.addColumn(RealmFieldType.INTEGER, "cost", Table.NOT_NULLABLE);
             table.addSearchIndex(table.getColumnIndex("name"));
             table.setPrimaryKey("name");
             return table;
@@ -246,14 +172,14 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         if (sharedRealm.hasTable("class_User")) {
             Table table = sharedRealm.getTable("class_User");
             final long columnCount = table.getColumnCount();
-            if (columnCount != 4) {
-                if (columnCount < 4) {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 4 but was " + columnCount);
+            if (columnCount != 2) {
+                if (columnCount < 2) {
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 2 but was " + columnCount);
                 }
                 if (allowExtraColumns) {
-                    RealmLog.debug("Field count is more than expected - expected 4 but was %1$d", columnCount);
+                    RealmLog.debug("Field count is more than expected - expected 2 but was %1$d", columnCount);
                 } else {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 4 but was " + columnCount);
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 2 but was " + columnCount);
                 }
             }
             Map<String, RealmFieldType> columnTypes = new HashMap<String, RealmFieldType>();
@@ -286,24 +212,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             }
             if (table.isColumnNullable(columnInfo.coinsIndex)) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'coins' does support null values in the existing Realm file. Use corresponding boxed type for field 'coins' or migrate using RealmObjectSchema.setNullable().");
-            }
-            if (!columnTypes.containsKey("timeOutOfApp")) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'timeOutOfApp' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
-            }
-            if (columnTypes.get("timeOutOfApp") != RealmFieldType.FLOAT) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'float' for field 'timeOutOfApp' in existing Realm file.");
-            }
-            if (table.isColumnNullable(columnInfo.timeOutOfAppIndex)) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'timeOutOfApp' does support null values in the existing Realm file. Use corresponding boxed type for field 'timeOutOfApp' or migrate using RealmObjectSchema.setNullable().");
-            }
-            if (!columnTypes.containsKey("cost")) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'cost' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
-            }
-            if (columnTypes.get("cost") != RealmFieldType.INTEGER) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'cost' in existing Realm file.");
-            }
-            if (table.isColumnNullable(columnInfo.costIndex)) {
-                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'cost' does support null values in the existing Realm file. Use corresponding boxed type for field 'cost' or migrate using RealmObjectSchema.setNullable().");
             }
             return columnInfo;
         } else {
@@ -361,20 +269,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                 ((UserRealmProxyInterface) obj).realmSet$coins((float) json.getDouble("coins"));
             }
         }
-        if (json.has("timeOutOfApp")) {
-            if (json.isNull("timeOutOfApp")) {
-                throw new IllegalArgumentException("Trying to set non-nullable field 'timeOutOfApp' to null.");
-            } else {
-                ((UserRealmProxyInterface) obj).realmSet$timeOutOfApp((float) json.getDouble("timeOutOfApp"));
-            }
-        }
-        if (json.has("cost")) {
-            if (json.isNull("cost")) {
-                throw new IllegalArgumentException("Trying to set non-nullable field 'cost' to null.");
-            } else {
-                ((UserRealmProxyInterface) obj).realmSet$cost((int) json.getInt("cost"));
-            }
-        }
         return obj;
     }
 
@@ -401,20 +295,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                     throw new IllegalArgumentException("Trying to set non-nullable field 'coins' to null.");
                 } else {
                     ((UserRealmProxyInterface) obj).realmSet$coins((float) reader.nextDouble());
-                }
-            } else if (name.equals("timeOutOfApp")) {
-                if (reader.peek() == JsonToken.NULL) {
-                    reader.skipValue();
-                    throw new IllegalArgumentException("Trying to set non-nullable field 'timeOutOfApp' to null.");
-                } else {
-                    ((UserRealmProxyInterface) obj).realmSet$timeOutOfApp((float) reader.nextDouble());
-                }
-            } else if (name.equals("cost")) {
-                if (reader.peek() == JsonToken.NULL) {
-                    reader.skipValue();
-                    throw new IllegalArgumentException("Trying to set non-nullable field 'cost' to null.");
-                } else {
-                    ((UserRealmProxyInterface) obj).realmSet$cost((int) reader.nextInt());
                 }
             } else {
                 reader.skipValue();
@@ -482,8 +362,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             com.companybest.ondra.engineerclicker.Models.User realmObject = realm.createObjectInternal(com.companybest.ondra.engineerclicker.Models.User.class, ((UserRealmProxyInterface) newObject).realmGet$name(), false, Collections.<String>emptyList());
             cache.put(newObject, (RealmObjectProxy) realmObject);
             ((UserRealmProxyInterface) realmObject).realmSet$coins(((UserRealmProxyInterface) newObject).realmGet$coins());
-            ((UserRealmProxyInterface) realmObject).realmSet$timeOutOfApp(((UserRealmProxyInterface) newObject).realmGet$timeOutOfApp());
-            ((UserRealmProxyInterface) realmObject).realmSet$cost(((UserRealmProxyInterface) newObject).realmGet$cost());
             return realmObject;
         }
     }
@@ -510,8 +388,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         }
         cache.put(object, rowIndex);
         Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
-        Table.nativeSetFloat(tableNativePtr, columnInfo.timeOutOfAppIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$timeOutOfApp(), false);
-        Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$cost(), false);
         return rowIndex;
     }
 
@@ -542,8 +418,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                 }
                 cache.put(object, rowIndex);
                 Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
-                Table.nativeSetFloat(tableNativePtr, columnInfo.timeOutOfAppIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$timeOutOfApp(), false);
-                Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$cost(), false);
             }
         }
     }
@@ -568,8 +442,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         }
         cache.put(object, rowIndex);
         Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
-        Table.nativeSetFloat(tableNativePtr, columnInfo.timeOutOfAppIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$timeOutOfApp(), false);
-        Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$cost(), false);
         return rowIndex;
     }
 
@@ -598,8 +470,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                 }
                 cache.put(object, rowIndex);
                 Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
-                Table.nativeSetFloat(tableNativePtr, columnInfo.timeOutOfAppIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$timeOutOfApp(), false);
-                Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$cost(), false);
             }
         }
     }
@@ -624,15 +494,11 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         }
         ((UserRealmProxyInterface) unmanagedObject).realmSet$name(((UserRealmProxyInterface) realmObject).realmGet$name());
         ((UserRealmProxyInterface) unmanagedObject).realmSet$coins(((UserRealmProxyInterface) realmObject).realmGet$coins());
-        ((UserRealmProxyInterface) unmanagedObject).realmSet$timeOutOfApp(((UserRealmProxyInterface) realmObject).realmGet$timeOutOfApp());
-        ((UserRealmProxyInterface) unmanagedObject).realmSet$cost(((UserRealmProxyInterface) realmObject).realmGet$cost());
         return unmanagedObject;
     }
 
     static com.companybest.ondra.engineerclicker.Models.User update(Realm realm, com.companybest.ondra.engineerclicker.Models.User realmObject, com.companybest.ondra.engineerclicker.Models.User newObject, Map<RealmModel, RealmObjectProxy> cache) {
         ((UserRealmProxyInterface) realmObject).realmSet$coins(((UserRealmProxyInterface) newObject).realmGet$coins());
-        ((UserRealmProxyInterface) realmObject).realmSet$timeOutOfApp(((UserRealmProxyInterface) newObject).realmGet$timeOutOfApp());
-        ((UserRealmProxyInterface) realmObject).realmSet$cost(((UserRealmProxyInterface) newObject).realmGet$cost());
         return realmObject;
     }
 
@@ -648,14 +514,6 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         stringBuilder.append(",");
         stringBuilder.append("{coins:");
         stringBuilder.append(realmGet$coins());
-        stringBuilder.append("}");
-        stringBuilder.append(",");
-        stringBuilder.append("{timeOutOfApp:");
-        stringBuilder.append(realmGet$timeOutOfApp());
-        stringBuilder.append("}");
-        stringBuilder.append(",");
-        stringBuilder.append("{cost:");
-        stringBuilder.append(realmGet$cost());
         stringBuilder.append("}");
         stringBuilder.append("]");
         return stringBuilder.toString();

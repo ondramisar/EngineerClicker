@@ -4,14 +4,12 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.v4.app.DialogFragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.SeekBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.companybest.ondra.engineerclicker.R;
 
@@ -91,9 +89,6 @@ Context context;
 
                 sharedPreferences.edit().putInt("music", finalMusicVol).apply();
                 sharedPreferences.edit().putInt("sound", finalSoundVol).apply();
-                Toast.makeText(getContext(), "CONFIRM SETTINGS", Toast.LENGTH_LONG).show();
-
-                Log.i("user", "HEY, WHATS UP");
 
                 SettingFragment.this.dismiss();
 

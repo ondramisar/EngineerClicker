@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.companybest.ondra.engineerclicker.References.BettingSlide;
 import com.companybest.ondra.engineerclicker.References.CustomSlide;
+import com.companybest.ondra.engineerclicker.References.LastSlide;
 import com.companybest.ondra.engineerclicker.References.StockSlide;
 import com.companybest.ondra.engineerclicker.References.UpgradeSlide;
 
@@ -17,9 +18,11 @@ public class IntroActivity extends MaterialIntroActivity {
         super.onCreate(savedInstanceState);
         enableLastSlideAlphaExitTransition(true);
 
-        addSlide(new CustomSlide(true));
+        addSlide(new CustomSlide(0));
 
-        addSlide(new CustomSlide(false));
+        addSlide(new CustomSlide(1));
+
+        addSlide(new CustomSlide(2));
 
         addSlide(new StockSlide(true));
 
@@ -30,6 +33,8 @@ public class IntroActivity extends MaterialIntroActivity {
         addSlide(new BettingSlide(1));
 
         addSlide(new BettingSlide(2));
+
+        addSlide(new LastSlide());
 
     }
 }
