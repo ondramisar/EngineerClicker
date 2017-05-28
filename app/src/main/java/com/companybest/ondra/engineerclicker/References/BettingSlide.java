@@ -22,6 +22,7 @@ public class BettingSlide extends SlideFragment {
 
     }
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -41,8 +42,6 @@ public class BettingSlide extends SlideFragment {
             decription.setText("Under you have second mini game, It is shufl you can put number of coins you want to play with then you press confirm button and when you want to start a game you press play shufl button, There will be shown a message how much you have won, You will always win back but you can win maximally 25% more then you have set or win 25% less then you have set");
 
         }
-
-
 
 
         return view;
