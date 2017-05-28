@@ -27,35 +27,16 @@
         android:progressTint="@color/BlueSapphire"
         android:thumbTint="@color/BlueSapphire" />
 
-    <TextView
-        android:id="@+id/soundSet"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/seekBarFormusicSet"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="31dp"
-        android:text="SOUND: "
-        android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
-    <SeekBar
-        android:id="@+id/seekBarForSoundSet"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="27dp"
-        android:layout_below="@+id/soundSet"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:progressTint="@color/BlueSapphire"
-        android:thumbTint="@color/BlueSapphire" />
 
     <Button
         android:id="@+id/confirmSetting"
         android:layout_width="100dp"
         android:layout_height="45dp"
-        android:layout_below="@+id/seekBarForSoundSet"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:background="@color/Secondary_Green68"
         android:text="CONFIRM"
-        android:layout_marginBottom="10dp"/>
+        android:layout_below="@+id/seekBarFormusicSet"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="8dp"/>
 </RelativeLayout>

@@ -124,18 +124,21 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                                     public void execute(Realm realm) {
 
                                         user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), true);
-                                        //mainActivity.coins.setText(String.valueOf(user.getCoins()));
                                     }
                                 });
+                                TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                             } else {
                                 realm.executeTransaction(new Realm.Transaction() {
                                     @Override
                                     public void execute(Realm realm) {
 
                                         user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), false);
-                                        //mainActivity.coins.setText(String.valueOf(user.getCoins()));
                                     }
                                 });
+
+                                TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                                 Toast.makeText(getContext(), "YOU HAVE Lost " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
                             }
 
@@ -216,9 +219,12 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
 
                                 user.setCoins(Integer.valueOf(String.valueOf(editTextForShufl.getText())), false);
                                 user.setCoins(i1, true);
-                                //mainActivity.coins.setText(String.valueOf(user.getCoins()));
+
                             }
                         });
+
+                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                         new CountDownTimer(10000, 1000) {
 
                             public void onTick(long millisUntilFinished) {
@@ -293,7 +299,8 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                 }
             });
 
-            //mainActivity.coins.setText(String.valueOf("Coins: " + user.getCoins()));
+            TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+            txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
             Toast.makeText(getContext(), "GOT: " + String.valueOf(i1) + " Coins", Toast.LENGTH_LONG).show();
 
         } finally {

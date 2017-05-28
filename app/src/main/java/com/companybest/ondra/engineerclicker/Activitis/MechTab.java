@@ -3,7 +3,6 @@ package com.companybest.ondra.engineerclicker.Activitis;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -29,7 +28,7 @@ import io.realm.RealmResults;
 public class MechTab extends Fragment {
     RealmResults<Machine> machines;
     MainRealmAdapter mainRealmAdapter;
-    TextView numberOfWorkers;
+    static public TextView numberOfWorkers;
     Button plusWorker;
     TextView costOfWorkers;
     MainActivity mainActivity;
@@ -113,8 +112,6 @@ public class MechTab extends Fragment {
 
                         TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                        //mainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                        Log.i("user", "" + user.getCoins());
 
                     }
                 }
@@ -132,9 +129,8 @@ public class MechTab extends Fragment {
         return rootView;
     }
 
-    public  void changeNumberOfWorkersText(BasicWorker worker){
-        numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
     }
-
 }

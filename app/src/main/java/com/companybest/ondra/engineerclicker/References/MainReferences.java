@@ -40,7 +40,7 @@ public class MainReferences {
     private int workersOnMachine3 = 0;
     private int timerOfMachine3 = 900;
     private String nameOfMaterialForMachine3 = "cast";
-    String nameOfMaterialNeededMachine3 = "ingot";
+    private String nameOfMaterialNeededMachine3 = "ingot";
     private String nameOfImageMachine3 = "casting";
 
     private Machine machine4;
@@ -50,7 +50,7 @@ public class MainReferences {
     private int workersOnMachine4 = 0;
     private int timerOfMachine4 = 700;
     private String nameOfMaterialForMachine4 = "cast";
-    String nameOfMaterialNeededMachine4= "ingot";
+    private String nameOfMaterialNeededMachine4= "ingot";
     private String nameOfImageMachine4 = "rolling";
 
     private Machine machine5;
@@ -60,7 +60,7 @@ public class MainReferences {
     private int workersOnMachine5 = 0;
     private int timerOfMachine5 = 600;
     private String nameOfMaterialForMachine5 = "drilled hole";
-    String nameOfMaterialNeededMachine5 = "cast";
+    private String nameOfMaterialNeededMachine5 = "cast";
     private String nameOfImageMachine5 = "drill";
 
     private Machine machine6;
@@ -70,7 +70,7 @@ public class MainReferences {
     private int workersOnMachine6 = 0;
     private int timerOfMachine6 = 700;
     private String nameOfMaterialForMachine6 = "better hole";
-    String nameOfMaterialNeededMachine6 = "drilled hole";
+    private String nameOfMaterialNeededMachine6 = "drilled hole";
     private String nameOfImageMachine6 = "countersinks";
 
     private Machine machine7;
@@ -80,7 +80,7 @@ public class MainReferences {
     private int workersOnMachine7 = 0;
     private int timerOfMachine7 = 800;
     private String nameOfMaterialForMachine7 = "best hole";
-    String nameOfMaterialNeededMachine7 = "better hole";
+    private String nameOfMaterialNeededMachine7 = "better hole";
     private String nameOfImageMachine7 = "reamer";
 
     private Machine machine8;
@@ -100,7 +100,7 @@ public class MainReferences {
     private int workersOnMachine9 = 0;
     private int timerOfMachine9 = 1100;
     private String nameOfMaterialForMachine9 = "workpiece";
-    String nameOfMaterialNeededMachine9 = "best hole";
+    private  String nameOfMaterialNeededMachine9 = "best hole";
     private String nameOfImageMachine9 = "turning";
 
     private Machine machine10;
@@ -110,7 +110,7 @@ public class MainReferences {
     private int workersOnMachine10 = 0;
     private int timerOfMachine10 = 1800;
     private String nameOfMaterialForMachine10 = "weldment";
-    String nameOfMaterialNeededMachine10 = "workpiece";
+    private String nameOfMaterialNeededMachine10 = "workpiece";
     private String nameOfImageMachine10 = "welding";
 
 
@@ -120,7 +120,7 @@ public class MainReferences {
     private String nameOfMaterial1 = "ore";
     private int numnerOfMaterial1 = 0;
     private int costOfMaterial1 = 15;
-    String nameOfImgMaterial1 = "gold";
+    private String nameOfImgMaterial1 = "gold";
 
     private Material material2;
     private String nameOfMaterial2 = "ingot";
@@ -158,170 +158,161 @@ public class MainReferences {
     private int costOfMaterial8 = 750;
 
 
-    // UPGRADE TIME
-
-    Upgrade upgrade0;
-    String nameOfUpgrade0 = "Upgrade Time: ";
-    int costOfUpgrade0 = 200;
-    int whatToDoUpgrade0 = 30;
-    String forWhatToDoUpgrade0 = "time";
-    String nameOfImgUpgrade0 = "upgrade_time";
-
 
     // UPGRADE MATERIAL
 
-    Upgrade upgrade1;
-    String nameOfUpgrade1 = "Upgrade ore cost +1";
-    int costOfUpgrade1 = 120;
-    int whatToDoUpgrade1 = 1;
-    String forWhatToDoUpgrade1 = "material";
-    String nameOfMachineToGiveUpgrade1 = "Extraction";
-    String nameOfMaterialToGiveUpgrade1 = "ore";
-    String nameOfImgUpgrade1 = "upgrade_money_for_mat";
+    private Upgrade upgrade1;
+    private String nameOfUpgrade1 = "Upgrade ore cost +1";
+    private int costOfUpgrade1 = 120;
+    private int whatToDoUpgrade1 = 1;
+    private String forWhatToDoUpgrade1 = "material";
+    private String nameOfMachineToGiveUpgrade1 = "Extraction";
+    private String nameOfMaterialToGiveUpgrade1 = "ore";
+    private String nameOfImgUpgrade1 = "upgrade_money_for_mat";
 
-    Upgrade upgrade2;
-    String nameOfUpgrade2 = "Upgrade ingot cost +2";
-    int costOfUpgrade2 = 400;
-    int whatToDoUpgrade2 = 2;
-    String forWhatToDoUpgrade2 = "material";
-    String nameOfMachineToGiveUpgrade2 = "Steelworks";
-    String nameOfMaterialToGiveUpgrade2 = "ingot";
+    private Upgrade upgrade2;
+    private String nameOfUpgrade2 = "Upgrade ingot cost +2";
+    private int costOfUpgrade2 = 400;
+    private int whatToDoUpgrade2 = 2;
+    private String forWhatToDoUpgrade2 = "material";
+    private String nameOfMachineToGiveUpgrade2 = "Steelworks";
+    private String nameOfMaterialToGiveUpgrade2 = "ingot";
 
 
-    Upgrade upgrade3;
-    String nameOfUpgrade3 = "Upgrade cast cost +4";
-    int costOfUpgrade3 = 250;
-    int whatToDoUpgrade3 = 4;
-    String forWhatToDoUpgrade3 = "material";
-    String nameOfMachineToGiveUpgrade3 = "Casting machine";
-    String nameOfMaterialToGiveUpgrade3 = "cast";
+    private Upgrade upgrade3;
+    private String nameOfUpgrade3 = "Upgrade cast cost +4";
+    private int costOfUpgrade3 = 250;
+    private int whatToDoUpgrade3 = 4;
+    private String forWhatToDoUpgrade3 = "material";
+    private String nameOfMachineToGiveUpgrade3 = "Casting machine";
+    private String nameOfMaterialToGiveUpgrade3 = "cast";
 
-    Upgrade upgrade4;
-    String nameOfUpgrade4 = "Upgrade hole cost +4";
-    int costOfUpgrade4 = 450;
-    int whatToDoUpgrade4 = 4;
-    String forWhatToDoUpgrade4 = "material";
-    String nameOfMachineToGiveUpgrade4 = "Drill press";
-    String nameOfMaterialToGiveUpgrade4 = "hole";
+    private Upgrade upgrade4;
+    private String nameOfUpgrade4 = "Upgrade hole cost +4";
+    private int costOfUpgrade4 = 450;
+    private int whatToDoUpgrade4 = 4;
+    private String forWhatToDoUpgrade4 = "material";
+    private String nameOfMachineToGiveUpgrade4 = "Drill press";
+    private String nameOfMaterialToGiveUpgrade4 = "hole";
 
-    Upgrade upgrade5;
-    String nameOfUpgrade5 = "Upgrade better hole cost +5";
-    int costOfUpgrade5 = 650;
-    int whatToDoUpgrade5 = 5;
-    String forWhatToDoUpgrade5 = "material";
-    String nameOfMachineToGiveUpgrade5 = "Countersinks";
-    String nameOfMaterialToGiveUpgrade5 = "better hole";
+    private Upgrade upgrade5;
+    private String nameOfUpgrade5 = "Upgrade better hole cost +5";
+    private int costOfUpgrade5 = 650;
+    private int whatToDoUpgrade5 = 5;
+    private String forWhatToDoUpgrade5 = "material";
+    private String nameOfMachineToGiveUpgrade5 = "Countersinks";
+    private String nameOfMaterialToGiveUpgrade5 = "better hole";
 
-    Upgrade upgrade6;
-    String nameOfUpgrade6 = "Upgrade best hole cost +5";
-    int costOfUpgrade6 = 600;
-    int whatToDoUpgrade6 = 5;
-    String forWhatToDoUpgrade6 = "material";
-    String nameOfMachineToGiveUpgrade6 = "Reamer";
-    String nameOfMaterialToGiveUpgrade6 = "best hole";
+    private Upgrade upgrade6;
+    private String nameOfUpgrade6 = "Upgrade best hole cost +5";
+    private int costOfUpgrade6 = 600;
+    private int whatToDoUpgrade6 = 5;
+    private String forWhatToDoUpgrade6 = "material";
+    private String nameOfMachineToGiveUpgrade6 = "Reamer";
+    private String nameOfMaterialToGiveUpgrade6 = "best hole";
 
-    Upgrade upgrade7;
-    String nameOfUpgrade7 = "Upgrade workpiece cost +7";
-    int costOfUpgrade7 = 300;
-    int whatToDoUpgrade7 = 7;
-    String forWhatToDoUpgrade7 = "material";
-    String nameOfMachineToGiveUpgrade7 = "Turning";
-    String nameOfMaterialToGiveUpgrade7 = "workpiece";
+    private Upgrade upgrade7;
+    private String nameOfUpgrade7 = "Upgrade workpiece cost +7";
+    private int costOfUpgrade7 = 300;
+    private int whatToDoUpgrade7 = 7;
+    private String forWhatToDoUpgrade7 = "material";
+    private String nameOfMachineToGiveUpgrade7 = "Turning";
+    private String nameOfMaterialToGiveUpgrade7 = "workpiece";
 
-    Upgrade upgrade8;
-    String nameOfUpgrade8 = "Upgrade weldment cost +8";
-    int costOfUpgrade8 = 200;
-    int whatToDoUpgrade8 = 8;
-    String forWhatToDoUpgrade8 = "material";
-    String nameOfMachineToGiveUpgrade8 = "Welder";
-    String nameOfMaterialToGiveUpgrade8 = "weldment";
+    private Upgrade upgrade8;
+    private String nameOfUpgrade8 = "Upgrade weldment cost +8";
+    private int costOfUpgrade8 = 200;
+    private int whatToDoUpgrade8 = 8;
+    private String forWhatToDoUpgrade8 = "material";
+    private String nameOfMachineToGiveUpgrade8 = "Welder";
+    private String nameOfMaterialToGiveUpgrade8 = "weldment";
 
     // UPGRADE TIME OF MACHINE
 
-    Upgrade upgrade9;
-    String nameOfUpgrade9 = "Upgrade Time Of Extraction";
-    int costOfUpgrade9 = 500;
-    int whatToDoUpgrade9 = 30;
-    String forWhatToDoUpgrade9 = "machine";
-    String nameOfMachineToGiveUpgrade9 = "Extraction";
-    String nameOfMaterialToGiveUpgrade9 = "ore";
-    String NameOfImgUpgrade9 = "upgrade_time_of_machine";
+    private Upgrade upgrade9;
+    private String nameOfUpgrade9 = "Upgrade Time Of Extraction";
+    private int costOfUpgrade9 = 500;
+    private int whatToDoUpgrade9 = 30;
+    private String forWhatToDoUpgrade9 = "machine";
+    private String nameOfMachineToGiveUpgrade9 = "Extraction";
+    private String nameOfMaterialToGiveUpgrade9 = "ore";
+    private String NameOfImgUpgrade9 = "upgrade_time_of_machine";
 
 
-    Upgrade upgrade10;
-    String nameOfUpgrade10 = "Upgrade Time Of Steelworks";
-    int costOfUpgrade10 = 1000;
-    int whatToDoUpgrade10 = 1;
-    String forWhatToDoUpgrade10 = "machine";
-    String nameOfMachineToGiveUpgrade10 = "Steelworks";
-    String nameOfMaterialToGiveUpgrade10 = "ore";
+    private Upgrade upgrade10;
+    private String nameOfUpgrade10 = "Upgrade Time Of Steelworks";
+    private int costOfUpgrade10 = 1000;
+    private int whatToDoUpgrade10 = 1;
+    private String forWhatToDoUpgrade10 = "machine";
+    private String nameOfMachineToGiveUpgrade10 = "Steelworks";
+    private String nameOfMaterialToGiveUpgrade10 = "ore";
 
-    Upgrade upgrade11;
-    String nameOfUpgrade11 = "Upgrade Time Of Casting machine";
-    int costOfUpgrade11 = 1500;
-    int whatToDoUpgrade11 = 1;
-    String forWhatToDoUpgrade11 = "machine";
-    String nameOfMachineToGiveUpgrade11 = "Casting machine";
-    String nameOfMaterialToGiveUpgrade11 = "ingot";
-
-
-    Upgrade upgrade13;
-    String nameOfUpgrade13 = "Upgrade Time Of Rolling machine";
-    int costOfUpgrade13 = 1700;
-    int whatToDoUpgrade13 = 1;
-    String forWhatToDoUpgrade13 = "machine";
-    String nameOfMachineToGiveUpgrade13 = "Rolling machine";
-    String nameOfMaterialToGiveUpgrade13 = "drilled workpiece";
-
-    Upgrade upgrade14;
-    String nameOfUpgrade14 = "Upgrade Time Of Drill press";
-    int costOfUpgrade14 = 2000;
-    int whatToDoUpgrade14 = 1;
-    String forWhatToDoUpgrade14 = "machine";
-    String nameOfMachineToGiveUpgrade14 = "Drill press";
-    String nameOfMaterialToGiveUpgrade14 = "better drilled workpiece";
-
-    Upgrade upgrade15;
-    String nameOfUpgrade15 = "Upgrade Time Of Countersinks";
-    int costOfUpgrade15 = 2200;
-    int whatToDoUpgrade15 = 1;
-    String forWhatToDoUpgrade15 = "machine";
-    String nameOfMachineToGiveUpgrade15 = "Countersinks";
-    String nameOfMaterialToGiveUpgrade15 = "best drilled workpiece";
-
-    Upgrade upgrade16;
-    String nameOfUpgrade16 = "Upgrade Time Of Reamer";
-    int costOfUpgrade16 = 2500;
-    int whatToDoUpgrade16 = 1;
-    String forWhatToDoUpgrade16 = "machine";
-    String nameOfMachineToGiveUpgrade16 = "Reamer";
-    String nameOfMaterialToGiveUpgrade16 = "workpiece";
-
-    Upgrade upgrade17;
-    String nameOfUpgrade17 = "Upgrade Time Of Milling machine";
-    int costOfUpgrade17 = 3000;
-    int whatToDoUpgrade17 = 1;
-    String forWhatToDoUpgrade17 = "machine";
-    String nameOfMachineToGiveUpgrade17 = "Milling machine";
-    String nameOfMaterialToGiveUpgrade17 = "workpiece";
+    private Upgrade upgrade11;
+    private String nameOfUpgrade11 = "Upgrade Time Of Casting machine";
+    private int costOfUpgrade11 = 1500;
+    private int whatToDoUpgrade11 = 1;
+    private String forWhatToDoUpgrade11 = "machine";
+    private String nameOfMachineToGiveUpgrade11 = "Casting machine";
+    private String nameOfMaterialToGiveUpgrade11 = "ingot";
 
 
-    Upgrade upgrade18;
-    String nameOfUpgrade18 = "Upgrade Time Of Turning";
-    int costOfUpgrade18 = 3200;
-    int whatToDoUpgrade18 = 1;
-    String forWhatToDoUpgrade18 = "machine";
-    String nameOfMachineToGiveUpgrade18 = "Turning";
-    String nameOfMaterialToGiveUpgrade18 = "workpiece";
+    private Upgrade upgrade13;
+    private String nameOfUpgrade13 = "Upgrade Time Of Rolling machine";
+    private int costOfUpgrade13 = 1700;
+    private int whatToDoUpgrade13 = 1;
+    private String forWhatToDoUpgrade13 = "machine";
+    private String nameOfMachineToGiveUpgrade13 = "Rolling machine";
+    private String nameOfMaterialToGiveUpgrade13 = "drilled workpiece";
+
+    private Upgrade upgrade14;
+    private String nameOfUpgrade14 = "Upgrade Time Of Drill press";
+    private int costOfUpgrade14 = 2000;
+    private int whatToDoUpgrade14 = 1;
+    private String forWhatToDoUpgrade14 = "machine";
+    private String nameOfMachineToGiveUpgrade14 = "Drill press";
+    private String nameOfMaterialToGiveUpgrade14 = "better drilled workpiece";
+
+    private Upgrade upgrade15;
+    private String nameOfUpgrade15 = "Upgrade Time Of Countersinks";
+    private int costOfUpgrade15 = 2200;
+    private int whatToDoUpgrade15 = 1;
+    private String forWhatToDoUpgrade15 = "machine";
+    private String nameOfMachineToGiveUpgrade15 = "Countersinks";
+    private String nameOfMaterialToGiveUpgrade15 = "best drilled workpiece";
+
+    private Upgrade upgrade16;
+    private String nameOfUpgrade16 = "Upgrade Time Of Reamer";
+    private int costOfUpgrade16 = 2500;
+    private int whatToDoUpgrade16 = 1;
+    private String forWhatToDoUpgrade16 = "machine";
+    private String nameOfMachineToGiveUpgrade16 = "Reamer";
+    private String nameOfMaterialToGiveUpgrade16 = "workpiece";
+
+    private Upgrade upgrade17;
+    private String nameOfUpgrade17 = "Upgrade Time Of Milling machine";
+    private int costOfUpgrade17 = 3000;
+    private int whatToDoUpgrade17 = 1;
+    private String forWhatToDoUpgrade17 = "machine";
+    private String nameOfMachineToGiveUpgrade17 = "Milling machine";
+    private String nameOfMaterialToGiveUpgrade17 = "workpiece";
 
 
-    Upgrade upgrade19;
-    String nameOfUpgrade19 = "Upgrade Time Of Welder";
-    int costOfUpgrade19 = 3500;
-    int whatToDoUpgrade19 = 1;
-    String forWhatToDoUpgrade19 = "machine";
-    String nameOfMachineToGiveUpgrade19 = "Welder";
-    String nameOfMaterialToGiveUpgrade19 = "weldment";
+    private Upgrade upgrade18;
+    private String nameOfUpgrade18 = "Upgrade Time Of Turning";
+    private int costOfUpgrade18 = 3200;
+    private int whatToDoUpgrade18 = 1;
+    private String forWhatToDoUpgrade18 = "machine";
+    private String nameOfMachineToGiveUpgrade18 = "Turning";
+    private String nameOfMaterialToGiveUpgrade18 = "workpiece";
+
+
+    private Upgrade upgrade19;
+    private String nameOfUpgrade19 = "Upgrade Time Of Welder";
+    private int costOfUpgrade19 = 3500;
+    private int whatToDoUpgrade19 = 1;
+    private String forWhatToDoUpgrade19 = "machine";
+    private String nameOfMachineToGiveUpgrade19 = "Welder";
+    private String nameOfMaterialToGiveUpgrade19 = "weldment";
 
     // WORKER
 
@@ -390,18 +381,6 @@ public class MainReferences {
         upgrade.setForWhatToDo(forWhatToDoUpgrade);
         upgrade.setNameOfMachinetoGive(nameOfMachineToGiveUpgrade);
         upgrade.setNameOfMaterialGive(nameOfMaterialToGiveUpgrade);
-        upgrade.setNameOfImg(nameOfImgUpgrade);
-        realm.beginTransaction();
-        realm.copyToRealm(upgrade);
-        realm.commitTransaction();
-    }
-
-    private void createUpgradeOfTime(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade, String nameOfImgUpgrade){
-        upgrade = new Upgrade();
-        upgrade.setName(nameOfUpgrade);
-        upgrade.setCost(costOfUpgrade, true);
-        upgrade.setWhatDo(whatToDoUpgrade);
-        upgrade.setForWhatToDo(forWhatToDoUpgrade);
         upgrade.setNameOfImg(nameOfImgUpgrade);
         realm.beginTransaction();
         realm.copyToRealm(upgrade);

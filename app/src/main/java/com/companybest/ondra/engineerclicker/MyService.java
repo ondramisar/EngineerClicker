@@ -54,7 +54,7 @@ public class MyService extends Service {
                 notificationIntent, 0);
 
         Notification notification = new NotificationCompat.Builder(this)
-                .setSmallIcon(R.mipmap.ic_launcher)
+                .setSmallIcon(R.drawable.ikona)
                 .setContentTitle("Engineer Clicker")
                 .setContentText("Doing some work...")
                 .setContentIntent(pendingIntent).build();
@@ -78,9 +78,8 @@ public class MyService extends Service {
 
     @Override
     public void onDestroy() {
-        super.onDestroy();
         wl.release();
-        mainThread.setRunning(false);
+        super.onDestroy();
     }
 
     public void update() {

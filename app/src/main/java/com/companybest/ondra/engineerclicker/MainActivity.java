@@ -4,6 +4,8 @@ import android.app.ActivityManager;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.media.AudioManager;
+import android.media.MediaPlayer;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -53,6 +55,9 @@ public class MainActivity extends RealmBaseActivity {
 
 
     TextView coins;
+    MediaPlayer mediaPlayer;
+    public static AudioManager audioManager;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -95,7 +100,6 @@ public class MainActivity extends RealmBaseActivity {
         //REFERENCE FOR REAL OBJECT
         mainReferences = new MainReferences();
 
-
         //CREATING MACHINES JUST WHEN APP IS CREATED FOR THE FIRST TIME
         if (sharedPreferences.getInt("created", 0) == 0) {
             sharedPreferences.edit().putInt("created", 1).apply();
@@ -109,6 +113,8 @@ public class MainActivity extends RealmBaseActivity {
             Intent i = new Intent(this, IntroActivity.class);
             startActivity(i);
         }
+
+        startMusic();
 
         //COIN IMAGE
         SimpleDraweeView coinsImg = (SimpleDraweeView) findViewById(R.id.coinsImg);
@@ -130,6 +136,14 @@ public class MainActivity extends RealmBaseActivity {
         }
     }
 
+    public void startMusic(){
+        SharedPreferences sharedPreferences = this.getSharedPreferences("com.companybest.ondra.engineerclicker.Activitis", Context.MODE_PRIVATE);
+        mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bac_mus);
+        mediaPlayer.start();
+        mediaPlayer.setLooping(true);
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,sharedPreferences.getInt("music",0), 0);
+    }
 
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
@@ -184,6 +198,7 @@ public class MainActivity extends RealmBaseActivity {
     @Override
     protected void onRestart() {
         super.onRestart();
+        startMusic();
 
     }
 
@@ -191,11 +206,13 @@ public class MainActivity extends RealmBaseActivity {
     protected void onStop() {
         // call the superclass method first
         super.onStop();
+        mediaPlayer.stop();
     }
 
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        if (mediaPlayer != null) mediaPlayer.release();
     }
 
 

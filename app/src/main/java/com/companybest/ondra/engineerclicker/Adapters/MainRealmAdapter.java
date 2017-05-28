@@ -7,6 +7,7 @@ import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 
+import com.companybest.ondra.engineerclicker.Activitis.MechTab;
 import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
@@ -23,25 +24,25 @@ import io.realm.RealmViewHolder;
 public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, MainRealmAdapter.ViewHolder> {
 
 
-    public class ViewHolder extends RealmViewHolder {
+    class ViewHolder extends RealmViewHolder {
 
-        public TextView numberOfMachines;
-        public TextView numberOfWorkersOnMach;
-        public TextView costOfMachine;
-        public TextView nameOfMachine;
-        public Button plusMachine;
-        public Button plusWorkerOnMachine;
-        public Button minusWorkerOnMachine;
-        public TextView timer;
-        public TextView materialMake;
-        public SimpleDraweeView imageView;
-        public SimpleDraweeView costOfMachineImg;
-        public SimpleDraweeView timeOfMachineImg;
-        public SimpleDraweeView materialOfMachineImg;
-        public SimpleDraweeView workerOnMachineImg;
-        public SimpleDraweeView smallMachImg;
+        TextView numberOfMachines;
+        TextView numberOfWorkersOnMach;
+        TextView costOfMachine;
+        TextView nameOfMachine;
+        Button plusMachine;
+        Button plusWorkerOnMachine;
+        Button minusWorkerOnMachine;
+        TextView timer;
+        TextView materialMake;
+        SimpleDraweeView imageView;
+        SimpleDraweeView costOfMachineImg;
+        SimpleDraweeView timeOfMachineImg;
+        SimpleDraweeView materialOfMachineImg;
+        SimpleDraweeView workerOnMachineImg;
+        SimpleDraweeView smallMachImg;
 
-        public ViewHolder(FrameLayout container) {
+        ViewHolder(FrameLayout container) {
             super(container);
             this.numberOfMachines = (TextView) container.findViewById(R.id.numberOfMachine);
             this.numberOfWorkersOnMach = (TextView) container.findViewById(R.id.numberOfWokersOnMach);
@@ -156,7 +157,6 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                         TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                        //MainActivity.coins.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                     }
 
                 }
@@ -183,7 +183,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                         viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                        //MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                        MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                         //MechTab mechTab = new MechTab();
                         //mechTab.changeNumberOfWorkersText(worker);
@@ -215,7 +215,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                         viewHolder.numberOfWorkersOnMach.setText("" + String.valueOf(machine.getNumberOfWorkersOnMachine()));
 
-                        //MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                        MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
                         viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 

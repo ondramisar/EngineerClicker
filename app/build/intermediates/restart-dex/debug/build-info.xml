@@ -6,28 +6,31 @@
     density="xxhdpi"
     format="10"
     plugin-version="2.3.0"
-    timestamp="1495890685534"
+    timestamp="1495907616836"
     token="2444275099828509080"
     verifier="FULL_BUILD_REQUESTED" >
 
     <task
         name="javac"
-        duration="8753" />
+        duration="0" />
     <task
         name="instant-run-dex"
         duration="0" />
     <task
         name="instant-run-transform"
-        duration="59" />
+        duration="1817" />
     <task
         name="verifier"
-        duration="23" />
+        duration="0" />
 
     <artifact
-        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
         type="SPLIT" />
     <artifact
-        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+        type="SPLIT" />
+    <artifact
+        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
         type="SPLIT" />
     <artifact
         location="G:\programing\android\project\EngineerClicker\app\build\outputs\apk\app-debug.apk"
@@ -48,10 +51,7 @@
         location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
         type="SPLIT" />
     <artifact
-        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-        type="SPLIT" />
-    <artifact
-        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+        location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
         type="SPLIT" />
     <artifact
         location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
@@ -62,13 +62,16 @@
 
     <build
         build-mode="FULL"
-        timestamp="1495890685534"
+        timestamp="1495907616836"
         verifier="FULL_BUILD_REQUESTED" >
         <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
             type="SPLIT" />
         <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_0.apk"
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
+            type="SPLIT" />
+        <artifact
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
             type="SPLIT" />
         <artifact
             location="G:\programing\android\project\EngineerClicker\app\build\outputs\apk\app-debug.apk"
@@ -89,10 +92,7 @@
             location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_9.apk"
             type="SPLIT" />
         <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_8.apk"
-            type="SPLIT" />
-        <artifact
-            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_2.apk"
+            location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_3.apk"
             type="SPLIT" />
         <artifact
             location="G:\programing\android\project\EngineerClicker\app\build\intermediates\split-apk\debug\slices\slice_6.apk"
