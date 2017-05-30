@@ -39,13 +39,15 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         public long numberOfIndex;
         public long numberOfWorkersOnMachineIndex;
         public long costIndex;
+        public long maxTimerOfMachineIndex;
         public long timerOfMachineIndex;
+        public long expGiveIndex;
         public long nameOfMaterialIndex;
         public long nameOfNeededMaterialIndex;
         public long nameOfImageIndex;
 
         MachineColumnInfo(String path, Table table) {
-            final Map<String, Long> indicesMap = new HashMap<String, Long>(8);
+            final Map<String, Long> indicesMap = new HashMap<String, Long>(10);
             this.nameIndex = getValidColumnIndex(path, table, "Machine", "name");
             indicesMap.put("name", this.nameIndex);
             this.numberOfIndex = getValidColumnIndex(path, table, "Machine", "numberOf");
@@ -54,8 +56,12 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             indicesMap.put("numberOfWorkersOnMachine", this.numberOfWorkersOnMachineIndex);
             this.costIndex = getValidColumnIndex(path, table, "Machine", "cost");
             indicesMap.put("cost", this.costIndex);
+            this.maxTimerOfMachineIndex = getValidColumnIndex(path, table, "Machine", "maxTimerOfMachine");
+            indicesMap.put("maxTimerOfMachine", this.maxTimerOfMachineIndex);
             this.timerOfMachineIndex = getValidColumnIndex(path, table, "Machine", "timerOfMachine");
             indicesMap.put("timerOfMachine", this.timerOfMachineIndex);
+            this.expGiveIndex = getValidColumnIndex(path, table, "Machine", "expGive");
+            indicesMap.put("expGive", this.expGiveIndex);
             this.nameOfMaterialIndex = getValidColumnIndex(path, table, "Machine", "nameOfMaterial");
             indicesMap.put("nameOfMaterial", this.nameOfMaterialIndex);
             this.nameOfNeededMaterialIndex = getValidColumnIndex(path, table, "Machine", "nameOfNeededMaterial");
@@ -73,7 +79,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             this.numberOfIndex = otherInfo.numberOfIndex;
             this.numberOfWorkersOnMachineIndex = otherInfo.numberOfWorkersOnMachineIndex;
             this.costIndex = otherInfo.costIndex;
+            this.maxTimerOfMachineIndex = otherInfo.maxTimerOfMachineIndex;
             this.timerOfMachineIndex = otherInfo.timerOfMachineIndex;
+            this.expGiveIndex = otherInfo.expGiveIndex;
             this.nameOfMaterialIndex = otherInfo.nameOfMaterialIndex;
             this.nameOfNeededMaterialIndex = otherInfo.nameOfNeededMaterialIndex;
             this.nameOfImageIndex = otherInfo.nameOfImageIndex;
@@ -96,7 +104,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         fieldNames.add("numberOf");
         fieldNames.add("numberOfWorkersOnMachine");
         fieldNames.add("cost");
+        fieldNames.add("maxTimerOfMachine");
         fieldNames.add("timerOfMachine");
+        fieldNames.add("expGive");
         fieldNames.add("nameOfMaterial");
         fieldNames.add("nameOfNeededMaterial");
         fieldNames.add("nameOfImage");
@@ -237,6 +247,36 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
     }
 
     @SuppressWarnings("cast")
+    public int realmGet$maxTimerOfMachine() {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        return (int) proxyState.getRow$realm().getLong(columnInfo.maxTimerOfMachineIndex);
+    }
+
+    public void realmSet$maxTimerOfMachine(int value) {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        if (proxyState.isUnderConstruction()) {
+            if (!proxyState.getAcceptDefaultValue$realm()) {
+                return;
+            }
+            final Row row = proxyState.getRow$realm();
+            row.getTable().setLong(columnInfo.maxTimerOfMachineIndex, row.getIndex(), value, true);
+            return;
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        proxyState.getRow$realm().setLong(columnInfo.maxTimerOfMachineIndex, value);
+    }
+
+    @SuppressWarnings("cast")
     public int realmGet$timerOfMachine() {
         if (proxyState == null) {
             // Called from model's constructor. Inject context.
@@ -264,6 +304,36 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
 
         proxyState.getRealm$realm().checkIfValid();
         proxyState.getRow$realm().setLong(columnInfo.timerOfMachineIndex, value);
+    }
+
+    @SuppressWarnings("cast")
+    public int realmGet$expGive() {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        return (int) proxyState.getRow$realm().getLong(columnInfo.expGiveIndex);
+    }
+
+    public void realmSet$expGive(int value) {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        if (proxyState.isUnderConstruction()) {
+            if (!proxyState.getAcceptDefaultValue$realm()) {
+                return;
+            }
+            final Row row = proxyState.getRow$realm();
+            row.getTable().setLong(columnInfo.expGiveIndex, row.getIndex(), value, true);
+            return;
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        proxyState.getRow$realm().setLong(columnInfo.expGiveIndex, value);
     }
 
     @SuppressWarnings("cast")
@@ -387,7 +457,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             realmObjectSchema.add(new Property("numberOf", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             realmObjectSchema.add(new Property("numberOfWorkersOnMachine", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             realmObjectSchema.add(new Property("cost", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
+            realmObjectSchema.add(new Property("maxTimerOfMachine", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             realmObjectSchema.add(new Property("timerOfMachine", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
+            realmObjectSchema.add(new Property("expGive", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             realmObjectSchema.add(new Property("nameOfMaterial", RealmFieldType.STRING, !Property.PRIMARY_KEY, !Property.INDEXED, !Property.REQUIRED));
             realmObjectSchema.add(new Property("nameOfNeededMaterial", RealmFieldType.STRING, !Property.PRIMARY_KEY, !Property.INDEXED, !Property.REQUIRED));
             realmObjectSchema.add(new Property("nameOfImage", RealmFieldType.STRING, !Property.PRIMARY_KEY, !Property.INDEXED, !Property.REQUIRED));
@@ -403,7 +475,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             table.addColumn(RealmFieldType.INTEGER, "numberOf", Table.NOT_NULLABLE);
             table.addColumn(RealmFieldType.INTEGER, "numberOfWorkersOnMachine", Table.NOT_NULLABLE);
             table.addColumn(RealmFieldType.INTEGER, "cost", Table.NOT_NULLABLE);
+            table.addColumn(RealmFieldType.INTEGER, "maxTimerOfMachine", Table.NOT_NULLABLE);
             table.addColumn(RealmFieldType.INTEGER, "timerOfMachine", Table.NOT_NULLABLE);
+            table.addColumn(RealmFieldType.INTEGER, "expGive", Table.NOT_NULLABLE);
             table.addColumn(RealmFieldType.STRING, "nameOfMaterial", Table.NULLABLE);
             table.addColumn(RealmFieldType.STRING, "nameOfNeededMaterial", Table.NULLABLE);
             table.addColumn(RealmFieldType.STRING, "nameOfImage", Table.NULLABLE);
@@ -418,14 +492,14 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         if (sharedRealm.hasTable("class_Machine")) {
             Table table = sharedRealm.getTable("class_Machine");
             final long columnCount = table.getColumnCount();
-            if (columnCount != 8) {
-                if (columnCount < 8) {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 8 but was " + columnCount);
+            if (columnCount != 10) {
+                if (columnCount < 10) {
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 10 but was " + columnCount);
                 }
                 if (allowExtraColumns) {
-                    RealmLog.debug("Field count is more than expected - expected 8 but was %1$d", columnCount);
+                    RealmLog.debug("Field count is more than expected - expected 10 but was %1$d", columnCount);
                 } else {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 8 but was " + columnCount);
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 10 but was " + columnCount);
                 }
             }
             Map<String, RealmFieldType> columnTypes = new HashMap<String, RealmFieldType>();
@@ -477,6 +551,15 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             if (table.isColumnNullable(columnInfo.costIndex)) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'cost' does support null values in the existing Realm file. Use corresponding boxed type for field 'cost' or migrate using RealmObjectSchema.setNullable().");
             }
+            if (!columnTypes.containsKey("maxTimerOfMachine")) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'maxTimerOfMachine' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("maxTimerOfMachine") != RealmFieldType.INTEGER) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'maxTimerOfMachine' in existing Realm file.");
+            }
+            if (table.isColumnNullable(columnInfo.maxTimerOfMachineIndex)) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'maxTimerOfMachine' does support null values in the existing Realm file. Use corresponding boxed type for field 'maxTimerOfMachine' or migrate using RealmObjectSchema.setNullable().");
+            }
             if (!columnTypes.containsKey("timerOfMachine")) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'timerOfMachine' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
             }
@@ -485,6 +568,15 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             }
             if (table.isColumnNullable(columnInfo.timerOfMachineIndex)) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'timerOfMachine' does support null values in the existing Realm file. Use corresponding boxed type for field 'timerOfMachine' or migrate using RealmObjectSchema.setNullable().");
+            }
+            if (!columnTypes.containsKey("expGive")) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'expGive' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("expGive") != RealmFieldType.INTEGER) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'expGive' in existing Realm file.");
+            }
+            if (table.isColumnNullable(columnInfo.expGiveIndex)) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'expGive' does support null values in the existing Realm file. Use corresponding boxed type for field 'expGive' or migrate using RealmObjectSchema.setNullable().");
             }
             if (!columnTypes.containsKey("nameOfMaterial")) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'nameOfMaterial' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
@@ -583,11 +675,25 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
                 ((MachineRealmProxyInterface) obj).realmSet$cost((int) json.getInt("cost"));
             }
         }
+        if (json.has("maxTimerOfMachine")) {
+            if (json.isNull("maxTimerOfMachine")) {
+                throw new IllegalArgumentException("Trying to set non-nullable field 'maxTimerOfMachine' to null.");
+            } else {
+                ((MachineRealmProxyInterface) obj).realmSet$maxTimerOfMachine((int) json.getInt("maxTimerOfMachine"));
+            }
+        }
         if (json.has("timerOfMachine")) {
             if (json.isNull("timerOfMachine")) {
                 throw new IllegalArgumentException("Trying to set non-nullable field 'timerOfMachine' to null.");
             } else {
                 ((MachineRealmProxyInterface) obj).realmSet$timerOfMachine((int) json.getInt("timerOfMachine"));
+            }
+        }
+        if (json.has("expGive")) {
+            if (json.isNull("expGive")) {
+                throw new IllegalArgumentException("Trying to set non-nullable field 'expGive' to null.");
+            } else {
+                ((MachineRealmProxyInterface) obj).realmSet$expGive((int) json.getInt("expGive"));
             }
         }
         if (json.has("nameOfMaterial")) {
@@ -652,12 +758,26 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
                 } else {
                     ((MachineRealmProxyInterface) obj).realmSet$cost((int) reader.nextInt());
                 }
+            } else if (name.equals("maxTimerOfMachine")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    throw new IllegalArgumentException("Trying to set non-nullable field 'maxTimerOfMachine' to null.");
+                } else {
+                    ((MachineRealmProxyInterface) obj).realmSet$maxTimerOfMachine((int) reader.nextInt());
+                }
             } else if (name.equals("timerOfMachine")) {
                 if (reader.peek() == JsonToken.NULL) {
                     reader.skipValue();
                     throw new IllegalArgumentException("Trying to set non-nullable field 'timerOfMachine' to null.");
                 } else {
                     ((MachineRealmProxyInterface) obj).realmSet$timerOfMachine((int) reader.nextInt());
+                }
+            } else if (name.equals("expGive")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    throw new IllegalArgumentException("Trying to set non-nullable field 'expGive' to null.");
+                } else {
+                    ((MachineRealmProxyInterface) obj).realmSet$expGive((int) reader.nextInt());
                 }
             } else if (name.equals("nameOfMaterial")) {
                 if (reader.peek() == JsonToken.NULL) {
@@ -748,7 +868,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
             ((MachineRealmProxyInterface) realmObject).realmSet$numberOf(((MachineRealmProxyInterface) newObject).realmGet$numberOf());
             ((MachineRealmProxyInterface) realmObject).realmSet$numberOfWorkersOnMachine(((MachineRealmProxyInterface) newObject).realmGet$numberOfWorkersOnMachine());
             ((MachineRealmProxyInterface) realmObject).realmSet$cost(((MachineRealmProxyInterface) newObject).realmGet$cost());
+            ((MachineRealmProxyInterface) realmObject).realmSet$maxTimerOfMachine(((MachineRealmProxyInterface) newObject).realmGet$maxTimerOfMachine());
             ((MachineRealmProxyInterface) realmObject).realmSet$timerOfMachine(((MachineRealmProxyInterface) newObject).realmGet$timerOfMachine());
+            ((MachineRealmProxyInterface) realmObject).realmSet$expGive(((MachineRealmProxyInterface) newObject).realmGet$expGive());
             ((MachineRealmProxyInterface) realmObject).realmSet$nameOfMaterial(((MachineRealmProxyInterface) newObject).realmGet$nameOfMaterial());
             ((MachineRealmProxyInterface) realmObject).realmSet$nameOfNeededMaterial(((MachineRealmProxyInterface) newObject).realmGet$nameOfNeededMaterial());
             ((MachineRealmProxyInterface) realmObject).realmSet$nameOfImage(((MachineRealmProxyInterface) newObject).realmGet$nameOfImage());
@@ -780,7 +902,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         Table.nativeSetLong(tableNativePtr, columnInfo.numberOfIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOf(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.numberOfWorkersOnMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOfWorkersOnMachine(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$cost(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.maxTimerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$maxTimerOfMachine(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.timerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$timerOfMachine(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expGiveIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$expGive(), false);
         String realmGet$nameOfMaterial = ((MachineRealmProxyInterface)object).realmGet$nameOfMaterial();
         if (realmGet$nameOfMaterial != null) {
             Table.nativeSetString(tableNativePtr, columnInfo.nameOfMaterialIndex, rowIndex, realmGet$nameOfMaterial, false);
@@ -825,7 +949,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
                 Table.nativeSetLong(tableNativePtr, columnInfo.numberOfIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOf(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.numberOfWorkersOnMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOfWorkersOnMachine(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$cost(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.maxTimerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$maxTimerOfMachine(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.timerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$timerOfMachine(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expGiveIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$expGive(), false);
                 String realmGet$nameOfMaterial = ((MachineRealmProxyInterface)object).realmGet$nameOfMaterial();
                 if (realmGet$nameOfMaterial != null) {
                     Table.nativeSetString(tableNativePtr, columnInfo.nameOfMaterialIndex, rowIndex, realmGet$nameOfMaterial, false);
@@ -864,7 +990,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         Table.nativeSetLong(tableNativePtr, columnInfo.numberOfIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOf(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.numberOfWorkersOnMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOfWorkersOnMachine(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$cost(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.maxTimerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$maxTimerOfMachine(), false);
         Table.nativeSetLong(tableNativePtr, columnInfo.timerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$timerOfMachine(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expGiveIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$expGive(), false);
         String realmGet$nameOfMaterial = ((MachineRealmProxyInterface)object).realmGet$nameOfMaterial();
         if (realmGet$nameOfMaterial != null) {
             Table.nativeSetString(tableNativePtr, columnInfo.nameOfMaterialIndex, rowIndex, realmGet$nameOfMaterial, false);
@@ -913,7 +1041,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
                 Table.nativeSetLong(tableNativePtr, columnInfo.numberOfIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOf(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.numberOfWorkersOnMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$numberOfWorkersOnMachine(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.costIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$cost(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.maxTimerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$maxTimerOfMachine(), false);
                 Table.nativeSetLong(tableNativePtr, columnInfo.timerOfMachineIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$timerOfMachine(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expGiveIndex, rowIndex, ((MachineRealmProxyInterface)object).realmGet$expGive(), false);
                 String realmGet$nameOfMaterial = ((MachineRealmProxyInterface)object).realmGet$nameOfMaterial();
                 if (realmGet$nameOfMaterial != null) {
                     Table.nativeSetString(tableNativePtr, columnInfo.nameOfMaterialIndex, rowIndex, realmGet$nameOfMaterial, false);
@@ -958,7 +1088,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$numberOf(((MachineRealmProxyInterface) realmObject).realmGet$numberOf());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$numberOfWorkersOnMachine(((MachineRealmProxyInterface) realmObject).realmGet$numberOfWorkersOnMachine());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$cost(((MachineRealmProxyInterface) realmObject).realmGet$cost());
+        ((MachineRealmProxyInterface) unmanagedObject).realmSet$maxTimerOfMachine(((MachineRealmProxyInterface) realmObject).realmGet$maxTimerOfMachine());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$timerOfMachine(((MachineRealmProxyInterface) realmObject).realmGet$timerOfMachine());
+        ((MachineRealmProxyInterface) unmanagedObject).realmSet$expGive(((MachineRealmProxyInterface) realmObject).realmGet$expGive());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$nameOfMaterial(((MachineRealmProxyInterface) realmObject).realmGet$nameOfMaterial());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$nameOfNeededMaterial(((MachineRealmProxyInterface) realmObject).realmGet$nameOfNeededMaterial());
         ((MachineRealmProxyInterface) unmanagedObject).realmSet$nameOfImage(((MachineRealmProxyInterface) realmObject).realmGet$nameOfImage());
@@ -969,7 +1101,9 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         ((MachineRealmProxyInterface) realmObject).realmSet$numberOf(((MachineRealmProxyInterface) newObject).realmGet$numberOf());
         ((MachineRealmProxyInterface) realmObject).realmSet$numberOfWorkersOnMachine(((MachineRealmProxyInterface) newObject).realmGet$numberOfWorkersOnMachine());
         ((MachineRealmProxyInterface) realmObject).realmSet$cost(((MachineRealmProxyInterface) newObject).realmGet$cost());
+        ((MachineRealmProxyInterface) realmObject).realmSet$maxTimerOfMachine(((MachineRealmProxyInterface) newObject).realmGet$maxTimerOfMachine());
         ((MachineRealmProxyInterface) realmObject).realmSet$timerOfMachine(((MachineRealmProxyInterface) newObject).realmGet$timerOfMachine());
+        ((MachineRealmProxyInterface) realmObject).realmSet$expGive(((MachineRealmProxyInterface) newObject).realmGet$expGive());
         ((MachineRealmProxyInterface) realmObject).realmSet$nameOfMaterial(((MachineRealmProxyInterface) newObject).realmGet$nameOfMaterial());
         ((MachineRealmProxyInterface) realmObject).realmSet$nameOfNeededMaterial(((MachineRealmProxyInterface) newObject).realmGet$nameOfNeededMaterial());
         ((MachineRealmProxyInterface) realmObject).realmSet$nameOfImage(((MachineRealmProxyInterface) newObject).realmGet$nameOfImage());
@@ -998,8 +1132,16 @@ public class MachineRealmProxy extends com.companybest.ondra.engineerclicker.Mod
         stringBuilder.append(realmGet$cost());
         stringBuilder.append("}");
         stringBuilder.append(",");
+        stringBuilder.append("{maxTimerOfMachine:");
+        stringBuilder.append(realmGet$maxTimerOfMachine());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
         stringBuilder.append("{timerOfMachine:");
         stringBuilder.append(realmGet$timerOfMachine());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{expGive:");
+        stringBuilder.append(realmGet$expGive());
         stringBuilder.append("}");
         stringBuilder.append(",");
         stringBuilder.append("{nameOfMaterial:");

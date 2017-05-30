@@ -33,6 +33,7 @@ public class MyService extends Service {
     int timeForMachine9 = 0;
     int timeForMachine10 = 0;
 
+
     float timeOfDestructionThred = 0.f;
     PowerManager.WakeLock wl;
     RealmResults<Machine> machines;
@@ -82,20 +83,47 @@ public class MyService extends Service {
         super.onDestroy();
     }
 
+    public void progressBar (final Machine m, final int timer ){
+        Realm realm = Realm.getDefaultInstance();
+        try {
+            if (m.getNumberOfWorkersOnMachine() > 0) {
+                if (m.getTimerOfMachine() <= m.getMaxTimerOfMachine()) {
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            m.setTimerOfMachine(timer, true);
+                           //Log.i("user", String.valueOf(m.getTimerOfMachine()));
+
+                        }
+                    });
+                } else {
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            m.setTimerOfMachine(m.getTimerOfMachine(), false);
+                        }
+                    });
+                }
+            }
+        } finally {
+            realm.close();
+        }
+    }
+
     public void update() {
         timeOfDestructionThred += 0.01f;
 
-        timeForMachine1 += 1;
-        timeForMachine2 += 1;
-        timeForMachine3 += 1;
-        timeForMachine4 += 1;
-        timeForMachine5 += 1;
-        timeForMachine6 += 1;
-        timeForMachine7 += 1;
-        timeForMachine8 += 1;
-        timeForMachine9 += 1;
-        timeForMachine10 += 1;
 
+            timeForMachine1 += 1;
+            timeForMachine2 += 1;
+            timeForMachine3 += 1;
+            timeForMachine4 += 1;
+            timeForMachine5 += 1;
+            timeForMachine6 += 1;
+            timeForMachine7 += 1;
+            timeForMachine8 += 1;
+            timeForMachine9 += 1;
+            timeForMachine10 += 1;
 
         Realm realm = Realm.getDefaultInstance();
         try {
@@ -110,6 +138,18 @@ public class MyService extends Service {
             final Machine m8 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine8).findFirst();
             final Machine m9 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine9).findFirst();
             final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();
+
+            /*
+            progressBar(m, timeForMachine1);
+            progressBar(m2, timeForMachine2);
+            progressBar(m3, timeForMachine3);
+            progressBar(m4, timeForMachine4);
+            progressBar(m5, timeForMachine5);
+            progressBar(m6, timeForMachine6);
+            progressBar(m7, timeForMachine7);
+            progressBar(m8, timeForMachine8);
+            progressBar(m9, timeForMachine9);
+            progressBar(m10, timeForMachine10);*/
 
 
 
@@ -131,6 +171,8 @@ public class MyService extends Service {
 
                 }
             }
+
+
 
             if (timeForMachine2 > m2.getTimerOfMachine()) {
 
@@ -207,34 +249,35 @@ public class MyService extends Service {
         }
     }
 
-    private void machineThread(Machine mach){
+    private void machineThread(final Machine mach){
         Realm realm = Realm.getDefaultInstance();
         try {
             final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
             final Material material2 = realm.where(Material.class).equalTo("name", mach.getNameOfNeededMaterial()).findFirst();
 
             if (mach.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
-                int numberOfMaterialsAdd = 0;
-                int numberOfMaterials = material2.getNumberOf();
 
-                for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
-                    if (numberOfMaterials > 0) {
-                        numberOfMaterialsAdd += 1;
-                        numberOfMaterials -= 1;
+                    int numberOfMaterialsAdd = 0;
+                    int numberOfMaterials = material2.getNumberOf();
+
+                    for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
+                        if (numberOfMaterials > 0) {
+                            numberOfMaterialsAdd += 1;
+                            numberOfMaterials -= 1;
+                        }
                     }
-                }
 
-                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
+                    final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
 
-                realm.executeTransaction(new Realm.Transaction() {
-                    @Override
-                    public void execute(Realm realm) {
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
 
-                        material.setNumberOf(finalNumberOfMaterialsAdd, true);
+                            material.setNumberOf(finalNumberOfMaterialsAdd, true);
 
-                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                    }
-                });
+                            material2.setNumberOf(finalNumberOfMaterialsAdd, false);
+                        }
+                    });
             }
         } finally {
                 realm.close();

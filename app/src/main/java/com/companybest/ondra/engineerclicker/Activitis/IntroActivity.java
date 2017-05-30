@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 
 import com.companybest.ondra.engineerclicker.References.BettingSlide;
 import com.companybest.ondra.engineerclicker.References.CustomSlide;
+import com.companybest.ondra.engineerclicker.References.InfoSlide;
 import com.companybest.ondra.engineerclicker.References.LastSlide;
 import com.companybest.ondra.engineerclicker.References.StockSlide;
 import com.companybest.ondra.engineerclicker.References.UpgradeSlide;
@@ -34,7 +35,10 @@ public class IntroActivity extends MaterialIntroActivity {
 
         addSlide(new BettingSlide(2));
 
+        addSlide(new InfoSlide());
+
         addSlide(new LastSlide());
+
 
     }
 }

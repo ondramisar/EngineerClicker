@@ -30,7 +30,7 @@ public class MechTab extends Fragment {
     MainRealmAdapter mainRealmAdapter;
     static public TextView numberOfWorkers;
     Button plusWorker;
-    TextView costOfWorkers;
+    static public TextView costOfWorkers;
     MainActivity mainActivity;
 
     RealmRecyclerView mainScreenRecyclerView;
@@ -116,7 +116,6 @@ public class MechTab extends Fragment {
                     }
                 }
             });
-
 
             BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
             numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));

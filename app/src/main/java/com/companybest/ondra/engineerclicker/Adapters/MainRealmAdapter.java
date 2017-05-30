@@ -41,6 +41,8 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
         SimpleDraweeView materialOfMachineImg;
         SimpleDraweeView workerOnMachineImg;
         SimpleDraweeView smallMachImg;
+        SimpleDraweeView bacForText;
+        TextView workingTextView;
 
         ViewHolder(FrameLayout container) {
             super(container);
@@ -59,6 +61,8 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
             this.materialOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.materialOfMachineImg);
             this.workerOnMachineImg = (SimpleDraweeView) container.findViewById(R.id.workerOnMachImg);
             this.smallMachImg = (SimpleDraweeView) container.findViewById(R.id.smallMachImg);
+            this.workingTextView = (TextView) container.findViewById(R.id.workingTextView);
+            this.bacForText = (SimpleDraweeView) container.findViewById(R.id.bac_for_text);
         }
     }
 
@@ -87,6 +91,12 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
         viewHolder.nameOfMachine.setText(machine.getName());
         viewHolder.timer.setText("" + String.valueOf(machine.getTimerOfMachine()));
         viewHolder.materialMake.setText("" + machine.getNameOfMaterial());
+
+        if (machine.getNumberOfWorkersOnMachine() > 0) {
+            viewHolder.workingTextView.setText("WORKING...");
+        } else {
+            viewHolder.workingTextView.setText("STOPPED");
+        }
 
         int resourceId = getContext().getResources().getIdentifier(machine.getNameOfImage(), "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
@@ -131,6 +141,14 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.smallMachImg.setImageURI(uri5);
 
+        int resourceId6 = getContext().getResources().getIdentifier("bac_for_text", "drawable", "com.companybest.ondra.engineerclicker");
+        Uri uri6 = new Uri.Builder()
+                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
+                .path(String.valueOf(resourceId6))
+                .build();
+        viewHolder.bacForText.setImageURI(uri6);
+
+
         final Realm realm = Realm.getDefaultInstance();
         try {
             viewHolder.plusMachine.setOnClickListener(new View.OnClickListener() {
@@ -149,6 +167,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                                 machine.setNumberOf(1, true);
                                 machine.setCost(machine.getCost(), true);
 
+                                user.setExp(machine.getExpGive(),true);
                             }
                         });
 
@@ -185,8 +204,6 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
 
                         MechTab.numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
-                        //MechTab mechTab = new MechTab();
-                        //mechTab.changeNumberOfWorkersText(worker);
 
                         viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
 
@@ -222,6 +239,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                     }
                 }
             });
+
         }finally {
             realm.close();
         }

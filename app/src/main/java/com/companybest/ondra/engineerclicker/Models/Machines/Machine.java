@@ -13,10 +13,20 @@ public class Machine extends RealmObject{
     private int numberOf;
     private int numberOfWorkersOnMachine;
     private int cost;
+    private int maxTimerOfMachine;
     private int timerOfMachine;
+    private int expGive;
     private String nameOfMaterial;
     private String nameOfNeededMaterial;
     private String nameOfImage;
+
+    public int getExpGive() {
+        return expGive;
+    }
+
+    public void setExpGive(int expGive) {
+        this.expGive = expGive;
+    }
 
     public String getNameOfImage() {
         return nameOfImage;
@@ -43,13 +53,25 @@ public class Machine extends RealmObject{
     }
 
 
+    public int getMaxTimerOfMachine() {
+        return maxTimerOfMachine;
+    }
+
+    public void setMaxTimerOfMachine(int maxTimerOfMachine, boolean plus) {
+        if (plus) {
+            this.maxTimerOfMachine += maxTimerOfMachine;
+        } else {
+            this.maxTimerOfMachine -= maxTimerOfMachine;
+        }
+    }
+
     public int getTimerOfMachine() {
         return timerOfMachine;
     }
 
     public void setTimerOfMachine(int timerOfMachine, boolean plus) {
         if (plus) {
-            this.timerOfMachine += timerOfMachine;
+            this.timerOfMachine = timerOfMachine;
         } else {
             this.timerOfMachine -= timerOfMachine;
         }

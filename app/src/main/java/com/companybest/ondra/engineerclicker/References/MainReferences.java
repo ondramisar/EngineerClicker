@@ -19,7 +19,9 @@ public class MainReferences {
     private int numberOfMachine1 = 0;
     private int costOfMachine1 = 4000;
     private int workersOnMachine1 = 0;
-    private int timerOfMachine1 = 300;
+    private int maxTimerOfMachine1 = 300;
+    private int timerOfMachine1 = maxTimerOfMachine1;
+    private int expGiveMach1 = 500;
     private String nameOfMaterialForMachine1 = "ore";
     private String nameOfImageMachine1 = "mine";
 
@@ -28,7 +30,9 @@ public class MainReferences {
     private int numberOfMachine2 = 0;
     private int costOfMachine2 = 30000;
     private int workersOnMachine2 = 0;
-    private int timerOfMachine2 = 600;
+    private int maxTimerOfMachine2 = 600;
+    private int timerOfMachine2 = maxTimerOfMachine2;
+    private int expGiveMach2 = 1000;
     private String nameOfMaterialForMachine2 = "ingot";
     private String nameOfMaterialNeededMachine2 = "ore";
     private String nameOfImageMachine2 = "factory";
@@ -38,7 +42,9 @@ public class MainReferences {
     private int numberOfMachine3 = 0;
     private int costOfMachine3 = 80000;
     private int workersOnMachine3 = 0;
-    private int timerOfMachine3 = 900;
+    private int maxTimerOfMachine3 = 900;
+    private int timerOfMachine3 = maxTimerOfMachine3;
+    private int expGiveMach3 = 2000;
     private String nameOfMaterialForMachine3 = "cast";
     private String nameOfMaterialNeededMachine3 = "ingot";
     private String nameOfImageMachine3 = "casting";
@@ -48,7 +54,9 @@ public class MainReferences {
     private int numberOfMachine4 = 0;
     private int costOfMachine4 = 90000;
     private int workersOnMachine4 = 0;
-    private int timerOfMachine4 = 700;
+    private int maxTimerOfMachine4 = 700;
+    private int timerOfMachine4 = maxTimerOfMachine4;
+    private int expGiveMach4 = 2500;
     private String nameOfMaterialForMachine4 = "cast";
     private String nameOfMaterialNeededMachine4= "ingot";
     private String nameOfImageMachine4 = "rolling";
@@ -58,7 +66,9 @@ public class MainReferences {
     private int numberOfMachine5 = 0;
     private int costOfMachine5 = 170000;
     private int workersOnMachine5 = 0;
-    private int timerOfMachine5 = 600;
+    private int maxTimerOfMachine5 = 600;
+    private int timerOfMachine5 = maxTimerOfMachine5;
+    private int expGiveMach5 = 4000;
     private String nameOfMaterialForMachine5 = "drilled hole";
     private String nameOfMaterialNeededMachine5 = "cast";
     private String nameOfImageMachine5 = "drill";
@@ -68,7 +78,9 @@ public class MainReferences {
     private int numberOfMachine6 = 0;
     private int costOfMachine6 = 290000;
     private int workersOnMachine6 = 0;
-    private int timerOfMachine6 = 700;
+    private int maxTimerOfMachine6 = 700;
+    private int timerOfMachine6 = maxTimerOfMachine6;
+    private int expGiveMach6 = 8000;
     private String nameOfMaterialForMachine6 = "better hole";
     private String nameOfMaterialNeededMachine6 = "drilled hole";
     private String nameOfImageMachine6 = "countersinks";
@@ -78,7 +90,9 @@ public class MainReferences {
     private int numberOfMachine7 = 0;
     private int costOfMachine7 = 470000;
     private int workersOnMachine7 = 0;
-    private int timerOfMachine7 = 800;
+    private int maxTimerOfMachine7 = 800;
+    private int timerOfMachine7 = maxTimerOfMachine7;
+    private int expGiveMach7 = 16000;
     private String nameOfMaterialForMachine7 = "best hole";
     private String nameOfMaterialNeededMachine7 = "better hole";
     private String nameOfImageMachine7 = "reamer";
@@ -88,7 +102,9 @@ public class MainReferences {
     private int numberOfMachine8 = 0;
     private int costOfMachine8 = 770000;
     private int workersOnMachine8 = 0;
-    private int timerOfMachine8 = 1200;
+    private int maxTimerOfMachine8 = 1200;
+    private int timerOfMachine8 = maxTimerOfMachine8;
+    private int expGiveMach8 = 32000;
     private String nameOfMaterialForMachine8 = "workpiece";
     private String nameOfMaterialNeededMachine8 = "best hole";
     private String nameOfImageMachine8 = "milling";
@@ -98,7 +114,9 @@ public class MainReferences {
     private int numberOfMachine9 = 0;
     private int costOfMachine9 = 800000;
     private int workersOnMachine9 = 0;
-    private int timerOfMachine9 = 1100;
+    private int maxTimerOfMachine9 = 1100;
+    private int timerOfMachine9 = maxTimerOfMachine9;
+    private int expGiveMach9 = 35000;
     private String nameOfMaterialForMachine9 = "workpiece";
     private  String nameOfMaterialNeededMachine9 = "best hole";
     private String nameOfImageMachine9 = "turning";
@@ -108,7 +126,9 @@ public class MainReferences {
     private int numberOfMachine10 = 0;
     private int costOfMachine10 = 1500000;
     private int workersOnMachine10 = 0;
-    private int timerOfMachine10 = 1800;
+    private int maxTimerOfMachine10 = 60000;
+    private int timerOfMachine10 = maxTimerOfMachine10;
+    private int expGiveMach10 = 500;
     private String nameOfMaterialForMachine10 = "weldment";
     private String nameOfMaterialNeededMachine10 = "workpiece";
     private String nameOfImageMachine10 = "welding";
@@ -133,7 +153,7 @@ public class MainReferences {
     private int costOfMaterial3 = 80;
 
     private Material material4;
-    private String nameOfMaterial4 = "hole";
+    private String nameOfMaterial4 = "drilled hole";
     private int numnerOfMaterial4 = 0;
     private int costOfMaterial4 = 95;
 
@@ -323,41 +343,49 @@ public class MainReferences {
 
     public User user;
     public float coins = 5000.f;
+    //public float coins = 1000000.f;
     public String name = "user";
+    int levelOfUser = 1;
+    int expNeeded = 1000;
+    int exp = 0;
 
     private Realm realm;
 
     public MainReferences() {
     }
 
-    private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int timerOfMachine, String nameOfMaterialForMachine, String nameOfImgMachine){
+    private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int maxTimerOfMachine, int timerOfMachine, int expGive, String nameOfMaterialForMachine, String nameOfImgMachine){
         machine = new Machine();
         machine.setName(nameOfMachine);
         machine.setNumberOf(numberOfMachine,true);
         machine.setCost(costOfMachine, true);
         machine.setNumberOfWorkersOnMachine(workersOnMachine,true);
         machine.setTimerOfMachine(timerOfMachine, true);
+        machine.setExpGive(expGive);
+        machine.setMaxTimerOfMachine(maxTimerOfMachine, true);
         machine.setNameOfMaterial(nameOfMaterialForMachine);
         machine.setNameOfImage(nameOfImgMachine);
         realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.copyToRealm(machine);
+        realm.copyToRealmOrUpdate(machine);
         realm.commitTransaction();
     }
 
-    private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int timerOfMachine, String nameOfMaterialForMachine, String nameOfMaterialNeededMachine, String nameOfImgMachine){
+    private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int maxTimerOfMachine, int timerOfMachine, int expGive, String nameOfMaterialForMachine, String nameOfMaterialNeededMachine, String nameOfImgMachine){
         machine = new Machine();
         machine.setName(nameOfMachine);
         machine.setNumberOf(numberOfMachine,true);
         machine.setCost(costOfMachine, true);
         machine.setNumberOfWorkersOnMachine(workersOnMachine,true);
         machine.setTimerOfMachine(timerOfMachine, true);
+        machine.setExpGive(expGive);
+        machine.setMaxTimerOfMachine(maxTimerOfMachine, true);
         machine.setNameOfMaterial(nameOfMaterialForMachine);
         machine.setNameOfNeededMaterial(nameOfMaterialNeededMachine);
         machine.setNameOfImage(nameOfImgMachine);
         realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.copyToRealm(machine);
+        realm.copyToRealmOrUpdate(machine);
         realm.commitTransaction();
     }
 
@@ -369,7 +397,7 @@ public class MainReferences {
         material.setNameOfImg(nameOfImgMaterial);
         realm = Realm.getDefaultInstance();
         realm.beginTransaction();
-        realm.copyToRealm(material);
+        realm.copyToRealmOrUpdate(material);
         realm.commitTransaction();
     }
 
@@ -383,21 +411,21 @@ public class MainReferences {
         upgrade.setNameOfMaterialGive(nameOfMaterialToGiveUpgrade);
         upgrade.setNameOfImg(nameOfImgUpgrade);
         realm.beginTransaction();
-        realm.copyToRealm(upgrade);
+        realm.copyToRealmOrUpdate(upgrade);
         realm.commitTransaction();
     }
 
     public void createAllMachines(){
-        creatingMachine(machine1, nameOfMachine1, numberOfMachine1,costOfMachine1,workersOnMachine1,timerOfMachine1, nameOfMaterialForMachine1, nameOfImageMachine1);
-        creatingMachine(machine2, nameOfMachine2, numberOfMachine2,costOfMachine2, workersOnMachine2,timerOfMachine2,nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine2);
-        creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3,timerOfMachine3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine3);
-        creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4,timerOfMachine4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine4);
-        creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5,timerOfMachine5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
-        creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6,timerOfMachine6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine6);
-        creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7,timerOfMachine7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine7);
-        creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8,timerOfMachine8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine8);
-        creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9,timerOfMachine9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine9);
-        creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10,timerOfMachine10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);
+        creatingMachine(machine1, nameOfMachine1, numberOfMachine1,costOfMachine1,workersOnMachine1, maxTimerOfMachine1,timerOfMachine1, expGiveMach1, nameOfMaterialForMachine1, nameOfImageMachine1);
+        creatingMachine(machine2, nameOfMachine2, numberOfMachine2,costOfMachine2, workersOnMachine2, maxTimerOfMachine2, timerOfMachine2, expGiveMach2,nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine2);
+        creatingMachine(machine3, nameOfMachine3, numberOfMachine3,costOfMachine3, workersOnMachine3, maxTimerOfMachine3, timerOfMachine3, expGiveMach3,nameOfMaterialForMachine3, nameOfMaterialNeededMachine3, nameOfImageMachine3);
+        creatingMachine(machine4, nameOfMachine4, numberOfMachine4,costOfMachine4, workersOnMachine4, maxTimerOfMachine4, timerOfMachine4, expGiveMach4,nameOfMaterialForMachine4, nameOfMaterialNeededMachine4, nameOfImageMachine4);
+        creatingMachine(machine5, nameOfMachine5, numberOfMachine5,costOfMachine5, workersOnMachine5, maxTimerOfMachine5, timerOfMachine5, expGiveMach5,nameOfMaterialForMachine5, nameOfMaterialNeededMachine5, nameOfImageMachine5);
+        creatingMachine(machine6, nameOfMachine6, numberOfMachine6,costOfMachine6, workersOnMachine6, maxTimerOfMachine6, timerOfMachine6, expGiveMach6,nameOfMaterialForMachine6, nameOfMaterialNeededMachine6, nameOfImageMachine6);
+        creatingMachine(machine7, nameOfMachine7, numberOfMachine7,costOfMachine7, workersOnMachine7, maxTimerOfMachine7,timerOfMachine7, expGiveMach7,nameOfMaterialForMachine7, nameOfMaterialNeededMachine7, nameOfImageMachine7);
+        creatingMachine(machine8, nameOfMachine8, numberOfMachine8,costOfMachine8, workersOnMachine8, maxTimerOfMachine8, timerOfMachine8, expGiveMach8,nameOfMaterialForMachine8, nameOfMaterialNeededMachine8, nameOfImageMachine8);
+        creatingMachine(machine9, nameOfMachine9, numberOfMachine9,costOfMachine9, workersOnMachine9, maxTimerOfMachine9, timerOfMachine9, expGiveMach9,nameOfMaterialForMachine9, nameOfMaterialNeededMachine9, nameOfImageMachine9);
+        creatingMachine(machine10, nameOfMachine10, numberOfMachine10,costOfMachine10, workersOnMachine10, maxTimerOfMachine10, timerOfMachine10, expGiveMach10,nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);
     }
 
     public void createAllMaterials(){
@@ -442,14 +470,39 @@ public class MainReferences {
         worker.setNumberOf(numberOfWorker,true);
         worker.setCost(costOfWorker, true);
         realm.beginTransaction();
-        realm.copyToRealm(worker);
+        realm.copyToRealmOrUpdate(worker);
         realm.commitTransaction();
+    }
+
+    public void createMaterialBetter(int plusCost){
+            costOfMaterial1 += plusCost;
+            costOfMaterial2 += 2 *plusCost;
+            costOfMaterial3 += 2 *plusCost;
+            costOfMaterial4 += 2*plusCost;
+            costOfMaterial5 += 3*plusCost;
+            costOfMaterial6 += 3*plusCost;
+            costOfMaterial7 += 3*plusCost;
+            costOfMaterial8 += 4*plusCost;
+
+
+        createMaterial(material1, nameOfMaterial1, costOfMaterial1, numnerOfMaterial1, nameOfImgMaterial1);
+        createMaterial(material2, nameOfMaterial2, costOfMaterial2, numnerOfMaterial2, nameOfImgMaterial1);
+        createMaterial(material3, nameOfMaterial3, costOfMaterial3, numnerOfMaterial3, nameOfImgMaterial1);
+        createMaterial(material4, nameOfMaterial4, costOfMaterial4, numnerOfMaterial4, nameOfImgMaterial1);
+        createMaterial(material5, nameOfMaterial5, costOfMaterial5, numnerOfMaterial5, nameOfImgMaterial1);
+        createMaterial(material6, nameOfMaterial6, costOfMaterial6, numnerOfMaterial6, nameOfImgMaterial1);
+        createMaterial(material7, nameOfMaterial7, costOfMaterial7, numnerOfMaterial7, nameOfImgMaterial1);
+        createMaterial(material8, nameOfMaterial8, costOfMaterial8, numnerOfMaterial8, nameOfImgMaterial1);
+
     }
 
     public void createUser(){
         user = new User();
         user.setName(name);
         user.setCoins(coins, true);
+        user.setLevel(levelOfUser, true);
+        user.setExpNeeded(expNeeded,true);
+        user.setExp(exp,false);
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();

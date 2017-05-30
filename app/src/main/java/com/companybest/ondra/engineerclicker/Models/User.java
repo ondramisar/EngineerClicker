@@ -7,8 +7,47 @@ public class User extends RealmObject {
     @PrimaryKey
     private String name;
 
+    private int level;
+    private int expNeeded;
+    private int exp;
+
     private float coins;
 
+    public int getExp() {
+        return exp;
+    }
+
+    public void setExp(int exp, boolean plus) {
+        if (plus) {
+            this.exp += exp;
+        } else {
+            this.exp = exp;
+        }
+    }
+
+    public int getExpNeeded() {
+        return expNeeded;
+    }
+
+    public void setExpNeeded(int expNeeded, boolean plus) {
+        if (plus) {
+            this.expNeeded += expNeeded;
+        } else {
+            this.expNeeded -= expNeeded;
+        }
+    }
+
+    public int getLevel() {
+        return level;
+    }
+
+    public void setLevel(int level, boolean plus) {
+        if (plus) {
+            this.level += level;
+        } else {
+            this.level -= level;
+        }
+    }
 
     public String getName() {
         return name;

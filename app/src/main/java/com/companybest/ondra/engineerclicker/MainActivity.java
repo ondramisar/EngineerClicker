@@ -20,8 +20,10 @@ import android.widget.TextView;
 
 import com.companybest.ondra.engineerclicker.Activitis.BettingTab;
 import com.companybest.ondra.engineerclicker.Activitis.CreditFragment;
+import com.companybest.ondra.engineerclicker.Activitis.InfTab;
 import com.companybest.ondra.engineerclicker.Activitis.IntroActivity;
 import com.companybest.ondra.engineerclicker.Activitis.MechTab;
+import com.companybest.ondra.engineerclicker.Activitis.ResetGameFragment;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
@@ -108,11 +110,18 @@ public class MainActivity extends RealmBaseActivity {
             mainReferences.createAllUpgrades();
             mainReferences.createWorker();
             mainReferences.createUser();
-            sharedPreferences.edit().putInt("music", 100).apply();
-            sharedPreferences.edit().putInt("sound", 100).apply();
+            sharedPreferences.edit().putInt("music", 0).apply();
+            sharedPreferences.edit().putInt("sound", 0).apply();
             Intent i = new Intent(this, IntroActivity.class);
             startActivity(i);
+        } else if (sharedPreferences.getInt("created", 0) == 1) {
+            sharedPreferences.edit().putInt("created", 2).apply();
+            FragmentManager fm = getSupportFragmentManager();
+            ResetGameFragment resetGameFragment = new ResetGameFragment(getApplicationContext());
+            resetGameFragment.show(fm, "user");
+
         }
+
 
         startMusic();
 
@@ -190,6 +199,13 @@ public class MainActivity extends RealmBaseActivity {
             startActivity(i1);
 
             return true;
+        } else if (id == R.id.resetGame){
+            FragmentManager fm = getSupportFragmentManager();
+            ResetGameFragment resetGameFragment = new ResetGameFragment(getApplicationContext());
+            resetGameFragment.show(fm, "user");
+
+            return true;
+
         }
 
         return super.onOptionsItemSelected(item);
@@ -236,9 +252,12 @@ public class MainActivity extends RealmBaseActivity {
                     StockTab stockTab = new StockTab();
                     return stockTab;
                 case 2:
+                    InfTab infTab = new InfTab();
+                    return infTab;
+                case 3:
                     UpgradeTab upgradeTab = new UpgradeTab();
                     return upgradeTab;
-                case 3:
+                case 4:
                     BettingTab bettingTab = new BettingTab();
                     return bettingTab;
                 default:
@@ -248,8 +267,8 @@ public class MainActivity extends RealmBaseActivity {
 
         @Override
         public int getCount() {
-            // Show 4 total pages.
-            return 4;
+            // Show 5 total pages.
+            return 5;
         }
 
         @Override
@@ -260,9 +279,11 @@ public class MainActivity extends RealmBaseActivity {
                 case 1:
                     return "STOCK";
                 case 2:
-                    return "UPGRADE";
+                    return "INF";
                 case 3:
-                    return "Betting";
+                    return "UPG";
+                case 4:
+                    return "Bet";
             }
             return null;
         }

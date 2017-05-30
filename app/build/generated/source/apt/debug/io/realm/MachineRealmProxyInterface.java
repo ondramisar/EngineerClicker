@@ -10,8 +10,12 @@ public interface MachineRealmProxyInterface {
     public void realmSet$numberOfWorkersOnMachine(int value);
     public int realmGet$cost();
     public void realmSet$cost(int value);
+    public int realmGet$maxTimerOfMachine();
+    public void realmSet$maxTimerOfMachine(int value);
     public int realmGet$timerOfMachine();
     public void realmSet$timerOfMachine(int value);
+    public int realmGet$expGive();
+    public void realmSet$expGive(int value);
     public String realmGet$nameOfMaterial();
     public void realmSet$nameOfMaterial(String value);
     public String realmGet$nameOfNeededMaterial();

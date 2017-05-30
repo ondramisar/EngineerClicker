@@ -136,6 +136,10 @@
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\drawable\\upgrade_time_of_machine.png"
     },
     {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\bac_for_text.png",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\drawable\\bac_for_text.png"
+    },
+    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\ic_dashboard_black_24dp.xml",
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\drawable\\ic_dashboard_black_24dp.xml"
     },
@@ -282,6 +286,10 @@
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\milling.png",
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\drawable\\milling.png"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\build.png",
+        "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\drawable\\build.png"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\drawable\\common_google_signin_btn_text_light.xml",

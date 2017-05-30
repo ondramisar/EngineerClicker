@@ -36,12 +36,21 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         implements Cloneable {
 
         public long nameIndex;
+        public long levelIndex;
+        public long expNeededIndex;
+        public long expIndex;
         public long coinsIndex;
 
         UserColumnInfo(String path, Table table) {
-            final Map<String, Long> indicesMap = new HashMap<String, Long>(2);
+            final Map<String, Long> indicesMap = new HashMap<String, Long>(5);
             this.nameIndex = getValidColumnIndex(path, table, "User", "name");
             indicesMap.put("name", this.nameIndex);
+            this.levelIndex = getValidColumnIndex(path, table, "User", "level");
+            indicesMap.put("level", this.levelIndex);
+            this.expNeededIndex = getValidColumnIndex(path, table, "User", "expNeeded");
+            indicesMap.put("expNeeded", this.expNeededIndex);
+            this.expIndex = getValidColumnIndex(path, table, "User", "exp");
+            indicesMap.put("exp", this.expIndex);
             this.coinsIndex = getValidColumnIndex(path, table, "User", "coins");
             indicesMap.put("coins", this.coinsIndex);
 
@@ -52,6 +61,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         public final void copyColumnInfoFrom(ColumnInfo other) {
             final UserColumnInfo otherInfo = (UserColumnInfo) other;
             this.nameIndex = otherInfo.nameIndex;
+            this.levelIndex = otherInfo.levelIndex;
+            this.expNeededIndex = otherInfo.expNeededIndex;
+            this.expIndex = otherInfo.expIndex;
             this.coinsIndex = otherInfo.coinsIndex;
 
             setIndicesMap(otherInfo.getIndicesMap());
@@ -69,6 +81,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
     static {
         List<String> fieldNames = new ArrayList<String>();
         fieldNames.add("name");
+        fieldNames.add("level");
+        fieldNames.add("expNeeded");
+        fieldNames.add("exp");
         fieldNames.add("coins");
         FIELD_NAMES = Collections.unmodifiableList(fieldNames);
     }
@@ -117,6 +132,96 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
     }
 
     @SuppressWarnings("cast")
+    public int realmGet$level() {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        return (int) proxyState.getRow$realm().getLong(columnInfo.levelIndex);
+    }
+
+    public void realmSet$level(int value) {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        if (proxyState.isUnderConstruction()) {
+            if (!proxyState.getAcceptDefaultValue$realm()) {
+                return;
+            }
+            final Row row = proxyState.getRow$realm();
+            row.getTable().setLong(columnInfo.levelIndex, row.getIndex(), value, true);
+            return;
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        proxyState.getRow$realm().setLong(columnInfo.levelIndex, value);
+    }
+
+    @SuppressWarnings("cast")
+    public int realmGet$expNeeded() {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        return (int) proxyState.getRow$realm().getLong(columnInfo.expNeededIndex);
+    }
+
+    public void realmSet$expNeeded(int value) {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        if (proxyState.isUnderConstruction()) {
+            if (!proxyState.getAcceptDefaultValue$realm()) {
+                return;
+            }
+            final Row row = proxyState.getRow$realm();
+            row.getTable().setLong(columnInfo.expNeededIndex, row.getIndex(), value, true);
+            return;
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        proxyState.getRow$realm().setLong(columnInfo.expNeededIndex, value);
+    }
+
+    @SuppressWarnings("cast")
+    public int realmGet$exp() {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        return (int) proxyState.getRow$realm().getLong(columnInfo.expIndex);
+    }
+
+    public void realmSet$exp(int value) {
+        if (proxyState == null) {
+            // Called from model's constructor. Inject context.
+            injectObjectContext();
+        }
+
+        if (proxyState.isUnderConstruction()) {
+            if (!proxyState.getAcceptDefaultValue$realm()) {
+                return;
+            }
+            final Row row = proxyState.getRow$realm();
+            row.getTable().setLong(columnInfo.expIndex, row.getIndex(), value, true);
+            return;
+        }
+
+        proxyState.getRealm$realm().checkIfValid();
+        proxyState.getRow$realm().setLong(columnInfo.expIndex, value);
+    }
+
+    @SuppressWarnings("cast")
     public float realmGet$coins() {
         if (proxyState == null) {
             // Called from model's constructor. Inject context.
@@ -150,6 +255,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         if (!realmSchema.contains("User")) {
             RealmObjectSchema realmObjectSchema = realmSchema.create("User");
             realmObjectSchema.add(new Property("name", RealmFieldType.STRING, Property.PRIMARY_KEY, Property.INDEXED, !Property.REQUIRED));
+            realmObjectSchema.add(new Property("level", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
+            realmObjectSchema.add(new Property("expNeeded", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
+            realmObjectSchema.add(new Property("exp", RealmFieldType.INTEGER, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             realmObjectSchema.add(new Property("coins", RealmFieldType.FLOAT, !Property.PRIMARY_KEY, !Property.INDEXED, Property.REQUIRED));
             return realmObjectSchema;
         }
@@ -160,6 +268,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         if (!sharedRealm.hasTable("class_User")) {
             Table table = sharedRealm.getTable("class_User");
             table.addColumn(RealmFieldType.STRING, "name", Table.NULLABLE);
+            table.addColumn(RealmFieldType.INTEGER, "level", Table.NOT_NULLABLE);
+            table.addColumn(RealmFieldType.INTEGER, "expNeeded", Table.NOT_NULLABLE);
+            table.addColumn(RealmFieldType.INTEGER, "exp", Table.NOT_NULLABLE);
             table.addColumn(RealmFieldType.FLOAT, "coins", Table.NOT_NULLABLE);
             table.addSearchIndex(table.getColumnIndex("name"));
             table.setPrimaryKey("name");
@@ -172,14 +283,14 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         if (sharedRealm.hasTable("class_User")) {
             Table table = sharedRealm.getTable("class_User");
             final long columnCount = table.getColumnCount();
-            if (columnCount != 2) {
-                if (columnCount < 2) {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 2 but was " + columnCount);
+            if (columnCount != 5) {
+                if (columnCount < 5) {
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is less than expected - expected 5 but was " + columnCount);
                 }
                 if (allowExtraColumns) {
-                    RealmLog.debug("Field count is more than expected - expected 2 but was %1$d", columnCount);
+                    RealmLog.debug("Field count is more than expected - expected 5 but was %1$d", columnCount);
                 } else {
-                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 2 but was " + columnCount);
+                    throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field count is more than expected - expected 5 but was " + columnCount);
                 }
             }
             Map<String, RealmFieldType> columnTypes = new HashMap<String, RealmFieldType>();
@@ -203,6 +314,33 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             }
             if (!table.hasSearchIndex(table.getColumnIndex("name"))) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Index not defined for field 'name' in existing Realm file. Either set @Index or migrate using io.realm.internal.Table.removeSearchIndex().");
+            }
+            if (!columnTypes.containsKey("level")) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'level' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("level") != RealmFieldType.INTEGER) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'level' in existing Realm file.");
+            }
+            if (table.isColumnNullable(columnInfo.levelIndex)) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'level' does support null values in the existing Realm file. Use corresponding boxed type for field 'level' or migrate using RealmObjectSchema.setNullable().");
+            }
+            if (!columnTypes.containsKey("expNeeded")) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'expNeeded' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("expNeeded") != RealmFieldType.INTEGER) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'expNeeded' in existing Realm file.");
+            }
+            if (table.isColumnNullable(columnInfo.expNeededIndex)) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'expNeeded' does support null values in the existing Realm file. Use corresponding boxed type for field 'expNeeded' or migrate using RealmObjectSchema.setNullable().");
+            }
+            if (!columnTypes.containsKey("exp")) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'exp' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
+            }
+            if (columnTypes.get("exp") != RealmFieldType.INTEGER) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Invalid type 'int' for field 'exp' in existing Realm file.");
+            }
+            if (table.isColumnNullable(columnInfo.expIndex)) {
+                throw new RealmMigrationNeededException(sharedRealm.getPath(), "Field 'exp' does support null values in the existing Realm file. Use corresponding boxed type for field 'exp' or migrate using RealmObjectSchema.setNullable().");
             }
             if (!columnTypes.containsKey("coins")) {
                 throw new RealmMigrationNeededException(sharedRealm.getPath(), "Missing field 'coins' in existing Realm file. Either remove field or migrate using io.realm.internal.Table.addColumn().");
@@ -262,6 +400,27 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                 throw new IllegalArgumentException("JSON object doesn't have the primary key field 'name'.");
             }
         }
+        if (json.has("level")) {
+            if (json.isNull("level")) {
+                throw new IllegalArgumentException("Trying to set non-nullable field 'level' to null.");
+            } else {
+                ((UserRealmProxyInterface) obj).realmSet$level((int) json.getInt("level"));
+            }
+        }
+        if (json.has("expNeeded")) {
+            if (json.isNull("expNeeded")) {
+                throw new IllegalArgumentException("Trying to set non-nullable field 'expNeeded' to null.");
+            } else {
+                ((UserRealmProxyInterface) obj).realmSet$expNeeded((int) json.getInt("expNeeded"));
+            }
+        }
+        if (json.has("exp")) {
+            if (json.isNull("exp")) {
+                throw new IllegalArgumentException("Trying to set non-nullable field 'exp' to null.");
+            } else {
+                ((UserRealmProxyInterface) obj).realmSet$exp((int) json.getInt("exp"));
+            }
+        }
         if (json.has("coins")) {
             if (json.isNull("coins")) {
                 throw new IllegalArgumentException("Trying to set non-nullable field 'coins' to null.");
@@ -289,6 +448,27 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                     ((UserRealmProxyInterface) obj).realmSet$name((String) reader.nextString());
                 }
                 jsonHasPrimaryKey = true;
+            } else if (name.equals("level")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    throw new IllegalArgumentException("Trying to set non-nullable field 'level' to null.");
+                } else {
+                    ((UserRealmProxyInterface) obj).realmSet$level((int) reader.nextInt());
+                }
+            } else if (name.equals("expNeeded")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    throw new IllegalArgumentException("Trying to set non-nullable field 'expNeeded' to null.");
+                } else {
+                    ((UserRealmProxyInterface) obj).realmSet$expNeeded((int) reader.nextInt());
+                }
+            } else if (name.equals("exp")) {
+                if (reader.peek() == JsonToken.NULL) {
+                    reader.skipValue();
+                    throw new IllegalArgumentException("Trying to set non-nullable field 'exp' to null.");
+                } else {
+                    ((UserRealmProxyInterface) obj).realmSet$exp((int) reader.nextInt());
+                }
             } else if (name.equals("coins")) {
                 if (reader.peek() == JsonToken.NULL) {
                     reader.skipValue();
@@ -361,6 +541,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             // rejecting default values to avoid creating unexpected objects from RealmModel/RealmList fields.
             com.companybest.ondra.engineerclicker.Models.User realmObject = realm.createObjectInternal(com.companybest.ondra.engineerclicker.Models.User.class, ((UserRealmProxyInterface) newObject).realmGet$name(), false, Collections.<String>emptyList());
             cache.put(newObject, (RealmObjectProxy) realmObject);
+            ((UserRealmProxyInterface) realmObject).realmSet$level(((UserRealmProxyInterface) newObject).realmGet$level());
+            ((UserRealmProxyInterface) realmObject).realmSet$expNeeded(((UserRealmProxyInterface) newObject).realmGet$expNeeded());
+            ((UserRealmProxyInterface) realmObject).realmSet$exp(((UserRealmProxyInterface) newObject).realmGet$exp());
             ((UserRealmProxyInterface) realmObject).realmSet$coins(((UserRealmProxyInterface) newObject).realmGet$coins());
             return realmObject;
         }
@@ -387,6 +570,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             Table.throwDuplicatePrimaryKeyException(primaryKeyValue);
         }
         cache.put(object, rowIndex);
+        Table.nativeSetLong(tableNativePtr, columnInfo.levelIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$level(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expNeededIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$expNeeded(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$exp(), false);
         Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
         return rowIndex;
     }
@@ -417,6 +603,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                     Table.throwDuplicatePrimaryKeyException(primaryKeyValue);
                 }
                 cache.put(object, rowIndex);
+                Table.nativeSetLong(tableNativePtr, columnInfo.levelIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$level(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expNeededIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$expNeeded(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$exp(), false);
                 Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
             }
         }
@@ -441,6 +630,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             rowIndex = table.addEmptyRowWithPrimaryKey(primaryKeyValue, false);
         }
         cache.put(object, rowIndex);
+        Table.nativeSetLong(tableNativePtr, columnInfo.levelIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$level(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expNeededIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$expNeeded(), false);
+        Table.nativeSetLong(tableNativePtr, columnInfo.expIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$exp(), false);
         Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
         return rowIndex;
     }
@@ -469,6 +661,9 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
                     rowIndex = table.addEmptyRowWithPrimaryKey(primaryKeyValue, false);
                 }
                 cache.put(object, rowIndex);
+                Table.nativeSetLong(tableNativePtr, columnInfo.levelIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$level(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expNeededIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$expNeeded(), false);
+                Table.nativeSetLong(tableNativePtr, columnInfo.expIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$exp(), false);
                 Table.nativeSetFloat(tableNativePtr, columnInfo.coinsIndex, rowIndex, ((UserRealmProxyInterface)object).realmGet$coins(), false);
             }
         }
@@ -493,11 +688,17 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
             cache.put(realmObject, new RealmObjectProxy.CacheData(currentDepth, unmanagedObject));
         }
         ((UserRealmProxyInterface) unmanagedObject).realmSet$name(((UserRealmProxyInterface) realmObject).realmGet$name());
+        ((UserRealmProxyInterface) unmanagedObject).realmSet$level(((UserRealmProxyInterface) realmObject).realmGet$level());
+        ((UserRealmProxyInterface) unmanagedObject).realmSet$expNeeded(((UserRealmProxyInterface) realmObject).realmGet$expNeeded());
+        ((UserRealmProxyInterface) unmanagedObject).realmSet$exp(((UserRealmProxyInterface) realmObject).realmGet$exp());
         ((UserRealmProxyInterface) unmanagedObject).realmSet$coins(((UserRealmProxyInterface) realmObject).realmGet$coins());
         return unmanagedObject;
     }
 
     static com.companybest.ondra.engineerclicker.Models.User update(Realm realm, com.companybest.ondra.engineerclicker.Models.User realmObject, com.companybest.ondra.engineerclicker.Models.User newObject, Map<RealmModel, RealmObjectProxy> cache) {
+        ((UserRealmProxyInterface) realmObject).realmSet$level(((UserRealmProxyInterface) newObject).realmGet$level());
+        ((UserRealmProxyInterface) realmObject).realmSet$expNeeded(((UserRealmProxyInterface) newObject).realmGet$expNeeded());
+        ((UserRealmProxyInterface) realmObject).realmSet$exp(((UserRealmProxyInterface) newObject).realmGet$exp());
         ((UserRealmProxyInterface) realmObject).realmSet$coins(((UserRealmProxyInterface) newObject).realmGet$coins());
         return realmObject;
     }
@@ -510,6 +711,18 @@ public class UserRealmProxy extends com.companybest.ondra.engineerclicker.Models
         StringBuilder stringBuilder = new StringBuilder("User = [");
         stringBuilder.append("{name:");
         stringBuilder.append(realmGet$name() != null ? realmGet$name() : "null");
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{level:");
+        stringBuilder.append(realmGet$level());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{expNeeded:");
+        stringBuilder.append(realmGet$expNeeded());
+        stringBuilder.append("}");
+        stringBuilder.append(",");
+        stringBuilder.append("{exp:");
+        stringBuilder.append(realmGet$exp());
         stringBuilder.append("}");
         stringBuilder.append(",");
         stringBuilder.append("{coins:");

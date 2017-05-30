@@ -1,7 +1,4 @@
-#Sat May 27 19:53:43 CEST 2017
-base.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_2abec5b1fa7fadfce671e3b1b9756b31e3a3a9df
-renamed.1=classes2.dex
+#Tue May 30 13:54:39 CEST 2017
+base.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main
 renamed.0=classes.dex
-file.1=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_40f58c379fc4ea3f6e879695735099f5026e8830\\classes.dex
-base.1=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_40f58c379fc4ea3f6e879695735099f5026e8830
-file.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_2abec5b1fa7fadfce671e3b1b9756b31e3a3a9df\\classes.dex
+file.0=G\:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\1f\\main\\classes.dex
