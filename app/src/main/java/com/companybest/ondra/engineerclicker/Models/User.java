@@ -17,10 +17,12 @@ public class User extends RealmObject {
         return exp;
     }
 
-    public void setExp(int exp, boolean plus) {
-        if (plus) {
+    public void setExp(int exp, int plusOrMinusOrSet) {
+        if (plusOrMinusOrSet == 0) {
             this.exp += exp;
-        } else {
+        } else if (plusOrMinusOrSet == 1){
+            this.exp -= exp;
+        } else if (plusOrMinusOrSet == 2){
             this.exp = exp;
         }
     }

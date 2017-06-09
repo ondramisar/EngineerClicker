@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -27,6 +28,8 @@ import com.companybest.ondra.engineerclicker.Activitis.ResetGameFragment;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
+import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
 import com.facebook.common.util.UriUtil;
@@ -66,7 +69,6 @@ public class MainActivity extends RealmBaseActivity {
         super.onCreate(savedInstanceState);
         Fresco.initialize(this.getApplicationContext());
 
-
         setTitle("");
 
         setContentView(R.layout.activity_main1);
@@ -89,6 +91,7 @@ public class MainActivity extends RealmBaseActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
+        // IF SERVICE IS NOT RUNNING START IT
         if (!isMyServiceRunning(MyService.class)) {
             startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
         }
@@ -115,15 +118,58 @@ public class MainActivity extends RealmBaseActivity {
             Intent i = new Intent(this, IntroActivity.class);
             startActivity(i);
         } else if (sharedPreferences.getInt("created", 0) == 1) {
+            //SECOND CREATE
             sharedPreferences.edit().putInt("created", 2).apply();
-            FragmentManager fm = getSupportFragmentManager();
-            ResetGameFragment resetGameFragment = new ResetGameFragment(getApplicationContext());
-            resetGameFragment.show(fm, "user");
+        }  else if (sharedPreferences.getInt("created", 0) == 2) {
+            //THIRD CREATE
+            sharedPreferences.edit().putInt("created", 3).apply();
+            Realm realm = Realm.getDefaultInstance();
+            try {
+                final Upgrade upgrade = realm.where(Upgrade.class).equalTo("name", "Upgrade hole cost +4").findFirst();
+                final Machine machine = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine10).findFirst();
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        upgrade.setNameOfMaterialGive(mainReferences.nameOfMaterialToGiveUpgrade4);
+                        machine.setMaxTimerOfMachine(mainReferences.maxTimerOfMachine10, true);
+                        machine.setTimerOfMachine(mainReferences.maxTimerOfMachine10, true);
+                        machine.setExpGive(mainReferences.expGiveMach10);
+                        Log.i("user", "Machine UPGRADE WAS DONE");
+                    }
+                });
 
+            }finally {
+                realm.close();
+            }
+        } else if (sharedPreferences.getInt("created", 0) == 3) {
+            //FOURTH CREATE
+            sharedPreferences.edit().putInt("created", 3).apply();
+            Realm realm = Realm.getDefaultInstance();
+            try {
+                final Machine machine = realm.where(Machine.class).equalTo("name", mainReferences.nameOfMachine10).findFirst();
+
+                if (machine.getExpGive() != 60000 || machine.getTimerOfMachine() > 1800) {
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
+                            machine.setMaxTimerOfMachine(mainReferences.maxTimerOfMachine10, true);
+                            machine.setTimerOfMachine(mainReferences.maxTimerOfMachine10, true);
+                            machine.setExpGive(mainReferences.expGiveMach10);
+                            Log.i("user", "Machine UPGRADE WAS DOMNE VERSION 3: " + String.valueOf(machine.getTimerOfMachine()));
+                        }
+                    });
+                }else {
+                    Log.i("user", "ELSE LOOP");
+
+                }
+            } finally {
+                realm.close();
+            }
         }
 
-
+        //START MUSIC
         startMusic();
+
 
         //COIN IMAGE
         SimpleDraweeView coinsImg = (SimpleDraweeView) findViewById(R.id.coinsImg);
@@ -138,6 +184,14 @@ public class MainActivity extends RealmBaseActivity {
         Realm realm = Realm.getDefaultInstance();
         try {
             final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
+            /*
+            //TEST METHOD
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    user.setCoins(600000000, true);
+                }
+            });*/
             coins = (TextView) findViewById(R.id.coins);
             coins.setText("" + String.valueOf(user.getCoins()));
         } finally {
@@ -154,6 +208,7 @@ public class MainActivity extends RealmBaseActivity {
         audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,sharedPreferences.getInt("music",0), 0);
     }
 
+
     private boolean isMyServiceRunning(Class<?> serviceClass) {
         ActivityManager manager = (ActivityManager) getSystemService(Context.ACTIVITY_SERVICE);
         for (ActivityManager.RunningServiceInfo service : manager.getRunningServices(Integer.MAX_VALUE)) {
@@ -163,8 +218,6 @@ public class MainActivity extends RealmBaseActivity {
         }
         return false;
     }
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -183,23 +236,27 @@ public class MainActivity extends RealmBaseActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            //SETTINGS
             FragmentManager fm = getSupportFragmentManager();
             SettingFragment settingFragment = new SettingFragment(getApplicationContext());
             settingFragment.show(fm, "user");
 
             return true;
         } else if (id == R.id.action_credit) {
+            //CREDIT
             FragmentManager fm = getSupportFragmentManager();
             CreditFragment cretidFragment = new CreditFragment(getApplicationContext());
             cretidFragment.show(fm, "user");
 
             return true;
         } else if (id == R.id.action_help) {
+            //HELP
             Intent i1 = new Intent(this, IntroActivity.class);
             startActivity(i1);
 
             return true;
         } else if (id == R.id.resetGame){
+            //RESET GAME
             FragmentManager fm = getSupportFragmentManager();
             ResetGameFragment resetGameFragment = new ResetGameFragment(getApplicationContext());
             resetGameFragment.show(fm, "user");
@@ -215,7 +272,6 @@ public class MainActivity extends RealmBaseActivity {
     protected void onRestart() {
         super.onRestart();
         startMusic();
-
     }
 
     @Override

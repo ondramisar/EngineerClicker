@@ -28,6 +28,7 @@ public class BettingSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.betting_slide, container, false);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.decription);
         if (worker == 0 ) {
 

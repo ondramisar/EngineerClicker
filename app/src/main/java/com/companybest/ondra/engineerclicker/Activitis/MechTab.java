@@ -62,6 +62,7 @@ public class MechTab extends Fragment {
             mainScreenRecyclerView.setAdapter(mainRealmAdapter);
 
 
+            //COIN IMG
             SimpleDraweeView costOfWorker = (SimpleDraweeView) rootView.findViewById(R.id.costOfWorker);
             int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
             Uri uri1 = new Uri.Builder()
@@ -70,6 +71,7 @@ public class MechTab extends Fragment {
                     .build();
             costOfWorker.setImageURI(uri1);
 
+            //WORKER IMG
             workerImg = (SimpleDraweeView) rootView.findViewById(R.id.workerImg);
             int resourceId = getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker");
             Uri uri = new Uri.Builder()

@@ -29,6 +29,7 @@ public class StockSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.stock_slide, container, false);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.decription);
         if (worker) {
 
@@ -37,6 +38,7 @@ public class StockSlide extends SlideFragment {
         }
 
 
+        //COIN IMG
         SimpleDraweeView costOfMaterialImg = (SimpleDraweeView) view.findViewById(R.id.costOfMaterialImg);
         int resourceId8 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri8 = new Uri.Builder()
@@ -45,6 +47,7 @@ public class StockSlide extends SlideFragment {
                 .build();
         costOfMaterialImg.setImageURI(uri8);
 
+        //MATERIAL IMG
         SimpleDraweeView upgradeImg = (SimpleDraweeView) view.findViewById(R.id.upgradeImg);
         int resourceId9 = getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri9 = new Uri.Builder()

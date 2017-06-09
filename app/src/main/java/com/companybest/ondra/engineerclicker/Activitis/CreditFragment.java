@@ -29,6 +29,7 @@ public class CreditFragment extends DialogFragment {
         View rootView = inflater.inflate(R.layout.credit_fragment, container,
                 false);
 
+        //CREDITS
         ArrayList<String> values = new ArrayList<>();
         values.add("Developed by Ondřej Misař, Contact email: ondramisar124@seznam.cz");
         values.add("Part of graphic is from Jan Cikrle, FACEBOOK: Jan Ciki Cikrle");

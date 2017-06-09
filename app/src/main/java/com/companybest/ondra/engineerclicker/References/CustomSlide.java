@@ -30,6 +30,7 @@ public class CustomSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.custom_slide_machine, container, false);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.decription);
         if (worker == 0) {
 
@@ -42,6 +43,7 @@ public class CustomSlide extends SlideFragment {
         }
 
 
+        //COIN IMG
         SimpleDraweeView costOfWorker = (SimpleDraweeView) view.findViewById(R.id.costOfWorker);
         int resourceId8 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri8 = new Uri.Builder()
@@ -50,6 +52,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         costOfWorker.setImageURI(uri8);
 
+        //WORKER IMG
         SimpleDraweeView workerImg = (SimpleDraweeView) view.findViewById(R.id.workerImg);
         int resourceId9 = getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri9 = new Uri.Builder()
@@ -58,8 +61,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         workerImg.setImageURI(uri9);
 
-
-
+        //MINE IMG
         SimpleDraweeView machImg = (SimpleDraweeView) view.findViewById(R.id.imageView);
         int resourceId = getContext().getResources().getIdentifier("mine", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
@@ -68,7 +70,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         machImg.setImageURI(uri);
 
-
+        //COIN IMG
         SimpleDraweeView coin = (SimpleDraweeView) view.findViewById(R.id.costOfMachineImg);
         int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri1 = new Uri.Builder()
@@ -77,7 +79,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         coin.setImageURI(uri1);
 
-
+        //TIME IMG
         SimpleDraweeView timeOfMachineImg = (SimpleDraweeView) view.findViewById(R.id.timeOfMachineImg);
         int resourceId2 = getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri2 = new Uri.Builder()
@@ -86,7 +88,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         timeOfMachineImg.setImageURI(uri2);
 
-
+        //MATERIAL IMG
         SimpleDraweeView materialOfMachineImg = (SimpleDraweeView) view.findViewById(R.id.materialOfMachineImg);
         int resourceId3 = getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri3 = new Uri.Builder()
@@ -95,7 +97,7 @@ public class CustomSlide extends SlideFragment {
                 .build();
         materialOfMachineImg.setImageURI(uri3);
 
-
+        //WORKER ON MACHINE IMG
         SimpleDraweeView workerOnMachineImg = (SimpleDraweeView) view.findViewById(R.id.workerOnMachImg);
         int resourceId4 = getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri4 = new Uri.Builder()

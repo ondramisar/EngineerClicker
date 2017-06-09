@@ -70,7 +70,7 @@ public class InfTab extends Fragment{
                     realm.executeTransaction(new Realm.Transaction() {
                         @Override
                         public void execute(Realm realm) {
-                            user.setCoins(1.0f, true);
+                            user.setCoins((float) user.getLevel(), true);
                         }
                     });
 

@@ -65,6 +65,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         viewHolder.costOfMaterial.setText("" + String.valueOf(material.getCost()));
         viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
 
+        //MATERIAL IMG
         int resourceId = getContext().getResources().getIdentifier(material.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -72,6 +73,7 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
                 .build();
         viewHolder.upgradeImg.setImageURI(uri);
 
+        //COIN IMG
         int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri1 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"

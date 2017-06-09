@@ -24,6 +24,7 @@ public class LastSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.last_slide, container, false);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.decription);
         TextView decription2 = (TextView) view.findViewById(R.id.decription2);
 

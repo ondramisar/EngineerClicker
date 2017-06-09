@@ -79,8 +79,6 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
     }
 
 
-
-
     @Override
     public void onBindRealmViewHolder(final ViewHolder viewHolder, int position) {
         final Machine machine = realmResults.get(position);
@@ -98,6 +96,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
             viewHolder.workingTextView.setText("STOPPED");
         }
 
+        //MACHINE IMG
         int resourceId = getContext().getResources().getIdentifier(machine.getNameOfImage(), "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -105,6 +104,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.imageView.setImageURI(uri);
 
+        //COIN IMG
         int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri1 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -112,6 +112,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.costOfMachineImg.setImageURI(uri1);
 
+        //TIME IMG
         int resourceId2 = getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri2 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -119,6 +120,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.timeOfMachineImg.setImageURI(uri2);
 
+        //MATERIAL IMG
         int resourceId3 = getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri3 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -126,7 +128,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.materialOfMachineImg.setImageURI(uri3);
 
-
+        //WORKER ON MACHINE IMG
         int resourceId4 = getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri4 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -134,6 +136,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.workerOnMachineImg.setImageURI(uri4);
 
+        //DEFAULT SMALL MACHINE IMG
         int resourceId5 = getContext().getResources().getIdentifier("smallmach", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri5 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -141,6 +144,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 .build();
         viewHolder.smallMachImg.setImageURI(uri5);
 
+        //BACK FOR TEXT IF IT IS WORKING OR NOT IMG
         int resourceId6 = getContext().getResources().getIdentifier("bac_for_text", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri6 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -167,14 +171,14 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                                 machine.setNumberOf(1, true);
                                 machine.setCost(machine.getCost(), true);
 
-                                user.setExp(machine.getExpGive(),true);
+                                user.setExp(machine.getExpGive(), 0);
                             }
                         });
 
                         viewHolder.numberOfMachines.setText("" + String.valueOf(machine.getNumberOf()));
                         viewHolder.costOfMachine.setText("" + String.valueOf(machine.getCost()));
 
-                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                     }
 
@@ -240,7 +244,7 @@ public class MainRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, Mai
                 }
             });
 
-        }finally {
+        } finally {
             realm.close();
         }
     }

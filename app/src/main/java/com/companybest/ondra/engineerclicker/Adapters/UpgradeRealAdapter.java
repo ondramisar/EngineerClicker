@@ -65,6 +65,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         viewHolder.nameOfUpgrade.setText(String.valueOf(upgrade.getName()));
         viewHolder.costOfUpgrade.setText("" + String.valueOf(upgrade.getCost()));
 
+        //UPGRADE IMG
         int resourceId = getContext().getResources().getIdentifier(upgrade.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -72,6 +73,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
                 .build();
         viewHolder.upgradeImg.setImageURI(uri);
 
+        //COIN IMG
         int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri1 = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
@@ -89,6 +91,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                     if (user.getCoins() >= upgrade.getCost()) {
 
+                        //MATERIL UPGRADE
                         if (Objects.equals(upgrade.getForWhatToDo(), "material")) {
 
                             final Material material = realm.where(Material.class).equalTo("name", upgrade.getNameOfMaterialGive()).findFirst();
@@ -106,6 +109,7 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
                             });
                         }
 
+                        //MACHINE UPGRADE
                         if (Objects.equals(upgrade.getForWhatToDo(), "machine")) {
 
                             final Machine machine = realm.where(Machine.class).equalTo("name", upgrade.getNameOfMachinetoGive()).findFirst();
@@ -116,7 +120,12 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                                         user.setCoins(upgrade.getCost(), false);
 
-                                        machine.setTimerOfMachine(machine.getTimerOfMachine() / 20, false);
+                                        if (machine.getTimerOfMachine() > 100){
+                                            machine.setTimerOfMachine(machine.getTimerOfMachine() / 20, false);
+                                        } else if (machine.getTimerOfMachine() <= 100){
+                                            viewHolder.buyUpgrade.setEnabled(false);
+                                        }
+
 
                                         upgrade.setCost(upgrade.getCost() / 3, true);
                                     }
@@ -129,7 +138,6 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
 
                         TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                       // MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
 
                         viewHolder.costOfUpgrade.setText("Cost: " + String.valueOf(upgrade.getCost()));
 

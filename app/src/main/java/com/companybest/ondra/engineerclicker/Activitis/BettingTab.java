@@ -83,9 +83,11 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         Button buttonForConfurm50To50 = (Button) rootView.findViewById(R.id.buttonConfirmForFyftyFyfty);
         final TextView textViewFor50To50 = (TextView) rootView.findViewById(R.id.textViewForFyftyToFyfty);
         final EditText editTextFor50To50 = (EditText) rootView.findViewById(R.id.editTextFyftyToFyfty);
+
         if (editTextFor50To50.getText().toString().trim().length() > 0) {
             textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
         }
+
         buttonForConfurm50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -96,6 +98,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                 }
             }
         });
+
         play50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -166,6 +169,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         Button buttonForConfurmShufl = (Button) rootView.findViewById(R.id.buttonForConfirmShufl);
         final TextView textViewForShufl = (TextView) rootView.findViewById(R.id.textViewForShufl);
         final EditText editTextForShufl = (EditText) rootView.findViewById(R.id.editTextShufle);
+
         if (editTextForShufl.getText().toString().trim().length() > 0) {
             int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
 
@@ -173,6 +177,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             int max = i + i / 3;
             textViewForShufl.setText("You can win from " + String.valueOf(min) + " to " + String.valueOf(max));
         }
+
         buttonForConfurmShufl.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -188,6 +193,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                 }
             }
         });
+
         playShufle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

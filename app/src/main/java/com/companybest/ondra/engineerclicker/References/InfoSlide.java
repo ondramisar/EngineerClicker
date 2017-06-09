@@ -28,6 +28,7 @@ public class InfoSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.info_slide, container, false);
 
+        //CLICKING IMG
         SimpleDraweeView clickImg = (SimpleDraweeView) view.findViewById(R.id.clickImg);
         int resourceId = getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
@@ -36,6 +37,7 @@ public class InfoSlide extends SlideFragment {
                 .build();
         clickImg.setImageURI(uri);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.descriptionOfInfoSlide);
 
             decription.setText("In this slide you will find a information about your level, how much exp you have and you click on img of building and make coins from it");

@@ -19,6 +19,7 @@ public class IntroActivity extends MaterialIntroActivity {
         super.onCreate(savedInstanceState);
         enableLastSlideAlphaExitTransition(true);
 
+        //ALL SLIDES OF HELP/TUTORIAL
         addSlide(new CustomSlide(0));
 
         addSlide(new CustomSlide(1));

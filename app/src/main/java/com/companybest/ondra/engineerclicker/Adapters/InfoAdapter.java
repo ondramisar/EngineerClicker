@@ -22,12 +22,14 @@ public class InfoAdapter  extends RealmBasedRecyclerViewAdapter<User, InfoAdapte
         TextView levelOfUser;
         TextView exp;
         ProgressBar levelProgress;
+        TextView clickTextView;
 
         ViewHolder(FrameLayout container) {
             super(container);
             this.levelOfUser = (TextView) container.findViewById(R.id.levelOfUser);
             this.exp = (TextView) container.findViewById(R.id.expNumber);
             this.levelProgress = (ProgressBar) container.findViewById(R.id.progressOfLevel);
+            this.clickTextView = (TextView) container.findViewById(R.id.clickTextView);
         }
     }
 
@@ -49,18 +51,21 @@ public class InfoAdapter  extends RealmBasedRecyclerViewAdapter<User, InfoAdapte
 
         viewHolder.levelOfUser.setText("YOU ARE LEVEL" + String.valueOf(user.getLevel()));
         viewHolder.exp.setText(String.valueOf(user.getExp()) + " / "  + String.valueOf(user.getExpNeeded()));
+        //PROGRESS BAR
         viewHolder.levelProgress.setMax(user.getExpNeeded());
         viewHolder.levelProgress.setProgress(user.getExp());
+
+        viewHolder.clickTextView.setText("YOU ARE MAKING " + user.getLevel() + " COINS BY CLICK");
 
 
         Realm realm = Realm.getDefaultInstance();
         try {
-            if (user.getExp() > user.getExpNeeded()) {
+            if (user.getExp() >= user.getExpNeeded()) {
                 realm.executeTransaction(new Realm.Transaction() {
                     @Override
                     public void execute(Realm realm) {
                         user.setLevel(1, true);
-                        user.setExp(0, false);
+                        user.setExp(0, 2);
                         user.setExpNeeded(user.getExpNeeded(), true);
 
                     }

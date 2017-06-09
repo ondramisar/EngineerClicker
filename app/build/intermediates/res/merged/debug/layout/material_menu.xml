@@ -29,7 +29,7 @@
             android:layout_marginLeft="4dp"
             android:layout_toEndOf="@+id/upgradeImg"
             android:layout_toRightOf="@+id/upgradeImg"
-            android:text="100000"
+            android:text="10000"
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
         <Button
@@ -85,7 +85,7 @@
             android:layout_width="30dp"
             android:layout_height="32dp"
             android:layout_alignParentTop="true"
-            android:layout_marginLeft="10dp"
+            android:layout_marginLeft="7dp"
             android:layout_marginTop="45dp"
             android:layout_toRightOf="@+id/sellMaterialAll" />
 

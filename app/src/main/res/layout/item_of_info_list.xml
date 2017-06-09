@@ -11,11 +11,11 @@
             android:id="@+id/levelOfUser"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="15dp"
             android:textSize="22sp"
             android:text="TextView"
+            android:layout_marginTop="8dp"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
-            android:layout_alignParentTop="true"
+            android:layout_below="@+id/clickTextView"
             android:layout_centerHorizontal="true" />
 
         <TextView
@@ -24,7 +24,7 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/levelOfUser"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="10dp"
             android:text="TextView"
             android:textColor="@color/common_google_signin_btn_text_dark_focused"
             android:textSize="18sp" />
@@ -38,6 +38,17 @@
             android:layout_below="@+id/expNumber"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true" />
+
+        <TextView
+            android:id="@+id/clickTextView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="18sp"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:textColor="@color/common_google_signin_btn_text_dark_focused"
+            android:text="TextView" />
     </RelativeLayout>
 
 </FrameLayout>

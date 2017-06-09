@@ -22,6 +22,7 @@ public class MyService extends Service {
 
     MainThread mainThread;
 
+    //TIMERS
     int timeForMachine1 = 0;
     int timeForMachine2 = 0;
     int timeForMachine3 = 0;
@@ -32,10 +33,13 @@ public class MyService extends Service {
     int timeForMachine8 = 0;
     int timeForMachine9 = 0;
     int timeForMachine10 = 0;
+    int timeForMachine11 = 0;
 
 
     float timeOfDestructionThred = 0.f;
+
     PowerManager.WakeLock wl;
+
     RealmResults<Machine> machines;
 
 
@@ -48,8 +52,9 @@ public class MyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        Intent notificationIntent = new Intent(this, MainActivity.class);
 
+        //NOTIFICATION IN A BAR
+        Intent notificationIntent = new Intent(this, MainActivity.class);
 
         PendingIntent pendingIntent = PendingIntent.getActivity(this, 0,
                 notificationIntent, 0);
@@ -65,12 +70,13 @@ public class MyService extends Service {
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-        // Let it continue running until it is stopped.
 
+        //GAME LOOP
         mainThread = new MainThread(this, false);
         mainThread.setRunning(true);
         mainThread.start();
 
+        //THIS MAKE DEVICE WORK ALL THE TIME
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "My Tag");
         wl.acquire();
@@ -83,52 +89,38 @@ public class MyService extends Service {
         super.onDestroy();
     }
 
-    public void progressBar (final Machine m, final int timer ){
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            if (m.getNumberOfWorkersOnMachine() > 0) {
-                if (m.getTimerOfMachine() <= m.getMaxTimerOfMachine()) {
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            m.setTimerOfMachine(timer, true);
-                           //Log.i("user", String.valueOf(m.getTimerOfMachine()));
-
-                        }
-                    });
-                } else {
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            m.setTimerOfMachine(m.getTimerOfMachine(), false);
-                        }
-                    });
-                }
-            }
-        } finally {
-            realm.close();
-        }
-    }
-
     public void update() {
         timeOfDestructionThred += 0.01f;
 
-
-            timeForMachine1 += 1;
-            timeForMachine2 += 1;
-            timeForMachine3 += 1;
-            timeForMachine4 += 1;
-            timeForMachine5 += 1;
-            timeForMachine6 += 1;
-            timeForMachine7 += 1;
-            timeForMachine8 += 1;
-            timeForMachine9 += 1;
-            timeForMachine10 += 1;
+        //ADDING TO EVERY TIMER
+        timeForMachine1 += 1;
+        timeForMachine2 += 1;
+        timeForMachine3 += 1;
+        timeForMachine4 += 1;
+        timeForMachine5 += 1;
+        timeForMachine6 += 1;
+        timeForMachine7 += 1;
+        timeForMachine8 += 1;
+        timeForMachine9 += 1;
+        timeForMachine10 += 1;
+        timeForMachine11 += 1;
 
         Realm realm = Realm.getDefaultInstance();
         try {
             machines = realm.where(Machine.class).findAll();
-            final Machine m =  machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine1).findFirst();
+
+            int numberOfMachine = 0;
+            //THIS MAKES COUNT OF EVERY MACHINE THAT HAVE A WORKER ON THEM
+            for (int i = 0; i < machines.size(); i++) {
+                Machine m = machines.get(i);
+                if (m.getNumberOfWorkersOnMachine() > 0) {
+                    numberOfMachine += 1;
+                }
+            }
+
+
+            //SET UP ALL MACHINES FROM MACHINES LIST
+            final Machine m = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine1).findFirst();
             final Machine m2 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine2).findFirst();
             final Machine m3 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine3).findFirst();
             final Machine m4 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine4).findFirst();
@@ -139,20 +131,16 @@ public class MyService extends Service {
             final Machine m9 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine9).findFirst();
             final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();
 
-            /*
-            progressBar(m, timeForMachine1);
-            progressBar(m2, timeForMachine2);
-            progressBar(m3, timeForMachine3);
-            progressBar(m4, timeForMachine4);
-            progressBar(m5, timeForMachine5);
-            progressBar(m6, timeForMachine6);
-            progressBar(m7, timeForMachine7);
-            progressBar(m8, timeForMachine8);
-            progressBar(m9, timeForMachine9);
-            progressBar(m10, timeForMachine10);*/
+
+            //NEW PLUS MACHINE IF YOU DONT HAVE RESTARTED THE GAME AND DONT HAVE DONT SHOW IT
+            Machine m11 = null;
+            if (numberOfMachine > 10) {
+                m11 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine11).findFirst();
+
+            }
 
 
-
+            //MACHINE 1 IS DIFFERENT THAN EVERY OTHER
             if (timeForMachine1 > m.getTimerOfMachine()) {
                 timeForMachine1 = 0;
 
@@ -173,7 +161,7 @@ public class MyService extends Service {
             }
 
 
-
+            //CHECKING EVERY MACHINES TIMER
             if (timeForMachine2 > m2.getTimerOfMachine()) {
 
                 timeForMachine2 = 0;
@@ -243,13 +231,25 @@ public class MyService extends Service {
 
             }
 
+            //NEW MACHINE
+            if (m11 != null) {
+                if (timeForMachine11 > m11.getTimerOfMachine()) {
 
-        }finally {
+                    timeForMachine11 = 0;
+
+                    machineThread(m11);
+
+                }
+            }
+
+
+        } finally {
             realm.close();
         }
     }
 
-    private void machineThread(final Machine mach){
+    //METHOD FOR MACHINE SET UP AND ADDING
+    private void machineThread(final Machine mach) {
         Realm realm = Realm.getDefaultInstance();
         try {
             final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
@@ -257,31 +257,32 @@ public class MyService extends Service {
 
             if (mach.getNumberOfWorkersOnMachine() > 0 && material2.getNumberOf() > 0) {
 
-                    int numberOfMaterialsAdd = 0;
-                    int numberOfMaterials = material2.getNumberOf();
+                int numberOfMaterialsAdd = 0;
+                int numberOfMaterials = material2.getNumberOf();
 
-                    for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
-                        if (numberOfMaterials > 0) {
-                            numberOfMaterialsAdd += 1;
-                            numberOfMaterials -= 1;
-                        }
+                //METHOD FOR GETTING NUMBER OF MATERIALS TO ADD
+                for (int i = 0; i < mach.getNumberOfWorkersOnMachine(); i++) {
+                    if (numberOfMaterials > 0) {
+                        numberOfMaterialsAdd += 1;
+                        numberOfMaterials -= 1;
                     }
+                }
 
-                    final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
+                final int finalNumberOfMaterialsAdd = numberOfMaterialsAdd;
 
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
 
-                            material.setNumberOf(finalNumberOfMaterialsAdd, true);
+                        material.setNumberOf(finalNumberOfMaterialsAdd, true);
 
-                            material2.setNumberOf(finalNumberOfMaterialsAdd, false);
-                        }
-                    });
+                        material2.setNumberOf(finalNumberOfMaterialsAdd, false);
+                    }
+                });
             }
         } finally {
-                realm.close();
-            }
+            realm.close();
+        }
 
 
     }

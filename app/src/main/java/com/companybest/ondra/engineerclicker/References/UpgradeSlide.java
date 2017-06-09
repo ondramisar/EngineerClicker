@@ -30,6 +30,7 @@ public class UpgradeSlide extends SlideFragment {
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.upgrade_slide, container, false);
 
+        //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.decription);
         if (worker) {
 
@@ -37,7 +38,7 @@ public class UpgradeSlide extends SlideFragment {
 
         }
 
-
+        //COIN IMG
         SimpleDraweeView costOfUpgrdImg = (SimpleDraweeView) view.findViewById(R.id.costOfUpgrdImg);
         int resourceId8 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri8 = new Uri.Builder()
@@ -46,6 +47,7 @@ public class UpgradeSlide extends SlideFragment {
                 .build();
         costOfUpgrdImg.setImageURI(uri8);
 
+        //UPGRADE IMG
         SimpleDraweeView upgradeImg = (SimpleDraweeView) view.findViewById(R.id.imageViewOfUpgrade);
         int resourceId9 = getContext().getResources().getIdentifier("upgrade_money_for_mat", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri9 = new Uri.Builder()
