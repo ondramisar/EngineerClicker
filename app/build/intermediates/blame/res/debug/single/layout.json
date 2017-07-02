@@ -32,12 +32,12 @@
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\reset_game_fragment.xml"
     },
     {
-        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\c6132543d33bd31971cce8efa1d094e82b157bbe\\output\\res\\layout\\abc_screen_content_include.xml"
-    },
-    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\list_group.xml",
         "source": "G:\\programing\\android\\project\\EngineerClicker\\app\\src\\main\\res\\layout\\list_group.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_screen_content_include.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\c6132543d33bd31971cce8efa1d094e82b157bbe\\output\\res\\layout\\abc_screen_content_include.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\layout\\abc_popup_menu_header_item_layout.xml",

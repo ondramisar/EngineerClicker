@@ -386,11 +386,13 @@ public class MainReferences {
     //USER
     public User user;
     public float coins = 5000.f;
-    //public float coins = 1000000.f;
     public String name = "user";
     int levelOfUser = 1;
     int expNeeded = 2000;
     int exp = 0;
+    int maxMachine = 5;
+    int maxWorker = 5;
+    int maxUpgrade = 5;
 
     private Realm realm;
 
@@ -523,9 +525,24 @@ public class MainReferences {
         user.setLevel(levelOfUser, true);
         user.setExpNeeded(expNeeded, true);
         user.setExp(exp, 1);
+        user.setMaxMachine(maxMachine);
+        user.setMaxWorkers(maxWorker);
+        user.setMaxUpgrade(maxUpgrade);
         realm.beginTransaction();
         realm.copyToRealmOrUpdate(user);
         realm.commitTransaction();
+    }
+
+    public void createPartOfUser(){
+        final User user = realm.where(User.class).equalTo("name", name).findFirst();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                user.setMaxMachine(maxMachine);
+                user.setMaxWorkers(maxWorker);
+                user.setMaxUpgrade(maxUpgrade);
+            }
+        });
     }
 
 

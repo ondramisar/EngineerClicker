@@ -72,6 +72,7 @@ public class ResetGameFragment extends DialogFragment {
                         mainReferences.createAllMaterials();
                         mainReferences.createAllUpgrades();
                         mainReferences.createWorker();
+                        mainReferences.createPartOfUser();
 
                     } else if (numberOfMachine >= 5 && numberOfMachine < 10) {
                         deleteUpgrade();
@@ -80,6 +81,7 @@ public class ResetGameFragment extends DialogFragment {
                         mainReferences.createAllMachines();
                         mainReferences.createAllUpgrades();
                         mainReferences.createWorker();
+                        mainReferences.createPartOfUser();
 
                     } else if (numberOfMachine == 10) {
                         deleteUpgrade();
@@ -91,6 +93,7 @@ public class ResetGameFragment extends DialogFragment {
                         mainReferences.createAllUpgrades();
                         mainReferences.createNewUpgrade();
                         mainReferences.createWorker();
+                        mainReferences.createPartOfUser();
 
                     } else if (numberOfMachine > 10) {
                         deleteUpgrade();
@@ -102,6 +105,7 @@ public class ResetGameFragment extends DialogFragment {
                         mainReferences.createAllUpgrades();
                         mainReferences.createNewUpgrade();
                         mainReferences.createWorker();
+                        mainReferences.createPartOfUser();
 
                     }
 

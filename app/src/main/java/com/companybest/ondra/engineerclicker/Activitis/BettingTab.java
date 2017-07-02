@@ -49,7 +49,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
 
         mAd = MobileAds.getRewardedVideoAdInstance(getContext());
         mAd.setRewardedVideoAdListener(this);
-        loadAd();
+        //loadAd();
 
         //AD VIEW
         AdView mAdView4 = (AdView) rootView.findViewById(R.id.adView4);

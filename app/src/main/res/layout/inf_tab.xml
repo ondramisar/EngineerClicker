@@ -13,21 +13,11 @@
 
         <com.facebook.drawee.view.SimpleDraweeView
             android:id="@+id/clickImg"
-            android:layout_width="230dp"
-            android:layout_height="230dp"
+            android:layout_width="180dp"
+            android:layout_height="180dp"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="15dp" />
-
-
-        <com.google.android.gms.ads.AdView
-            android:id="@+id/adView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"
-            ads:adSize="BANNER"
-            ads:adUnitId="@string/banner_ad_unit_id" />
 
 
         <co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView

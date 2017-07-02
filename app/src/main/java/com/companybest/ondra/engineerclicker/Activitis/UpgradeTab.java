@@ -33,7 +33,7 @@ public class UpgradeTab extends Fragment {
         //AD VIEW
         AdView mAdView3 = (AdView) rootView.findViewById(R.id.adView3);
         AdRequest adRequest3 = new AdRequest.Builder().build();
-        mAdView3.loadAd(adRequest3);
+        //mAdView3.loadAd(adRequest3);
 
 
         Realm realm = Realm.getDefaultInstance();

@@ -8,12 +8,12 @@
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\c6132543d33bd31971cce8efa1d094e82b157bbe\\output\\res\\color\\abc_primary_text_material_dark.xml"
     },
     {
-        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
-        "source": "C:\\Users\\Ondra\\.android\\build-cache\\8d782df52dfbcc951ec456b47072b4d51a736d35\\output\\res\\color\\design_error.xml"
-    },
-    {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\color\\switch_thumb_material_light.xml",
         "source": "C:\\Users\\Ondra\\.android\\build-cache\\c6132543d33bd31971cce8efa1d094e82b157bbe\\output\\res\\color\\switch_thumb_material_light.xml"
+    },
+    {
+        "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\color\\design_error.xml",
+        "source": "C:\\Users\\Ondra\\.android\\build-cache\\8d782df52dfbcc951ec456b47072b4d51a736d35\\output\\res\\color\\design_error.xml"
     },
     {
         "merged": "G:\\programing\\android\\project\\EngineerClicker\\app\\build\\intermediates\\res\\merged\\debug\\color\\common_google_signin_btn_text_dark.xml",

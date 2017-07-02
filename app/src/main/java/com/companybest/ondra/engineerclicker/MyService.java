@@ -220,7 +220,6 @@ public class MyService extends Service {
 
                 machineThread(m9);
 
-
             }
 
             if (timeForMachine10 > m10.getTimerOfMachine()) {

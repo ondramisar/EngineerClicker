@@ -13,6 +13,35 @@ public class User extends RealmObject {
 
     private float coins;
 
+    //
+    int maxMachine;
+    int maxWorkers;
+    int maxUpgrade;
+
+    public int getMaxMachine() {
+        return maxMachine;
+    }
+
+    public void setMaxMachine(int maxMachine) {
+        this.maxMachine = maxMachine;
+    }
+
+    public int getMaxWorkers() {
+        return maxWorkers;
+    }
+
+    public void setMaxWorkers(int maxWorkers) {
+        this.maxWorkers = maxWorkers;
+    }
+
+    public int getMaxUpgrade() {
+        return maxUpgrade;
+    }
+
+    public void setMaxUpgrade(int maxUpgrade) {
+        this.maxUpgrade = maxUpgrade;
+    }
+
     public int getExp() {
         return exp;
     }

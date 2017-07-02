@@ -35,7 +35,7 @@ public class InfTab extends Fragment{
         //AD VIEW
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView5);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView.loadAd(adRequest);
 
         RealmRecyclerView infoList = (RealmRecyclerView) rootView.findViewById(R.id.info_rcycler_view);
 

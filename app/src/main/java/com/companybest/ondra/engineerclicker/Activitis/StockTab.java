@@ -35,7 +35,7 @@ public class StockTab extends Fragment {
         //AD VIEW
         AdView mAdView2 = (AdView) rootView.findViewById(R.id.adView2);
         AdRequest adRequest2 = new AdRequest.Builder().build();
-        mAdView2.loadAd(adRequest2);
+        //mAdView2.loadAd(adRequest2);
 
         Realm realm = Realm.getDefaultInstance();
         try {

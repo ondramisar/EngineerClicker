@@ -47,7 +47,7 @@ public class MechTab extends Fragment {
         //AD VIEW
         AdView mAdView = (AdView) rootView.findViewById(R.id.adView);
         AdRequest adRequest = new AdRequest.Builder().build();
-        mAdView.loadAd(adRequest);
+        //mAdView.loadAd(adRequest);
 
         final Realm realm = Realm.getDefaultInstance();
         try {
