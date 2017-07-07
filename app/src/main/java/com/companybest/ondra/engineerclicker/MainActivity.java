@@ -14,7 +14,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -28,8 +27,6 @@ import com.companybest.ondra.engineerclicker.Activitis.ResetGameFragment;
 import com.companybest.ondra.engineerclicker.Activitis.SettingFragment;
 import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
-import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
 import com.facebook.common.util.UriUtil;
@@ -38,6 +35,8 @@ import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.MobileAds;
 
 import io.realm.Realm;
+
+// Running on android studio 3.0 and gradle 4.1
 
 public class MainActivity extends RealmBaseActivity {
 
@@ -60,6 +59,8 @@ public class MainActivity extends RealmBaseActivity {
 
 
     TextView coins;
+
+    //VARIABLES FOR MUSIC
     MediaPlayer mediaPlayer;
     public static AudioManager audioManager;
 
@@ -71,9 +72,10 @@ public class MainActivity extends RealmBaseActivity {
 
         setTitle("");
 
-        setContentView(R.layout.activity_main1);
+        setContentView(R.layout.activity_main);
 
         MobileAds.initialize(getApplicationContext(), "ca-app-pub-3940256099942544~3347511713");
+
 
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -86,9 +88,9 @@ public class MainActivity extends RealmBaseActivity {
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
+
 
 
         // IF SERVICE IS NOT RUNNING START IT
@@ -96,7 +98,7 @@ public class MainActivity extends RealmBaseActivity {
             startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
         }
 
-        //DEFAULT REALM INSTANCE/CONFIG
+        //DEFAULT REALM INSTANCE/CONFIG GETTING FROM RealmBaseActivity
         Realm.setDefaultConfiguration(getRealmConfig());
 
         //SHARED PREFERENCES IS USED FOR FIRST TIME CREATING SO THE MACHINES CAN BE CREATED AND FOR SOUND AND MUSIC SET
@@ -105,8 +107,8 @@ public class MainActivity extends RealmBaseActivity {
         //REFERENCE FOR REAL OBJECT
         mainReferences = new MainReferences();
 
-        //CREATING MACHINES JUST WHEN APP IS CREATED FOR THE FIRST TIME
         if (sharedPreferences.getInt("created", 0) == 0) {
+            //CREATING MACHINES JUST WHEN APP IS CREATED FOR THE FIRST TIME
             sharedPreferences.edit().putInt("created", 1).apply();
             mainReferences.createAllMachines();
             mainReferences.createAllMaterials();
@@ -121,6 +123,10 @@ public class MainActivity extends RealmBaseActivity {
             //SECOND CREATE
             sharedPreferences.edit().putInt("created", 2).apply();
         }  else if (sharedPreferences.getInt("created", 0) == 2) {
+            // PROBLEMS WITH ONE MACHINE AND ONE UPGRADE, IF SOMEONE DOWNLOAD
+            // THE GAME THE DAY IT CAME OUT HE NEEDS TO UPDATE, DOWNLOAD LATER DONT NEED TO UPDATE
+
+            /*
             //THIRD CREATE
             sharedPreferences.edit().putInt("created", 3).apply();
             Realm realm = Realm.getDefaultInstance();
@@ -140,8 +146,9 @@ public class MainActivity extends RealmBaseActivity {
 
             }finally {
                 realm.close();
-            }
+            }*/
         } else if (sharedPreferences.getInt("created", 0) == 3) {
+            /*
             //FOURTH CREATE
             sharedPreferences.edit().putInt("created", 3).apply();
             Realm realm = Realm.getDefaultInstance();
@@ -164,7 +171,7 @@ public class MainActivity extends RealmBaseActivity {
                 }
             } finally {
                 realm.close();
-            }
+            }*/
         }
 
         //START MUSIC
@@ -180,7 +187,7 @@ public class MainActivity extends RealmBaseActivity {
                 .build();
         coinsImg.setImageURI(uri1);
 
-        //USE OF REALM INSTANCE AND CLOSING IT
+        //SETTING USERS COINS
         Realm realm = Realm.getDefaultInstance();
         try {
             final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();

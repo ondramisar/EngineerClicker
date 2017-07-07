@@ -9,11 +9,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
-import com.companybest.ondra.engineerclicker.Adapters.MainRealmAdapter;
+import com.companybest.ondra.engineerclicker.Adapters.MachineRealmAdapter;
 import com.companybest.ondra.engineerclicker.MainActivity;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
-import com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker;
+import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.R;
 import com.facebook.common.util.UriUtil;
 import com.facebook.drawee.view.SimpleDraweeView;
@@ -27,7 +27,7 @@ import io.realm.RealmResults;
 
 public class MechTab extends Fragment {
     RealmResults<Machine> machines;
-    MainRealmAdapter mainRealmAdapter;
+    MachineRealmAdapter machineRealmAdapter;
     static public TextView numberOfWorkers;
     Button plusWorker;
     static public TextView costOfWorkers;
@@ -55,11 +55,11 @@ public class MechTab extends Fragment {
             machines = realm
                     .where(Machine.class)
                     .findAll();
-            mainRealmAdapter = new MainRealmAdapter(getContext(), machines, true, false);
+            machineRealmAdapter = new MachineRealmAdapter(getContext(), machines, true, false);
 
             //RECYCLERVIEW
             mainScreenRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view);
-            mainScreenRecyclerView.setAdapter(mainRealmAdapter);
+            mainScreenRecyclerView.setAdapter(machineRealmAdapter);
 
 
             //COIN IMG

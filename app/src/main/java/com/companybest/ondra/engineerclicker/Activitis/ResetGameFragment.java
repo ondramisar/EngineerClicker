@@ -11,10 +11,10 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.companybest.ondra.engineerclicker.MainActivity;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
-import com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker;
+import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.R;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
 
@@ -65,7 +65,7 @@ public class ResetGameFragment extends DialogFragment {
                         }
                     }
 
-                    Log.i("user", "NUMEBR OF MACHINES " + String.valueOf(numberOfMachine));
+                    //Log.i("user", "NUMEBR OF MACHINES " + String.valueOf(numberOfMachine));
                     if (numberOfMachine < 5) {
                         deleteUpgrade();
                         mainReferences.createAllMachines();

@@ -6,6 +6,7 @@ import io.realm.RealmMigration;
 import io.realm.RealmObjectSchema;
 import io.realm.RealmSchema;
 
+//CLASS FOR MIGRATING TO NEW VERSION OF MODEL
 
 public class MyMigration implements RealmMigration {
 

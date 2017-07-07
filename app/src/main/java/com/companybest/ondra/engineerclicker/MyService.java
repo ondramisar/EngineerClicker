@@ -12,7 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.NotificationCompat;
 
 import com.companybest.ondra.engineerclicker.GameLoop.MainThread;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.Material;
 
 import io.realm.Realm;
@@ -35,8 +35,6 @@ public class MyService extends Service {
     int timeForMachine10 = 0;
     int timeForMachine11 = 0;
 
-
-    float timeOfDestructionThred = 0.f;
 
     PowerManager.WakeLock wl;
 
@@ -72,14 +70,16 @@ public class MyService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId) {
 
         //GAME LOOP
-        mainThread = new MainThread(this, false);
+        mainThread = new MainThread(this);
         mainThread.setRunning(true);
         mainThread.start();
 
-        //THIS MAKE DEVICE WORK ALL THE TIME
+        //THIS MAKE DEVICE WORK ALL THE TIME,
+        // IF SET SOME TIME WHEN THE APP WILL STOP SET METHOD acquire. better for battery
         PowerManager pm = (PowerManager) getSystemService(Context.POWER_SERVICE);
         wl = pm.newWakeLock(PowerManager.PARTIAL_WAKE_LOCK, "My Tag");
         wl.acquire();
+
         return START_STICKY;
     }
 
@@ -90,7 +90,6 @@ public class MyService extends Service {
     }
 
     public void update() {
-        timeOfDestructionThred += 0.01f;
 
         //ADDING TO EVERY TIMER
         timeForMachine1 += 1;
@@ -105,8 +104,10 @@ public class MyService extends Service {
         timeForMachine10 += 1;
         timeForMachine11 += 1;
 
+
         Realm realm = Realm.getDefaultInstance();
         try {
+            //LIST OF ALL MACHINES
             machines = realm.where(Machine.class).findAll();
 
             int numberOfMachine = 0;
@@ -132,7 +133,7 @@ public class MyService extends Service {
             final Machine m10 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine10).findFirst();
 
 
-            //NEW PLUS MACHINE IF YOU DONT HAVE RESTARTED THE GAME AND DONT HAVE DONT SHOW IT
+            //NEW PLUS MACHINE IF YOU DONT HAVE RESTARTED THE GAME DONT SHOW
             Machine m11 = null;
             if (numberOfMachine > 10) {
                 m11 = machines.where().equalTo("name", MainActivity.mainReferences.nameOfMachine11).findFirst();
@@ -162,6 +163,7 @@ public class MyService extends Service {
 
 
             //CHECKING EVERY MACHINES TIMER
+            //WILL BE SIMPLIFIED IN A FUTURE
             if (timeForMachine2 > m2.getTimerOfMachine()) {
 
                 timeForMachine2 = 0;
@@ -230,7 +232,7 @@ public class MyService extends Service {
 
             }
 
-            //NEW MACHINE
+            //NEW MACHINE, ONLY ABLE WHEN YOU RESTARTED GAME
             if (m11 != null) {
                 if (timeForMachine11 > m11.getTimerOfMachine()) {
 

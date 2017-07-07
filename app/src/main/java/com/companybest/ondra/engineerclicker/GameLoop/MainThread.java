@@ -1,31 +1,28 @@
 package com.companybest.ondra.engineerclicker.GameLoop;
 
 import android.graphics.Canvas;
-import android.util.Log;
 
-import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.MyService;
+
+//CLASS FOR GAME LOOP, WORK WITH 30fps
 
 public class MainThread extends Thread {
 
     private int FPS = 30;
     private double averageFPS;
-    private MainActivity mainActivity;
     private MyService myService;
     private boolean running;
     public static Canvas canvas;
-    private boolean isMain;
 
-    public MainThread(MyService myService, boolean isMain) {
+    public MainThread(MyService myService) {
         super();
         this.myService = myService;
-        this.isMain = isMain;
     }
 
     @Override
     public void run() {
 
-        Log.i("user", String.valueOf(running));
+       // Log.i("user", String.valueOf(running));
 
         long startTime;
         long timeMillis;

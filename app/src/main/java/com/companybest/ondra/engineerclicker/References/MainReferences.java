@@ -3,14 +3,16 @@ package com.companybest.ondra.engineerclicker.References;
 
 import android.util.Log;
 
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
-import com.companybest.ondra.engineerclicker.Models.Workers.BasicWorker;
+import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 
 import io.realm.Realm;
 
+
+//THIS IS CLASS WHERE ARE ALL THE MACHINES, MATERIALS, UPGRADES, WORKER, USER ARE CREATED
 
 public class MainReferences {
 
@@ -387,18 +389,17 @@ public class MainReferences {
     public User user;
     public float coins = 5000.f;
     public String name = "user";
-    int levelOfUser = 1;
-    int expNeeded = 2000;
-    int exp = 0;
-    int maxMachine = 5;
-    int maxWorker = 5;
-    int maxUpgrade = 5;
+    private int levelOfUser = 1;
+    private int expNeeded = 2000;
+    private int exp = 0;
+    private int maxMachine = 5;
+    private int maxWorker = 5;
+    private int maxUpgrade = 5;
 
     private Realm realm;
 
-    public MainReferences() {
-    }
 
+    //FIRST MACHINE IS DIFFERENT
     private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int maxTimerOfMachine, int timerOfMachine, int expGive, String nameOfMaterialForMachine, String nameOfImgMachine) {
         machine = new Machine();
         machine.setName(nameOfMachine);
@@ -416,6 +417,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+    //METHOD FOR ALL THE OTHERS MACHINES
     private void creatingMachine(Machine machine, String nameOfMachine, int numberOfMachine, int costOfMachine, int workersOnMachine, int maxTimerOfMachine, int timerOfMachine, int expGive, String nameOfMaterialForMachine, String nameOfMaterialNeededMachine, String nameOfImgMachine) {
         machine = new Machine();
         machine.setName(nameOfMachine);
@@ -434,6 +436,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+    //METHOD FOR CREATE ALL MATERIALS
     private void createMaterial(Material material, String nameOfMaterial, int costOfMaterial, int numnerOfMaterial, String nameOfImgMaterial) {
         material = new Material();
         material.setName(nameOfMaterial);
@@ -446,6 +449,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+    //METHOD FOR CREATE ALL UPGRADE
     private void createUpgrade(Upgrade upgrade, String nameOfUpgrade, int costOfUpgrade, int whatToDoUpgrade, String forWhatToDoUpgrade, String nameOfMachineToGiveUpgrade, String nameOfMaterialToGiveUpgrade, String nameOfImgUpgrade) {
         upgrade = new Upgrade();
         upgrade.setName(nameOfUpgrade);
@@ -460,6 +464,8 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+
+    //CREATING ALL THE MACHINES
     public void createAllMachines() {
         creatingMachine(machine1, nameOfMachine1, numberOfMachine1, costOfMachine1, workersOnMachine1, maxTimerOfMachine1, timerOfMachine1, expGiveMach1, nameOfMaterialForMachine1, nameOfImageMachine1);
         creatingMachine(machine2, nameOfMachine2, numberOfMachine2, costOfMachine2, workersOnMachine2, maxTimerOfMachine2, timerOfMachine2, expGiveMach2, nameOfMaterialForMachine2, nameOfMaterialNeededMachine2, nameOfImageMachine2);
@@ -473,6 +479,7 @@ public class MainReferences {
         creatingMachine(machine10, nameOfMachine10, numberOfMachine10, costOfMachine10, workersOnMachine10, maxTimerOfMachine10, timerOfMachine10, expGiveMach10, nameOfMaterialForMachine10, nameOfMaterialNeededMachine10, nameOfImageMachine10);
     }
 
+    //CREATING ALL THE MATERIALS
     public void createAllMaterials() {
         createMaterial(material1, nameOfMaterial1, costOfMaterial1, numnerOfMaterial1, nameOfImgMaterial1);
         createMaterial(material2, nameOfMaterial2, costOfMaterial2, numnerOfMaterial2, nameOfImgMaterial1);
@@ -484,6 +491,7 @@ public class MainReferences {
         createMaterial(material8, nameOfMaterial8, costOfMaterial8, numnerOfMaterial8, nameOfImgMaterial1);
     }
 
+    //CREATING ALL THE UPGRADES
     public void createAllUpgrades() {
 
         createUpgrade(upgrade1, nameOfUpgrade1, costOfUpgrade1, whatToDoUpgrade1, forWhatToDoUpgrade1, nameOfMachineToGiveUpgrade1, nameOfMaterialToGiveUpgrade1, nameOfImgUpgrade1);
@@ -508,6 +516,7 @@ public class MainReferences {
     }
 
 
+    //CREATING WORKER
     public void createWorker() {
         worker = new BasicWorker();
         worker.setName(nameOfWorker);
@@ -518,6 +527,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+    //CREATING USER
     public void createUser() {
         user = new User();
         user.setName(name);
@@ -533,6 +543,7 @@ public class MainReferences {
         realm.commitTransaction();
     }
 
+    //CREATING THE NEW PART OF USER, THIS IS NOT BEING USED
     public void createPartOfUser(){
         final User user = realm.where(User.class).equalTo("name", name).findFirst();
         realm.executeTransaction(new Realm.Transaction() {
@@ -546,8 +557,7 @@ public class MainReferences {
     }
 
 
-    //NEW METHODS FOR CREATING
-
+    //NEW METHODS FOR CREATING BETTER MATERIALS
     public void createMaterialBetter(int plusCost) {
         costOfMaterial1 += plusCost;
         costOfMaterial2 += 2 * plusCost;
@@ -573,23 +583,27 @@ public class MainReferences {
 
     }
 
+    //NEW METHODS FOR CREATING NEW MACHINES
     public void createNewMachinesFirst() {
         creatingMachine(machine11, nameOfMachine11, numberOfMachine11, costOfMachine11, workersOnMachine11, maxTimerOfMachine11, timerOfMachine11, expGiveMach11, nameOfMaterialForMachine11, nameOfMaterialNeededMachine11, nameOfImageMachine11);
 
         Log.i("user", String.valueOf(timerOfMachine11));
     }
 
+    //NEW METHODS FOR CREATING NEW MATERIAL
     public void createNewMaterial() {
         createMaterial(material9, nameOfMaterial9, costOfMaterial9, numnerOfMaterial9, nameOfImgMaterial1);
 
     }
 
+    //NEW METHODS FOR CREATING NEW BETTER MATERIAL
     public void createNewMaterialBetter(int plusCost) {
         costOfMaterial9 += 3 * plusCost;
 
         createMaterial(material9, nameOfMaterial9, costOfMaterial9, numnerOfMaterial9, nameOfImgMaterial1);
     }
 
+    //NEW METHODS FOR CREATING NEW UPGRADE
     public void createNewUpgrade() {
         createUpgrade(upgrade20, nameOfUpgrade20, costOfUpgrade20, whatToDoUpgrade20, forWhatToDoUpgrade20, nameOfMachineToGiveUpgrade20, nameOfMaterialToGiveUpgrade20, nameOfImgUpgrade1);
         createUpgrade(upgrade21, nameOfUpgrade21, costOfUpgrade21, whatToDoUpgrade21, forWhatToDoUpgrade21, nameOfMachineToGiveUpgrade21, nameOfMaterialToGiveUpgrade21, NameOfImgUpgrade9);

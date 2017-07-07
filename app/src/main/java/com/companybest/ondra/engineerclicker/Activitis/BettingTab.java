@@ -16,7 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.companybest.ondra.engineerclicker.MainActivity;
-import com.companybest.ondra.engineerclicker.Models.Machines.Machine;
+import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
 import com.google.android.gms.ads.AdRequest;
@@ -54,7 +54,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
         //AD VIEW
         AdView mAdView4 = (AdView) rootView.findViewById(R.id.adView4);
         AdRequest adRequest4 = new AdRequest.Builder().build();
-        mAdView4.loadAd(adRequest4);
+        //mAdView4.loadAd(adRequest4);
 
         LinearLayout layout = (LinearLayout) rootView.findViewById(R.id.betting_layout);
         layout.setOnClickListener(new View.OnClickListener() {
@@ -99,6 +99,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             }
         });
 
+        //FIRST GAME
         play50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -194,6 +195,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             }
         });
 
+        //SECOND GAME
         playShufle.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

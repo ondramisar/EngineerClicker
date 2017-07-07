@@ -1,6 +1,50 @@
 -- Merging decision tree log ---
 manifest
 ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+MERGED from [agency.tango.android:material-intro-screen:0.0.5] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\material-intro-screen-0.0.5.aar\cfdf93e768bebf9cf3a5abb59279ea93\AndroidManifest.xml:2:1-12:12
+MERGED from [com.github.thorbenprimke:realm-recyclerview:0.9.25] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-recyclerview-0.9.25.aar\4c0ee85736cbc998aae312ef8fc40787\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\76739ce3fe256cf6e8636e051820add0\AndroidManifest.xml:17:1-27:12
+MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\android-adapters-1.2.2.aar\0fcdae531c456953aea3cbefa13c54bb\AndroidManifest.xml:2:1-10:12
+MERGED from [com.tonicartos:superslim:0.4.13] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\superslim-0.4.13.aar\e22a3338d2e0977c393df2a307d659cd\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.2.0.aar\26a8d68a7fed1cee0cce50644f540fb4\AndroidManifest.xml:17:1-22:12
+MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-core-10.2.0.aar\97ff83fb6d91fb0c3a5d933502c8db50\AndroidManifest.xml:2:1-6:12
+MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-ads-10.2.0.aar\855ceea6f920b8a583f44301fe5b9e41\AndroidManifest.xml:2:1-6:12
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1cb4892fbf813bd39eebb084e81bb918\AndroidManifest.xml:2:1-11:12
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\4aa1a5a82e5fa4cbaa6547c5aa94bd51\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\21a89f9f1c4528f76657059dbb09852f\AndroidManifest.xml:17:1-25:12
+MERGED from [com.github.deano2390:MaterialShowcaseView:1.1.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\MaterialShowcaseView-1.1.0.aar\bed58a0e3b56aec791cd83f904f3abef\AndroidManifest.xml:2:1-11:12
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\2c33c5cb59b22b9e984f1a7714d01d49\AndroidManifest.xml:2:1-9:12
+MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-android-library-2.2.1.aar\22e925ab9cfd23a92ce426e6c4732356\AndroidManifest.xml:2:1-10:12
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:16:1-34:12
+MERGED from [com.google.android.gms:play-services-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.2.0.aar\e3d40bdf9a9020082f5d1fad322e8e93\AndroidManifest.xml:16:1-18:12
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:16:1-29:12
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:16:1-51:12
+MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:2:1-8:12
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:16:1-28:12
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.2.0.aar\a18419078c6389ff958d5b6918a91613\AndroidManifest.xml:16:1-19:12
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:16:1-21:12
+MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.2.0.aar\22dbd896f482d70351c37d3aeabde161\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.2.0.aar\0c4c3811c88b5d6e6ba6010e514c2b2f\AndroidManifest.xml:2:1-5:12
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:16:1-23:12
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\transition-25.2.0.aar\e5673725220a92c5f0b4e9f5bf55ddbe\AndroidManifest.xml:17:1-24:12
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\46f27f1d083493837a1a8139e13caa5e\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\28068f3d5bb75a1a054829fc74160404\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\c8ec24c89d142bed65bf977dbcddfe83\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c2394f88c4b2d3552699d6ed8c55c88d\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\f9a4b2083708efa611d95e2f9cf4ad60\AndroidManifest.xml:17:1-27:12
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d86e70499bd5608505602d701704204f\AndroidManifest.xml:17:1-27:12
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\1480827a41e842ef0704f0ff9918a0cb\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\bfa9773e48ff8435b90e0aa7518bf7f2\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\8216e683937c2296294ceef065334bb8\AndroidManifest.xml:2:1-9:12
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\6515592243e87d8c0438a531ca3450f9\AndroidManifest.xml:2:1-9:12
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\relinker-1.2.2.aar\20db7a55afa519340440881b96c90417\AndroidManifest.xml:2:1-9:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:1-35:12
 	package
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:3:5-52
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
@@ -8,60 +52,91 @@ ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidMan
 	android:versionName
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
-	xmlns:android
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:11-69
 	android:versionCode
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
+	xmlns:android
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:2:11-69
 uses-permission#android.permission.INTERNET
 ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:5:5-67
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:19:5-66
-MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:20:5-66
-MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:20:5-66
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:20:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:19:5-66
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:19:5-66
 	android:name
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:5:22-64
 uses-permission#android.permission.WAKE_LOCK
 ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:6:5-68
-MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:22:5-67
-MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:22:5-67
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:21:5-67
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:21:5-67
 	android:name
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:6:22-65
 application
 ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:8:5-33:19
-MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.android\build-cache\1b5f23f39b99e8b0cbb23b6f522cf9c3246c7208\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.android\build-cache\1616c609464fa410db907a9a0e62d0da65ec2d4c\output\AndroidManifest.xml:5:5-20
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:23:5-27:19
-MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.android\build-cache\71b95a32d1c81903f1fd25a1312a02d12f2502b2\output\AndroidManifest.xml:18:5-19
-MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:18:5-20:19
-MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.android\build-cache\741e1c7de4495595ad172d14b10acc6490ed98fc\output\AndroidManifest.xml:4:5-19
-MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:24:5-33:19
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:24:5-28:19
-MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:28:5-50:19
-MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:4:5-7:19
-MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.android\build-cache\a6f75c2687d228f8f783a11781b5d82115afb8ac\output\AndroidManifest.xml:4:5-19
-MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2253c31fea065e20529b2acf8b5353aa74a3b699\output\AndroidManifest.xml:19:5-21:19
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.android\build-cache\16e39f75d6bfe6986f39d76d4e92ece084332a1e\output\AndroidManifest.xml:9:5-20
-MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.android\build-cache\8d782df52dfbcc951ec456b47072b4d51a736d35\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.android\build-cache\c6132543d33bd31971cce8efa1d094e82b157bbe\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\73c3130eede8c1c7eb92805c3486b9f1736636a1\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\2e6e1a789708a70e22db5fadd4d3be9d61b3e60b\output\AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.android\build-cache\7b1dd244deb5d0fcf62f77a447d04b02e30a5a5e\output\AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.android\build-cache\4a7fe80851cb2affda4a8b2a8a4704b25181ceee\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.android\build-cache\c3229c62233c9b24269fa866be900a4a471272a4\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.android\build-cache\6d4a76c908d1eca1b4894e40bae7c7632172439b\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.android\build-cache\516a21b3fc41280a2bb2605a26e1637db55d2692\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.android\build-cache\273023fab92d4f060cca7346f24323704234eb49\output\AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\build-cache\11a82e6074486c381976c713cf2430a92fd3a67d\output\AndroidManifest.xml:25:5-20
-	android:label
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:11:9-41
+MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\76739ce3fe256cf6e8636e051820add0\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\76739ce3fe256cf6e8636e051820add0\AndroidManifest.xml:25:5-20
+MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-core-10.2.0.aar\97ff83fb6d91fb0c3a5d933502c8db50\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-core-10.2.0.aar\97ff83fb6d91fb0c3a5d933502c8db50\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-ads-10.2.0.aar\855ceea6f920b8a583f44301fe5b9e41\AndroidManifest.xml:5:5-20
+MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-ads-10.2.0.aar\855ceea6f920b8a583f44301fe5b9e41\AndroidManifest.xml:5:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1cb4892fbf813bd39eebb084e81bb918\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1cb4892fbf813bd39eebb084e81bb918\AndroidManifest.xml:9:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\4aa1a5a82e5fa4cbaa6547c5aa94bd51\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\4aa1a5a82e5fa4cbaa6547c5aa94bd51\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\21a89f9f1c4528f76657059dbb09852f\AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\21a89f9f1c4528f76657059dbb09852f\AndroidManifest.xml:23:5-20
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:24:5-33:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:24:5-28:19
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:28:5-50:19
+MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:4:5-7:19
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:23:5-27:19
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.2.0.aar\a18419078c6389ff958d5b6918a91613\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.2.0.aar\a18419078c6389ff958d5b6918a91613\AndroidManifest.xml:18:5-19
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:18:5-20:19
+MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.2.0.aar\22dbd896f482d70351c37d3aeabde161\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.2.0.aar\22dbd896f482d70351c37d3aeabde161\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.2.0.aar\0c4c3811c88b5d6e6ba6010e514c2b2f\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.2.0.aar\0c4c3811c88b5d6e6ba6010e514c2b2f\AndroidManifest.xml:4:5-19
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:19:5-21:19
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:19:5-21:19
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\transition-25.2.0.aar\e5673725220a92c5f0b4e9f5bf55ddbe\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\transition-25.2.0.aar\e5673725220a92c5f0b4e9f5bf55ddbe\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\46f27f1d083493837a1a8139e13caa5e\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\46f27f1d083493837a1a8139e13caa5e\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\28068f3d5bb75a1a054829fc74160404\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\28068f3d5bb75a1a054829fc74160404\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\c8ec24c89d142bed65bf977dbcddfe83\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\c8ec24c89d142bed65bf977dbcddfe83\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c2394f88c4b2d3552699d6ed8c55c88d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c2394f88c4b2d3552699d6ed8c55c88d\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\f9a4b2083708efa611d95e2f9cf4ad60\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\f9a4b2083708efa611d95e2f9cf4ad60\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d86e70499bd5608505602d701704204f\AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d86e70499bd5608505602d701704204f\AndroidManifest.xml:25:5-20
 	android:supportsRtl
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:12:9-35
-	android:allowBackup
-		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:9:9-35
+	android:label
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:11:9-41
 	android:icon
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:10:9-39
+	android:allowBackup
+		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:9:9-35
 	android:theme
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:13:9-40
 activity#com.companybest.ondra.engineerclicker.MainActivity
@@ -98,46 +173,88 @@ ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidMan
 		ADDED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml:29:13-38
 uses-sdk
 INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.android\build-cache\ec74d40fefcdc63afd7bfa26487fc76781220051\output\AndroidManifest.xml:6:5-8:41
-MERGED from [com.github.thorbenprimke:realm-recyclerview:0.9.25] C:\Users\Ondra\.android\build-cache\353d909505bf609b89c83d82497a095a79f7320c\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.tonicartos:superslim:0.4.13] C:\Users\Ondra\.android\build-cache\e46253e2b54603d40be985b0eb19be5c8c328971\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.android\build-cache\1b5f23f39b99e8b0cbb23b6f522cf9c3246c7208\output\AndroidManifest.xml:4:5-43
-MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.android\build-cache\1616c609464fa410db907a9a0e62d0da65ec2d4c\output\AndroidManifest.xml:4:5-43
-MERGED from [com.google.android.gms:play-services-ads:10.2.0] C:\Users\Ondra\.android\build-cache\918bc9f05771e76cb6958e25b8f7b91a60fae0ed\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:22:5-43
-MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.android\build-cache\71b95a32d1c81903f1fd25a1312a02d12f2502b2\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.android\build-cache\741e1c7de4495595ad172d14b10acc6490ed98fc\output\AndroidManifest.xml:3:5-43
-MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:17:5-43
-MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.android\build-cache\a6f75c2687d228f8f783a11781b5d82115afb8ac\output\AndroidManifest.xml:3:5-43
-MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2253c31fea065e20529b2acf8b5353aa74a3b699\output\AndroidManifest.xml:17:5-43
-MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.android\build-cache\16e39f75d6bfe6986f39d76d4e92ece084332a1e\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.github.deano2390:MaterialShowcaseView:1.1.0] C:\Users\Ondra\.android\build-cache\14c006753860074faea51431da96c26ed6460c94\output\AndroidManifest.xml:7:5-9:41
-MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.android\build-cache\2d32d871e9088c740793eed3d05fe1fb43fb0a37\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.android\build-cache\fa9902521d1a8d6c2841be812fb5809e09a00846\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.android\build-cache\157c03db827fdfa04e56a9027ed8202da741abb9\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.android\build-cache\b3517b0203645cfc469447ab675677c11651580c\output\AndroidManifest.xml:5:5-7:41
-MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.android\build-cache\81434627ee590b0d1e9ee4953dc84a4c16be8923\output\AndroidManifest.xml:5:5-7:41
-MERGED from [agency.tango.android:material-intro-screen:0.0.5] C:\Users\Ondra\.android\build-cache\50e5760198982355cc9e94f26c481fd6e33d2325\output\AndroidManifest.xml:8:5-10:41
-MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.android\build-cache\8d782df52dfbcc951ec456b47072b4d51a736d35\output\AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.android\build-cache\c6132543d33bd31971cce8efa1d094e82b157bbe\output\AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\73c3130eede8c1c7eb92805c3486b9f1736636a1\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.android\build-cache\2e6e1a789708a70e22db5fadd4d3be9d61b3e60b\output\AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Ondra\.android\build-cache\d58e11acddbcb8df5c58baeb9a9c10866f07269a\output\AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.android\build-cache\7b1dd244deb5d0fcf62f77a447d04b02e30a5a5e\output\AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.android\build-cache\4a7fe80851cb2affda4a8b2a8a4704b25181ceee\output\AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.android\build-cache\c3229c62233c9b24269fa866be900a4a471272a4\output\AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.android\build-cache\6d4a76c908d1eca1b4894e40bae7c7632172439b\output\AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.android\build-cache\516a21b3fc41280a2bb2605a26e1637db55d2692\output\AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.android\build-cache\273023fab92d4f060cca7346f24323704234eb49\output\AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.android\build-cache\11a82e6074486c381976c713cf2430a92fd3a67d\output\AndroidManifest.xml:21:5-23:58
-MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.android\build-cache\9cfa8782b00353dee85362b6b2d568b643525b87\output\AndroidManifest.xml:6:5-8:41
-MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.android\build-cache\648647d2359a2e5f96fb482e81e4bb9b356c7378\output\AndroidManifest.xml:7:5-43
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
+MERGED from [agency.tango.android:material-intro-screen:0.0.5] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\material-intro-screen-0.0.5.aar\cfdf93e768bebf9cf3a5abb59279ea93\AndroidManifest.xml:8:5-10:41
+MERGED from [agency.tango.android:material-intro-screen:0.0.5] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\material-intro-screen-0.0.5.aar\cfdf93e768bebf9cf3a5abb59279ea93\AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.thorbenprimke:realm-recyclerview:0.9.25] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-recyclerview-0.9.25.aar\4c0ee85736cbc998aae312ef8fc40787\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.thorbenprimke:realm-recyclerview:0.9.25] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-recyclerview-0.9.25.aar\4c0ee85736cbc998aae312ef8fc40787\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\76739ce3fe256cf6e8636e051820add0\AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:appcompat-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\appcompat-v7-25.2.0.aar\76739ce3fe256cf6e8636e051820add0\AndroidManifest.xml:21:5-23:78
+MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\android-adapters-1.2.2.aar\0fcdae531c456953aea3cbefa13c54bb\AndroidManifest.xml:6:5-8:41
+MERGED from [io.realm:android-adapters:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\android-adapters-1.2.2.aar\0fcdae531c456953aea3cbefa13c54bb\AndroidManifest.xml:6:5-8:41
+MERGED from [com.tonicartos:superslim:0.4.13] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\superslim-0.4.13.aar\e22a3338d2e0977c393df2a307d659cd\AndroidManifest.xml:7:5-9:41
+MERGED from [com.tonicartos:superslim:0.4.13] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\superslim-0.4.13.aar\e22a3338d2e0977c393df2a307d659cd\AndroidManifest.xml:7:5-9:41
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.2.0.aar\26a8d68a7fed1cee0cce50644f540fb4\AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:recyclerview-v7:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\recyclerview-v7-25.2.0.aar\26a8d68a7fed1cee0cce50644f540fb4\AndroidManifest.xml:20:5-43
+MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-core-10.2.0.aar\97ff83fb6d91fb0c3a5d933502c8db50\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-core:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-core-10.2.0.aar\97ff83fb6d91fb0c3a5d933502c8db50\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-ads-10.2.0.aar\855ceea6f920b8a583f44301fe5b9e41\AndroidManifest.xml:4:5-43
+MERGED from [com.google.firebase:firebase-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-ads-10.2.0.aar\855ceea6f920b8a583f44301fe5b9e41\AndroidManifest.xml:4:5-43
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1cb4892fbf813bd39eebb084e81bb918\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support.constraint:constraint-layout:1.0.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\constraint-layout-1.0.2.aar\1cb4892fbf813bd39eebb084e81bb918\AndroidManifest.xml:5:5-7:41
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\4aa1a5a82e5fa4cbaa6547c5aa94bd51\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:animated-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\animated-vector-drawable-25.2.0.aar\4aa1a5a82e5fa4cbaa6547c5aa94bd51\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\21a89f9f1c4528f76657059dbb09852f\AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:support-vector-drawable:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-vector-drawable-25.2.0.aar\21a89f9f1c4528f76657059dbb09852f\AndroidManifest.xml:21:5-43
+MERGED from [com.github.deano2390:MaterialShowcaseView:1.1.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\MaterialShowcaseView-1.1.0.aar\bed58a0e3b56aec791cd83f904f3abef\AndroidManifest.xml:7:5-9:41
+MERGED from [com.github.deano2390:MaterialShowcaseView:1.1.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\MaterialShowcaseView-1.1.0.aar\bed58a0e3b56aec791cd83f904f3abef\AndroidManifest.xml:7:5-9:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\2c33c5cb59b22b9e984f1a7714d01d49\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fresco:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fresco-1.3.0.aar\2c33c5cb59b22b9e984f1a7714d01d49\AndroidManifest.xml:5:5-7:41
+MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-android-library-2.2.1.aar\22e925ab9cfd23a92ce426e6c4732356\AndroidManifest.xml:6:5-8:41
+MERGED from [io.realm:realm-android-library:2.2.1] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\realm-android-library-2.2.1.aar\22e925ab9cfd23a92ce426e6c4732356\AndroidManifest.xml:6:5-8:41
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.2.0.aar\e3d40bdf9a9020082f5d1fad322e8e93\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-ads:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-10.2.0.aar\e3d40bdf9a9020082f5d1fad322e8e93\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:17:5-43
+MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:3:5-43
+MERGED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:22:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.2.0.aar\a18419078c6389ff958d5b6918a91613\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-clearcut:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-clearcut-10.2.0.aar\a18419078c6389ff958d5b6918a91613\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.2.0.aar\22dbd896f482d70351c37d3aeabde161\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-gass:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-gass-10.2.0.aar\22dbd896f482d70351c37d3aeabde161\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.2.0.aar\0c4c3811c88b5d6e6ba6010e514c2b2f\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-tasks:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-tasks-10.2.0.aar\0c4c3811c88b5d6e6ba6010e514c2b2f\AndroidManifest.xml:3:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:17:5-43
+MERGED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:17:5-43
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\transition-25.2.0.aar\e5673725220a92c5f0b4e9f5bf55ddbe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:transition:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\transition-25.2.0.aar\e5673725220a92c5f0b4e9f5bf55ddbe\AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\46f27f1d083493837a1a8139e13caa5e\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-v4:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-v4-25.2.0.aar\46f27f1d083493837a1a8139e13caa5e\AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\28068f3d5bb75a1a054829fc74160404\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-fragment:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-fragment-25.2.0.aar\28068f3d5bb75a1a054829fc74160404\AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\c8ec24c89d142bed65bf977dbcddfe83\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-ui:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-ui-25.2.0.aar\c8ec24c89d142bed65bf977dbcddfe83\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c2394f88c4b2d3552699d6ed8c55c88d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-media-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-media-compat-25.2.0.aar\c2394f88c4b2d3552699d6ed8c55c88d\AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\f9a4b2083708efa611d95e2f9cf4ad60\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-core-utils:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-core-utils-25.2.0.aar\f9a4b2083708efa611d95e2f9cf4ad60\AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d86e70499bd5608505602d701704204f\AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-compat:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\support-compat-25.2.0.aar\d86e70499bd5608505602d701704204f\AndroidManifest.xml:21:5-23:58
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\1480827a41e842ef0704f0ff9918a0cb\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:drawee:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\drawee-1.3.0.aar\1480827a41e842ef0704f0ff9918a0cb\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\bfa9773e48ff8435b90e0aa7518bf7f2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-1.3.0.aar\bfa9773e48ff8435b90e0aa7518bf7f2\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\8216e683937c2296294ceef065334bb8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:imagepipeline-base:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\imagepipeline-base-1.3.0.aar\8216e683937c2296294ceef065334bb8\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\6515592243e87d8c0438a531ca3450f9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.facebook.fresco:fbcore:1.3.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\fbcore-1.3.0.aar\6515592243e87d8c0438a531ca3450f9\AndroidManifest.xml:5:5-7:41
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\relinker-1.2.2.aar\20db7a55afa519340440881b96c90417\AndroidManifest.xml:7:5-43
+MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\relinker-1.2.2.aar\20db7a55afa519340440881b96c90417\AndroidManifest.xml:7:5-43
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
+INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.2.0] C:\Users\Ondra\.android\build-cache\8d782df52dfbcc951ec456b47072b4d51a736d35\output\AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\design-25.2.0.aar\3cb7ee29b60b9accc122f3351098efbf\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
@@ -145,135 +262,140 @@ MERGED from [com.getkeepsafe.relinker:relinker:1.2.2] C:\Users\Ondra\.android\bu
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 		INJECTED from G:\programing\android\project\EngineerClicker\app\src\main\AndroidManifest.xml
 uses-permission#android.permission.ACCESS_NETWORK_STATE
-ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:20:5-78
-MERGED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:21:5-78
-MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:19:5-78
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:21:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:19:5-78
+MERGED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:19:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:20:5-78
+MERGED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:20:5-78
 	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:20:22-76
-activity#com.google.android.gms.ads.AdActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:25:9-232
-	android:configChanges
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:25:72-181
-	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:25:182-230
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:25:19-71
-activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
-ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:26:9-131
-	android:theme
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:26:92-129
-	android:name
-		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.android\build-cache\f4f1d4435d1ace8cff13f7b62659d09b738770c4\output\AndroidManifest.xml:26:19-91
-activity#com.google.android.gms.common.api.GoogleApiActivity
-ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:19:9-172
-	android:exported
-		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:19:146-170
-	android:theme
-		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:19:86-145
-	android:name
-		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.android\build-cache\5a514665ab7d3c25a5543d7dba4c2a8555dab01d\output\AndroidManifest.xml:19:19-85
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:21:22-76
 receiver#com.google.android.gms.measurement.AppMeasurementReceiver
-ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:25:7-26:18
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:25:7-26:18
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:25:7-26:18
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:25:7-26:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:25:90-112
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:25:90-112
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:25:113-137
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:25:113-137
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:25:17-89
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:25:17-89
 receiver#com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver
-ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:27:7-31:18
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:27:7-31:18
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:27:162-184
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:27:162-184
 	android:permission
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:27:105-161
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:27:105-161
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:27:17-104
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:27:17-104
 intent-filter#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:28:11-30:27
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:28:11-30:27
 action#com.android.vending.INSTALL_REFERRER
-ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:29:15-76
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:29:15-76
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:29:23-74
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:29:23-74
 service#com.google.android.gms.measurement.AppMeasurementService
-ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:32:7-137
-MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.android\build-cache\08914a8686f940d707fb1c6de1f10b233c50d65b\output\AndroidManifest.xml:27:7-137
+ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:32:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:27:7-137
+MERGED from [com.google.firebase:firebase-analytics-impl:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-impl-10.2.0.aar\a809ef9b22c41a2e93394a998d2745b5\AndroidManifest.xml:27:7-137
 	android:enabled
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:32:88-110
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:32:88-110
 	android:exported
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:32:111-135
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:32:111-135
 	android:name
-		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.android\build-cache\c4efa082f9781a7d74773de549622a2ebdf67b2c\output\AndroidManifest.xml:32:16-87
+		ADDED from [com.google.firebase:firebase-analytics:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-analytics-10.2.0.aar\27027d4f3f6deba0a9762198ea9b595d\AndroidManifest.xml:32:16-87
 uses-permission#com.google.android.c2dm.permission.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:22:5-81
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:22:5-81
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:22:22-79
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:22:22-79
 permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:24:5-109
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:24:5-109
 	android:protectionLevel
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:24:72-107
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:24:72-107
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:24:17-71
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:24:17-71
 uses-permission#${applicationId}.permission.C2D_MESSAGE
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:26:5-78
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:26:5-78
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:26:22-76
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:26:22-76
 receiver#com.google.firebase.iid.FirebaseInstanceIdReceiver
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:30:9-36:20
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:30:9-36:20
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:30:85-108
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:30:85-108
 	android:permission
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:30:109-169
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:30:109-169
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:30:19-84
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:30:19-84
 intent-filter#${applicationId}+com.google.android.c2dm.intent.RECEIVE+com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:31:13-35:29
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:31:13-35:29
 action#com.google.android.c2dm.intent.RECEIVE
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:32:17-80
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:32:17-80
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:32:25-78
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:32:25-78
 action#com.google.android.c2dm.intent.REGISTRATION
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:33:17-85
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:33:17-85
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:33:25-83
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:33:25-83
 category#${applicationId}
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:34:17-60
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:34:17-60
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:34:27-58
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:34:27-58
 receiver#com.google.firebase.iid.FirebaseInstanceIdInternalReceiver
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:40:9-119
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:40:9-119
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:40:93-117
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:40:93-117
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:40:19-92
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:40:19-92
 service#com.google.firebase.iid.FirebaseInstanceIdService
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:44:9-48:19
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:44:9-48:19
 	android:exported
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:44:83-106
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:44:83-106
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:44:18-82
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:44:18-82
 intent-filter#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:45:13-47:29
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:45:13-47:29
 	android:priority
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:45:28-51
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:45:28-51
 action#com.google.firebase.INSTANCE_ID_EVENT
-ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:46:17-79
+ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:46:17-79
 	android:name
-		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.android\build-cache\7d267c15724a1d1529a356260f28cada0996b0fc\output\AndroidManifest.xml:46:25-77
+		ADDED from [com.google.firebase:firebase-iid:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-iid-10.2.0.aar\5356d1461d6253804052454438c3106e\AndroidManifest.xml:46:25-77
 provider#com.google.firebase.provider.FirebaseInitProvider
-ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:6:9-194
+ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:6:9-194
 	android:authorities
-		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:6:19-78
+		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:6:19-78
 	android:exported
-		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:6:144-168
+		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:6:144-168
 	android:initOrder
-		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:6:169-192
+		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:6:169-192
 	android:name
-		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.android\build-cache\45e620a34e9f9a77a56331dfe75b7b31fba2757a\output\AndroidManifest.xml:6:79-143
+		ADDED from [com.google.firebase:firebase-common:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\firebase-common-10.2.0.aar\a3160611809bdd481922ffcea16e3a23\AndroidManifest.xml:6:79-143
+activity#com.google.android.gms.ads.AdActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:25:9-232
+	android:configChanges
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:25:72-181
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:25:182-230
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:25:19-71
+activity#com.google.android.gms.ads.purchase.InAppPurchaseActivity
+ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:26:9-131
+	android:theme
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:26:92-129
+	android:name
+		ADDED from [com.google.android.gms:play-services-ads-lite:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-ads-lite-10.2.0.aar\936ac743a7e854f295935a49e778ab19\AndroidManifest.xml:26:19-91
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:19:9-172
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:19:146-170
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:19:86-145
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-base-10.2.0.aar\7f4641c1c0736020b3de39d82bc8c427\AndroidManifest.xml:19:19-85
 meta-data#com.google.android.gms.version
-ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2253c31fea065e20529b2acf8b5353aa74a3b699\output\AndroidManifest.xml:20:9-121
+ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:20:9-121
 	android:value
-		ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2253c31fea065e20529b2acf8b5353aa74a3b699\output\AndroidManifest.xml:20:66-119
+		ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:20:66-119
 	android:name
-		ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.android\build-cache\2253c31fea065e20529b2acf8b5353aa74a3b699\output\AndroidManifest.xml:20:20-65
+		ADDED from [com.google.android.gms:play-services-basement:10.2.0] C:\Users\Ondra\.gradle\caches\transforms-1\files-1.1\play-services-basement-10.2.0.aar\ea34af28183d1966a1b2ba73055accc1\AndroidManifest.xml:20:20-65

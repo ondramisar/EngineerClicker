@@ -42,6 +42,7 @@ public class InfTab extends Fragment{
         SimpleDraweeView clickImg = (SimpleDraweeView) rootView.findViewById(R.id.clickImg);
 
 
+        //IMG OF BUILDING
         int resourceId = getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker");
         Uri uri = new Uri.Builder()
                 .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"

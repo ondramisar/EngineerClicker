@@ -17,15 +17,15 @@ import io.realm.RealmViewHolder;
 
 public class InfoAdapter  extends RealmBasedRecyclerViewAdapter<User, InfoAdapter.ViewHolder> {
 
-
     class ViewHolder extends RealmViewHolder {
         TextView levelOfUser;
         TextView exp;
         ProgressBar levelProgress;
         TextView clickTextView;
+        /*
         TextView maxMachine;
         TextView maxWorkers;
-        TextView maxUpgrade;
+        TextView maxUpgrade;*/
 
         ViewHolder(FrameLayout container) {
             super(container);
@@ -33,9 +33,9 @@ public class InfoAdapter  extends RealmBasedRecyclerViewAdapter<User, InfoAdapte
             this.exp = (TextView) container.findViewById(R.id.expNumber);
             this.levelProgress = (ProgressBar) container.findViewById(R.id.progressOfLevel);
             this.clickTextView = (TextView) container.findViewById(R.id.clickTextView);
-            this.maxMachine = (TextView) container.findViewById(R.id.maxMachine);
-            this.maxWorkers = (TextView) container.findViewById(R.id.maxWorkers);
-            this.maxUpgrade = (TextView) container.findViewById(R.id.maxUpgrade);
+            //this.maxMachine = (TextView) container.findViewById(R.id.maxMachine);
+            //this.maxWorkers = (TextView) container.findViewById(R.id.maxWorkers);
+            //this.maxUpgrade = (TextView) container.findViewById(R.id.maxUpgrade);
         }
     }
 
@@ -62,9 +62,9 @@ public class InfoAdapter  extends RealmBasedRecyclerViewAdapter<User, InfoAdapte
         viewHolder.levelProgress.setProgress(user.getExp());
 
         viewHolder.clickTextView.setText("YOU ARE MAKING " + user.getLevel() + " COINS BY CLICK");
-        viewHolder.maxMachine.setText("MAXIMAL NUMBER OF MACHINE YOU CAN HAVE " + String.valueOf(user.getMaxMachine()));
-        viewHolder.maxWorkers.setText("MAXIMAL NUMBER OF WORKERS YOU CAN HAVE " + String.valueOf(user.getMaxWorkers()));
-        viewHolder.maxUpgrade.setText("MAXIMAL NUMBER OF UPGRADE YOU CAN HAVE " + String.valueOf(user.getMaxUpgrade()));
+        //viewHolder.maxMachine.setText("MAXIMAL NUMBER OF MACHINE YOU CAN HAVE " + String.valueOf(user.getMaxMachine()));
+        //viewHolder.maxWorkers.setText("MAXIMAL NUMBER OF WORKERS YOU CAN HAVE " + String.valueOf(user.getMaxWorkers()));
+        //viewHolder.maxUpgrade.setText("MAXIMAL NUMBER OF UPGRADE YOU CAN HAVE " + String.valueOf(user.getMaxUpgrade()));
 
         Realm realm = Realm.getDefaultInstance();
         try {

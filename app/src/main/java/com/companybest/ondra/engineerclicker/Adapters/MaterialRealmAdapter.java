@@ -104,7 +104,6 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
 
                         TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                        //MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
                     }
                 }
             });
@@ -129,7 +128,6 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
 
                         TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                        //MainActivity.coins.setText("" + String.valueOf(user.getCoins()));
                     }
 
                 }
