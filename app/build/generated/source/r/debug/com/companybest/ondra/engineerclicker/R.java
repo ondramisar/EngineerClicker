@@ -4097,7 +4097,7 @@ public final class R {
     public static final int abc_search_dropdown_item_icons_2line=0x7f0a0018;
     public static final int abc_search_view=0x7f0a0019;
     public static final int abc_select_dialog_material=0x7f0a001a;
-    public static final int activity_main =0x7f0a001b;
+    public static final int activity_main=0x7f0a001b;
     public static final int activity_material_intro=0x7f0a001c;
     public static final int betting_slide=0x7f0a001d;
     public static final int betting_tab=0x7f0a001e;

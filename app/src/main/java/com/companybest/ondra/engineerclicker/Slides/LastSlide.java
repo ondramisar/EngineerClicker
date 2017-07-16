@@ -1,4 +1,4 @@
-package com.companybest.ondra.engineerclicker.References;
+package com.companybest.ondra.engineerclicker.Slides;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;

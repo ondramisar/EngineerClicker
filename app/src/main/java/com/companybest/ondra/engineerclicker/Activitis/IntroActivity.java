@@ -4,12 +4,12 @@ package com.companybest.ondra.engineerclicker.Activitis;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 
-import com.companybest.ondra.engineerclicker.References.BettingSlide;
+import com.companybest.ondra.engineerclicker.Slides.BettingSlide;
 import com.companybest.ondra.engineerclicker.References.MachineSlide;
-import com.companybest.ondra.engineerclicker.References.InfoSlide;
-import com.companybest.ondra.engineerclicker.References.LastSlide;
-import com.companybest.ondra.engineerclicker.References.StockSlide;
-import com.companybest.ondra.engineerclicker.References.UpgradeSlide;
+import com.companybest.ondra.engineerclicker.Slides.InfoSlide;
+import com.companybest.ondra.engineerclicker.Slides.LastSlide;
+import com.companybest.ondra.engineerclicker.Slides.StockSlide;
+import com.companybest.ondra.engineerclicker.Slides.UpgradeSlide;
 
 import agency.tango.materialintroscreen.MaterialIntroActivity;
 

@@ -1,4 +1,4 @@
-package com.companybest.ondra.engineerclicker.References;
+package com.companybest.ondra.engineerclicker.Slides;
 
 import android.net.Uri;
 import android.os.Bundle;
