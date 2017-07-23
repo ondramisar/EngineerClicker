@@ -32,7 +32,7 @@ import io.realm.Realm;
 import io.realm.RealmResults;
 
 
-public class BettingTab extends Fragment implements RewardedVideoAdListener{
+public class BettingTab extends Fragment implements RewardedVideoAdListener {
 
     MainActivity mainActivity;
 
@@ -41,6 +41,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
     Button playShufle;
 
     private RewardedVideoAd mAd;
+    private Realm realm;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -61,19 +62,19 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             @Override
             public void onClick(View v) {
 
-                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             }
         });
 
         playAd = (Button) rootView.findViewById(R.id.playAd);
-        if (!mAd.isLoaded()){
+        if (!mAd.isLoaded()) {
             playAd.setEnabled(false);
         }
         playAd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (mAd.isLoaded()){
+                if (mAd.isLoaded()) {
                     mAd.show();
                 }
             }
@@ -93,73 +94,71 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             public void onClick(View v) {
                 if (editTextFor50To50.getText().toString().trim().length() > 0) {
                     textViewFor50To50.setText("Your Bet: " + editTextFor50To50.getText());
-                        InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                 }
             }
         });
+
+        realm = Realm.getDefaultInstance();
 
         //FIRST GAME
         play50To50.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-                if (textViewFor50To50.getText() != "" &&  editTextFor50To50.getText().toString().trim().length() > 0) {
+                if (textViewFor50To50.getText() != "" && editTextFor50To50.getText().toString().trim().length() > 0) {
 
-                    Realm realm = Realm.getDefaultInstance();
 
-                    try {
-                        final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
+                    final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
 
-                        if (user.getCoins() > Integer.valueOf(String.valueOf(editTextFor50To50.getText()))) {
+                    if (user.getCoins() > Integer.valueOf(String.valueOf(editTextFor50To50.getText()))) {
 
-                            int min = 0;
-                            final int max = 200;
+                        int min = 0;
+                        final int max = 200;
 
-                            Random r = new Random();
-                            final int i1 = r.nextInt(max - min + 1) + min;
+                        Random r = new Random();
+                        final int i1 = r.nextInt(max - min + 1) + min;
 
-                            play50To50.setEnabled(false);
+                        play50To50.setEnabled(false);
 
-                            if (i1 <= 100) {
-                                Toast.makeText(getContext(), "YOU HAVE WONE " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
-                                realm.executeTransaction(new Realm.Transaction() {
-                                    @Override
-                                    public void execute(Realm realm) {
+                        if (i1 <= 100) {
+                            Toast.makeText(getContext(), "YOU HAVE WONE " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
 
-                                        user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), true);
-                                    }
-                                });
-                                TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
-                                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                            } else {
-                                realm.executeTransaction(new Realm.Transaction() {
-                                    @Override
-                                    public void execute(Realm realm) {
+                                    user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), true);
+                                }
+                            });
+                            TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+                            txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                        } else {
+                            realm.executeTransaction(new Realm.Transaction() {
+                                @Override
+                                public void execute(Realm realm) {
 
-                                        user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), false);
-                                    }
-                                });
+                                    user.setCoins(Integer.valueOf(String.valueOf(editTextFor50To50.getText())), false);
+                                }
+                            });
 
-                                TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
-                                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                                Toast.makeText(getContext(), "YOU HAVE Lost " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
+                            TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+                            txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                            Toast.makeText(getContext(), "YOU HAVE Lost " + textViewFor50To50.getText(), Toast.LENGTH_SHORT).show();
+                        }
+
+                        new CountDownTimer(10000, 1000) {
+
+                            public void onTick(long millisUntilFinished) {
+
                             }
 
-                            new CountDownTimer(10000, 1000) {
-
-                                public void onTick(long millisUntilFinished) {
-
-                                }
-
-                                public void onFinish() {
-                                    play50To50.setEnabled(true);
-                                }
-                            }.start();
-                        }
-                    }finally {
-                        realm.close();
+                            public void onFinish() {
+                                play50To50.setEnabled(true);
+                            }
+                        }.start();
                     }
+
                 }
 
             }
@@ -189,7 +188,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                     int max = i + i / 3;
                     textViewForShufl.setText("You can win from " + String.valueOf(min) + " to " + String.valueOf(max));
 
-                    InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                    InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                     imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
                 }
             }
@@ -200,12 +199,10 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
             @Override
             public void onClick(View v) {
 
-                if (textViewForShufl.getText() != ""&& editTextForShufl.getText().toString().trim().length() > 0) {
+                if (textViewForShufl.getText() != "" && editTextForShufl.getText().toString().trim().length() > 0) {
 
-                    Realm realm = Realm.getDefaultInstance();
 
-                    try {
-                    final User user = realm.where(User.class).equalTo("name",  mainActivity.mainReferences.name).findFirst();
+                    final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
 
                     if (user.getCoins() > Integer.valueOf(String.valueOf(editTextForShufl.getText()))) {
                         int i = Integer.valueOf(String.valueOf(editTextForShufl.getText()));
@@ -231,7 +228,7 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                             }
                         });
 
-                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
+                        TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
                         txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
                         new CountDownTimer(10000, 1000) {
 
@@ -244,15 +241,12 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
                             }
                         }.start();
                     }
-                    } finally {
-                        realm.close();
-                    }
                 }
 
             }
         });
 
-        ((MainActivity)getActivity()).mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+        ((MainActivity) getActivity()).mViewPager.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
 
             @Override
             public void onPageSelected(int position) {
@@ -264,15 +258,15 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
 
             @Override
             public void onPageScrollStateChanged(int state) {
-                InputMethodManager imm = (InputMethodManager)getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
+                InputMethodManager imm = (InputMethodManager) getContext().getSystemService(Context.INPUT_METHOD_SERVICE);
                 imm.hideSoftInputFromWindow(getActivity().getCurrentFocus().getWindowToken(), 0);
             }
         });
         return rootView;
     }
 
-    private void loadAd(){
-        if (!mAd.isLoaded()){
+    private void loadAd() {
+        if (!mAd.isLoaded()) {
             mAd.loadAd("ca-app-pub-4686615482489412/9724660686", new AdRequest.Builder().build());
             //mAd.loadAd("ca-app-pub-3940256099942544/5224354917", new AdRequest.Builder().build());
         }
@@ -280,40 +274,37 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
 
     @Override
     public void onRewarded(RewardItem reward) {
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
-            RealmResults<Machine> machines = realm.where(Machine.class).findAll();
 
-            int numberOfMachine = 0;
-            for (int i = 0; i < machines.size(); i++ ){
-                if (machines.get(i).getNumberOfWorkersOnMachine() > 0) {
-                    numberOfMachine += 1;
-                }
+        final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
+        RealmResults<Machine> machines = realm.where(Machine.class).findAll();
+
+        int numberOfMachine = 0;
+        for (int i = 0; i < machines.size(); i++) {
+            if (machines.get(i).getNumberOfWorkersOnMachine() > 0) {
+                numberOfMachine += 1;
             }
-            int min = 500 * numberOfMachine;
-            int max = 5000 * numberOfMachine;
-
-
-            Random r = new Random();
-            final int i1 = r.nextInt(max - min + 1) + min;
-
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-
-                    user.setCoins(i1, true);
-
-                }
-            });
-
-            TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
-            txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-            Toast.makeText(getContext(), "GOT: " + String.valueOf(i1) + " Coins", Toast.LENGTH_LONG).show();
-
-        } finally {
-            realm.close();
         }
+        int min = 500 * numberOfMachine;
+        int max = 5000 * numberOfMachine;
+
+
+        Random r = new Random();
+        final int i1 = r.nextInt(max - min + 1) + min;
+
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+
+                user.setCoins(i1, true);
+
+            }
+        });
+
+        TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+        Toast.makeText(getContext(), "GOT: " + String.valueOf(i1) + " Coins", Toast.LENGTH_LONG).show();
+
+
     }
 
     @Override
@@ -347,4 +338,10 @@ public class BettingTab extends Fragment implements RewardedVideoAdListener{
     public void onRewardedVideoStarted() {
     }
 
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }

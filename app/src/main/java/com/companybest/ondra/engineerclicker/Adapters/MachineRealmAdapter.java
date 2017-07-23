@@ -81,6 +81,7 @@ public class MachineRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, 
     }
 
 
+
     @Override
     public void onBindRealmViewHolder(final ViewHolder viewHolder, int position) {
         final Machine machine = realmResults.get(position);

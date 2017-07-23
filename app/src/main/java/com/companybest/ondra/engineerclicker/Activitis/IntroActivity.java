@@ -5,7 +5,7 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 
 import com.companybest.ondra.engineerclicker.Slides.BettingSlide;
-import com.companybest.ondra.engineerclicker.References.MachineSlide;
+import com.companybest.ondra.engineerclicker.Slides.MachineSlide;
 import com.companybest.ondra.engineerclicker.Slides.InfoSlide;
 import com.companybest.ondra.engineerclicker.Slides.LastSlide;
 import com.companybest.ondra.engineerclicker.Slides.StockSlide;

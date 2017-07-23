@@ -37,6 +37,8 @@ public class MechTab extends Fragment {
 
     SimpleDraweeView workerImg;
 
+    private Realm realm;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -49,8 +51,7 @@ public class MechTab extends Fragment {
         AdRequest adRequest = new AdRequest.Builder().build();
         //mAdView.loadAd(adRequest);
 
-        final Realm realm = Realm.getDefaultInstance();
-        try {
+        realm = Realm.getDefaultInstance();
             //FOR ADAPTER LIST OF MACHINES
             machines = realm
                     .where(Machine.class)
@@ -123,9 +124,6 @@ public class MechTab extends Fragment {
             numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
             costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
-        }finally {
-            //realm.close();
-        }
 
         return rootView;
     }
@@ -133,5 +131,6 @@ public class MechTab extends Fragment {
     @Override
     public void onDestroy() {
         super.onDestroy();
+        realm.close();
     }
 }

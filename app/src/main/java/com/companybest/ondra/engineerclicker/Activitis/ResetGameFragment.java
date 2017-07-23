@@ -25,6 +25,7 @@ import io.realm.RealmResults;
 public class ResetGameFragment extends DialogFragment {
 
     Context context;
+    private Realm realm;
 
     public ResetGameFragment(Context context) {
         // Empty constructor required for DialogFragment
@@ -51,101 +52,99 @@ public class ResetGameFragment extends DialogFragment {
             @Override
             public void onClick(View v) {
 
-                Realm realm = Realm.getDefaultInstance();
-                try {
-                    BasicWorker worker = realm.where(BasicWorker.class).findFirst();
-                    final User user = realm.where(User.class).findFirst();
-                    RealmResults<Machine> machine = realm.where(Machine.class).findAll();
-                    int numberOfMachine = 0;
+                realm = Realm.getDefaultInstance();
 
-                    for (int i = 0; i < machine.size(); i++) {
-                        Machine m = machine.get(i);
-                        if (m.getNumberOfWorkersOnMachine() > 0) {
-                            numberOfMachine += 1;
-                        }
+                BasicWorker worker = realm.where(BasicWorker.class).findFirst();
+                final User user = realm.where(User.class).findFirst();
+                RealmResults<Machine> machine = realm.where(Machine.class).findAll();
+                int numberOfMachine = 0;
+
+                for (int i = 0; i < machine.size(); i++) {
+                    Machine m = machine.get(i);
+                    if (m.getNumberOfWorkersOnMachine() > 0) {
+                        numberOfMachine += 1;
                     }
-
-                    //Log.i("user", "NUMEBR OF MACHINES " + String.valueOf(numberOfMachine));
-                    if (numberOfMachine < 5) {
-                        deleteUpgrade();
-                        mainReferences.createAllMachines();
-                        mainReferences.createAllMaterials();
-                        mainReferences.createAllUpgrades();
-                        mainReferences.createWorker();
-                        mainReferences.createPartOfUser();
-
-                    } else if (numberOfMachine >= 5 && numberOfMachine < 10) {
-                        deleteUpgrade();
-                        mainReferences.createMaterialBetter(user.getLevel() * 10);
-                        Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
-                        mainReferences.createAllMachines();
-                        mainReferences.createAllUpgrades();
-                        mainReferences.createWorker();
-                        mainReferences.createPartOfUser();
-
-                    } else if (numberOfMachine == 10) {
-                        deleteUpgrade();
-                        mainReferences.createMaterialBetter(user.getLevel() * 10);
-                        Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
-                        mainReferences.createNewMaterial();
-                        mainReferences.createAllMachines();
-                        mainReferences.createNewMachinesFirst();
-                        mainReferences.createAllUpgrades();
-                        mainReferences.createNewUpgrade();
-                        mainReferences.createWorker();
-                        mainReferences.createPartOfUser();
-
-                    } else if (numberOfMachine > 10) {
-                        deleteUpgrade();
-                        mainReferences.createMaterialBetter(user.getLevel() * 10);
-                        Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
-                        mainReferences.createNewMaterialBetter(user.getLevel() * 10);
-                        mainReferences.createAllMachines();
-                        mainReferences.createNewMachinesFirst();
-                        mainReferences.createAllUpgrades();
-                        mainReferences.createNewUpgrade();
-                        mainReferences.createWorker();
-                        mainReferences.createPartOfUser();
-
-                    }
-
-
-                    MechTab.numberOfWorkers.setText(String.valueOf(worker.getNumberOf()));
-                    MechTab.costOfWorkers.setText(String.valueOf(worker.getCost()));
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            user.setCoins(user.getCoins(), false);
-                            user.setCoins(5000, true);
-                            user.setExp(500, 1);
-                        }
-                    });
-
-                    if (user.getExp() < 0) {
-                        if (user.getLevel() == 1) {
-                            realm.executeTransaction(new Realm.Transaction() {
-                                @Override
-                                public void execute(Realm realm) {
-                                    user.setExp(0, 2);
-
-                                }
-                            });
-                        } else if (user.getLevel() > 1) {
-                            realm.executeTransaction(new Realm.Transaction() {
-                                @Override
-                                public void execute(Realm realm) {
-                                    user.setLevel(1, false);
-                                    user.setExpNeeded(user.getExpNeeded() / 2, false);
-                                    user.setExp(user.getExpNeeded() + user.getExp(), 2);
-                                }
-                            });
-                        }
-                    }
-                    TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
-                    txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                } finally {
-                    realm.close();
                 }
+
+                //Log.i("user", "NUMEBR OF MACHINES " + String.valueOf(numberOfMachine));
+                if (numberOfMachine < 5) {
+                    deleteUpgrade();
+                    mainReferences.createAllMachines();
+                    mainReferences.createAllMaterials();
+                    mainReferences.createAllUpgrades();
+                    mainReferences.createWorker();
+                    mainReferences.createPartOfUser();
+
+                } else if (numberOfMachine >= 5 && numberOfMachine < 10) {
+                    deleteUpgrade();
+                    mainReferences.createMaterialBetter(user.getLevel() * 10);
+                    Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
+                    mainReferences.createAllMachines();
+                    mainReferences.createAllUpgrades();
+                    mainReferences.createWorker();
+                    mainReferences.createPartOfUser();
+
+                } else if (numberOfMachine == 10) {
+                    deleteUpgrade();
+                    mainReferences.createMaterialBetter(user.getLevel() * 10);
+                    Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
+                    mainReferences.createNewMaterial();
+                    mainReferences.createAllMachines();
+                    mainReferences.createNewMachinesFirst();
+                    mainReferences.createAllUpgrades();
+                    mainReferences.createNewUpgrade();
+                    mainReferences.createWorker();
+                    mainReferences.createPartOfUser();
+
+                } else if (numberOfMachine > 10) {
+                    deleteUpgrade();
+                    mainReferences.createMaterialBetter(user.getLevel() * 10);
+                    Log.i("user", "NUMBER GIVIN FROM LEVEL " + String.valueOf(user.getLevel() * 10));
+                    mainReferences.createNewMaterialBetter(user.getLevel() * 10);
+                    mainReferences.createAllMachines();
+                    mainReferences.createNewMachinesFirst();
+                    mainReferences.createAllUpgrades();
+                    mainReferences.createNewUpgrade();
+                    mainReferences.createWorker();
+                    mainReferences.createPartOfUser();
+
+                }
+
+
+                MechTab.numberOfWorkers.setText(String.valueOf(worker.getNumberOf()));
+                MechTab.costOfWorkers.setText(String.valueOf(worker.getCost()));
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        user.setCoins(user.getCoins(), false);
+                        user.setCoins(5000, true);
+                        user.setExp(500, 1);
+                    }
+                });
+
+                if (user.getExp() < 0) {
+                    if (user.getLevel() == 1) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                user.setExp(0, 2);
+
+                            }
+                        });
+                    } else if (user.getLevel() > 1) {
+                        realm.executeTransaction(new Realm.Transaction() {
+                            @Override
+                            public void execute(Realm realm) {
+                                user.setLevel(1, false);
+                                user.setExpNeeded(user.getExpNeeded() / 2, false);
+                                user.setExp(user.getExpNeeded() + user.getExp(), 2);
+                            }
+                        });
+                    }
+                }
+                TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+
 
                 ResetGameFragment.this.dismiss();
             }
@@ -157,18 +156,20 @@ public class ResetGameFragment extends DialogFragment {
 
 
     private void deleteUpgrade() {
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            final RealmResults<Upgrade> upgrades = realm.where(Upgrade.class).findAll();
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    upgrades.deleteAllFromRealm();
-                }
-            });
-        } finally {
-            realm.close();
-        }
+
+        final RealmResults<Upgrade> upgrades = realm.where(Upgrade.class).findAll();
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                upgrades.deleteAllFromRealm();
+            }
+        });
+
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }

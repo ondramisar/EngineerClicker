@@ -25,6 +25,8 @@ public class StockTab extends Fragment {
     //REALM DATABASE
     RealmResults<Material> materials;
 
+    private Realm realm;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -37,8 +39,8 @@ public class StockTab extends Fragment {
         AdRequest adRequest2 = new AdRequest.Builder().build();
         //mAdView2.loadAd(adRequest2);
 
-        Realm realm = Realm.getDefaultInstance();
-        try {
+        realm = Realm.getDefaultInstance();
+
             //FOR ADAPTER LIST OF MACHINES
             materials = realm
                     .where(Material.class)
@@ -50,11 +52,14 @@ public class StockTab extends Fragment {
             //RECYCLERVIEW
             materialRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view_for_products);
             materialRecyclerView.setAdapter(materialRealmAdapter);
-        } finally {
-            realm.close();
-        }
+
 
         return rootView;
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }

@@ -412,9 +412,13 @@ public class MainReferences {
         machine.setNameOfMaterial(nameOfMaterialForMachine);
         machine.setNameOfImage(nameOfImgMachine);
         realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(machine);
-        realm.commitTransaction();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(machine);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
     //METHOD FOR ALL THE OTHERS MACHINES
@@ -431,9 +435,13 @@ public class MainReferences {
         machine.setNameOfNeededMaterial(nameOfMaterialNeededMachine);
         machine.setNameOfImage(nameOfImgMachine);
         realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(machine);
-        realm.commitTransaction();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(machine);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
     //METHOD FOR CREATE ALL MATERIALS
@@ -444,9 +452,13 @@ public class MainReferences {
         material.setNumberOf(numnerOfMaterial, true);
         material.setNameOfImg(nameOfImgMaterial);
         realm = Realm.getDefaultInstance();
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(material);
-        realm.commitTransaction();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(material);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
     //METHOD FOR CREATE ALL UPGRADE
@@ -459,9 +471,14 @@ public class MainReferences {
         upgrade.setNameOfMachinetoGive(nameOfMachineToGiveUpgrade);
         upgrade.setNameOfMaterialGive(nameOfMaterialToGiveUpgrade);
         upgrade.setNameOfImg(nameOfImgUpgrade);
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(upgrade);
-        realm.commitTransaction();
+        realm = Realm.getDefaultInstance();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(upgrade);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
 
@@ -522,9 +539,14 @@ public class MainReferences {
         worker.setName(nameOfWorker);
         worker.setNumberOf(numberOfWorker, true);
         worker.setCost(costOfWorker, true);
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(worker);
-        realm.commitTransaction();
+        realm = Realm.getDefaultInstance();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(worker);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
     //CREATING USER
@@ -538,22 +560,32 @@ public class MainReferences {
         user.setMaxMachine(maxMachine);
         user.setMaxWorkers(maxWorker);
         user.setMaxUpgrade(maxUpgrade);
-        realm.beginTransaction();
-        realm.copyToRealmOrUpdate(user);
-        realm.commitTransaction();
+        realm = Realm.getDefaultInstance();
+        try {
+            realm.beginTransaction();
+            realm.copyToRealmOrUpdate(user);
+            realm.commitTransaction();
+        } finally {
+            realm.close();
+        }
     }
 
     //CREATING THE NEW PART OF USER, THIS IS NOT BEING USED
-    public void createPartOfUser(){
-        final User user = realm.where(User.class).equalTo("name", name).findFirst();
-        realm.executeTransaction(new Realm.Transaction() {
-            @Override
-            public void execute(Realm realm) {
-                user.setMaxMachine(maxMachine);
-                user.setMaxWorkers(maxWorker);
-                user.setMaxUpgrade(maxUpgrade);
-            }
-        });
+    public void createPartOfUser() {
+        realm = Realm.getDefaultInstance();
+        try {
+            final User user = realm.where(User.class).equalTo("name", name).findFirst();
+            realm.executeTransaction(new Realm.Transaction() {
+                @Override
+                public void execute(Realm realm) {
+                    user.setMaxMachine(maxMachine);
+                    user.setMaxWorkers(maxWorker);
+                    user.setMaxUpgrade(maxUpgrade);
+                }
+            });
+        } finally {
+            realm.close();
+        }
     }
 
 
@@ -609,7 +641,6 @@ public class MainReferences {
         createUpgrade(upgrade21, nameOfUpgrade21, costOfUpgrade21, whatToDoUpgrade21, forWhatToDoUpgrade21, nameOfMachineToGiveUpgrade21, nameOfMaterialToGiveUpgrade21, NameOfImgUpgrade9);
 
     }
-
 
 
 }

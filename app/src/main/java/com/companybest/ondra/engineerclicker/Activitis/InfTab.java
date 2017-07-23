@@ -22,9 +22,9 @@ import co.moonmonkeylabs.realmrecyclerview.RealmRecyclerView;
 import io.realm.Realm;
 import io.realm.RealmResults;
 
-public class InfTab extends Fragment{
+public class InfTab extends Fragment {
 
-
+    private Realm realm;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -51,40 +51,41 @@ public class InfTab extends Fragment{
         clickImg.setImageURI(uri);
 
 
-
-        final Realm realm = Realm.getDefaultInstance();
-        try {
-        RealmResults<User> users =  realm
+        realm = Realm.getDefaultInstance();
+        RealmResults<User> users = realm
                 .where(User.class)
                 .findAll();
 
-            InfoAdapter infoAdapter = new InfoAdapter(getContext(), users, true, false);
+        InfoAdapter infoAdapter = new InfoAdapter(getContext(), users, true, false);
 
-            infoList.setAdapter(infoAdapter);
-
-
-            clickImg.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    final User user = realm.where(User.class).findFirst();
-
-                    realm.executeTransaction(new Realm.Transaction() {
-                        @Override
-                        public void execute(Realm realm) {
-                            user.setCoins((float) user.getLevel(), true);
-                        }
-                    });
+        infoList.setAdapter(infoAdapter);
 
 
-                    TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
-                    txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
-                }
-            });
+        clickImg.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                final User user = realm.where(User.class).findFirst();
 
-        }finally {
-            realm.close();
-        }
+                realm.executeTransaction(new Realm.Transaction() {
+                    @Override
+                    public void execute(Realm realm) {
+                        user.setCoins((float) user.getLevel(), true);
+                    }
+                });
+
+
+                TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+                txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+            }
+        });
+
 
         return rootView;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
     }
 }

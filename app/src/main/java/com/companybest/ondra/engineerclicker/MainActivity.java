@@ -14,6 +14,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.TextView;
@@ -64,6 +65,8 @@ public class MainActivity extends RealmBaseActivity {
     MediaPlayer mediaPlayer;
     public static AudioManager audioManager;
 
+    private Realm realm;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,10 +95,13 @@ public class MainActivity extends RealmBaseActivity {
         tabLayout.setupWithViewPager(mViewPager);
 
 
-
         // IF SERVICE IS NOT RUNNING START IT
         if (!isMyServiceRunning(MyService.class)) {
             startService(new Intent(getBaseContext(), MyService.class).putExtra("outOfApp", false));
+            Log.i("user", "new RUN");
+        } else {
+            Log.i("user", "RUNNING");
+
         }
 
         //DEFAULT REALM INSTANCE/CONFIG GETTING FROM RealmBaseActivity
@@ -122,7 +128,7 @@ public class MainActivity extends RealmBaseActivity {
         } else if (sharedPreferences.getInt("created", 0) == 1) {
             //SECOND CREATE
             sharedPreferences.edit().putInt("created", 2).apply();
-        }  else if (sharedPreferences.getInt("created", 0) == 2) {
+        } else if (sharedPreferences.getInt("created", 0) == 2) {
             // PROBLEMS WITH ONE MACHINE AND ONE UPGRADE, IF SOMEONE DOWNLOAD
             // THE GAME THE DAY IT CAME OUT HE NEEDS TO UPDATE, DOWNLOAD LATER DONT NEED TO UPDATE
 
@@ -188,31 +194,29 @@ public class MainActivity extends RealmBaseActivity {
         coinsImg.setImageURI(uri1);
 
         //SETTING USERS COINS
-        Realm realm = Realm.getDefaultInstance();
-        try {
-            final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
-            /*
-            //TEST METHOD
-            realm.executeTransaction(new Realm.Transaction() {
-                @Override
-                public void execute(Realm realm) {
-                    user.setCoins(600000000, true);
-                }
-            });*/
-            coins = (TextView) findViewById(R.id.coins);
-            coins.setText("" + String.valueOf(user.getCoins()));
-        } finally {
-            realm.close();
-        }
+        realm = Realm.getDefaultInstance();
+        final User user = realm.where(User.class).equalTo("name", mainReferences.name).findFirst();
+
+        /*
+        //TEST METHOD
+        realm.executeTransaction(new Realm.Transaction() {
+            @Override
+            public void execute(Realm realm) {
+                user.setCoins(600000000, true);
+            }
+        });*/
+        coins = (TextView) findViewById(R.id.coins);
+        coins.setText("" + String.valueOf(user.getCoins()));
+
     }
 
-    public void startMusic(){
+    public void startMusic() {
         SharedPreferences sharedPreferences = this.getSharedPreferences("com.companybest.ondra.engineerclicker.Activitis", Context.MODE_PRIVATE);
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.bac_mus);
         mediaPlayer.start();
         mediaPlayer.setLooping(true);
         audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
-        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC,sharedPreferences.getInt("music",0), 0);
+        audioManager.setStreamVolume(AudioManager.STREAM_MUSIC, sharedPreferences.getInt("music", 0), 0);
     }
 
 
@@ -262,7 +266,7 @@ public class MainActivity extends RealmBaseActivity {
             startActivity(i1);
 
             return true;
-        } else if (id == R.id.resetGame){
+        } else if (id == R.id.resetGame) {
             //RESET GAME
             FragmentManager fm = getSupportFragmentManager();
             ResetGameFragment resetGameFragment = new ResetGameFragment(getApplicationContext());
@@ -292,6 +296,7 @@ public class MainActivity extends RealmBaseActivity {
     protected void onDestroy() {
         super.onDestroy();
         if (mediaPlayer != null) mediaPlayer.release();
+        realm.close();
     }
 
 
@@ -307,7 +312,7 @@ public class MainActivity extends RealmBaseActivity {
 
         @Override
         public Fragment getItem(int position) {
-            switch (position){
+            switch (position) {
                 case 0:
                     MechTab mechTab = new MechTab();
                     return mechTab;

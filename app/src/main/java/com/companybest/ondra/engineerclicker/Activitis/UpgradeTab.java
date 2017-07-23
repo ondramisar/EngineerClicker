@@ -25,6 +25,8 @@ public class UpgradeTab extends Fragment {
     //REALM DATABASE
     RealmResults<Upgrade> upgrades;
 
+    private Realm realm;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -36,8 +38,7 @@ public class UpgradeTab extends Fragment {
         //mAdView3.loadAd(adRequest3);
 
 
-        Realm realm = Realm.getDefaultInstance();
-        try {
+        realm = Realm.getDefaultInstance();
 
             //FOR ADAPTER LIST OF MACHINES
             upgrades = realm
@@ -50,12 +51,14 @@ public class UpgradeTab extends Fragment {
             //RECYCLERVIEW
             upgradeRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view_for_upgrades);
             upgradeRecyclerView.setAdapter(upgradeRealAdapter);
-        } finally {
-            realm.close();
-        }
+
 
         return rootView;
     }
 
-
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        realm.close();
+    }
 }

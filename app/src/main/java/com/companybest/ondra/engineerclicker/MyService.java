@@ -40,6 +40,8 @@ public class MyService extends Service {
 
     RealmResults<Machine> machines;
 
+    private Realm realm;
+
 
     @Nullable
     @Override
@@ -105,7 +107,7 @@ public class MyService extends Service {
         timeForMachine11 += 1;
 
 
-        Realm realm = Realm.getDefaultInstance();
+        realm = Realm.getDefaultInstance();
         try {
             //LIST OF ALL MACHINES
             machines = realm.where(Machine.class).findAll();
@@ -242,16 +244,15 @@ public class MyService extends Service {
 
                 }
             }
-
-
         } finally {
             realm.close();
         }
+
     }
 
     //METHOD FOR MACHINE SET UP AND ADDING
     private void machineThread(final Machine mach) {
-        Realm realm = Realm.getDefaultInstance();
+        realm = Realm.getDefaultInstance();
         try {
             final Material material = realm.where(Material.class).equalTo("name", mach.getNameOfMaterial()).findFirst();
             final Material material2 = realm.where(Material.class).equalTo("name", mach.getNameOfNeededMaterial()).findFirst();
@@ -284,7 +285,6 @@ public class MyService extends Service {
         } finally {
             realm.close();
         }
-
 
     }
 }

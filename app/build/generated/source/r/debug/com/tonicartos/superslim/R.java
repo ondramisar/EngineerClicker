@@ -19,15 +19,15 @@ public final class R {
     }
     public static final class id {
         public static final int auto_fit = 0x7f080028;
-        public static final int end = 0x7f080066;
-        public static final int grid = 0x7f080078;
-        public static final int inline = 0x7f080089;
-        public static final int linear = 0x7f080091;
-        public static final int match_header = 0x7f08009a;
-        public static final int overlay = 0x7f0800b2;
-        public static final int staggered_grid = 0x7f0800f5;
-        public static final int start = 0x7f0800f7;
-        public static final int sticky = 0x7f0800f9;
+        public static final int end = 0x7f080065;
+        public static final int grid = 0x7f080077;
+        public static final int inline = 0x7f080088;
+        public static final int linear = 0x7f080090;
+        public static final int match_header = 0x7f080099;
+        public static final int overlay = 0x7f0800b1;
+        public static final int staggered_grid = 0x7f0800f4;
+        public static final int start = 0x7f0800f6;
+        public static final int sticky = 0x7f0800f8;
     }
     public static final class string {
         public static final int app_name = 0x7f0e0023;
