@@ -6,7 +6,6 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -17,8 +16,10 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.Activitis.BettingTab;
 import com.companybest.ondra.engineerclicker.Activitis.CreditFragment;
 import com.companybest.ondra.engineerclicker.Activitis.InfTab;
@@ -30,9 +31,6 @@ import com.companybest.ondra.engineerclicker.Activitis.StockTab;
 import com.companybest.ondra.engineerclicker.Activitis.UpgradeTab;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.References.MainReferences;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.backends.pipeline.Fresco;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.MobileAds;
 
 import io.realm.Realm;
@@ -71,8 +69,6 @@ public class MainActivity extends RealmBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Fresco.initialize(this.getApplicationContext());
-
         setTitle("");
 
         setContentView(R.layout.activity_main);
@@ -185,13 +181,8 @@ public class MainActivity extends RealmBaseActivity {
 
 
         //COIN IMAGE
-        SimpleDraweeView coinsImg = (SimpleDraweeView) findViewById(R.id.coinsImg);
-        int resourceId1 = this.getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri1 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId1))
-                .build();
-        coinsImg.setImageURI(uri1);
+        ImageView coinsImg = (ImageView) findViewById(R.id.coinsImg);
+        Glide.with(this).load(getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(coinsImg);
 
         //SETTING USERS COINS
         realm = Realm.getDefaultInstance();

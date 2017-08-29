@@ -21,7 +21,7 @@
         android:background="@color/wintegreenDream">
 
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/costOfWorker"
             android:layout_width="30dp"
             android:layout_height="32dp"
@@ -68,7 +68,7 @@
             android:textColor="@color/common_google_signin_btn_text_dark_focused" />
 
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/workerImg"
             android:layout_width="45dp"
             android:layout_height="45dp"

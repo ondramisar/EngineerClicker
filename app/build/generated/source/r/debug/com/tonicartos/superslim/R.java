@@ -8,35 +8,35 @@ package com.tonicartos.superslim;
 
 public final class R {
     public static final class attr {
-        public static final int slm_grid_columnWidth = 0x7f03013f;
-        public static final int slm_grid_numColumns = 0x7f030140;
-        public static final int slm_headerDisplay = 0x7f030141;
-        public static final int slm_isHeader = 0x7f030142;
-        public static final int slm_section_firstPosition = 0x7f030143;
-        public static final int slm_section_headerMarginEnd = 0x7f030144;
-        public static final int slm_section_headerMarginStart = 0x7f030145;
-        public static final int slm_section_sectionManager = 0x7f030146;
+        public static final int slm_grid_columnWidth = 0x7f030125;
+        public static final int slm_grid_numColumns = 0x7f030126;
+        public static final int slm_headerDisplay = 0x7f030127;
+        public static final int slm_isHeader = 0x7f030128;
+        public static final int slm_section_firstPosition = 0x7f030129;
+        public static final int slm_section_headerMarginEnd = 0x7f03012a;
+        public static final int slm_section_headerMarginStart = 0x7f03012b;
+        public static final int slm_section_sectionManager = 0x7f03012c;
     }
     public static final class id {
         public static final int auto_fit = 0x7f080028;
-        public static final int end = 0x7f080065;
-        public static final int grid = 0x7f080077;
-        public static final int inline = 0x7f080088;
-        public static final int linear = 0x7f080090;
-        public static final int match_header = 0x7f080099;
-        public static final int overlay = 0x7f0800b1;
-        public static final int staggered_grid = 0x7f0800f4;
-        public static final int start = 0x7f0800f6;
-        public static final int sticky = 0x7f0800f8;
+        public static final int end = 0x7f080063;
+        public static final int grid = 0x7f080070;
+        public static final int inline = 0x7f080081;
+        public static final int linear = 0x7f080089;
+        public static final int match_header = 0x7f080092;
+        public static final int overlay = 0x7f0800aa;
+        public static final int staggered_grid = 0x7f0800ed;
+        public static final int start = 0x7f0800ef;
+        public static final int sticky = 0x7f0800f1;
     }
     public static final class string {
         public static final int app_name = 0x7f0e0023;
     }
     public static final class styleable {
-        public static final int[] superslim_GridSLM = { 0x7f03013f, 0x7f030140 };
+        public static final int[] superslim_GridSLM = { 0x7f030125, 0x7f030126 };
         public static final int superslim_GridSLM_slm_grid_columnWidth = 0;
         public static final int superslim_GridSLM_slm_grid_numColumns = 1;
-        public static final int[] superslim_LayoutManager = { 0x7f030141, 0x7f030142, 0x7f030143, 0x7f030144, 0x7f030145, 0x7f030146 };
+        public static final int[] superslim_LayoutManager = { 0x7f030127, 0x7f030128, 0x7f030129, 0x7f03012a, 0x7f03012b, 0x7f03012c };
         public static final int superslim_LayoutManager_slm_headerDisplay = 0;
         public static final int superslim_LayoutManager_slm_isHeader = 1;
         public static final int superslim_LayoutManager_slm_section_firstPosition = 2;

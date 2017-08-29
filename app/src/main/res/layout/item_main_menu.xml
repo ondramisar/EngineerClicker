@@ -60,7 +60,7 @@
             android:textSize="16sp" />
 
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/smallMachImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -69,7 +69,7 @@
             android:layout_alignTop="@+id/plusMachine"
             android:layout_marginTop="4sp" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/workerOnMachImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -147,14 +147,14 @@
             android:textSize="16sp" />
 
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/imageView"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/costOfMachineImg"
             android:layout_width="30dp"
             android:layout_height="32dp"
@@ -163,7 +163,7 @@
             android:layout_toEndOf="@+id/imageView"
             android:layout_toRightOf="@+id/imageView" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/timeOfMachineImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -171,7 +171,7 @@
             android:layout_alignLeft="@+id/costOfMachineImg"
             android:layout_alignStart="@+id/costOfMachineImg" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/materialOfMachineImg"
             android:layout_width="30dp"
             android:layout_height="30dp"
@@ -179,7 +179,7 @@
             android:layout_toLeftOf="@+id/timer"
             android:layout_toStartOf="@+id/timer" />
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/bac_for_text"
             android:layout_width="146dp"
             android:layout_height="35dp"

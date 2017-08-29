@@ -1,16 +1,15 @@
 package com.companybest.ondra.engineerclicker.Slides;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import agency.tango.materialintroscreen.SlideFragment;
 
@@ -44,67 +43,32 @@ public class MachineSlide extends SlideFragment {
 
 
         //COIN IMG
-        SimpleDraweeView costOfWorker = (SimpleDraweeView) view.findViewById(R.id.costOfWorker);
-        int resourceId8 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri8 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId8))
-                .build();
-        costOfWorker.setImageURI(uri8);
+        ImageView costOfWorker = (ImageView) view.findViewById(R.id.costOfWorker);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(costOfWorker);
 
         //WORKER IMG
-        SimpleDraweeView workerImg = (SimpleDraweeView) view.findViewById(R.id.workerImg);
-        int resourceId9 = getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri9 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId9))
-                .build();
-        workerImg.setImageURI(uri9);
+        ImageView workerImg = (ImageView) view.findViewById(R.id.workerImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker")).into(workerImg);
 
         //MINE IMG
-        SimpleDraweeView machImg = (SimpleDraweeView) view.findViewById(R.id.imageView);
-        int resourceId = getContext().getResources().getIdentifier("mine", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        machImg.setImageURI(uri);
+        ImageView machImg = (ImageView) view.findViewById(R.id.imageView);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("mine", "drawable", "com.companybest.ondra.engineerclicker")).into(machImg);
 
         //COIN IMG
-        SimpleDraweeView coin = (SimpleDraweeView) view.findViewById(R.id.costOfMachineImg);
-        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri1 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId1))
-                .build();
-        coin.setImageURI(uri1);
+        ImageView coin = (ImageView) view.findViewById(R.id.costOfMachineImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(coin);
 
         //TIME IMG
-        SimpleDraweeView timeOfMachineImg = (SimpleDraweeView) view.findViewById(R.id.timeOfMachineImg);
-        int resourceId2 = getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri2 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId2))
-                .build();
-        timeOfMachineImg.setImageURI(uri2);
+        ImageView timeOfMachineImg = (ImageView) view.findViewById(R.id.timeOfMachineImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker")).into(timeOfMachineImg);
 
         //MATERIAL IMG
-        SimpleDraweeView materialOfMachineImg = (SimpleDraweeView) view.findViewById(R.id.materialOfMachineImg);
-        int resourceId3 = getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri3 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId3))
-                .build();
-        materialOfMachineImg.setImageURI(uri3);
+        ImageView materialOfMachineImg = (ImageView) view.findViewById(R.id.materialOfMachineImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker")).into(materialOfMachineImg);
 
         //WORKER ON MACHINE IMG
-        SimpleDraweeView workerOnMachineImg = (SimpleDraweeView) view.findViewById(R.id.workerOnMachImg);
-        int resourceId4 = getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri4 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId4))
-                .build();
-        workerOnMachineImg.setImageURI(uri4);
+        ImageView workerOnMachineImg = (ImageView) view.findViewById(R.id.workerOnMachImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker")).into(workerOnMachineImg);
 
         return view;
     }

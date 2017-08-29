@@ -1,17 +1,16 @@
 package com.companybest.ondra.engineerclicker.Slides;
 
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import agency.tango.materialintroscreen.SlideFragment;
 
@@ -29,13 +28,8 @@ public class InfoSlide extends SlideFragment {
         final View view = inflater.inflate(R.layout.info_slide, container, false);
 
         //CLICKING IMG
-        SimpleDraweeView clickImg = (SimpleDraweeView) view.findViewById(R.id.clickImg);
-        int resourceId = getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        clickImg.setImageURI(uri);
+        ImageView clickImg = (ImageView) view.findViewById(R.id.clickImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker")).into(clickImg);
 
         //DESCRIPTION
         TextView decription = (TextView) view.findViewById(R.id.descriptionOfInfoSlide);

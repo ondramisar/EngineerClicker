@@ -1,22 +1,21 @@
 package com.companybest.ondra.engineerclicker.Activitis;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.Adapters.MachineRealmAdapter;
 import com.companybest.ondra.engineerclicker.MainActivity;
+import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
-import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -35,7 +34,7 @@ public class MechTab extends Fragment {
 
     RealmRecyclerView mainScreenRecyclerView;
 
-    SimpleDraweeView workerImg;
+    ImageView workerImg;
 
     private Realm realm;
 
@@ -52,77 +51,67 @@ public class MechTab extends Fragment {
         //mAdView.loadAd(adRequest);
 
         realm = Realm.getDefaultInstance();
-            //FOR ADAPTER LIST OF MACHINES
-            machines = realm
-                    .where(Machine.class)
-                    .findAll();
-            machineRealmAdapter = new MachineRealmAdapter(getContext(), machines, true, false);
+        //FOR ADAPTER LIST OF MACHINES
+        machines = realm
+                .where(Machine.class)
+                .findAll();
+        machineRealmAdapter = new MachineRealmAdapter(getContext(), machines, true, false);
 
-            //RECYCLERVIEW
-            mainScreenRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view);
-            mainScreenRecyclerView.setAdapter(machineRealmAdapter);
+        //RECYCLERVIEW
+        mainScreenRecyclerView = (RealmRecyclerView) rootView.findViewById(R.id.realm_recycler_view);
+        mainScreenRecyclerView.setAdapter(machineRealmAdapter);
 
 
-            //COIN IMG
-            SimpleDraweeView costOfWorker = (SimpleDraweeView) rootView.findViewById(R.id.costOfWorker);
-            int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-            Uri uri1 = new Uri.Builder()
-                    .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                    .path(String.valueOf(resourceId1))
-                    .build();
-            costOfWorker.setImageURI(uri1);
+        //COIN IMG
+        ImageView costOfWorker = (ImageView) rootView.findViewById(R.id.costOfWorker);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(costOfWorker);
 
-            //WORKER IMG
-            workerImg = (SimpleDraweeView) rootView.findViewById(R.id.workerImg);
-            int resourceId = getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker");
-            Uri uri = new Uri.Builder()
-                    .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                    .path(String.valueOf(resourceId))
-                    .build();
-            workerImg.setImageURI(uri);
+        //WORKER IMG
+        workerImg = (ImageView) rootView.findViewById(R.id.workerImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("worker_helmet", "drawable", "com.companybest.ondra.engineerclicker")).into(workerImg);
 
-            //TEXT VIEWS OF WORKERS COINS AND COST OF WORKERS AND SETTING VALUE
-            numberOfWorkers = (TextView) rootView.findViewById(R.id.numberOfWorkers);
-            costOfWorkers = (TextView) rootView.findViewById(R.id.costOfWorkers);
-            plusWorker = (Button) rootView.findViewById(R.id.plusWorker);
-            plusWorker.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    //GETTING WORKERS AND USER COINS
-                    final BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
-                    final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
+        //TEXT VIEWS OF WORKERS COINS AND COST OF WORKERS AND SETTING VALUE
+        numberOfWorkers = (TextView) rootView.findViewById(R.id.numberOfWorkers);
+        costOfWorkers = (TextView) rootView.findViewById(R.id.costOfWorkers);
+        plusWorker = (Button) rootView.findViewById(R.id.plusWorker);
+        plusWorker.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                //GETTING WORKERS AND USER COINS
+                final BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
+                final User user = realm.where(User.class).equalTo("name", mainActivity.mainReferences.name).findFirst();
 
-                    if (user.getCoins() >= worker.getCost()) {
+                if (user.getCoins() >= worker.getCost()) {
 
-                        realm.executeTransaction(new Realm.Transaction() {
-                            @Override
-                            public void execute(Realm realm) {
+                    realm.executeTransaction(new Realm.Transaction() {
+                        @Override
+                        public void execute(Realm realm) {
 
-                                worker.setNumberOf(1, true);
+                            worker.setNumberOf(1, true);
 
-                                int calculatingNamburOfCost = worker.getCost() / 5;
+                            int calculatingNamburOfCost = worker.getCost() / 5;
 
-                                user.setCoins(worker.getCost(), false);
+                            user.setCoins(worker.getCost(), false);
 
-                                worker.setCost(calculatingNamburOfCost, true);
+                            worker.setCost(calculatingNamburOfCost, true);
 
-                            }
-                        });
+                        }
+                    });
 
-                        numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+                    numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
 
-                        costOfWorkers.setText("" + String.valueOf(worker.getCost()));
+                    costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
-                        TextView txtView = (TextView) ((MainActivity)getContext()).findViewById(R.id.coins);
-                        txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
+                    TextView txtView = (TextView) ((MainActivity) getContext()).findViewById(R.id.coins);
+                    txtView.setText(String.valueOf("" + String.valueOf(user.getCoins())));
 
-                    }
                 }
-            });
+            }
+        });
 
-            BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
-            numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
-            costOfWorkers.setText("" + String.valueOf(worker.getCost()));
+        BasicWorker worker = realm.where(BasicWorker.class).equalTo("name", mainActivity.mainReferences.nameOfWorker).findFirst();
+        numberOfWorkers.setText("" + String.valueOf(worker.getNumberOf()));
+        costOfWorkers.setText("" + String.valueOf(worker.getCost()));
 
 
         return rootView;

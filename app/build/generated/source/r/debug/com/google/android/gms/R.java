@@ -8,15 +8,15 @@ package com.google.android.gms;
 
 public final class R {
     public static final class attr {
-        public static final int adSize = 0x7f030025;
-        public static final int adSizes = 0x7f030026;
-        public static final int adUnitId = 0x7f030027;
-        public static final int buttonSize = 0x7f030049;
-        public static final int circleCrop = 0x7f030050;
-        public static final int colorScheme = 0x7f030060;
-        public static final int imageAspectRatio = 0x7f0300a0;
-        public static final int imageAspectRatioAdjust = 0x7f0300a1;
-        public static final int scopeUris = 0x7f030131;
+        public static final int adSize = 0x7f030022;
+        public static final int adSizes = 0x7f030023;
+        public static final int adUnitId = 0x7f030024;
+        public static final int buttonSize = 0x7f030045;
+        public static final int circleCrop = 0x7f03004c;
+        public static final int colorScheme = 0x7f03005c;
+        public static final int imageAspectRatio = 0x7f030099;
+        public static final int imageAspectRatioAdjust = 0x7f03009a;
+        public static final int scopeUris = 0x7f030117;
     }
     public static final class color {
         public static final int common_google_signin_btn_text_dark = 0x7f050032;
@@ -59,18 +59,18 @@ public final class R {
         public static final int adjust_width = 0x7f080022;
         public static final int auto = 0x7f080027;
         public static final int center = 0x7f080037;
-        public static final int dark = 0x7f080055;
-        public static final int icon_only = 0x7f08007f;
-        public static final int light = 0x7f08008d;
-        public static final int none = 0x7f0800a8;
-        public static final int normal = 0x7f0800a9;
-        public static final int radio = 0x7f0800c0;
-        public static final int standard = 0x7f0800f5;
-        public static final int text = 0x7f0800fe;
-        public static final int text2 = 0x7f0800ff;
-        public static final int toolbar = 0x7f08010f;
-        public static final int wide = 0x7f08011e;
-        public static final int wrap_content = 0x7f080124;
+        public static final int dark = 0x7f080053;
+        public static final int icon_only = 0x7f080078;
+        public static final int light = 0x7f080086;
+        public static final int none = 0x7f0800a1;
+        public static final int normal = 0x7f0800a2;
+        public static final int radio = 0x7f0800b9;
+        public static final int standard = 0x7f0800ee;
+        public static final int text = 0x7f0800f7;
+        public static final int text2 = 0x7f0800f8;
+        public static final int toolbar = 0x7f080108;
+        public static final int wide = 0x7f080117;
+        public static final int wrap_content = 0x7f08011d;
     }
     public static final class integer {
         public static final int google_play_services_version = 0x7f090006;
@@ -108,15 +108,15 @@ public final class R {
         public static final int Theme_IAPTheme = 0x7f0f0123;
     }
     public static final class styleable {
-        public static final int[] AdsAttrs = { 0x7f030025, 0x7f030026, 0x7f030027 };
+        public static final int[] AdsAttrs = { 0x7f030022, 0x7f030023, 0x7f030024 };
         public static final int AdsAttrs_adSize = 0;
         public static final int AdsAttrs_adSizes = 1;
         public static final int AdsAttrs_adUnitId = 2;
-        public static final int[] LoadingImageView = { 0x7f030050, 0x7f0300a0, 0x7f0300a1 };
+        public static final int[] LoadingImageView = { 0x7f03004c, 0x7f030099, 0x7f03009a };
         public static final int LoadingImageView_circleCrop = 0;
         public static final int LoadingImageView_imageAspectRatio = 1;
         public static final int LoadingImageView_imageAspectRatioAdjust = 2;
-        public static final int[] SignInButton = { 0x7f030049, 0x7f030060, 0x7f030131 };
+        public static final int[] SignInButton = { 0x7f030045, 0x7f03005c, 0x7f030117 };
         public static final int SignInButton_buttonSize = 0;
         public static final int SignInButton_colorScheme = 1;
         public static final int SignInButton_scopeUris = 2;

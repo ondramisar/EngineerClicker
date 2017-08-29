@@ -1,20 +1,19 @@
 package com.companybest.ondra.engineerclicker.Adapters;
 
-import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.Activitis.MechTab;
 import com.companybest.ondra.engineerclicker.MainActivity;
+import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.User;
-import com.companybest.ondra.engineerclicker.Models.BasicWorker;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import io.realm.Realm;
 import io.realm.RealmBasedRecyclerViewAdapter;
@@ -37,13 +36,13 @@ public class MachineRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, 
         Button minusWorkerOnMachine;
         TextView timer;
         TextView materialMake;
-        SimpleDraweeView imageView;
-        SimpleDraweeView costOfMachineImg;
-        SimpleDraweeView timeOfMachineImg;
-        SimpleDraweeView materialOfMachineImg;
-        SimpleDraweeView workerOnMachineImg;
-        SimpleDraweeView smallMachImg;
-        SimpleDraweeView bacForText;
+        ImageView imageView;
+        ImageView costOfMachineImg;
+        ImageView timeOfMachineImg;
+        ImageView materialOfMachineImg;
+        ImageView workerOnMachineImg;
+        ImageView smallMachImg;
+        ImageView bacForText;
         TextView workingTextView;
 
         ViewHolder(FrameLayout container) {
@@ -57,14 +56,14 @@ public class MachineRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, 
             this.plusWorkerOnMachine = (Button) container.findViewById(R.id.plusWorkerOnMach);
             this.minusWorkerOnMachine = (Button) container.findViewById(R.id.minusWorkerOnMach);
             this.materialMake = (TextView) container.findViewById(R.id.materialMake);
-            this.imageView = (SimpleDraweeView) container.findViewById(R.id.imageView);
-            this.costOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.costOfMachineImg);
-            this.timeOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.timeOfMachineImg);
-            this.materialOfMachineImg = (SimpleDraweeView) container.findViewById(R.id.materialOfMachineImg);
-            this.workerOnMachineImg = (SimpleDraweeView) container.findViewById(R.id.workerOnMachImg);
-            this.smallMachImg = (SimpleDraweeView) container.findViewById(R.id.smallMachImg);
+            this.imageView = (ImageView) container.findViewById(R.id.imageView);
+            this.costOfMachineImg = (ImageView) container.findViewById(R.id.costOfMachineImg);
+            this.timeOfMachineImg = (ImageView) container.findViewById(R.id.timeOfMachineImg);
+            this.materialOfMachineImg = (ImageView) container.findViewById(R.id.materialOfMachineImg);
+            this.workerOnMachineImg = (ImageView) container.findViewById(R.id.workerOnMachImg);
+            this.smallMachImg = (ImageView) container.findViewById(R.id.smallMachImg);
             this.workingTextView = (TextView) container.findViewById(R.id.workingTextView);
-            this.bacForText = (SimpleDraweeView) container.findViewById(R.id.bac_for_text);
+            this.bacForText = (ImageView) container.findViewById(R.id.bac_for_text);
         }
     }
 
@@ -100,60 +99,25 @@ public class MachineRealmAdapter extends RealmBasedRecyclerViewAdapter<Machine, 
         }
 
         //MACHINE IMG
-        int resourceId = getContext().getResources().getIdentifier(machine.getNameOfImage(), "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        viewHolder.imageView.setImageURI(uri);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier(machine.getNameOfImage(), "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.imageView);
 
         //COIN IMG
-        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri1 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId1))
-                .build();
-        viewHolder.costOfMachineImg.setImageURI(uri1);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.costOfMachineImg);
 
         //TIME IMG
-        int resourceId2 = getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri2 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId2))
-                .build();
-        viewHolder.timeOfMachineImg.setImageURI(uri2);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("time", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.timeOfMachineImg);
 
         //MATERIAL IMG
-        int resourceId3 = getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri3 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId3))
-                .build();
-        viewHolder.materialOfMachineImg.setImageURI(uri3);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("gold", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.materialOfMachineImg);
 
         //WORKER ON MACHINE IMG
-        int resourceId4 = getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri4 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId4))
-                .build();
-        viewHolder.workerOnMachineImg.setImageURI(uri4);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("worker_on_mach", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.workerOnMachineImg);
 
         //DEFAULT SMALL MACHINE IMG
-        int resourceId5 = getContext().getResources().getIdentifier("smallmach", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri5 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId5))
-                .build();
-        viewHolder.smallMachImg.setImageURI(uri5);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("smallmach", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.smallMachImg);
 
         //BACK FOR TEXT IF IT IS WORKING OR NOT IMG
-        int resourceId6 = getContext().getResources().getIdentifier("bac_for_text", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri6 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId6))
-                .build();
-        viewHolder.bacForText.setImageURI(uri6);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("bac_for_text", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.bacForText);
 
 
         final Realm realm = Realm.getDefaultInstance();

@@ -11,7 +11,7 @@
         android:layout_height="match_parent"
         android:background="@color/warm_black">
 
-        <com.facebook.drawee.view.SimpleDraweeView
+        <ImageView
             android:id="@+id/clickImg"
             android:layout_width="180dp"
             android:layout_height="180dp"

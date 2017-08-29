@@ -1,22 +1,21 @@
 package com.companybest.ondra.engineerclicker.Adapters;
 
-import android.net.Uri;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Machine;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.Upgrade;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import java.util.Objects;
 
@@ -33,16 +32,16 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         public TextView nameOfUpgrade;
         public TextView costOfUpgrade;
         public Button buyUpgrade;
-        public SimpleDraweeView upgradeImg;
-        public SimpleDraweeView upgradeCostImg;
+        public ImageView upgradeImg;
+        public ImageView upgradeCostImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
             this.nameOfUpgrade = (TextView) container.findViewById(R.id.nameOgUpgrade);
             this.costOfUpgrade = (TextView) container.findViewById(R.id.costOfUpgrade);
             this.buyUpgrade = (Button) container.findViewById(R.id.buyUpgrade);
-            this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.imageViewOfUpgrade);
-            this.upgradeCostImg = (SimpleDraweeView) container.findViewById(R.id.costOfUpgrdImg);
+            this.upgradeImg = (ImageView) container.findViewById(R.id.imageViewOfUpgrade);
+            this.upgradeCostImg = (ImageView) container.findViewById(R.id.costOfUpgrdImg);
         }
     }
 
@@ -66,20 +65,10 @@ public class UpgradeRealAdapter extends RealmBasedRecyclerViewAdapter<Upgrade, U
         viewHolder.costOfUpgrade.setText("" + String.valueOf(upgrade.getCost()));
 
         //UPGRADE IMG
-        int resourceId = getContext().getResources().getIdentifier(upgrade.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        viewHolder.upgradeImg.setImageURI(uri);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier(upgrade.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.upgradeImg);
 
         //COIN IMG
-        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri1 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId1))
-                .build();
-        viewHolder.upgradeCostImg.setImageURI(uri1);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.upgradeCostImg);
 
         final Realm realm = Realm.getDefaultInstance();
         try {

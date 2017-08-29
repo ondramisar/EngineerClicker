@@ -1,20 +1,19 @@
 package com.companybest.ondra.engineerclicker.Activitis;
 
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.Adapters.InfoAdapter;
 import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 import com.google.android.gms.ads.AdRequest;
 import com.google.android.gms.ads.AdView;
 
@@ -39,16 +38,11 @@ public class InfTab extends Fragment {
 
         RealmRecyclerView infoList = (RealmRecyclerView) rootView.findViewById(R.id.info_rcycler_view);
 
-        SimpleDraweeView clickImg = (SimpleDraweeView) rootView.findViewById(R.id.clickImg);
+        ImageView clickImg = (ImageView) rootView.findViewById(R.id.clickImg);
 
 
         //IMG OF BUILDING
-        int resourceId = getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        clickImg.setImageURI(uri);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("build", "drawable", "com.companybest.ondra.engineerclicker")).into(clickImg);
 
 
         realm = Realm.getDefaultInstance();

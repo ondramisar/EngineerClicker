@@ -1,18 +1,17 @@
 package com.companybest.ondra.engineerclicker.Adapters;
 
-import android.net.Uri;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.MainActivity;
 import com.companybest.ondra.engineerclicker.Models.Material;
 import com.companybest.ondra.engineerclicker.Models.User;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import io.realm.Realm;
 import io.realm.RealmBasedRecyclerViewAdapter;
@@ -30,8 +29,8 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         public TextView numberOfMaterials;
         public Button sellMaterial;
         public Button sellMaterialAll;
-        public SimpleDraweeView upgradeImg;
-        public SimpleDraweeView costOfMaterialImg;
+        public ImageView upgradeImg;
+        public ImageView costOfMaterialImg;
 
         public ViewHolder(FrameLayout container) {
             super(container);
@@ -40,8 +39,8 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
             this.numberOfMaterials = (TextView) container.findViewById(R.id.numberOfMaterial);
             this.sellMaterial = (Button) container.findViewById(R.id.sellMaterial);
             this.sellMaterialAll = (Button) container.findViewById(R.id.sellMaterialAll);
-            this.upgradeImg = (SimpleDraweeView) container.findViewById(R.id.upgradeImg);
-            this.costOfMaterialImg = (SimpleDraweeView) container.findViewById(R.id.costOfMaterialImg);
+            this.upgradeImg = (ImageView) container.findViewById(R.id.upgradeImg);
+            this.costOfMaterialImg = (ImageView) container.findViewById(R.id.costOfMaterialImg);
         }
     }
 
@@ -66,20 +65,10 @@ public class MaterialRealmAdapter extends RealmBasedRecyclerViewAdapter<Material
         viewHolder.numberOfMaterials.setText("" + String.valueOf(material.getNumberOf()));
 
         //MATERIAL IMG
-        int resourceId = getContext().getResources().getIdentifier(material.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId))
-                .build();
-        viewHolder.upgradeImg.setImageURI(uri);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier(material.getNameOfImg(), "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.upgradeImg);
 
         //COIN IMG
-        int resourceId1 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri1 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId1))
-                .build();
-        viewHolder.costOfMaterialImg.setImageURI(uri1);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(viewHolder.costOfMaterialImg);
 
         final Realm realm = Realm.getDefaultInstance();
         try {

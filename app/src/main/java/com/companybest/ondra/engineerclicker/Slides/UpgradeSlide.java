@@ -1,16 +1,15 @@
 package com.companybest.ondra.engineerclicker.Slides;
 
-import android.net.Uri;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.companybest.ondra.engineerclicker.R;
-import com.facebook.common.util.UriUtil;
-import com.facebook.drawee.view.SimpleDraweeView;
 
 import agency.tango.materialintroscreen.SlideFragment;
 
@@ -39,22 +38,12 @@ public class UpgradeSlide extends SlideFragment {
         }
 
         //COIN IMG
-        SimpleDraweeView costOfUpgrdImg = (SimpleDraweeView) view.findViewById(R.id.costOfUpgrdImg);
-        int resourceId8 = getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri8 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId8))
-                .build();
-        costOfUpgrdImg.setImageURI(uri8);
+        ImageView costOfUpgrdImg = (ImageView) view.findViewById(R.id.costOfUpgrdImg);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("ui_coin", "drawable", "com.companybest.ondra.engineerclicker")).into(costOfUpgrdImg);
 
         //UPGRADE IMG
-        SimpleDraweeView upgradeImg = (SimpleDraweeView) view.findViewById(R.id.imageViewOfUpgrade);
-        int resourceId9 = getContext().getResources().getIdentifier("upgrade_money_for_mat", "drawable", "com.companybest.ondra.engineerclicker");
-        Uri uri9 = new Uri.Builder()
-                .scheme(UriUtil.LOCAL_RESOURCE_SCHEME) // "res"
-                .path(String.valueOf(resourceId9))
-                .build();
-        upgradeImg.setImageURI(uri9);
+        ImageView upgradeImg = (ImageView) view.findViewById(R.id.imageViewOfUpgrade);
+        Glide.with(getContext()).load(getContext().getResources().getIdentifier("upgrade_money_for_mat", "drawable", "com.companybest.ondra.engineerclicker")).into(upgradeImg);
 
 
         return view;
